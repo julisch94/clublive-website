@@ -1,30 +1,52 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="overlay" :class="{'is-menu-visible': isMenuVisible}">
+    <header id="header" class="reveal alt is-menu-visible">
+      <a href="/" class="logo">
+      <strong>ClubLive</strong>
+      <span>Club-Hits and Charts</span>
+      </a>
+      <nav @click="toggleMenu()">
+        <a href="#menu">Menu</a>
+      </nav>
+    </header>
+
+    <nav id="menu">
+      <div class="inner">
+        <ul class="links">
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/music">Musik</router-link></li>
+          <li><router-link to="/band">Band</router-link></li>
+          <li><router-link to="/shows">Shows</router-link></li>
+          <li><router-link to="/downloads">Downloads</router-link></li>
+          <li><router-link to="/datenschutzerklaerung">Datenschutzerklärung</router-link></li>
+          <li><router-link to="/impressum">Impressum</router-link></li>
+        </ul>
+      </div>
+      <a @click="toggleMenu" class="close">
+        "Close"
+      </a>
+    </nav>
   </div>
+
   <router-view/>
 </template>
 
+<script lang="ts">
+
+import {Vue} from "vue-class-component";
+
+export default class App extends Vue {
+
+  isMenuVisible = false;
+
+  toggleMenu() {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+
+}
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import "./assets/css/main.css";
 </style>
