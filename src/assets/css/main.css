@@ -34,7 +34,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline
+    vertical-align: baseline;
+    scroll-behavior: smooth;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -2673,7 +2674,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     width: 70%
 }
 
-.spotlights > section > .content > .inner {
+.spotlights > section > .content .inner {
     margin: 0 auto;
     max-width: 100%;
     width: 65em
@@ -3112,10 +3113,11 @@ body.is-loading #header.alt {
 }
 
 #banner h1 {
-    font-size: 3.25em
+    font-size: 3.25em;
+    text-transform: uppercase;
 }
 
-#banner > .inner {
+#banner .inner {
     -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
     -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
     -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
@@ -3125,23 +3127,23 @@ body.is-loading #header.alt {
     z-index: 2
 }
 
-#banner > .inner .image {
+#banner .inner .image {
     display: none
 }
 
-#banner > .inner header {
+#banner .inner header {
     width: auto
 }
 
-#banner > .inner header > :first-child {
+#banner .inner header > :first-child {
     width: auto
 }
 
-#banner > .inner header > :first-child:after {
+#banner .inner header > :first-child:after {
     max-width: 100%
 }
 
-#banner > .inner .content {
+#banner .inner .content {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -3153,16 +3155,16 @@ body.is-loading #header.alt {
     margin: 0 0 1em 0
 }
 
-#banner > .inner .content > * {
+#banner .inner .content > * {
     margin-left: 1.5em;
     margin-bottom: 0
 }
 
-#banner > .inner .content > :first-child {
+#banner .inner .content > :first-child {
     margin-left: 0
 }
 
-#banner > .inner .content p {
+#banner .inner .content p {
     font-size: 0.7em;
     font-weight: 700;
     letter-spacing: .25em;
@@ -3212,7 +3214,7 @@ body.is-loading #banner:after {
     opacity: 1
 }
 
-body.is-loading #banner > .inner {
+body.is-loading #banner .inner {
     -moz-filter: blur(0.125em);
     -webkit-filter: blur(0.125em);
     -ms-filter: blur(0.125em);
@@ -3238,11 +3240,11 @@ body.is-loading #banner > .inner {
         font-size: 2em
     }
 
-    #banner > .inner .content {
+    #banner .inner .content {
         display: block
     }
 
-    #banner > .inner .content > * {
+    #banner .inner .content > * {
         margin-left: 0;
         margin-bottom: 1em
     }
@@ -3260,7 +3262,7 @@ body.is-loading #banner > .inner {
         padding: 6em 0 3em 0
     }
 
-    #banner > .inner .content p br {
+    #banner .inner .content p br {
         display: none
     }
 
@@ -3281,7 +3283,7 @@ body.is-loading #banner > .inner {
     border-top: 0
 }
 
-#main > * > .inner {
+#main .inner {
     padding: 4em 0 3em 0;
     margin: 0 auto;
     max-width: 65em;
@@ -3289,7 +3291,7 @@ body.is-loading #banner > .inner {
 }
 
 @media screen and (max-width: 760px) {
-    #main > * > .inner {
+    #main .inner {
         padding: 2em 0 1em 0;
         width: calc(100% - 3em)
     }
@@ -3314,7 +3316,7 @@ body.is-loading #banner > .inner {
     overflow-x: hidden
 }
 
-#contact > .inner {
+#contact .inner {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -3322,27 +3324,27 @@ body.is-loading #banner > .inner {
     padding: 0 !important
 }
 
-#contact > .inner > :nth-child(2n-1) {
+#contact .inner > :nth-child(2n-1) {
     padding: 4em 3em 3em 0;
     border-right: solid 1px rgba(212, 212, 255, 0.1);
     width: 60%
 }
 
-#contact > .inner > :nth-child(2n) {
+#contact .inner > :nth-child(2n) {
     padding-left: 3em;
     width: 40%
 }
 
-#contact > .inner > .split {
+#contact .inner > .split {
     padding: 0
 }
 
-#contact > .inner > .split > * {
+#contact .inner > .split > * {
     padding: 3em 0 2em 3em;
     position: relative
 }
 
-#contact > .inner > .split > *:before {
+#contact .inner > .split > *:before {
     border-top: solid 1px rgba(212, 212, 255, 0.1);
     content: '';
     display: block;
@@ -3352,37 +3354,37 @@ body.is-loading #banner > .inner {
     width: calc(100vw + 3em)
 }
 
-#contact > .inner > .split > :first-child:before {
+#contact .inner > .split > :first-child:before {
     display: none
 }
 
 @media screen and (max-width: 960px) {
-    #contact > .inner {
+    #contact .inner {
         display: block
     }
 
-    #contact > .inner > :nth-child(2n-1) {
+    #contact .inner > :nth-child(2n-1) {
         padding: 4em 0 3em 0;
         border-right: 0;
         width: 100%
     }
 
-    #contact > .inner > :nth-child(2n) {
+    #contact .inner > :nth-child(2n) {
         padding-left: 0;
         width: 100%
     }
 
-    #contact > .inner > .split > * {
+    #contact .inner > .split > * {
         padding: 3em 0 2em 0
     }
 
-    #contact > .inner > .split > :first-child:before {
+    #contact .inner > .split > :first-child:before {
         display: block
     }
 }
 
 @media screen and (max-width: 840px) {
-    #contact > .inner > :nth-child(2n-1) {
+    #contact .inner > :nth-child(2n-1) {
         padding: 3em 0 2em 0
     }
 }
@@ -3430,7 +3432,7 @@ body.is-loading #banner > .inner {
     opacity: 0
 }
 
-#wrapper > * > .inner {
+#wrapper .inner {
     padding: 4em 0 3em 0;
     margin: 0 auto;
     max-width: 65em;
@@ -3438,7 +3440,7 @@ body.is-loading #banner > .inner {
 }
 
 @media screen and (max-width: 760px) {
-    #wrapper > * > .inner {
+    #wrapper .inner {
         padding: 2em 0 1em 0;
         width: calc(100% - 3em)
     }

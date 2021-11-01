@@ -1,12 +1,12 @@
 <template>
   <div id="overlay" :class="{'is-menu-visible': isMenuVisible}">
-    <header id="header" class="reveal alt is-menu-visible">
+    <header id="header" class="reveal alt">
       <a href="/" class="logo">
         <strong>ClubLive</strong>
         <span>Club-Hits and Charts</span>
       </a>
       <nav @click="toggleMenu()">
-        <a href="#">Menu</a>
+        <a href="#menu">Menu</a>
       </nav>
     </header>
 
@@ -25,14 +25,25 @@
 
     <div id="wrapper">
       <router-view/>
+
+      <Contact/>
+      <Footer/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 
-import {Vue} from "vue-class-component";
+import {Options, Vue} from "vue-class-component";
+import Contact from "@/components/Contact.vue";
+import Footer from "@/components/Footer.vue";
 
+@Options({
+  components: {
+    Contact,
+    Footer
+  }
+})
 export default class App extends Vue {
 
   routes = [
