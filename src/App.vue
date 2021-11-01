@@ -2,33 +2,31 @@
   <div id="overlay" :class="{'is-menu-visible': isMenuVisible}">
     <header id="header" class="reveal alt is-menu-visible">
       <a href="/" class="logo">
-      <strong>ClubLive</strong>
-      <span>Club-Hits and Charts</span>
+        <strong>ClubLive</strong>
+        <span>Club-Hits and Charts</span>
       </a>
       <nav @click="toggleMenu()">
-        <a href="#menu">Menu</a>
+        <a href="#">Menu</a>
       </nav>
     </header>
 
     <nav id="menu">
       <div class="inner">
         <ul class="links">
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/music">Musik</router-link></li>
-          <li><router-link to="/band">Band</router-link></li>
-          <li><router-link to="/shows">Shows</router-link></li>
-          <li><router-link to="/downloads">Downloads</router-link></li>
-          <li><router-link to="/datenschutzerklaerung">Datenschutzerklärung</router-link></li>
-          <li><router-link to="/impressum">Impressum</router-link></li>
+          <li v-for="item in routes" :key="item.name">
+            <router-link @click.capture="toggleMenu()" :to="item.route">{{ item.name }}</router-link>
+          </li>
         </ul>
       </div>
       <a @click="toggleMenu" class="close">
         "Close"
       </a>
     </nav>
-  </div>
 
-  <router-view/>
+    <div id="wrapper">
+      <router-view/>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -36,6 +34,37 @@
 import {Vue} from "vue-class-component";
 
 export default class App extends Vue {
+
+  routes = [
+    {
+      name: "Home",
+      route: "/"
+    },
+    {
+      name: "Musik",
+      route: "/music"
+    },
+    {
+      name: "Band",
+      route: "/band"
+    },
+    {
+      name: "Shows",
+      route: "/shows"
+    },
+    {
+      name: "Downloads",
+      route: "/downloads"
+    },
+    {
+      name: "Datenschutzerklärung",
+      route: "/datenschutzerklaerung"
+    },
+    {
+      name: "Impressum",
+      route: "/impressum"
+    }
+  ]
 
   isMenuVisible = false;
 
