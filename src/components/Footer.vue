@@ -36,7 +36,7 @@ import {Vue} from "vue-class-component";
 
 export default class Footer extends Vue {
 
-  get currentYear(): string {
+  get currentYear(): number {
     return new Date().getFullYear();
   }
 
