@@ -1,14 +1,7 @@
 <template>
   <div id="overlay" :class="{'is-menu-visible': isMenuVisible}">
-    <header id="header" class="alt">
-      <a href="/" class="logo">
-        <strong>ClubLive</strong>
-        <span>Club-Hits and Charts</span>
-      </a>
-      <nav @click="toggleMenu()">
-        <a href="#menu">Menu</a>
-      </nav>
-    </header>
+
+    <Header @toggle-menu="toggleMenu"/>
 
     <nav id="menu">
       <div class="inner">
@@ -37,9 +30,11 @@
 import {Options, Vue} from "vue-class-component";
 import Contact from "@/components/Contact.vue";
 import Footer from "@/components/Footer.vue";
+import Header from "@/components/Header.vue";
 
 @Options({
   components: {
+    Header,
     Contact,
     Footer
   }
