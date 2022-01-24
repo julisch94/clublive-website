@@ -45,11 +45,10 @@
 </template>
 
 <script lang="ts">
+import {defineComponent} from "vue";
 
-import {Vue} from "vue-class-component";
-
-export default class Contact extends Vue {
-
-}
+export default defineComponent({
+  name: "Contact"
+})
 
 </script>

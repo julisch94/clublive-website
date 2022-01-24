@@ -1,6 +1,6 @@
 <template>
   <div id="overlay" :class="{'is-menu-visible': isMenuVisible}">
-    <header id="header" class="reveal alt">
+    <header id="header" class="alt">
       <a href="/" class="logo">
         <strong>ClubLive</strong>
         <span>Club-Hits and Charts</span>
