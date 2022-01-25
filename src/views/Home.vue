@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section id="banner" class="major" style="background-position: center 0px;">
+    <section id="banner" class="major">
       <div class="inner">
         <header class="major">
           <h1>This is ClubLive</h1>

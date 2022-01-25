@@ -3127,10 +3127,6 @@ body.is-loading #header.alt {
     z-index: 2
 }
 
-#banner .inner .image {
-    display: none
-}
-
 #banner .inner header {
     width: auto
 }
