@@ -1,33 +1,38 @@
 <template>
-  <div future-date="20190426">
+  <div>
     <h2>
-      <span>{{ this.show.date }}&nbsp;//&nbsp;{{ this.show.place }}</span>
+      <span>{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</span>
     </h2>
-    <p v-if="this.show.description">{{ this.show.description }}</p>
-    <p v-if="this.show.website">
+    <p v-if="show.description">{{ show.description }}</p>
+    <p v-if="show.website">
       <span class="icon fa-globe">&nbsp;</span>
-      <a :href="this.show.website" target="_blank">{{ this.show.website }}</a>
+      <a :href="show.website" target="_blank">{{ show.website }}</a>
     </p>
-    <p v-if="this.show.mapsLink">
+    <p v-if="show.mapsLink">
       <span class="icon fa-map-marker">&nbsp;</span>
-      <a :href="this.show.mapsLink" target="_blank">Routenplaner</a>
+      <a :href="show.mapsLink" target="_blank">Routenplaner</a>
     </p>
-    <hr/>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue";
 import {ShowModel} from "@/model/show.model.ts";
+import dayjs from "../plugins/dayjs.ts";
 
 export default defineComponent({
   name: "Show",
   props: {
     show: {
-      type: () => ShowModel,
+      type: Object as () => ShowModel,
       required: true
     },
   },
+  computed: {
+    prettyDate(): string {
+      return dayjs(this.show.date).format('dd DD.MM.YYYY');
+    }
+  }
 });
 
 </script>

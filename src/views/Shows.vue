@@ -11,8 +11,10 @@
     <section id="one">
       <div class="inner">
 
-        <div v-if="hasShows">
-          <Show v-for="show of shows" :key="show.date" :show="show"/>
+        <div v-if="hasFutureShows">
+          <Show v-for="show of futureShows" :key="show.date" :show="show"/>
+          <hr/>
+          <p>Weitere Auftritte werden regelmäßig bekannt gegeben.</p>
         </div>
 
         <div v-else>
@@ -28,6 +30,8 @@
 <script lang="ts">
 import {defineComponent} from "vue";
 import Show from "../components/Show";
+import {ShowModel} from "@/model/show.model";
+import dayjs from "dayjs";
 
 export default defineComponent({
   name: "Shows",
@@ -36,21 +40,23 @@ export default defineComponent({
   },
   data() {
     return {
-      shows: []
-      // shows: [
-      //   {
-      //     date: "Do 18.07.19",
-      //     place: "Sommerfest Erasmus Karlsruhe",
-      //     description: "Eintritt frei. Open Air im Forum des KIT Campus.",
-      //     website: "https://karlsruhe.esn-germany.de/",
-      //     mapsLink: "https://goo.gl/maps/GbzK9vumR5MufVzy7"
-      //   }
-      // ]
+      shows: [
+        {
+          date: "2022/07/18",
+          place: "Sommerfest Erasmus Karlsruhe",
+          description: "Eintritt frei. Open Air im Forum des KIT Campus.",
+          website: "https://karlsruhe.esn-germany.de/",
+          mapsLink: "https://goo.gl/maps/GbzK9vumR5MufVzy7"
+        },
+      ]
     }
   },
   computed: {
-    hasShows(): boolean {
-      return this.shows.length > 0;
+    futureShows(): ShowModel[] {
+      return this.shows.filter(show => !dayjs().isAfter(show.date));
+    },
+    hasFutureShows(): boolean {
+      return this.futureShows.length > 0;
     }
   }
 })
