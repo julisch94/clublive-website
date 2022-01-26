@@ -16,7 +16,7 @@
       </div>
     </section>
 
-    <div id="main">
+    <div ref="main" id="main">
       <section>
         <div id="start" class="inner">
           <div class="-2u 8u 12u$(small)">
@@ -47,34 +47,56 @@
 </template>
 
 <script lang="ts">
-import {Vue} from 'vue-class-component';
+import {defineComponent} from "vue";
 
-export default class Home extends Vue {
-
-  articles = [
-    {
-      name: "Musik",
-      route: "/music",
-      class: "music"
-    },
-    {
-      name: "Band",
-      route: "/band",
-      class: "band"
-    },
-    {
-      name: "Shows",
-      route: "/shows",
-      class: "shows"
-    },
-    {
-      name: "Downloads",
-      route: "/downloads",
-      class: "downloads"
+export default defineComponent({
+  name: "Home",
+  data() {
+    return {
+      articles: [
+        {
+          name: "Musik",
+          route: "/music",
+          class: "music"
+        },
+        {
+          name: "Band",
+          route: "/band",
+          class: "band"
+        },
+        {
+          name: "Shows",
+          route: "/shows",
+          class: "shows"
+        },
+        {
+          name: "Downloads",
+          route: "/downloads",
+          class: "downloads"
+        }
+      ],
     }
-  ]
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  computed: {
+    startOfMain() {
+      const element = (this.$refs.main as Element).getBoundingClientRect();
+      return element.y;
+    }
+  },
+  methods: {
+    handleScroll(): void {
+      const isMainInView = window.scrollY > this.startOfMain;
+      this.$emit("is-main-in-view", isMainInView);
+    }
+  }
+});
 
-}
 </script>
 
 <style>

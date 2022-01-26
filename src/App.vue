@@ -1,7 +1,7 @@
 <template>
   <div id="overlay" :class="{'is-menu-visible': isMenuVisible}">
 
-    <Header @toggle-menu="toggleMenu"/>
+    <Header @toggle-menu="toggleMenu" :is-transparent="showTransparentNavbar"/>
 
     <nav id="menu">
       <div class="inner">
@@ -17,7 +17,7 @@
     </nav>
 
     <div id="wrapper">
-      <router-view/>
+      <router-view @is-main-in-view="onMainInView($event)"/>
 
       <Contact/>
       <Footer/>
@@ -27,59 +27,68 @@
 
 <script lang="ts">
 
-import {Options, Vue} from "vue-class-component";
+import {defineComponent} from "vue";
 import Contact from "@/components/Contact.vue";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
 
-@Options({
+export default defineComponent({
+  name: "App",
   components: {
     Header,
     Contact,
     Footer
-  }
-})
-export default class App extends Vue {
-
-  routes = [
-    {
-      name: "Home",
-      route: "/"
-    },
-    {
-      name: "Musik",
-      route: "/music"
-    },
-    {
-      name: "Band",
-      route: "/band"
-    },
-    {
-      name: "Shows",
-      route: "/shows"
-    },
-    {
-      name: "Downloads",
-      route: "/downloads"
-    },
-    {
-      name: "Datenschutzerklärung",
-      route: "/datenschutzerklaerung"
-    },
-    {
-      name: "Impressum",
-      route: "/impressum"
+  },
+  data() {
+    return {
+      routes: [
+        {
+          name: "Home",
+          route: "/"
+        },
+        {
+          name: "Musik",
+          route: "/music"
+        },
+        {
+          name: "Band",
+          route: "/band"
+        },
+        {
+          name: "Shows",
+          route: "/shows"
+        },
+        {
+          name: "Downloads",
+          route: "/downloads"
+        },
+        {
+          name: "Datenschutzerklärung",
+          route: "/datenschutzerklaerung"
+        },
+        {
+          name: "Impressum",
+          route: "/impressum"
+        }
+      ],
+      isMenuVisible: false,
+      isMainInView: false,
     }
-  ]
-
-  isMenuVisible = false;
-
-  toggleMenu() {
-    this.isMenuVisible = !this.isMenuVisible;
+  },
+  computed: {
+    showTransparentNavbar(): boolean {
+      return this.$route.path === "/" && !this.isMainInView;
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuVisible = !this.isMenuVisible;
+    },
+    onMainInView(isInView: boolean) {
+      this.isMainInView = isInView;
+    }
   }
-
-}
-
+});
 </script>
 
 <style>

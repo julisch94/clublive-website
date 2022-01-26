@@ -18,7 +18,7 @@
 <script lang="ts">
 import {defineComponent} from "vue";
 import {ShowModel} from "@/model/show.model.ts";
-import dayjs from "../plugins/dayjs.ts";
+import dayjs from "../plugins/dayjs";
 
 export default defineComponent({
   name: "Show",

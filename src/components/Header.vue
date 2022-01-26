@@ -1,5 +1,5 @@
 <template>
-  <header id="header" :class="{'alt': isTransparent}">
+  <header id="header" class="reveal" :class="{'alt': isTransparent}">
     <a href="/" class="logo">
       <strong>ClubLive</strong>
       <span>Club-Hits and Charts</span>
@@ -15,9 +15,10 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "Header",
-  computed: {
-    isTransparent() {
-      return this.$route.path === "/";
+  props: {
+    isTransparent: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

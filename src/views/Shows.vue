@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
-import Show from "../components/Show";
+import Show from "../components/Show.vue";
 import {ShowModel} from "@/model/show.model";
 import dayjs from "dayjs";
 
@@ -42,7 +42,7 @@ export default defineComponent({
     return {
       shows: [
         {
-          date: "2022/07/18",
+          date: "2020/07/18",
           place: "Sommerfest Erasmus Karlsruhe",
           description: "Eintritt frei. Open Air im Forum des KIT Campus.",
           website: "https://karlsruhe.esn-germany.de/",
