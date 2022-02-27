@@ -3,7 +3,7 @@
     <div class="inner">
       <section>
         <h3>Kontaktformular / Ihre Anfrage</h3>
-        <form @submit.prevent="submitForm()" @reset.prevent="reset()" data-netlify="true">
+        <form @submit.prevent="submitForm()" @reset.prevent="reset()" data-netlify="true" data-netlify-recaptcha="true">
           <input type="hidden" name="form-name" value="contact" />
           <div class="field half first">
             <label for="name">Name</label>
@@ -34,18 +34,18 @@
                 @keyup.ctrl.enter="submitForm()">
             </textarea>
           </div>
-          <div class="g-recaptcha" data-sitekey="6LcMQYQUAAAAAIGCx_-QUKMErQ_zxxm8uB3kAZic"></div>
+          <div data-netlify-recaptcha="true"></div>
           <ul class="actions">
             <li><input type="submit" value="Abschicken" class="special"></li>
             <li><input type="reset" value="Löschen"></li>
           </ul>
-          <div class="result">
-            <p v-if="this.success">Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns baldmöglichst
-              zurück.</p>
-            <p v-if="this.failure">Oh. Da ist etwas schief gegangen. Kannst du uns bitte stattdessen eine E-Mail an
-              contact@clublive.band schicken?</p>
-          </div>
         </form>
+        <div class="result">
+          <p v-if="this.success">Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns baldmöglichst
+            zurück.</p>
+          <p v-if="this.failure">Oh. Da ist etwas schief gegangen. Kannst du uns bitte stattdessen eine E-Mail an
+            contact@clublive.band schicken?</p>
+        </div>
       </section>
       <section class="split">
         <section>
