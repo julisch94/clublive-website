@@ -3,7 +3,8 @@
     <div class="inner">
       <section>
         <h3>Kontaktformular / Ihre Anfrage</h3>
-        <form @submit.prevent="submitForm()" @reset.prevent="reset()">
+        <form @submit.prevent="submitForm()" @reset.prevent="reset()" netlify>
+          <input type="hidden" name="form-name" value="contact" />
           <div class="field half first">
             <label for="name">Name</label>
             <input
