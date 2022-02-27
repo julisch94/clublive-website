@@ -3,7 +3,7 @@
     <div class="inner">
       <section>
         <h3>Kontaktformular / Ihre Anfrage</h3>
-        <form @submit.prevent="submitForm()" @reset.prevent="reset()" netlify>
+        <form @submit.prevent="submitForm()" @reset.prevent="reset()" data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
           <div class="field half first">
             <label for="name">Name</label>
@@ -97,6 +97,7 @@ export default defineComponent({
         body: new URLSearchParams(body).toString()
       })
           .then((result) => {
+            console.log(result);
             if (result.ok) {
               this.success = true;
               console.log("Form successfully submitted.");
@@ -107,7 +108,6 @@ export default defineComponent({
                   result.status,
                   result.statusText
               );
-              alert(`${result.status} ${result.statusText}`);
             }
           })
           .catch((error) => {
