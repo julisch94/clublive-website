@@ -4,8 +4,8 @@
       <strong>ClubLive</strong>
       <span>Club-Hits and Charts</span>
     </a>
-    <nav @click="toggleMenu()">
-      <a href="#" @click.prevent>Menu</a>
+    <nav>
+      <a href="#" @click="toggleMenu()">Menu</a>
     </nav>
   </header>
 </template>
