@@ -10,6 +10,7 @@
             <router-link @click.capture="toggleMenu()" :to="item.route">{{ item.name }}</router-link>
           </li>
         </ul>
+        
       </div>
       <a @click="toggleMenu" class="close">
         "Close"
