@@ -7,9 +7,8 @@
           @submit.prevent="submitForm"
           @reset.prevent="reset()"
           data-netlify="true"
-          data-netlify-recaptcha="true"
+          data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="contact" />
           <div class="field half first">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" v-model="name" required />
@@ -81,7 +80,7 @@ export default defineComponent({
   name: "Contact",
   data() {
     return {
-      name: "bla",
+      name: "",
       email: "",
       message: "",
       success: false,
@@ -94,7 +93,7 @@ export default defineComponent({
   methods: {
     submitForm() {
       const body = {
-        "form-name": "contact",
+        "form-name": "clublive-contact",
         name: this.name,
         email: this.email,
         message: this.message,
