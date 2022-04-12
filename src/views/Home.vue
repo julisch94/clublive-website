@@ -112,4 +112,9 @@ article.downloads {
   padding-top: 66px !important;
 }
 
+@media screen and (max-width: 760px) {
+  #start {
+    padding-top: 44px !important;
+  }
+}
 </style>
