@@ -12,17 +12,26 @@
           Glynne, Avicii, LMFAO, Marteria, Flo Rida, DJ Snake, Stromae,
           Macklemore, Zara Larsson, Calvin Harris und vielen mehr.
         </p>
+        <p>Hier einige Youtube-Videos unserer Auftritte:</p>
         <div class="row">
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/klPMadnQVL8" frameborder="0" allowfullscreen="allowfullscreen">
+              <iframe
+                src="https://www.youtube.com/embed/klPMadnQVL8"
+                frameborder="0"
+                allowfullscreen
+              >
               </iframe>
             </div>
             <p></p>
           </div>
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/w8EGcCSjuJQ" frameborder="0" allowfullscreen="allowfullscreen">
+              <iframe
+                src="https://www.youtube.com/embed/w8EGcCSjuJQ"
+                frameborder="0"
+                allowfullscreen
+              >
               </iframe>
             </div>
             <p></p>
@@ -31,35 +40,45 @@
         <div class="row">
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/q8VdEr7DpQ4" frameborder="0" allowfullscreen="allowfullscreen">
+              <iframe
+                src="https://www.youtube.com/embed/q8VdEr7DpQ4"
+                frameborder="0"
+                allowfullscreen
+              >
               </iframe>
             </div>
             <p></p>
           </div>
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/JAw3hM3quzc" frameborder="0" allowfullscreen="allowfullscreen">
+              <iframe
+                src="https://www.youtube.com/embed/JAw3hM3quzc"
+                frameborder="0"
+                allowfullscreen
+              >
               </iframe>
             </div>
             <p></p>
           </div>
         </div>
+        <p>Weitere Videos gibt es auf unseren Social-Media-Kanälen:</p>
+        <Social />
       </div>
     </section>
   </div>
 </template>
 
 <script lang="ts">
-
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
+import Social from "@/components/Social.vue";
 
 export default defineComponent({
   name: "Music",
   data() {
     return {
-      name: "Music"
-    }
-  }
-})
-
+      name: "Music",
+    };
+  },
+  components: { Social },
+});
 </script>
