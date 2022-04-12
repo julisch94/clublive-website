@@ -1,5 +1,5 @@
 <template>
-  <section id="banner" class="major">
+  <section id="banner" class="major" :class="{ 'is-loading': isLoading }">
     <div class="inner">
       <header class="major">
         <h1>This is ClubLive</h1>
@@ -24,6 +24,16 @@ import Social from "./Social.vue";
 export default defineComponent({
   name: "Banner",
   components: { Social },
+  data() {
+    return {
+      isLoading: true,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 0);
+  },
 });
 </script>
 
@@ -175,11 +185,11 @@ export default defineComponent({
   background-color: #87c5a4;
 }
 
-body.is-loading #banner:after {
+#banner.is-loading:after {
   opacity: 1;
 }
 
-body.is-loading #banner .inner {
+#banner.is-loading .inner {
   -moz-filter: blur(0.125em);
   -webkit-filter: blur(0.125em);
   -ms-filter: blur(0.125em);
