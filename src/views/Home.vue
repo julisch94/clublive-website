@@ -3,8 +3,8 @@
     <Banner />
 
     <div ref="main" id="main">
-      <section>
-        <div id="start" class="inner">
+      <section id="start">
+        <div class="inner">
           <div class="-2u 8u 12u$(small)">
             <h3>Clubmusik live performt!</h3>
             <p style="text-align: justify">
@@ -107,4 +107,9 @@ article.shows {
 article.downloads {
   background-image: url("../assets/images/downloads.jpg");
 }
+
+#start {
+  padding-top: 66px !important;
+}
+
 </style>
