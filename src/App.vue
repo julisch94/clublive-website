@@ -11,9 +11,7 @@
           </li>
         </ul>
       </div>
-      <a @click="toggleMenu" class="close">
-        "Close"
-      </a>
+      <a href="#" @click.prevent="toggleMenu()" class="close"></a>
     </nav>
 
     <div id="wrapper">
@@ -83,6 +81,7 @@ export default defineComponent({
   methods: {
     toggleMenu() {
       this.isMenuVisible = !this.isMenuVisible;
+      console.log('menu visible:', this.isMenuVisible)
     },
     onMainInView(isInView: boolean) {
       this.isMainInView = isInView;

@@ -5,7 +5,7 @@
       <span>Club-Hits and Charts</span>
     </a>
     <nav>
-      <a href="#" @click="toggleMenu()">Menu</a>
+      <a href="#" @click.prevent="toggleMenu()">Menu</a>
     </nav>
   </header>
 </template>

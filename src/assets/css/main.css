@@ -3235,6 +3235,7 @@ body.is-loading #header.alt {
     -ms-pointer-events: none;
     pointer-events: none;
     background: rgba(36, 41, 67, 0.9);
+    backdrop-filter: blur(10px);
     box-shadow: none;
     height: 100%;
     left: 0;
