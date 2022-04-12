@@ -43,3 +43,35 @@ export default class Footer extends Vue {
 }
 </script>
 
+<style>
+
+#footer .copyright {
+    font-size: 0.8em;
+    list-style: none;
+    padding-left: 0
+}
+
+#footer .copyright li {
+    border-left: solid 1px white;
+    display: inline-block;
+    line-height: 1;
+    margin-left: 1em;
+    padding-left: 1em
+}
+
+#footer .copyright li:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0
+}
+
+@media screen and (max-width: 760px) {
+    #footer .copyright li {
+        display: block;
+        border-left: 0;
+        margin-left: 0;
+        padding-left: 0;
+        line-height: inherit
+    }
+}
+</style>
