@@ -1,20 +1,6 @@
 <template>
   <div>
-    <section id="banner" class="major">
-      <div class="inner">
-        <header class="major">
-          <h1>This is ClubLive</h1>
-        </header>
-        <div class="content">
-          <p>Live Band aus Karlsruhe.</p>
-          <ul class="actions">
-            <li>
-              <a href="#start" class="button next">Let's go</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <Banner />
 
     <div ref="main" id="main">
       <section>
@@ -22,11 +8,14 @@
           <div class="-2u 8u 12u$(small)">
             <h3>Clubmusik live performt!</h3>
             <p style="text-align: justify">
-              Wer sich fragt, ob die heutige Radiomusik überhaupt noch live gespielt werden kann,
-              der kommt bei ClubLive ganz auf seine Kosten. Alle Farben, Clean Bandit, Martin Solveig,
-              Felix Jaehn uvm. werden handgemacht interpretiert. Dabei zeigt ClubLive, dass nicht nur DJs
-              mit aktuellen Hits für ordentlich Party sorgen können. Vom Club bis zur Open Air Show geht bei
-              ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur nach Hause.
+              Wer sich fragt, ob die heutige Radiomusik überhaupt noch live
+              gespielt werden kann, der kommt bei ClubLive ganz auf seine
+              Kosten. Alle Farben, Clean Bandit, Martin Solveig, Felix Jaehn
+              uvm. werden handgemacht interpretiert. Dabei zeigt ClubLive, dass
+              nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen
+              können. Vom Club bis zur Open Air Show geht bei ClubLive
+              garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur
+              nach Hause.
             </p>
           </div>
         </div>
@@ -47,56 +36,59 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
+import Banner from "@/components/Banner.vue";
 
 export default defineComponent({
   name: "Home",
+  components: {
+    Banner,
+  },
   data() {
     return {
       articles: [
         {
           name: "Musik",
           route: "/music",
-          class: "music"
+          class: "music",
         },
         {
           name: "Band",
           route: "/band",
-          class: "band"
+          class: "band",
         },
         {
           name: "Shows",
           route: "/shows",
-          class: "shows"
+          class: "shows",
         },
         {
           name: "Downloads",
           route: "/downloads",
-          class: "downloads"
-        }
+          class: "downloads",
+        },
       ],
-    }
+    };
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   computed: {
     startOfMain() {
       const element = (this.$refs.main as Element).getBoundingClientRect();
       return element.y;
-    }
+    },
   },
   methods: {
     handleScroll(): void {
       const isMainInView = window.scrollY > this.startOfMain;
       this.$emit("is-main-in-view", isMainInView);
-    }
-  }
+    },
+  },
 });
-
 </script>
 
 <style>
