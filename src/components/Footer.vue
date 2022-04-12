@@ -1,32 +1,8 @@
 <template>
   <footer id="footer">
     <div class="inner">
-      <ul class="icons">
-        <li>
-          <a
-            href="https://facebook.com/ClubLive.Band"
-            class="icon alt fa-facebook"
-          >
-            <span class="label">Facebook</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://instagram.com/clublive.band"
-            class="icon alt fa-instagram"
-          >
-            <span class="label">Instagram</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.youtube.com/channel/UCpnhZgIseF5XWs5icvU4nuQ"
-            class="icon alt fa-youtube"
-          >
-            <span class="label">YouTube</span>
-          </a>
-        </li>
-      </ul>
+      <Social />
+
       <ul class="copyright">
         <li>
           Bilder von
@@ -50,13 +26,20 @@
 </template>
 
 <script lang="ts">
-import { Vue } from "vue-class-component";
+import { defineComponent } from "vue";
+import Social from "@/components/Social.vue";
 
-export default class Footer extends Vue {
-  get currentYear(): number {
-    return new Date().getFullYear();
-  }
-}
+export default defineComponent({
+  name: "Footer",
+  components: {
+    Social,
+  },
+  computed: {
+    currentYear(): number {
+      return new Date().getFullYear();
+    },
+  },
+});
 </script>
 
 <style>
