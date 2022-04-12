@@ -12,7 +12,7 @@
           Glynne, Avicii, LMFAO, Marteria, Flo Rida, DJ Snake, Stromae,
           Macklemore, Zara Larsson, Calvin Harris und vielen mehr.
         </p>
-        <p>Hier einige Youtube-Videos unserer Auftritte:</p>
+        <p>Hier sind einige Youtube-Videos unserer Auftritte:</p>
         <div class="row">
           <div class="6u 12u$(medium)">
             <div class="video-container">
