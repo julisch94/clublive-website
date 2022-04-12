@@ -7,7 +7,7 @@
         <div class="inner">
           <div class="-2u 8u 12u$(small)">
             <h3>Clubmusik live performt!</h3>
-            <p style="text-align: justify">
+            <p class="info-text">
               Wer sich fragt, ob die heutige Radiomusik überhaupt noch live
               gespielt werden kann, der kommt bei ClubLive ganz auf seine
               Kosten. Alle Farben, Clean Bandit, Martin Solveig, Felix Jaehn
@@ -106,6 +106,16 @@ article.shows {
 
 article.downloads {
   background-image: url("../assets/images/downloads.jpg");
+}
+
+.info-text {
+  text-align: justify;
+}
+
+@media screen and (max-width: 760px) {
+  .info-text {
+    text-align: inherit;
+  }
 }
 
 #start {
