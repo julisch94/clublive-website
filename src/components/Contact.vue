@@ -57,7 +57,7 @@
           <div class="contact-method">
             <span class="icon alt fa-envelope"></span>
             <h3>E-Mail</h3>
-            <span>contact(at)clublive.band</span>
+            <span><a href="mailto:contact@clublive.band">contact@clublive.band</a></span>
             <p>Wir freuen uns über Ihre Anfrage!</p>
           </div>
         </section>
