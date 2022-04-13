@@ -3,7 +3,7 @@
 
     <Header @toggle-menu="toggleMenu" :is-transparent="showTransparentNavbar"/>
 
-    <nav id="menu">
+    <nav @wheel.prevent id="menu">
       <div class="inner">
         <ul class="links">
           <li v-for="item in routes" :key="item.name">
