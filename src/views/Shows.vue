@@ -1,11 +1,15 @@
 <template>
+  <section class="style2" id="banner">
+    <div class="inner">
+      <header class="major">
+        <h1>Shows</h1>
+      </header>
+    </div>
+  </section>
+
   <div class="alt" id="main">
     <section id="one">
       <div class="inner">
-        <header class="major">
-          <h2>Shows</h2>
-        </header>
-
         <div v-if="hasFutureShows">
           <Show v-for="show of futureShows" :key="show.date" :show="show" />
           <hr />
@@ -121,5 +125,7 @@ export default defineComponent({
 <style scoped>
 #banner {
   background-image: url("../assets/images/shows.jpg");
+  background-size: cover;
+  background-position: center;
 }
 </style>
