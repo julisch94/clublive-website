@@ -47,6 +47,7 @@ import dayjs from "dayjs";
 import Show from "@/components/Show.vue";
 import { ShowModel } from "@/model/show.model";
 import PastShow from "@/components/PastShow.vue";
+import { PastShowModel } from "@/model/pastShow.model";
 
 export default defineComponent({
   name: "Shows",
@@ -112,9 +113,9 @@ export default defineComponent({
     hasFutureShows(): boolean {
       return this.futureShows.length > 0;
     },
-    sortedPastShows(): any[] {
+    sortedPastShows(): PastShowModel[] {
       const s = JSON.parse(JSON.stringify(this.pastShows));
-      return s.sort((first: any, second: any) => {
+      return s.sort((first: PastShowModel, second: PastShowModel) => {
         return dayjs(first.date).isBefore(dayjs(second.date)) ? 1 : -1;
       });
     },

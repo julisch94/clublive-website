@@ -5,17 +5,13 @@
 <script lang="ts">
 import dayjs from "dayjs";
 import { defineComponent, PropType } from "vue";
-
-interface Show {
-  date: string;
-  text: string;
-}
+import { PastShowModel } from "@/model/pastShow.model";
 
 export default defineComponent({
   name: "PastShow",
   props: {
     show: {
-      type: Object as PropType<Show>,
+      type: Object as PropType<PastShowModel>,
       required: true,
     },
   },
