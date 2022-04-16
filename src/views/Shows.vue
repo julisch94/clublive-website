@@ -36,6 +36,8 @@
         </ul>
       </div>
     </section>
+
+    <Tiles :articles="articles" />
   </div>
 </template>
 
@@ -48,12 +50,15 @@ import Show from "@/components/Show.vue";
 import { ShowModel } from "@/model/show.model";
 import PastShow from "@/components/PastShow.vue";
 import { PastShowModel } from "@/model/pastShow.model";
+import Tiles from "@/components/Tiles.vue";
+import tiles from "@/util/tiles";
 
 export default defineComponent({
   name: "Shows",
   components: {
     Show,
     PastShow,
+    Tiles,
   },
   data() {
     return {
@@ -104,6 +109,7 @@ export default defineComponent({
           text: "Irish Pub Pforzheim",
         },
       ],
+      articles: [tiles["music"], tiles["band"]],
     };
   },
   computed: {

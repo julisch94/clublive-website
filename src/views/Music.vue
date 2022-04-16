@@ -65,20 +65,24 @@
         <Social />
       </div>
     </section>
+
+    <Tiles :articles="articles" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Social from "@/components/Social.vue";
+import Tiles from "@/components/Tiles.vue";
+import tiles from "@/util/tiles";
 
 export default defineComponent({
   name: "Music",
   data() {
     return {
-      name: "Music",
+      articles: [tiles["band"], tiles["shows"]],
     };
   },
-  components: { Social },
+  components: { Social, Tiles },
 });
 </script>
