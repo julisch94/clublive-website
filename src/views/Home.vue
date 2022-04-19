@@ -21,16 +21,7 @@
         </div>
       </section>
 
-      <section class="tiles">
-        <article v-for="item in articles" :key="item.name" :class="item.class">
-          <header class="major">
-            <h2>
-              <a :href="item.route" class="link">{{ item.name }}</a>
-            </h2>
-          </header>
-          <a :href="item.route" class="link primary"></a>
-        </article>
-      </section>
+      <Tiles :articles="articles" />
     </div>
   </div>
 </template>
@@ -38,35 +29,22 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Banner from "@/components/Banner.vue";
+import Tiles from "@/components/Tiles.vue";
+import tiles from "@/util/tiles";
 
 export default defineComponent({
   name: "Home",
   components: {
     Banner,
+    Tiles,
   },
   data() {
     return {
       articles: [
-        {
-          name: "Musik",
-          route: "/music",
-          class: "music",
-        },
-        {
-          name: "Band",
-          route: "/band",
-          class: "band",
-        },
-        {
-          name: "Shows",
-          route: "/shows",
-          class: "shows",
-        },
-        {
-          name: "Downloads",
-          route: "/downloads",
-          class: "downloads",
-        },
+        tiles["music"],
+        tiles["band"],
+        tiles["shows"],
+        tiles["downloads"],
       ],
     };
   },
