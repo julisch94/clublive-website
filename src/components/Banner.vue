@@ -2,7 +2,7 @@
   <section id="banner" class="major" :class="{ 'is-loading': isLoading }">
     <div class="inner">
       <header class="major">
-        <h1>This is ClubLive</h1>
+        <h1>ClubLive</h1>
       </header>
       <div class="content">
         <p>Live Band aus Karlsruhe.</p>

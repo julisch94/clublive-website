@@ -3,10 +3,16 @@
     <article v-for="item in articles" :key="item.name" :class="item.class">
       <header class="major">
         <h2>
-          <a :href="item.route" class="link">{{ item.name }}</a>
+          <a :href="item.route" class="link" :id="headerId(item.name)">{{
+            item.name
+          }}</a>
         </h2>
       </header>
-      <a :href="item.route" class="link primary"></a>
+      <a
+        :href="item.route"
+        class="link primary"
+        :id="imageLinkId(item.name)"
+      ></a>
     </article>
   </section>
 </template>
@@ -17,9 +23,22 @@ import { defineComponent, PropType } from "vue";
 
 export default defineComponent({
   name: "Tiles",
+  data() {
+    return {
+      greeting: "jules",
+    };
+  },
   props: {
     articles: {
       type: Array as PropType<TileArticle[]>,
+    },
+  },
+  methods: {
+    headerId(pageName: string): string {
+      return `tile-header-${pageName}`;
+    },
+    imageLinkId(pageName: string): string {
+      return `tile-image-${pageName}`;
     },
   },
 });

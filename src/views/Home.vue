@@ -6,7 +6,7 @@
       <section id="start">
         <div class="inner">
           <div class="-2u 8u 12u$(small)">
-            <h3>Clubmusik live performt!</h3>
+            <h2>Wir spielen Clubmusik live!</h2>
             <p class="info-text">
               Wer sich fragt, ob die heutige Radiomusik überhaupt noch live
               gespielt werden kann, der kommt bei ClubLive ganz auf seine
