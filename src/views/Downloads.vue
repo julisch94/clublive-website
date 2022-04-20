@@ -3,7 +3,7 @@
     <section>
       <div class="inner">
         <header class="major">
-          <h2>Downloads</h2>
+          <h1>Downloads</h1>
         </header>
 
         <div class="row">

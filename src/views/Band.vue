@@ -3,7 +3,7 @@
     <section id="one">
       <div class="inner">
         <header class="major">
-          <h2>Über ClubLive</h2>
+          <h1>Über ClubLive</h1>
         </header>
         <p>
           Wer sich fragt, ob die heutige Radiomusik überhaupt noch live gespielt

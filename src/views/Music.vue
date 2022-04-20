@@ -3,7 +3,7 @@
     <section id="one">
       <div class="inner">
         <header class="major">
-          <h2>Musik</h2>
+          <h1>Musik</h1>
         </header>
         <p align="justify">
           Unsere Playlist besteht aus einer sorgfältigen Auswahl an aktuellen
