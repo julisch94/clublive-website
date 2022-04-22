@@ -19,7 +19,7 @@
             Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
           </li>
           <li>
-            Vue.js integration:
+            Vue.js Integration:
             <a href="https://julianschmidt.codes/">Julian Schmidt</a>
           </li>
         </ul>
