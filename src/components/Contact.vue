@@ -8,6 +8,11 @@
             <Loader color="#efefef" />
           </div>
           <div>
+            <p>
+              Unser Kontaktformular ist die beste Möglichkeit zu uns Kontakt
+              aufzunehmen. Wir lesen deine Nachricht auf unseren Handys und
+              melden uns umgehend bei dir zurück.
+            </p>
             <form
               @submit.prevent="submitForm"
               @reset.prevent="reset()"
