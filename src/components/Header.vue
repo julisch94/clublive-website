@@ -4,9 +4,11 @@
       <strong>ClubLive</strong>
       <span>Club-Hits and Charts</span>
     </a>
-    <nav>
-      <a id="menu-desktop" href="#" @click.prevent="toggleMenu()">Menu</a>
-      <a id="menu-mobile" href="#" @click.prevent="toggleMenu()"></a>
+    <nav id="menu-desktop">
+      <a class="hamburger" href="#" @click.prevent="toggleMenu()">Menu</a>
+    </nav>
+    <nav id="menu-mobile">
+      <a class="hamburger" href="#" @click.prevent="toggleMenu()"></a>
     </nav>
   </header>
 </template>
@@ -99,7 +101,7 @@ export default defineComponent({
   line-height: inherit;
 }
 
-#header nav a {
+#header nav a.hamburger {
   border: 0;
   display: block;
   font-size: 0.8em;
@@ -110,16 +112,16 @@ export default defineComponent({
   vertical-align: middle;
 }
 
-#header nav a:last-child {
+#header nav a.hamburger:last-child {
   padding-right: 1.5em;
 }
 
-#header nav a[href="#"] {
+#header nav a.hamburger[href="#"] {
   padding-right: 3.325em !important;
 }
 
-#header nav a[href="#"]:before,
-#header nav a[href="#"]:after {
+#header nav a.hamburger[href="#"]:before,
+#header nav a.hamburger[href="#"]:after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %23fff%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
   background-position: center;
   background-repeat: no-repeat;
@@ -134,7 +136,7 @@ export default defineComponent({
   width: 24px;
 }
 
-#header nav a[href="#"]:after {
+#header nav a.hamburger[href="#"]:after {
   -moz-transition: opacity 0.2s ease-in-out;
   -webkit-transition: opacity 0.2s ease-in-out;
   -ms-transition: opacity 0.2s ease-in-out;
@@ -144,17 +146,17 @@ export default defineComponent({
   z-index: 1;
 }
 
-#header nav a[href="#"]:hover:after,
-#header nav a[href="#"]:active:after {
+#header nav a.hamburger[href="#"]:hover:after,
+#header nav a.hamburger[href="#"]:active:after {
   opacity: 1;
 }
 
-#header nav a[href="#"]:last-child {
+#header nav a.hamburger[href="#"]:last-child {
   padding-right: 3.875em !important;
 }
 
-#header nav a[href="#"]:last-child:before,
-#header nav a[href="#"]:last-child:after {
+#header nav a.hamburger[href="#"]:last-child:before,
+#header nav a.hamburger[href="#"]:last-child:after {
   right: 2em;
 }
 
@@ -211,26 +213,6 @@ body.is-loading #header.alt {
   opacity: 0;
 }
 
-@media screen and (max-width: 1680px) {
-  #header nav a[href="#menu"] {
-    padding-right: 3.75em !important;
-  }
-
-  #header nav a[href="#menu"]:last-child {
-    padding-right: 4.25em !important;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  #header nav a[href="#menu"] {
-    padding-right: 4em !important;
-  }
-
-  #header nav a[href="#menu"]:last-child {
-    padding-right: 4.5em !important;
-  }
-}
-
 @media screen and (max-width: 840px) {
   #header {
     height: 2.75em;
@@ -241,56 +223,18 @@ body.is-loading #header.alt {
     padding: 0 1em;
   }
 
-  #header nav a {
+  #header nav a.hamburger {
     padding: 0 0.5em;
   }
 
-  #header nav a:last-child {
+  #header nav a.hamburger:last-child {
     padding-right: 1em;
-  }
-
-  #header nav a[href="#menu"] {
-    padding-right: 3.25em !important;
-  }
-
-  #header nav a[href="#menu"]:before,
-  #header nav a[href="#menu"]:after {
-    right: 0.75em;
-  }
-
-  #header nav a[href="#menu"]:last-child {
-    padding-right: 4em !important;
-  }
-
-  #header nav a[href="#menu"]:last-child:before,
-  #header nav a[href="#menu"]:last-child:after {
-    right: 1.5em;
   }
 }
 
 @media screen and (max-width: 760px) {
   #header .logo span {
     display: none;
-  }
-
-  #header nav a[href="#menu"] {
-    overflow: hidden;
-    padding-right: 0 !important;
-    text-indent: 5em;
-    white-space: nowrap;
-    width: 5em;
-  }
-
-  #header nav a[href="#menu"]:before,
-  #header nav a[href="#menu"]:after {
-    right: 0;
-    width: inherit;
-  }
-
-  #header nav a[href="#menu"]:last-child:before,
-  #header nav a[href="#menu"]:last-child:after {
-    width: 4em;
-    right: 0;
   }
 }
 

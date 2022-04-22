@@ -1,6 +1,6 @@
 <template>
   <div class="alt" id="main">
-    <section id="one">
+    <section id="musik">
       <div class="inner">
         <header class="major">
           <h1>Musik</h1>
