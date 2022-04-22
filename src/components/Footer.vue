@@ -87,9 +87,17 @@ export default defineComponent({
   justify-content: space-between;
 }
 
+.copyright-row ul:last-of-type {
+  text-align: right;
+}
+
 @media screen and (max-width: 840px) {
   .copyright-row {
     flex-direction: column-reverse;
   }
+
+  .copyright-row ul:last-of-type {
+  text-align: unset;
+}
 }
 </style>
