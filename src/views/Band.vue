@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <section id="one">
-      <div class="inner">
+      <div class="inner pa">
         <header class="major">
           <h1>Über ClubLive</h1>
         </header>

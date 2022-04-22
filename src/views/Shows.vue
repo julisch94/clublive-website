@@ -1,6 +1,6 @@
 <template>
   <section class="style2" id="banner">
-    <div class="inner">
+    <div class="inner pa">
       <header class="major">
         <h1>Shows</h1>
       </header>
@@ -9,7 +9,7 @@
 
   <div class="alt" id="main">
     <section id="one">
-      <div class="inner">
+      <div class="inner pa">
         <div v-if="hasFutureShows">
           <Show v-for="show of futureShows" :key="show.date" :show="show" />
           <hr />
@@ -24,7 +24,7 @@
     </section>
 
     <section>
-      <div class="inner">
+      <div class="inner pa">
         <h3>Vergangene Shows</h3>
         <ul>
           <PastShow

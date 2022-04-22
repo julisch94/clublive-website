@@ -1,7 +1,7 @@
 <template>
   <div class="alt" id="main">
     <section id="musik">
-      <div class="inner">
+      <div class="inner pa">
         <header class="major">
           <h1>Musik</h1>
         </header>
