@@ -1,62 +1,69 @@
 <template>
-  <section id="contact">
-    <div class="inner">
+  <section id="contact" class="scroll-target">
+    <div class="inner pa">
       <section>
         <h3>Kontaktformular / Ihre Anfrage</h3>
         <div class="overlay-container">
           <div class="loading-overlay" v-if="isLoading">
             <Loader color="#efefef" />
           </div>
-          <form
-            @submit.prevent="submitForm"
-            @reset.prevent="reset()"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <div class="field half first">
-              <label for="name">Name</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                v-model="name"
-                required
-              />
-            </div>
-            <div class="field half">
-              <label for="email">E-Mail</label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                v-model="email"
-                pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
-                required
-              />
-            </div>
-            <div class="field">
-              <label for="message">Nachricht</label>
-              <textarea
-                name="message"
-                id="message"
-                v-model="message"
-                rows="6"
-                @keyup.ctrl.enter="submitForm()"
-              >
-              </textarea>
-            </div>
-            <div data-netlify-recaptcha="true"></div>
-            <ul class="actions">
-              <li>
-                <button type="submit" class="special" :disabled="isLoading">
-                  Abschicken
-                </button>
-              </li>
-              <li>
-                <button type="reset" :disabled="isLoading">Löschen</button>
-              </li>
-            </ul>
-          </form>
+          <div>
+            <p>
+              Unser Kontaktformular ist die beste Möglichkeit zu uns Kontakt
+              aufzunehmen. Wir lesen deine Nachricht auf unseren Handys und
+              melden uns umgehend bei dir zurück.
+            </p>
+            <form
+              @submit.prevent="submitForm"
+              @reset.prevent="reset()"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <div class="field half first">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  v-model="name"
+                  required
+                />
+              </div>
+              <div class="field half">
+                <label for="email">E-Mail</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  v-model="email"
+                  pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="message">Nachricht</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  v-model="message"
+                  rows="6"
+                  @keyup.ctrl.enter="submitForm()"
+                >
+                </textarea>
+              </div>
+              <div data-netlify-recaptcha="true"></div>
+              <ul class="actions">
+                <li>
+                  <button type="reset" :disabled="isLoading">Löschen</button>
+                </li>
+                <li>
+                  <button type="submit" class="special" :disabled="isLoading">
+                    Abschicken
+                  </button>
+                </li>
+              </ul>
+            </form>
+          </div>
           <div class="result" :class="{ shake: success || failure }">
             <div v-if="success">
               <span class="icon alt fa-check"></span>
@@ -76,23 +83,6 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="split">
-        <section>
-          <div class="contact-method">
-            <span class="icon alt fa-envelope"></span>
-            <h3>E-Mail</h3>
-            <a href="mailto:contact@clublive.band">contact@clublive.band</a>
-            <p>Wir freuen uns über Ihre Anfrage!</p>
-          </div>
-        </section>
-        <section>
-          <div class="contact-method">
-            <span class="icon alt fa-home"></span>
-            <h3>Adresse</h3>
-            <span>76131 Karlsruhe<br />Baden-Württemberg<br />Deutschland</span>
-          </div>
-        </section>
       </section>
     </div>
   </section>
@@ -166,7 +156,77 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
+#contact {
+  border-bottom: solid 1px rgba(212, 212, 255, 0.1);
+  overflow-x: hidden;
+}
+
+#contact .inner {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+
+#contact .inner > :nth-child(2n-1) {
+  width: 60%;
+}
+
+#contact .inner > :nth-child(2n) {
+  padding-left: 3em;
+  width: 40%;
+}
+
+#contact .inner > .split {
+  padding: 0;
+}
+
+#contact .inner > .split > * {
+  padding: 3em 0 2em 3em;
+  position: relative;
+}
+
+#contact .inner > .split > *:before {
+  border-top: solid 1px rgba(212, 212, 255, 0.1);
+  content: "";
+  display: block;
+  margin-left: -3em;
+  position: absolute;
+  top: 0;
+  width: calc(100vw + 3em);
+}
+
+#contact .inner > .split > :first-child:before {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  #contact .inner {
+    display: block;
+  }
+
+  #contact .inner > :nth-child(2n-1) {
+    /* padding: 4em 0 3em 0; */
+    border-right: 0;
+    width: 100%;
+  }
+
+  #contact .inner > :nth-child(2n) {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  #contact .inner > .split > * {
+    padding: 3em 0 2em 0;
+  }
+
+  #contact .inner > .split > :first-child:before {
+    display: block;
+  }
+}
+
 div.result {
   margin-top: 1em;
 }
@@ -187,6 +247,10 @@ div.result {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+}
+
+.actions {
+  text-align: end;
 }
 
 .result div {

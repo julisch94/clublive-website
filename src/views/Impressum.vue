@@ -1,7 +1,7 @@
 <template>
   <div id="main" class="alt">
     <section id="one">
-      <div class="inner">
+      <div class="inner pa">
         <header class="major">
           <h1>Impressum</h1>
         </header>
