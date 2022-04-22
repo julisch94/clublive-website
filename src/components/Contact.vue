@@ -49,12 +49,12 @@
               <div data-netlify-recaptcha="true"></div>
               <ul class="actions">
                 <li>
+                  <button type="reset" :disabled="isLoading">Löschen</button>
+                </li>
+                <li>
                   <button type="submit" class="special" :disabled="isLoading">
                     Abschicken
                   </button>
-                </li>
-                <li>
-                  <button type="reset" :disabled="isLoading">Löschen</button>
                 </li>
               </ul>
             </form>
@@ -151,7 +151,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 #contact {
   border-bottom: solid 1px rgba(212, 212, 255, 0.1);
   overflow-x: hidden;
@@ -242,6 +242,10 @@ div.result {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+}
+
+.actions {
+  text-align: end;
 }
 
 .result div {
