@@ -3,8 +3,8 @@
     <Banner />
 
     <div ref="main" id="main">
-      <section id="start">
-        <div class="inner">
+      <section id="start" class="scroll-target">
+        <div class="inner pa">
           <div class="-2u 8u 12u$(small)">
             <h2>Wir spielen Clubmusik live!</h2>
             <p class="info-text">
@@ -17,6 +17,16 @@
               garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur
               nach Hause.
             </p>
+            <div class="cta">
+              <p>
+                Das ist genau, was du für deine Veranstaltung suchst?
+              </p>
+              <ul class="actions">
+                <li>
+                  <a href="#contact" class="button next">Schreibe uns</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -96,13 +106,25 @@ article.downloads {
   }
 }
 
-#start {
-  padding-top: 66px !important;
-}
-
 @media screen and (max-width: 760px) {
   #start {
     padding-top: 44px !important;
   }
+}
+
+div.cta {
+  margin-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta > :first-child {
+  margin-right: 1em;
+}
+
+.cta li {
+  margin-right: 0;
 }
 </style>
