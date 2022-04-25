@@ -20,7 +20,7 @@
     </section>
 
     <section>
-      <div class="inner grid">
+      <div class="inner pa grid">
         <Musician
           v-for="musician in musicians"
           :key="musician.name"
