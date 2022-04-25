@@ -2,14 +2,14 @@
   <section id="contact" class="scroll-target">
     <div class="inner pa">
       <section>
-        <h3>Kontaktformular / Ihre Anfrage</h3>
+        <h3>Kontaktformular / Buchung</h3>
         <div class="overlay-container">
           <div class="loading-overlay" v-if="isLoading">
             <Loader color="#efefef" />
           </div>
           <div>
             <p>
-              Unser Kontaktformular ist die beste Möglichkeit zu uns Kontakt
+              Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt
               aufzunehmen. Wir lesen deine Nachricht auf unseren Handys und
               melden uns umgehend bei dir zurück.
             </p>
