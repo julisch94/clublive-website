@@ -85,7 +85,7 @@ export default defineComponent({
         {
           imageSrc: "assets/images/band/chris/chris.jpg",
           name: "Chris",
-          instrument: "Drums",
+          instrument: "Drums / DJ",
         },
       ],
     };
