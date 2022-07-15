@@ -12,7 +12,6 @@
       <div class="inner pa">
         <div v-if="hasFutureShows">
           <Show v-for="show of futureShows" :key="show.date" :show="show" />
-          <hr />
           <p>Weitere Auftritte werden regelmäßig bekannt gegeben.</p>
         </div>
 
@@ -23,7 +22,7 @@
       </div>
     </section>
 
-    <section>
+    <section v-if="displayPastShows">
       <div class="inner pa">
         <h3>Vergangene Shows</h3>
         <ul>
@@ -62,13 +61,18 @@ export default defineComponent({
   },
   data() {
     return {
+      displayPastShows: false, // disabled for now because it only contains 4 venues
       shows: [
         {
-          date: "2020/07/18",
-          place: "Sommerfest Erasmus Karlsruhe",
-          description: "Eintritt frei. Open Air im Forum des KIT Campus.",
-          website: "https://karlsruhe.esn-germany.de/",
-          mapsLink: "https://goo.gl/maps/GbzK9vumR5MufVzy7",
+          date: "2022/12/03",
+          place: "The Irish Pub Pforzheim",
+          description: "Eintritt 5 €, Tischreservierung wird empfohlen.",
+          website: "https://www.irishpubpf.de/",
+          mapsLink: "https://g.page/TheIrishPubPforzheim?share",
+        },
+        {
+          date: "2022/10/15",
+          place: "Private Veranstaltung",
         },
       ],
       pastShows: [
@@ -114,18 +118,26 @@ export default defineComponent({
   },
   computed: {
     futureShows(): ShowModel[] {
-      return this.shows.filter((show) => !dayjs().isAfter(show.date));
+      return this.shows
+        .filter((show) => !dayjs().isAfter(show.date))
+        .sort(this.sortByDateAsc);
     },
     hasFutureShows(): boolean {
       return this.futureShows.length > 0;
     },
     sortedPastShows(): PastShowModel[] {
       const s = JSON.parse(JSON.stringify(this.pastShows));
-      return s.sort((first: PastShowModel, second: PastShowModel) => {
-        return dayjs(first.date).isBefore(dayjs(second.date)) ? 1 : -1;
-      });
+      return s.sort(this.sortByDateDesc);
     },
   },
+  methods: {
+    sortByDateAsc(showA: ShowModel, showB: ShowModel) {
+      return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
+    },
+    sortByDateDesc(showA: PastShowModel, showB: PastShowModel) {
+      return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
+    },
+  }
 });
 </script>
 
