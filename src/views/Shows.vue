@@ -65,14 +65,25 @@ export default defineComponent({
       shows: [
         {
           date: "2022/12/03",
-          place: "The Irish Pub Pforzheim",
+          place: "The Irish Pub, Pforzheim",
           description: "Eintritt 5 €, Tischreservierung wird empfohlen.",
           website: "https://www.irishpubpf.de/",
           mapsLink: "https://g.page/TheIrishPubPforzheim?share",
         },
         {
           date: "2022/10/15",
-          place: "Private Veranstaltung",
+          place: "Private Veranstaltung, Mainz",
+        },
+        {
+          date: "2023/02/18",
+          place: "The Irish Pub, Pforzheim",
+          description: "Eintritt 5 €, Tischreservierung wird empfohlen.",
+          website: "https://www.irishpubpf.de/",
+          mapsLink: "https://g.page/TheIrishPubPforzheim?share",
+        },
+        {
+          date: "2023/04/29",
+          place: "Private Veranstaltung, Ettlingen",
         },
       ],
       pastShows: [
