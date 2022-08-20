@@ -72,7 +72,7 @@ export default defineComponent({
         },
         {
           date: "2022/10/15",
-          place: "Private Veranstaltung, Mainz",
+          place: "Private Veranstaltung, Vaihingen a. d. Enz",
         },
         {
           date: "2023/02/18",
@@ -85,7 +85,7 @@ export default defineComponent({
           date: "2023/04/29",
           place: "Private Veranstaltung, Ettlingen",
         },
-      ],
+      ] as ShowModel[],
       pastShows: [
         {
           date: "2018/03/09",
@@ -123,7 +123,7 @@ export default defineComponent({
           date: "2022/04/02",
           text: "Irish Pub Pforzheim",
         },
-      ],
+      ] as PastShowModel[],
       articles: [tiles["music"], tiles["band"]],
     };
   },
