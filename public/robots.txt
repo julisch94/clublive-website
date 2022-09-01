@@ -1,0 +1,7 @@
+# All robots allowed; no impressum or legal
+User-agent: *
+Disallow: /datenschutzerklaerung
+Disallow: /impressum
+
+# Sitemap files
+Sitemap: https://www.clublive.band/sitemap.txt
