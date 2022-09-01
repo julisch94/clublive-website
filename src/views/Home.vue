@@ -2,26 +2,23 @@
   <div>
     <Banner />
 
-    <div ref='main' id='main'>
-      <section id='start' class='scroll-target'>
-        <div class='inner pa'>
-          <div class='-2u 8u 12u$(small)'>
+    <div ref="main" id="main">
+      <section id="start" class="scroll-target">
+        <div class="inner pa">
+          <div class="-2u 8u 12u$(small)">
             <h2>Wir spielen Clubmusik live!</h2>
-            <p class='info-text'>
-              Wer sich fragt, ob die heutige Radiomusik überhaupt noch live
-              gespielt werden kann, der kommt bei ClubLive ganz auf seine
-              Kosten. Alle Farben, Clean Bandit, Martin Solveig, Felix Jaehn
-              uvm. werden handgemacht interpretiert. Dabei zeigt ClubLive, dass
-              nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen
-              können. Vom Club bis zur Open Air Show geht bei ClubLive
-              garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur
-              nach Hause.
+            <p class="info-text">
+              Wer sich fragt, ob die heutige Radiomusik überhaupt noch live gespielt werden kann, der kommt bei ClubLive
+              ganz auf seine Kosten. Alle Farben, Clean Bandit, Martin Solveig, Felix Jaehn uvm. werden handgemacht
+              interpretiert. Dabei zeigt ClubLive, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen
+              können. Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und
+              zerstörte Frisur nach Hause.
             </p>
-            <div class='cta'>
+            <div class="cta">
               <p>Das ist genau, was du für deine Veranstaltung suchst?</p>
-              <ul class='actions'>
+              <ul class="actions">
                 <li>
-                  <a href='#contact' class='button next'>Schreibe uns</a>
+                  <a href="#contact" class="button next">Schreibe uns</a>
                 </li>
               </ul>
             </div>
@@ -30,27 +27,27 @@
       </section>
 
       <section>
-        <div class='inner pa'>
-          <div class='-2u 8u 12u$(small)'>
+        <div class="inner pa">
+          <div class="-2u 8u 12u$(small)">
             <h2>Hörbeispiele</h2>
             <iframe
-              width='100%'
-              height='450'
-              scrolling='no'
-              frameborder='no'
-              allow='autoplay'
-              src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1430026750&color=%239bf1ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+              width="100%"
+              height="450"
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1430026750&color=%239bf1ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
             ></iframe>
           </div>
         </div>
       </section>
 
-      <Tiles :articles='articles' />
+      <Tiles :articles="articles" />
     </div>
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import Banner from '@/components/Banner.vue'
 import Tiles from '@/components/Tiles.vue'
@@ -64,12 +61,7 @@ export default defineComponent({
   },
   data() {
     return {
-      articles: [
-        tiles['music'],
-        tiles['band'],
-        tiles['shows'],
-        tiles['downloads'],
-      ],
+      articles: [tiles['music'], tiles['band'], tiles['shows'], tiles['downloads']],
     }
   },
   mounted() {
@@ -95,19 +87,19 @@ export default defineComponent({
 
 <style>
 article.music {
-  background-image: url("../assets/images/music.jpg");
+  background-image: url('../assets/images/music.jpg');
 }
 
 article.band {
-  background-image: url("../assets/images/band.jpg");
+  background-image: url('../assets/images/band.jpg');
 }
 
 article.shows {
-  background-image: url("../assets/images/shows.jpg");
+  background-image: url('../assets/images/shows.jpg');
 }
 
 article.downloads {
-  background-image: url("../assets/images/downloads.jpg");
+  background-image: url('../assets/images/downloads.jpg');
 }
 
 .info-text {

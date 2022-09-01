@@ -1,83 +1,64 @@
 <template>
-  <section id='contact' class='scroll-target'>
-    <div class='inner pa'>
+  <section id="contact" class="scroll-target">
+    <div class="inner pa">
       <section>
         <h3>Kontaktformular / Buchung</h3>
-        <div class='overlay-container'>
-          <div class='loading-overlay' v-if='isLoading'>
-            <Loader color='#efefef' />
+        <div class="overlay-container">
+          <div class="loading-overlay" v-if="isLoading">
+            <Loader color="#efefef" />
           </div>
           <div>
             <p>
-              Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt
-              aufzunehmen. Wir lesen deine Nachricht auf unseren Handys und
-              melden uns umgehend bei dir zurück.
+              Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
+              unseren Handys und melden uns umgehend bei dir zurück.
             </p>
             <form
-              @submit.prevent='submitForm'
-              @reset.prevent='reset()'
-              data-netlify='true'
-              data-netlify-honeypot='bot-field'
+              @submit.prevent="submitForm"
+              @reset.prevent="reset()"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
             >
-              <div class='field half first'>
-                <label for='name'>Name</label>
+              <div class="field half first">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" v-model="name" required />
+              </div>
+              <div class="field half">
+                <label for="email">E-Mail</label>
                 <input
-                  type='text'
-                  name='name'
-                  id='name'
-                  v-model='name'
+                  type="text"
+                  name="email"
+                  id="email"
+                  v-model="email"
+                  pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
                   required
                 />
               </div>
-              <div class='field half'>
-                <label for='email'>E-Mail</label>
-                <input
-                  type='text'
-                  name='email'
-                  id='email'
-                  v-model='email'
-                  pattern='^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$'
-                  required
-                />
-              </div>
-              <div class='field'>
-                <label for='message'>Nachricht</label>
-                <textarea
-                  name='message'
-                  id='message'
-                  v-model='message'
-                  rows='6'
-                  @keyup.ctrl.enter='submitForm()'
-                >
+              <div class="field">
+                <label for="message">Nachricht</label>
+                <textarea name="message" id="message" v-model="message" rows="6" @keyup.ctrl.enter="submitForm()">
                 </textarea>
               </div>
-              <div data-netlify-recaptcha='true'></div>
-              <ul class='actions'>
+              <div data-netlify-recaptcha="true"></div>
+              <ul class="actions">
                 <li>
-                  <button type='reset' :disabled='isLoading'>Löschen</button>
+                  <button type="reset" :disabled="isLoading">Löschen</button>
                 </li>
                 <li>
-                  <button type='submit' class='special' :disabled='isLoading'>
-                    Abschicken
-                  </button>
+                  <button type="submit" class="special" :disabled="isLoading">Abschicken</button>
                 </li>
               </ul>
             </form>
           </div>
-          <div class='result' :class='{ shake: success || failure }'>
-            <div v-if='success'>
-              <span class='icon alt fa-check'></span>
-              <span
-              >Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns
-                baldmöglichst zurück.</span
-              >
+          <div class="result" :class="{ shake: success || failure }">
+            <div v-if="success">
+              <span class="icon alt fa-check"></span>
+              <span>Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns baldmöglichst zurück.</span>
             </div>
-            <div v-if='failure'>
-              <span class='icon alt fa-exclamation'></span>
+            <div v-if="failure">
+              <span class="icon alt fa-exclamation"></span>
               <span>
-                Oh. Da ist etwas schief gegangen. Kannst du uns bitte
-                stattdessen eine E-Mail an
-                <a href='mailto:contact@clublive.band'>contact@clublive.band</a>
+                Oh. Da ist etwas schief gegangen. Kannst du uns bitte stattdessen eine E-Mail an
+                <a href="mailto:contact@clublive.band">contact@clublive.band</a>
                 schicken?
               </span>
             </div>
@@ -88,7 +69,7 @@
   </section>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import Loader from 'vue-spinner/src/ScaleLoader.vue'
 
@@ -125,7 +106,7 @@ export default defineComponent({
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(body).toString(),
       })
-        .then((result) => {
+        .then(result => {
           console.log(result)
           this.isLoading = false
           if (result.ok) {
@@ -133,14 +114,10 @@ export default defineComponent({
             console.log('Form successfully submitted.')
           } else {
             this.failure = true
-            console.error(
-              'Form submission failed',
-              result.status,
-              result.statusText,
-            )
+            console.error('Form submission failed', result.status, result.statusText)
           }
         })
-        .catch((error) => {
+        .catch(error => {
           this.isLoading = false
           alert(error)
         })
@@ -190,7 +167,7 @@ export default defineComponent({
 
 #contact .inner > .split > *:before {
   border-top: solid 1px rgba(212, 212, 255, 0.1);
-  content: "";
+  content: '';
   display: block;
   margin-left: -3em;
   position: absolute;

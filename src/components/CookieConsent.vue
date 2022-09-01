@@ -1,15 +1,14 @@
 <template>
-  <div v-if='show' class='cookie-consent'>
+  <div v-if="show" class="cookie-consent">
     <p>
-      Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren,
-      Funktionen für soziale Medien anbieten zu können und die Zugriffe auf
-      unsere Website zu analysieren.
+      Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu
+      können und die Zugriffe auf unsere Website zu analysieren.
     </p>
-    <button @click='hide()'>Okay</button>
+    <button @click="hide()">Okay</button>
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({

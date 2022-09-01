@@ -1,42 +1,40 @@
 <template>
-  <footer id='footer'>
-    <div class='inner pa'>
+  <footer id="footer">
+    <div class="inner pa">
       <Social />
 
-      <ul class='copyright'>
+      <ul class="copyright">
         <li>
           Alle Bilder sind von
-          <a href='https://www.romanbischoff.com/'>Roman Bischoff</a>,
-          <a href='https://www.tkammies.com/'>Timothée Kammies</a> und
-          <a href='https://ybfotografie.com/'>Yannick Bodemer</a>.
+          <a href="https://www.romanbischoff.com/">Roman Bischoff</a>,
+          <a href="https://www.tkammies.com/">Timothée Kammies</a> und
+          <a href="https://ybfotografie.com/">Yannick Bodemer</a>.
         </li>
       </ul>
 
-      <div class='copyright-row'>
-        <ul class='copyright'>
+      <div class="copyright-row">
+        <ul class="copyright">
           <li>&copy; {{ currentYear }} ClubLive</li>
-          <li>
-            Design: <a href='https://html5up.net' target='_blank'>HTML5 UP</a>
-          </li>
+          <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
           <li>
             Vue.js Integration:
-            <a href='https://julianschmidt.codes/'>Julian Schmidt</a>
+            <a href="https://julianschmidt.codes/">Julian Schmidt</a>
           </li>
         </ul>
-        <ul class='copyright'>
+        <ul class="copyright">
           <li>
             E-Mail:
-            <a href='mailto:contact@clublive.band'>contact@clublive.band</a>
+            <a href="mailto:contact@clublive.band">contact@clublive.band</a>
           </li>
-          <li><a href='/datenschutzerklaerung'>Datenschutzerklärung</a></li>
-          <li><a href='/impressum'>Impressum</a></li>
+          <li><a href="/datenschutzerklaerung">Datenschutzerklärung</a></li>
+          <li><a href="/impressum">Impressum</a></li>
         </ul>
       </div>
     </div>
   </footer>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import Social from '@/components/Social.vue'
 

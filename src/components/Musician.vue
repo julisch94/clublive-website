@@ -1,14 +1,14 @@
 <template>
-  <div class='container'>
-    <img :src='require(`@/${imageSrc}`)' :alt='alt' />
-    <div class='overlay'>
+  <div class="container">
+    <img :src="require(`@/${imageSrc}`)" :alt="alt" />
+    <div class="overlay">
       <h3>{{ name }}</h3>
       <p>{{ instrument }}</p>
     </div>
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -53,7 +53,7 @@ export default defineComponent({
 }
 
 .overlay :first-child::after {
-  content: "";
+  content: '';
   background-color: #fff;
   display: block;
   height: 2px;

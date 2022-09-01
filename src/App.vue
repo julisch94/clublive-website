@@ -1,22 +1,22 @@
 <template>
-  <div id='overlay' :class="{ 'is-menu-visible': isMenuVisible }">
-    <Header @toggle-menu='toggleMenu' :is-transparent='showTransparentNavbar' />
+  <div id="overlay" :class="{ 'is-menu-visible': isMenuVisible }">
+    <Header @toggle-menu="toggleMenu" :is-transparent="showTransparentNavbar" />
 
-    <nav id='menu'>
-      <div class='inner'>
-        <ul class='links'>
-          <li v-for='item in routes' :key='item.name'>
-            <router-link @click.capture='toggleMenu()' :to='item.route'>
+    <nav id="menu">
+      <div class="inner">
+        <ul class="links">
+          <li v-for="item in routes" :key="item.name">
+            <router-link @click.capture="toggleMenu()" :to="item.route">
               {{ item.name }}
             </router-link>
           </li>
         </ul>
       </div>
-      <a href='#' @click.prevent='toggleMenu()' class='close'></a>
+      <a href="#" @click.prevent="toggleMenu()" class="close"></a>
     </nav>
 
-    <div id='wrapper'>
-      <router-view @is-main-in-view='onMainInView($event)' />
+    <div id="wrapper">
+      <router-view @is-main-in-view="onMainInView($event)" />
 
       <Contact />
       <Footer />
@@ -26,7 +26,7 @@
   <CookieConsent />
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import Contact from '@/components/Contact.vue'
 import Footer from '@/components/Footer.vue'
@@ -94,7 +94,7 @@ export default defineComponent({
 </script>
 
 <style>
-@import "./assets/css/main.css";
+@import './assets/css/main.css';
 
 #cookie-consent {
   background-color: #242943;

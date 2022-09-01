@@ -1,23 +1,17 @@
 <template>
-  <section class='tiles'>
-    <article v-for='item in articles' :key='item.name' :class='item.class'>
-      <header class='major'>
+  <section class="tiles">
+    <article v-for="item in articles" :key="item.name" :class="item.class">
+      <header class="major">
         <h2>
-          <a :href='item.route' class='link' :id='headerId(item.name)'>{{
-              item.name
-            }}</a>
+          <a :href="item.route" class="link" :id="headerId(item.name)">{{ item.name }}</a>
         </h2>
       </header>
-      <a
-        :href='item.route'
-        class='link primary'
-        :id='imageLinkId(item.name)'
-      ></a>
+      <a :href="item.route" class="link primary" :id="imageLinkId(item.name)"></a>
     </article>
   </section>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { TileArticle } from '@/model/tileArticle.model'
 import { defineComponent, PropType } from 'vue'
 
@@ -117,7 +111,7 @@ export default defineComponent({
 
 .tiles article:before {
   background-color: rgba(36, 41, 67, 0.4);
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   left: 0;

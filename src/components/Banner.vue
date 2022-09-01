@@ -1,14 +1,14 @@
 <template>
-  <section id='banner' class='major' :class="{ 'is-loading': isLoading }">
-    <div class='inner'>
-      <header class='major'>
+  <section id="banner" class="major" :class="{ 'is-loading': isLoading }">
+    <div class="inner">
+      <header class="major">
         <h1>ClubLive</h1>
       </header>
-      <div class='content'>
+      <div class="content">
         <p>Live Band aus Karlsruhe.</p>
-        <ul class='actions'>
+        <ul class="actions">
           <li>
-            <a href='#start' class='button next'>Let's go</a>
+            <a href="#start" class="button next">Let's go</a>
           </li>
         </ul>
         <Social />
@@ -17,7 +17,7 @@
   </section>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import Social from './Social.vue'
 
@@ -76,7 +76,7 @@ export default defineComponent({
   -ms-pointer-events: none;
   pointer-events: none;
   background-color: #242943;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   left: 0;
@@ -93,14 +93,11 @@ export default defineComponent({
 }
 
 #banner .inner {
-  -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out,
-  -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out,
-  -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out,
-  -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
-  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease,
-  -webkit-filter 0.5s ease;
+  -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
+  -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease,
+    -webkit-filter 0.5s ease;
+  -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
+  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
   padding: 0 !important;
   position: relative;
   z-index: 2;
@@ -150,7 +147,7 @@ export default defineComponent({
   height: 110vh;
   min-height: 30em;
   max-height: 50em;
-  background-image: url("../assets/images/banner/banner_1400.jpg");
+  background-image: url('../assets/images/banner/banner_1400.jpg');
 }
 
 #banner.major:after {
@@ -229,7 +226,7 @@ export default defineComponent({
     min-height: 0;
     max-height: none;
     background-attachment: scroll;
-    background-image: url("../assets/images/banner/banner_839.jpg");
+    background-image: url('../assets/images/banner/banner_839.jpg');
   }
 }
 

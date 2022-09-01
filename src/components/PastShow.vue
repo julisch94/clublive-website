@@ -2,7 +2,7 @@
   <li>{{ displayDate }}<br />{{ show.text }}</li>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import dayjs from 'dayjs'
 import { defineComponent, PropType } from 'vue'
 import { PastShowModel } from '@/model/pastShow.model'

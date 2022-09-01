@@ -1,46 +1,42 @@
 <template>
-  <section class='style2' id='banner'>
-    <div class='inner pa'>
-      <header class='major'>
+  <section class="style2" id="banner">
+    <div class="inner pa">
+      <header class="major">
         <h1>Shows</h1>
       </header>
     </div>
   </section>
 
-  <div class='alt' id='main'>
-    <section id='one'>
-      <div class='inner pa'>
-        <div v-if='hasFutureShows'>
-          <Show v-for='show of futureShows' :key='show.date' :show='show' />
+  <div class="alt" id="main">
+    <section id="one">
+      <div class="inner pa">
+        <div v-if="hasFutureShows">
+          <Show v-for="show of futureShows" :key="show.date" :show="show" />
           <p>Weitere Auftritte werden regelmäßig bekannt gegeben.</p>
         </div>
 
         <div v-else>
-          <h3 id='noShows'>Bald werden wir wieder durchstarten! #corona</h3>
+          <h3 id="noShows">Bald werden wir wieder durchstarten! #corona</h3>
           <p>Sobald neue Auftritte anstehen, erscheinen sie hier.</p>
         </div>
       </div>
     </section>
 
-    <section v-if='displayPastShows'>
-      <div class='inner pa'>
+    <section v-if="displayPastShows">
+      <div class="inner pa">
         <h3>Vergangene Shows</h3>
         <ul>
-          <PastShow
-            v-for='show in sortedPastShows'
-            :key='show.date'
-            :show='show'
-          />
+          <PastShow v-for="show in sortedPastShows" :key="show.date" :show="show" />
           <li>...</li>
         </ul>
       </div>
     </section>
 
-    <Tiles :articles='articles' />
+    <Tiles :articles="articles" />
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 import dayjs from 'dayjs'
@@ -129,9 +125,7 @@ export default defineComponent({
   },
   computed: {
     futureShows(): ShowModel[] {
-      return this.shows
-        .filter((show) => !dayjs().isAfter(show.date))
-        .sort(this.sortByDateAsc)
+      return this.shows.filter(show => !dayjs().isAfter(show.date)).sort(this.sortByDateAsc)
     },
     hasFutureShows(): boolean {
       return this.futureShows.length > 0
@@ -154,7 +148,7 @@ export default defineComponent({
 
 <style scoped>
 #banner {
-  background-image: url("../assets/images/shows.jpg");
+  background-image: url('../assets/images/shows.jpg');
   background-size: cover;
   background-position: center;
 }

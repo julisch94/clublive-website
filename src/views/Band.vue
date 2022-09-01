@@ -1,41 +1,38 @@
 <template>
-  <div id='main'>
-    <section id='one'>
-      <div class='inner pa'>
-        <header class='major'>
+  <div id="main">
+    <section id="one">
+      <div class="inner pa">
+        <header class="major">
           <h1>Band</h1>
         </header>
         <p>
-          Wer sich fragt, ob die heutige Radiomusik überhaupt noch live gespielt
-          werden kann, der kommt bei ClubLive ganz auf seine Kosten. Von Parov
-          Stelar über Clean Bandit, bis hin zu Robin Schulz und Felix Jaehn
-          werden alle Songs handgemacht interpretiert. Dabei zeigt ClubLive,
-          dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen
-          können. 2018 feierte ClubLive Bühnenpremiere und ist seit dem im
-          Großraum Karlsruhe unterwegs. Vom Club bis zur Open Air Show geht bei
-          ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte
+          Wer sich fragt, ob die heutige Radiomusik überhaupt noch live gespielt werden kann, der kommt bei ClubLive
+          ganz auf seine Kosten. Von Parov Stelar über Clean Bandit, bis hin zu Robin Schulz und Felix Jaehn werden alle
+          Songs handgemacht interpretiert. Dabei zeigt ClubLive, dass nicht nur DJs mit aktuellen Hits für ordentlich
+          Party sorgen können. 2018 feierte ClubLive Bühnenpremiere und ist seit dem im Großraum Karlsruhe unterwegs.
+          Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte
           Frisur nach Hause.
         </p>
       </div>
     </section>
 
     <section>
-      <div class='inner pa grid'>
+      <div class="inner pa grid">
         <Musician
-          v-for='musician in musicians'
-          :key='musician.name'
-          :image-src='musician.imageSrc'
-          :name='musician.name'
-          :instrument='musician.instrument'
+          v-for="musician in musicians"
+          :key="musician.name"
+          :image-src="musician.imageSrc"
+          :name="musician.name"
+          :instrument="musician.instrument"
         />
       </div>
     </section>
 
-    <Tiles :articles='articles' />
+    <Tiles :articles="articles" />
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import Tiles from '@/components/Tiles.vue'
 import tiles from '@/util/tiles'
