@@ -29,6 +29,11 @@ yarn lint
 We are using prettier for auto-formatting. Make sure you have a prettier plugin installed in your IDE.
 Please also make sure that it's using the `.prettierrc` config file provided in this project.
 
+To confirm your configuration run the following command. It should not make any changes to your code base:
+```
+yarn prettify
+```
+
 ### Deployment
 
 We are using Netlify to deploy the page. Pushes to the main branch automatically trigger a deployment to production.
