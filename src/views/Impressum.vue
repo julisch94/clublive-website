@@ -16,7 +16,7 @@
         Telefon:
         <p>01781429505</p>
         Kontaktformular:
-        <p>siehe unten</p>
+        <p><a href="#contact">siehe unten</a></p>
         <h2 id="m172">Social Media und andere Onlinepräsenzen</h2>
         Dieses Impressum gilt auch für die folgenden Social-Media-Präsenzen und
         Onlineprofile:
