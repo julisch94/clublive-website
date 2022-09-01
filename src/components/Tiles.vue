@@ -1,32 +1,32 @@
 <template>
-  <section class="tiles">
-    <article v-for="item in articles" :key="item.name" :class="item.class">
-      <header class="major">
+  <section class='tiles'>
+    <article v-for='item in articles' :key='item.name' :class='item.class'>
+      <header class='major'>
         <h2>
-          <a :href="item.route" class="link" :id="headerId(item.name)">{{
-            item.name
-          }}</a>
+          <a :href='item.route' class='link' :id='headerId(item.name)'>{{
+              item.name
+            }}</a>
         </h2>
       </header>
       <a
-        :href="item.route"
-        class="link primary"
-        :id="imageLinkId(item.name)"
+        :href='item.route'
+        class='link primary'
+        :id='imageLinkId(item.name)'
       ></a>
     </article>
   </section>
 </template>
 
-<script lang="ts">
-import { TileArticle } from "@/model/tileArticle.model";
-import { defineComponent, PropType } from "vue";
+<script lang='ts'>
+import { TileArticle } from '@/model/tileArticle.model'
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: "Tiles",
+  name: 'Tiles',
   data() {
     return {
-      greeting: "jules",
-    };
+      greeting: 'jules',
+    }
   },
   props: {
     articles: {
@@ -35,13 +35,13 @@ export default defineComponent({
   },
   methods: {
     headerId(pageName: string): string {
-      return `tile-header-${pageName}`;
+      return `tile-header-${pageName}`
     },
     imageLinkId(pageName: string): string {
-      return `tile-image-${pageName}`;
+      return `tile-image-${pageName}`
     },
   },
-});
+})
 </script>
 
 <style>

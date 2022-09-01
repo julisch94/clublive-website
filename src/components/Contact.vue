@@ -1,11 +1,11 @@
 <template>
-  <section id="contact" class="scroll-target">
-    <div class="inner pa">
+  <section id='contact' class='scroll-target'>
+    <div class='inner pa'>
       <section>
         <h3>Kontaktformular / Buchung</h3>
-        <div class="overlay-container">
-          <div class="loading-overlay" v-if="isLoading">
-            <Loader color="#efefef" />
+        <div class='overlay-container'>
+          <div class='loading-overlay' v-if='isLoading'>
+            <Loader color='#efefef' />
           </div>
           <div>
             <p>
@@ -14,70 +14,70 @@
               melden uns umgehend bei dir zurück.
             </p>
             <form
-              @submit.prevent="submitForm"
-              @reset.prevent="reset()"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              @submit.prevent='submitForm'
+              @reset.prevent='reset()'
+              data-netlify='true'
+              data-netlify-honeypot='bot-field'
             >
-              <div class="field half first">
-                <label for="name">Name</label>
+              <div class='field half first'>
+                <label for='name'>Name</label>
                 <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  v-model="name"
+                  type='text'
+                  name='name'
+                  id='name'
+                  v-model='name'
                   required
                 />
               </div>
-              <div class="field half">
-                <label for="email">E-Mail</label>
+              <div class='field half'>
+                <label for='email'>E-Mail</label>
                 <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  v-model="email"
-                  pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
+                  type='text'
+                  name='email'
+                  id='email'
+                  v-model='email'
+                  pattern='^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$'
                   required
                 />
               </div>
-              <div class="field">
-                <label for="message">Nachricht</label>
+              <div class='field'>
+                <label for='message'>Nachricht</label>
                 <textarea
-                  name="message"
-                  id="message"
-                  v-model="message"
-                  rows="6"
-                  @keyup.ctrl.enter="submitForm()"
+                  name='message'
+                  id='message'
+                  v-model='message'
+                  rows='6'
+                  @keyup.ctrl.enter='submitForm()'
                 >
                 </textarea>
               </div>
-              <div data-netlify-recaptcha="true"></div>
-              <ul class="actions">
+              <div data-netlify-recaptcha='true'></div>
+              <ul class='actions'>
                 <li>
-                  <button type="reset" :disabled="isLoading">Löschen</button>
+                  <button type='reset' :disabled='isLoading'>Löschen</button>
                 </li>
                 <li>
-                  <button type="submit" class="special" :disabled="isLoading">
+                  <button type='submit' class='special' :disabled='isLoading'>
                     Abschicken
                   </button>
                 </li>
               </ul>
             </form>
           </div>
-          <div class="result" :class="{ shake: success || failure }">
-            <div v-if="success">
-              <span class="icon alt fa-check"></span>
+          <div class='result' :class='{ shake: success || failure }'>
+            <div v-if='success'>
+              <span class='icon alt fa-check'></span>
               <span
-                >Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns
+              >Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns
                 baldmöglichst zurück.</span
               >
             </div>
-            <div v-if="failure">
-              <span class="icon alt fa-exclamation"></span>
+            <div v-if='failure'>
+              <span class='icon alt fa-exclamation'></span>
               <span>
                 Oh. Da ist etwas schief gegangen. Kannst du uns bitte
                 stattdessen eine E-Mail an
-                <a href="mailto:contact@clublive.band">contact@clublive.band</a>
+                <a href='mailto:contact@clublive.band'>contact@clublive.band</a>
                 schicken?
               </span>
             </div>
@@ -88,72 +88,72 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import Loader from "vue-spinner/src/ScaleLoader.vue";
+<script lang='ts'>
+import { defineComponent } from 'vue'
+import Loader from 'vue-spinner/src/ScaleLoader.vue'
 
 export default defineComponent({
-  name: "Contact",
+  name: 'Contact',
   components: {
     Loader,
   },
   data() {
     return {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
       success: false,
       failure: false,
       isLoading: false,
-    };
+    }
   },
   methods: {
     submitForm() {
       const body = {
-        "form-name": "clublive-contact",
+        'form-name': 'clublive-contact',
         name: this.name,
         email: this.email,
         message: this.message,
-      };
-      console.log("form data", body);
+      }
+      console.log('form data', body)
 
-      this.success = false;
-      this.failure = false;
-      this.isLoading = true;
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      this.success = false
+      this.failure = false
+      this.isLoading = true
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(body).toString(),
       })
         .then((result) => {
-          console.log(result);
-          this.isLoading = false;
+          console.log(result)
+          this.isLoading = false
           if (result.ok) {
-            this.success = true;
-            console.log("Form successfully submitted.");
+            this.success = true
+            console.log('Form successfully submitted.')
           } else {
-            this.failure = true;
+            this.failure = true
             console.error(
-              "Form submission failed",
+              'Form submission failed',
               result.status,
-              result.statusText
-            );
+              result.statusText,
+            )
           }
         })
         .catch((error) => {
-          this.isLoading = false;
-          alert(error);
-        });
+          this.isLoading = false
+          alert(error)
+        })
     },
     reset() {
-      this.name = "";
-      this.email = "";
-      this.message = "";
-      this.success = false;
-      this.failure = false;
+      this.name = ''
+      this.email = ''
+      this.message = ''
+      this.success = false
+      this.failure = false
     },
   },
-});
+})
 </script>
 
 <style scoped>

@@ -2,13 +2,13 @@
   <li>{{ displayDate }}<br />{{ show.text }}</li>
 </template>
 
-<script lang="ts">
-import dayjs from "dayjs";
-import { defineComponent, PropType } from "vue";
-import { PastShowModel } from "@/model/pastShow.model";
+<script lang='ts'>
+import dayjs from 'dayjs'
+import { defineComponent, PropType } from 'vue'
+import { PastShowModel } from '@/model/pastShow.model'
 
 export default defineComponent({
-  name: "PastShow",
+  name: 'PastShow',
   props: {
     show: {
       type: Object as PropType<PastShowModel>,
@@ -17,8 +17,8 @@ export default defineComponent({
   },
   computed: {
     displayDate(): string {
-      return dayjs(this.show?.date).format("MMMM YYYY");
+      return dayjs(this.show?.date).format('MMMM YYYY')
     },
   },
-});
+})
 </script>

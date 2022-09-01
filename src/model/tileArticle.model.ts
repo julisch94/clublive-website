@@ -1,5 +1,5 @@
 export interface TileArticle {
-  name: string;
-  route: string;
-  class: string;
+  name: string
+  route: string
+  class: string
 }

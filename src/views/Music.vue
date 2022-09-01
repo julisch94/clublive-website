@@ -1,11 +1,11 @@
 <template>
-  <div class="alt" id="main">
-    <section id="musik">
-      <div class="inner pa">
-        <header class="major">
+  <div class='alt' id='main'>
+    <section id='musik'>
+      <div class='inner pa'>
+        <header class='major'>
           <h1>Musik</h1>
         </header>
-        <p align="justify">
+        <p align='justify'>
           Unsere Playlist besteht aus einer sorgfältigen Auswahl an aktuellen
           Chart- und Club-Hits. Es kommen zudem ständig neue Songs dazu. Unsere
           aktuelle Setlist enthält Songs von Alle Farben, Felix Jaehn, Jess
@@ -13,23 +13,23 @@
           Macklemore, Zara Larsson, Calvin Harris und vielen mehr.
         </p>
         <p>Hier sind einige Youtube-Videos unserer Auftritte:</p>
-        <div class="row">
-          <div class="6u 12u$(medium)">
-            <div class="video-container">
+        <div class='row'>
+          <div class='6u 12u$(medium)'>
+            <div class='video-container'>
               <iframe
-                src="https://www.youtube.com/embed/klPMadnQVL8"
-                frameborder="0"
+                src='https://www.youtube.com/embed/klPMadnQVL8'
+                frameborder='0'
                 allowfullscreen
               >
               </iframe>
             </div>
             <p></p>
           </div>
-          <div class="6u 12u$(medium)">
-            <div class="video-container">
+          <div class='6u 12u$(medium)'>
+            <div class='video-container'>
               <iframe
-                src="https://www.youtube.com/embed/w8EGcCSjuJQ"
-                frameborder="0"
+                src='https://www.youtube.com/embed/w8EGcCSjuJQ'
+                frameborder='0'
                 allowfullscreen
               >
               </iframe>
@@ -37,23 +37,23 @@
             <p></p>
           </div>
         </div>
-        <div class="row">
-          <div class="6u 12u$(medium)">
-            <div class="video-container">
+        <div class='row'>
+          <div class='6u 12u$(medium)'>
+            <div class='video-container'>
               <iframe
-                src="https://www.youtube.com/embed/q8VdEr7DpQ4"
-                frameborder="0"
+                src='https://www.youtube.com/embed/q8VdEr7DpQ4'
+                frameborder='0'
                 allowfullscreen
               >
               </iframe>
             </div>
             <p></p>
           </div>
-          <div class="6u 12u$(medium)">
-            <div class="video-container">
+          <div class='6u 12u$(medium)'>
+            <div class='video-container'>
               <iframe
-                src="https://www.youtube.com/embed/JAw3hM3quzc"
-                frameborder="0"
+                src='https://www.youtube.com/embed/JAw3hM3quzc'
+                frameborder='0'
                 allowfullscreen
               >
               </iframe>
@@ -66,23 +66,23 @@
       </div>
     </section>
 
-    <Tiles :articles="articles" />
+    <Tiles :articles='articles' />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import Social from "@/components/Social.vue";
-import Tiles from "@/components/Tiles.vue";
-import tiles from "@/util/tiles";
+<script lang='ts'>
+import { defineComponent } from 'vue'
+import Social from '@/components/Social.vue'
+import Tiles from '@/components/Tiles.vue'
+import tiles from '@/util/tiles'
 
 export default defineComponent({
-  name: "Music",
+  name: 'Music',
   data() {
     return {
-      articles: [tiles["band"], tiles["shows"]],
-    };
+      articles: [tiles['band'], tiles['shows']],
+    }
   },
   components: { Social, Tiles },
-});
+})
 </script>

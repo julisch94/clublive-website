@@ -1,18 +1,18 @@
 <template>
-  <div class="container">
-    <img :src="require(`@/${imageSrc}`)" :alt="alt" />
-    <div class="overlay">
+  <div class='container'>
+    <img :src='require(`@/${imageSrc}`)' :alt='alt' />
+    <div class='overlay'>
       <h3>{{ name }}</h3>
       <p>{{ instrument }}</p>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang='ts'>
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "Musician",
+  name: 'Musician',
   props: {
     imageSrc: String,
     name: String,
@@ -20,10 +20,10 @@ export default defineComponent({
   },
   computed: {
     alt(): string {
-      return `Bild von ${this.name} - ${this.instrument}`;
+      return `Bild von ${this.name} - ${this.instrument}`
     },
   },
-});
+})
 </script>
 
 <style scoped>

@@ -1,11 +1,11 @@
 <template>
-  <div id="main" class="alt">
-    <section id="one">
-      <div class="inner pa">
-        <header class="major">
+  <div id='main' class='alt'>
+    <section id='one'>
+      <div class='inner pa'>
+        <header class='major'>
           <h1>Datenschutzerklärung</h1>
         </header>
-        <h2 id="m14">Einleitung</h2>
+        <h2 id='m14'>Einleitung</h2>
         <p>
           Mit der folgenden Datenschutzerklärung möchten wir Sie darüber
           aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend
@@ -20,81 +20,81 @@
         <p>Die verwendeten Begriffe sind nicht geschlechtsspezifisch.</p>
         <p>Stand: 20. April 2022</p>
         <h2>Inhaltsübersicht</h2>
-        <ul class="index">
-          <li><a class="index-link" href="#m14">Einleitung</a></li>
-          <li><a class="index-link" href="#m3">Verantwortlicher</a></li>
+        <ul class='index'>
+          <li><a class='index-link' href='#m14'>Einleitung</a></li>
+          <li><a class='index-link' href='#m3'>Verantwortlicher</a></li>
           <li>
-            <a class="index-link" href="#mOverview"
-              >Übersicht der Verarbeitungen</a
+            <a class='index-link' href='#mOverview'
+            >Übersicht der Verarbeitungen</a
             >
           </li>
           <li>
-            <a class="index-link" href="#m13">Maßgebliche Rechtsgrundlagen</a>
+            <a class='index-link' href='#m13'>Maßgebliche Rechtsgrundlagen</a>
           </li>
-          <li><a class="index-link" href="#m27">Sicherheitsmaßnahmen</a></li>
+          <li><a class='index-link' href='#m27'>Sicherheitsmaßnahmen</a></li>
           <li>
-            <a class="index-link" href="#m25"
-              >Übermittlung von personenbezogenen Daten</a
+            <a class='index-link' href='#m25'
+            >Übermittlung von personenbezogenen Daten</a
             >
           </li>
           <li>
-            <a class="index-link" href="#m24"
-              >Datenverarbeitung in Drittländern</a
+            <a class='index-link' href='#m24'
+            >Datenverarbeitung in Drittländern</a
             >
           </li>
-          <li><a class="index-link" href="#m12">Löschung von Daten</a></li>
-          <li><a class="index-link" href="#m134">Einsatz von Cookies</a></li>
+          <li><a class='index-link' href='#m12'>Löschung von Daten</a></li>
+          <li><a class='index-link' href='#m134'>Einsatz von Cookies</a></li>
           <li>
-            <a class="index-link" href="#m317">Geschäftliche Leistungen</a>
+            <a class='index-link' href='#m317'>Geschäftliche Leistungen</a>
           </li>
           <li>
-            <a class="index-link" href="#m225"
-              >Bereitstellung des Onlineangebotes und Webhosting</a
-            >
-          </li>
-          <li>
-            <a class="index-link" href="#m182"
-              >Kontakt- und Anfragenverwaltung</a
+            <a class='index-link' href='#m225'
+            >Bereitstellung des Onlineangebotes und Webhosting</a
             >
           </li>
           <li>
-            <a class="index-link" href="#m263"
-              >Webanalyse, Monitoring und Optimierung</a
+            <a class='index-link' href='#m182'
+            >Kontakt- und Anfragenverwaltung</a
             >
           </li>
           <li>
-            <a class="index-link" href="#m136"
-              >Präsenzen in sozialen Netzwerken (Social Media)</a
+            <a class='index-link' href='#m263'
+            >Webanalyse, Monitoring und Optimierung</a
             >
           </li>
           <li>
-            <a class="index-link" href="#m328"
-              >Plugins und eingebettete Funktionen sowie Inhalte</a
+            <a class='index-link' href='#m136'
+            >Präsenzen in sozialen Netzwerken (Social Media)</a
             >
           </li>
           <li>
-            <a class="index-link" href="#m15"
-              >Änderung und Aktualisierung der Datenschutzerklärung</a
+            <a class='index-link' href='#m328'
+            >Plugins und eingebettete Funktionen sowie Inhalte</a
             >
           </li>
           <li>
-            <a class="index-link" href="#m10"
-              >Rechte der betroffenen Personen</a
+            <a class='index-link' href='#m15'
+            >Änderung und Aktualisierung der Datenschutzerklärung</a
             >
           </li>
-          <li><a class="index-link" href="#m42">Begriffsdefinitionen</a></li>
+          <li>
+            <a class='index-link' href='#m10'
+            >Rechte der betroffenen Personen</a
+            >
+          </li>
+          <li><a class='index-link' href='#m42'>Begriffsdefinitionen</a></li>
         </ul>
-        <h2 id="m3">Verantwortlicher</h2>
+        <h2 id='m3'>Verantwortlicher</h2>
         <p>Julian Schmidt<br />Ludwig-Marum-Str. 38<br />76185 Karlsruhe</p>
         E-Mail-Adresse:
-        <p><a href="mailto:contact@clublive.band">contact@clublive.band</a></p>
+        <p><a href='mailto:contact@clublive.band'>contact@clublive.band</a></p>
         Impressum:
         <p>
-          <a href="https://www.clublive.band/impressum" target="_blank"
-            >https://www.clublive.band/impressum</a
+          <a href='https://www.clublive.band/impressum' target='_blank'
+          >https://www.clublive.band/impressum</a
           >
         </p>
-        <h2 id="mOverview">Übersicht der Verarbeitungen</h2>
+        <h2 id='mOverview'>Übersicht der Verarbeitungen</h2>
         <p>
           Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und
           die Zwecke ihrer Verarbeitung zusammen und verweist auf die
@@ -132,7 +132,7 @@
             Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit.
           </li>
         </ul>
-        <h3 id="m13">Maßgebliche Rechtsgrundlagen</h3>
+        <h3 id='m13'>Maßgebliche Rechtsgrundlagen</h3>
         <p>
           Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der
           DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte
@@ -151,7 +151,7 @@
           </li>
           <li>
             <strong
-              >Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S.
+            >Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S.
               1 lit. b. DSGVO)</strong
             >
             - Die Verarbeitung ist für die Erfüllung eines Vertrags, dessen
@@ -161,7 +161,7 @@
           </li>
           <li>
             <strong
-              >Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c.
+            >Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c.
               DSGVO)</strong
             >
             - Die Verarbeitung ist zur Erfüllung einer rechtlichen Verpflichtung
@@ -169,7 +169,7 @@
           </li>
           <li>
             <strong
-              >Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO)</strong
+            >Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO)</strong
             >
             - Die Verarbeitung ist zur Wahrung der berechtigten Interessen des
             Verantwortlichen oder eines Dritten erforderlich, sofern nicht die
@@ -195,7 +195,7 @@
           Beschäftigten. Ferner können Landesdatenschutzgesetze der einzelnen
           Bundesländer zur Anwendung gelangen.
         </p>
-        <h2 id="m27">Sicherheitsmaßnahmen</h2>
+        <h2 id='m27'>Sicherheitsmaßnahmen</h2>
         <p>
           Wir treffen nach Maßgabe der gesetzlichen Vorgaben unter
           Berücksichtigung des Stands der Technik, der Implementierungskosten
@@ -224,7 +224,7 @@
           Sie erkennen derart verschlüsselte Verbindungen an dem Präfix https://
           in der Adresszeile Ihres Browsers.
         </p>
-        <h2 id="m25">Übermittlung von personenbezogenen Daten</h2>
+        <h2 id='m25'>Übermittlung von personenbezogenen Daten</h2>
         <p>
           Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt es
           vor, dass die Daten an andere Stellen, Unternehmen, rechtlich
@@ -247,7 +247,7 @@
           Verpflichtungen erforderlich ist oder wenn eine Einwilligung der
           Betroffenen oder eine gesetzliche Erlaubnis vorliegt.
         </p>
-        <h2 id="m24">Datenverarbeitung in Drittländern</h2>
+        <h2 id='m24'>Datenverarbeitung in Drittländern</h2>
         <p>
           Sofern wir Daten in einem Drittland (d.h., außerhalb der Europäischen
           Union (EU), des Europäischen Wirtschaftsraums (EWR)) verarbeiten oder
@@ -265,12 +265,12 @@
           verbindlicher internen Datenschutzvorschriften verarbeiten (Art. 44
           bis 49 DSGVO, Informationsseite der EU-Kommission:
           <a
-            href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de"
-            target="_blank"
-            >https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de</a
+            href='https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de'
+            target='_blank'
+          >https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de</a
           >).
         </p>
-        <h2 id="m12">Löschung von Daten</h2>
+        <h2 id='m12'>Löschung von Daten</h2>
         <p>
           Die von uns verarbeiteten Daten werden nach Maßgabe der gesetzlichen
           Vorgaben gelöscht, sobald deren zur Verarbeitung erlaubten
@@ -293,7 +293,7 @@
           Aufbewahrung und Löschung von Daten beinhalten, die für die jeweiligen
           Verarbeitungen vorrangig gelten.
         </p>
-        <h2 id="m134">Einsatz von Cookies</h2>
+        <h2 id='m134'>Einsatz von Cookies</h2>
         <p>
           Cookies sind kleine Textdateien, bzw. sonstige Speichervermerke, die
           Informationen auf Endgeräten speichern und Informationen aus den
@@ -341,7 +341,7 @@
         <ul>
           <li>
             <strong
-              >Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):</strong
+            >Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):</strong
             >&nbsp;Temporäre Cookies werden spätestens gelöscht, nachdem ein
             Nutzer ein Online-Angebot verlassen und sein Endgerät (z.B. Browser
             oder mobile Applikation) geschlossen hat.
@@ -361,7 +361,7 @@
         </ul>
         <p>
           <strong
-            >Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-Out): </strong
+          >Allgemeine Hinweise zum Widerruf und Widerspruch (Opt-Out): </strong
           >Nutzer können die von ihnen abgegebenen Einwilligungen jederzeit
           Widerrufen und zudem einen Widerspruch gegen die Verarbeitung
           entsprechend den gesetzlichen Vorgaben im Art. 21 DSGVO einlegen
@@ -371,14 +371,14 @@
         </p>
         <p>
           <strong
-            >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
+          >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
             Diensten:</strong
           >
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong
-              >Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung: </strong
+            >Verarbeitung von Cookie-Daten auf Grundlage einer Einwilligung: </strong
             >Wir setzen ein Verfahren zum Cookie-Einwilligungs-Management ein,
             in dessen Rahmen die Einwilligungen der Nutzer in den Einsatz von
             Cookies, bzw. der im Rahmen des
@@ -401,7 +401,7 @@
             gespeichert.
           </li>
         </ul>
-        <h2 id="m317">Geschäftliche Leistungen</h2>
+        <h2 id='m317'>Geschäftliche Leistungen</h2>
         <p>
           Wir verarbeiten Daten unserer Vertrags- und Geschäftspartner, z.B.
           Kunden und Interessenten (zusammenfassend bezeichnet als
@@ -489,7 +489,7 @@
           anderer Personen erhalten, verarbeiten wir diese im Einklang mit den
           gesetzlichen und vertraglichen Vorgaben.
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
             Adressen); Zahlungsdaten (z.B. Bankverbindungen, Rechnungen,
@@ -513,7 +513,7 @@
             Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO).
           </li>
         </ul>
-        <h2 id="m225">Bereitstellung des Onlineangebotes und Webhosting</h2>
+        <h2 id='m225'>Bereitstellung des Onlineangebotes und Webhosting</h2>
         <p>
           Um unser Onlineangebot sicher und effizient bereitstellen zu können,
           nehmen wir die Leistungen von einem oder mehreren Webhosting-Anbietern
@@ -532,7 +532,7 @@
           und alle innerhalb unseres Onlineangebotes oder von Webseiten
           getätigten Eingaben.
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Verarbeitete Datenarten:</strong> Inhaltsdaten (z.B.
             Eingaben in Onlineformularen); Nutzungsdaten (z.B. besuchte
@@ -555,11 +555,11 @@
         </ul>
         <p>
           <strong
-            >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
+          >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
             Diensten:</strong
           >
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>E-Mail-Versand und -Hosting: </strong>Die von uns in
             Anspruch genommenen Webhosting-Leistungen umfassen ebenfalls den
@@ -605,22 +605,22 @@
             Rechenkapazitäten); <strong>Dienstanbieter:</strong> 1&1 IONOS SE,
             Elgendorfer Str. 57, 56410 Montabaur, Deutschland;
             <strong>Website:</strong>
-            <a href="https://www.ionos.de" target="_blank"
-              >https://www.ionos.de</a
+            <a href='https://www.ionos.de' target='_blank'
+            >https://www.ionos.de</a
             >; <strong>Datenschutzerklärung:</strong>
             <a
-              href="https://www.ionos.de/terms-gtc/terms-privacy"
-              target="_blank"
-              >https://www.ionos.de/terms-gtc/terms-privacy</a
+              href='https://www.ionos.de/terms-gtc/terms-privacy'
+              target='_blank'
+            >https://www.ionos.de/terms-gtc/terms-privacy</a
             >; <strong>Auftragsverarbeitungsvertrag:</strong>
             <a
-              href="https://www.ionos.de/hilfe/datenschutz/allgemeine-informationen-zur-datenschutz-grundverordnung-dsgvo/auftragsverarbeitung/?utm_source=search&utm_medium=global&utm_term=Auft&utm_campaign=HELP_CENTER&utm_content=/hilfe/"
-              target="_blank"
-              >https://www.ionos.de/hilfe/datenschutz/allgemeine-informationen-zur-datenschutz-grundverordnung-dsgvo/auftragsverarbeitung/?utm_source=search&utm_medium=global&utm_term=Auft&utm_campaign=HELP_CENTER&utm_content=/hilfe/</a
+              href='https://www.ionos.de/hilfe/datenschutz/allgemeine-informationen-zur-datenschutz-grundverordnung-dsgvo/auftragsverarbeitung/?utm_source=search&utm_medium=global&utm_term=Auft&utm_campaign=HELP_CENTER&utm_content=/hilfe/'
+              target='_blank'
+            >https://www.ionos.de/hilfe/datenschutz/allgemeine-informationen-zur-datenschutz-grundverordnung-dsgvo/auftragsverarbeitung/?utm_source=search&utm_medium=global&utm_term=Auft&utm_campaign=HELP_CENTER&utm_content=/hilfe/</a
             >.
           </li>
         </ul>
-        <h2 id="m182">Kontakt- und Anfragenverwaltung</h2>
+        <h2 id='m182'>Kontakt- und Anfragenverwaltung</h2>
         <p>
           Bei der Kontaktaufnahme mit uns (z.B. per Kontaktformular, E-Mail,
           Telefon oder via soziale Medien) sowie im Rahmen bestehender Nutzer-
@@ -636,7 +636,7 @@
           Grundlage der berechtigten Interessen an der Beantwortung der Anfragen
           und Pflege von Nutzer- bzw. Geschäftsbeziehungen.
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
             Adressen); Kontaktdaten (z.B. E-Mail, Telefonnummern); Inhaltsdaten
@@ -657,11 +657,11 @@
         </ul>
         <p>
           <strong
-            >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
+          >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
             Diensten:</strong
           >
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Kontaktformular: </strong>Wenn Nutzer über unser
             Kontaktformular, E-Mail oder andere Kommunikationswege mit uns in
@@ -675,7 +675,7 @@
             gesetzlichen Aufbewahrungspflichten.
           </li>
         </ul>
-        <h2 id="m263">Webanalyse, Monitoring und Optimierung</h2>
+        <h2 id='m263'>Webanalyse, Monitoring und Optimierung</h2>
         <p>
           Die Webanalyse (auch als "Reichweitenmessung" bezeichnet) dient der
           Auswertung der Besucherströme unseres Onlineangebotes und kann
@@ -725,7 +725,7 @@
           möchten wir Sie auch auf die Informationen zur Verwendung von Cookies
           in dieser Datenschutzerklärung hinweisen.
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B.
             besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten);
@@ -752,11 +752,11 @@
         </ul>
         <p>
           <strong
-            >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
+          >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
             Diensten:</strong
           >
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Google Analytics: </strong>Webanalyse, Reichweitenmessung
             sowie Messung von Nutzerströmen;
@@ -765,47 +765,47 @@
             LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA;
             <strong>Website:</strong>
             <a
-              href="https://marketingplatform.google.com/intl/de/about/analytics/"
-              target="_blank"
-              >https://marketingplatform.google.com/intl/de/about/analytics/</a
+              href='https://marketingplatform.google.com/intl/de/about/analytics/'
+              target='_blank'
+            >https://marketingplatform.google.com/intl/de/about/analytics/</a
             >; <strong>Datenschutzerklärung:</strong>
-            <a href="https://policies.google.com/privacy" target="_blank"
-              >https://policies.google.com/privacy</a
+            <a href='https://policies.google.com/privacy' target='_blank'
+            >https://policies.google.com/privacy</a
             >; <strong>Auftragsverarbeitungsvertrag:</strong>
             <a
-              href="https://business.safety.google/adsprocessorterms"
-              target="_blank"
-              >https://business.safety.google/adsprocessorterms</a
+              href='https://business.safety.google/adsprocessorterms'
+              target='_blank'
+            >https://business.safety.google/adsprocessorterms</a
             >;
             <strong
-              >Standardvertragsklauseln (Gewährleistung Datenschutzniveau bei
+            >Standardvertragsklauseln (Gewährleistung Datenschutzniveau bei
               Verarbeitung in Drittländern):</strong
             >
             <a
-              href="https://business.safety.google/adsprocessorterms"
-              target="_blank"
-              >https://business.safety.google/adsprocessorterms</a
+              href='https://business.safety.google/adsprocessorterms'
+              target='_blank'
+            >https://business.safety.google/adsprocessorterms</a
             >;
             <strong>Widerspruchsmöglichkeit (Opt-Out):</strong> Opt-Out-Plugin:
             <a
-              href="https://tools.google.com/dlpage/gaoptout?hl=de"
-              target="_blank"
-              >https://tools.google.com/dlpage/gaoptout?hl=de</a
+              href='https://tools.google.com/dlpage/gaoptout?hl=de'
+              target='_blank'
+            >https://tools.google.com/dlpage/gaoptout?hl=de</a
             >, Einstellungen für die Darstellung von Werbeeinblendungen:
             <a
-              href="https://adssettings.google.com/authenticated"
-              target="_blank"
-              >https://adssettings.google.com/authenticated</a
+              href='https://adssettings.google.com/authenticated'
+              target='_blank'
+            >https://adssettings.google.com/authenticated</a
             >; <strong>Weitere Informationen:</strong>
             <a
-              href="https://privacy.google.com/businesses/adsservices"
-              target="_blank"
-              >https://privacy.google.com/businesses/adsservices</a
+              href='https://privacy.google.com/businesses/adsservices'
+              target='_blank'
+            >https://privacy.google.com/businesses/adsservices</a
             >
             (Arten der Verarbeitung sowie der verarbeiteten Daten).
           </li>
         </ul>
-        <h2 id="m136">Präsenzen in sozialen Netzwerken (Social Media)</h2>
+        <h2 id='m136'>Präsenzen in sozialen Netzwerken (Social Media)</h2>
         <p>
           Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke und
           verarbeiten in diesem Rahmen Daten der Nutzer, um mit den dort aktiven
@@ -846,7 +846,7 @@
           entsprechende Maßnahmen ergreifen und Auskünfte geben. Sollten Sie
           dennoch Hilfe benötigen, dann können Sie sich an uns wenden.
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Verarbeitete Datenarten:</strong> Kontaktdaten (z.B. E-Mail,
             Telefonnummern); Inhaltsdaten (z.B. Eingaben in Onlineformularen);
@@ -870,20 +870,20 @@
         </ul>
         <p>
           <strong
-            >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
+          >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
             Diensten:</strong
           >
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Instagram: </strong>Soziales Netzwerk;
             <strong>Dienstanbieter:</strong> Instagram Inc., 1601 Willow Road,
             Menlo Park, CA, 94025, USA; <strong>Website:</strong>
-            <a href="https://www.instagram.com" target="_blank"
-              >https://www.instagram.com</a
+            <a href='https://www.instagram.com' target='_blank'
+            >https://www.instagram.com</a
             >; <strong>Datenschutzerklärung:</strong>
-            <a href="https://instagram.com/about/legal/privacy" target="_blank"
-              >https://instagram.com/about/legal/privacy</a
+            <a href='https://instagram.com/about/legal/privacy' target='_blank'
+            >https://instagram.com/about/legal/privacy</a
             >.
           </li>
           <li>
@@ -896,14 +896,14 @@
             interagieren, oder die von ihnen vorgenommenen Handlungen (siehe
             unter „Von dir und anderen getätigte und bereitgestellte Dinge“ in
             der Facebook-Datenrichtlinie:
-            <a href="https://www.facebook.com/policy" target="_blank"
-              >https://www.facebook.com/policy</a
+            <a href='https://www.facebook.com/policy' target='_blank'
+            >https://www.facebook.com/policy</a
             >), sowie Informationen über die von den Nutzern genutzten Geräte
             (z. B. IP-Adressen, Betriebssystem, Browsertyp, Spracheinstellungen,
             Cookie-Daten; siehe unter „Geräteinformationen“ in der
             Facebook-Datenrichtlinie:
-            <a href="https://www.facebook.com/policy" target="_blank"
-              >https://www.facebook.com/policy</a
+            <a href='https://www.facebook.com/policy' target='_blank'
+            >https://www.facebook.com/policy</a
             >). Wie in der Facebook-Datenrichtlinie unter „Wie verwenden wir
             diese Informationen?“ erläutert, erhebt und verwendet Facebook
             Informationen auch, um Analysedienste, so genannte
@@ -913,9 +913,9 @@
             Facebook eine spezielle Vereinbarung abgeschlossen ("Informationen
             zu Seiten-Insights",
             <a
-              href="https://www.facebook.com/legal/terms/page_controller_addendum"
-              target="_blank"
-              >https://www.facebook.com/legal/terms/page_controller_addendum</a
+              href='https://www.facebook.com/legal/terms/page_controller_addendum'
+              target='_blank'
+            >https://www.facebook.com/legal/terms/page_controller_addendum</a
             >), in der insbesondere geregelt wird, welche Sicherheitsmaßnahmen
             Facebook beachten muss und in der Facebook sich bereit erklärt hat
             die Betroffenenrechte zu erfüllen (d. h. Nutzer können z. B.
@@ -924,32 +924,32 @@
             und Beschwerde bei zuständiger Aufsichtsbehörde), werden durch die
             Vereinbarungen mit Facebook nicht eingeschränkt. Weitere Hinweise
             finden sich in den "Informationen zu Seiten-Insights" (<a
-              href="https://www.facebook.com/legal/terms/information_about_page_insights_data"
-              target="_blank"
-              >https://www.facebook.com/legal/terms/information_about_page_insights_data</a
-            >); <strong>Dienstanbieter:</strong> Meta Platforms Ireland Limited,
+            href='https://www.facebook.com/legal/terms/information_about_page_insights_data'
+            target='_blank'
+          >https://www.facebook.com/legal/terms/information_about_page_insights_data</a
+          >); <strong>Dienstanbieter:</strong> Meta Platforms Ireland Limited,
             4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland;
             <strong>Website:</strong>
-            <a href="https://www.facebook.com" target="_blank"
-              >https://www.facebook.com</a
+            <a href='https://www.facebook.com' target='_blank'
+            >https://www.facebook.com</a
             >; <strong>Datenschutzerklärung:</strong>
-            <a href="https://www.facebook.com/about/privacy" target="_blank"
-              >https://www.facebook.com/about/privacy</a
+            <a href='https://www.facebook.com/about/privacy' target='_blank'
+            >https://www.facebook.com/about/privacy</a
             >;
             <strong
-              >Standardvertragsklauseln (Gewährleistung Datenschutzniveau bei
+            >Standardvertragsklauseln (Gewährleistung Datenschutzniveau bei
               Verarbeitung in Drittländern):</strong
             >
             <a
-              href="https://www.facebook.com/legal/EU_data_transfer_addendum"
-              target="_blank"
-              >https://www.facebook.com/legal/EU_data_transfer_addendum</a
+              href='https://www.facebook.com/legal/EU_data_transfer_addendum'
+              target='_blank'
+            >https://www.facebook.com/legal/EU_data_transfer_addendum</a
             >; <strong>Weitere Informationen:</strong> Vereinbarung gemeinsamer
             Verantwortlichkeit:
             <a
-              href="https://www.facebook.com/legal/terms/information_about_page_insights_data"
-              target="_blank"
-              >https://www.facebook.com/legal/terms/information_about_page_insights_data</a
+              href='https://www.facebook.com/legal/terms/information_about_page_insights_data'
+              target='_blank'
+            >https://www.facebook.com/legal/terms/information_about_page_insights_data</a
             >.
           </li>
           <li>
@@ -958,17 +958,17 @@
             House, Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google
             LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA;
             <strong>Datenschutzerklärung:</strong>
-            <a href="https://policies.google.com/privacy" target="_blank"
-              >https://policies.google.com/privacy</a
+            <a href='https://policies.google.com/privacy' target='_blank'
+            >https://policies.google.com/privacy</a
             >; <strong>Widerspruchsmöglichkeit (Opt-Out):</strong>
             <a
-              href="https://adssettings.google.com/authenticated"
-              target="_blank"
-              >https://adssettings.google.com/authenticated</a
+              href='https://adssettings.google.com/authenticated'
+              target='_blank'
+            >https://adssettings.google.com/authenticated</a
             >.
           </li>
         </ul>
-        <h2 id="m328">Plugins und eingebettete Funktionen sowie Inhalte</h2>
+        <h2 id='m328'>Plugins und eingebettete Funktionen sowie Inhalte</h2>
         <p>
           Wir binden in unser Onlineangebot Funktions- und Inhaltselemente ein,
           die von den Servern ihrer jeweiligen Anbieter (nachfolgend bezeichnet
@@ -1005,7 +1005,7 @@
           möchten wir Sie auch auf die Informationen zur Verwendung von Cookies
           in dieser Datenschutzerklärung hinweisen.
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B.
             besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten);
@@ -1031,11 +1031,11 @@
         </ul>
         <p>
           <strong
-            >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
+          >Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und
             Diensten:</strong
           >
         </p>
-        <ul class="m-elements">
+        <ul class='m-elements'>
           <li>
             <strong>Google Fonts: </strong>Bezug von Schriftarten ("Google
             Fonts") vom Anbieter Google zum Zwecke einer technisch sicheren,
@@ -1052,11 +1052,11 @@
             House, Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google
             LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA;
             <strong>Website:</strong>
-            <a href="https://fonts.google.com/" target="_blank"
-              >https://fonts.google.com/</a
+            <a href='https://fonts.google.com/' target='_blank'
+            >https://fonts.google.com/</a
             >; <strong>Datenschutzerklärung:</strong>
-            <a href="https://policies.google.com/privacy" target="_blank"
-              >https://policies.google.com/privacy</a
+            <a href='https://policies.google.com/privacy' target='_blank'
+            >https://policies.google.com/privacy</a
             >.
           </li>
           <li>
@@ -1069,22 +1069,22 @@
             Gordon House, Barrow Street, Dublin 4, Irland, Mutterunternehmen:
             Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA;
             <strong>Website:</strong>
-            <a href="https://cloud.google.com/maps-platform" target="_blank"
-              >https://cloud.google.com/maps-platform</a
+            <a href='https://cloud.google.com/maps-platform' target='_blank'
+            >https://cloud.google.com/maps-platform</a
             >; <strong>Datenschutzerklärung:</strong>
-            <a href="https://policies.google.com/privacy" target="_blank"
-              >https://policies.google.com/privacy</a
+            <a href='https://policies.google.com/privacy' target='_blank'
+            >https://policies.google.com/privacy</a
             >;
             <strong>Widerspruchsmöglichkeit (Opt-Out):</strong> Opt-Out-Plugin:
             <a
-              href="https://tools.google.com/dlpage/gaoptout?hl=de"
-              target="_blank"
-              >https://tools.google.com/dlpage/gaoptout?hl=de</a
+              href='https://tools.google.com/dlpage/gaoptout?hl=de'
+              target='_blank'
+            >https://tools.google.com/dlpage/gaoptout?hl=de</a
             >, Einstellungen für die Darstellung von Werbeeinblendungen:
             <a
-              href="https://adssettings.google.com/authenticated"
-              target="_blank"
-              >https://adssettings.google.com/authenticated</a
+              href='https://adssettings.google.com/authenticated'
+              target='_blank'
+            >https://adssettings.google.com/authenticated</a
             >.
           </li>
           <li>
@@ -1093,26 +1093,26 @@
             House, Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google
             LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA;
             <strong>Website:</strong>
-            <a href="https://www.youtube.com" target="_blank"
-              >https://www.youtube.com</a
+            <a href='https://www.youtube.com' target='_blank'
+            >https://www.youtube.com</a
             >; <strong>Datenschutzerklärung:</strong>
-            <a href="https://policies.google.com/privacy" target="_blank"
-              >https://policies.google.com/privacy</a
+            <a href='https://policies.google.com/privacy' target='_blank'
+            >https://policies.google.com/privacy</a
             >;
             <strong>Widerspruchsmöglichkeit (Opt-Out):</strong> Opt-Out-Plugin:
             <a
-              href="https://tools.google.com/dlpage/gaoptout?hl=de"
-              target="_blank"
-              >https://tools.google.com/dlpage/gaoptout?hl=de</a
+              href='https://tools.google.com/dlpage/gaoptout?hl=de'
+              target='_blank'
+            >https://tools.google.com/dlpage/gaoptout?hl=de</a
             >, Einstellungen für die Darstellung von Werbeeinblendungen:
             <a
-              href="https://adssettings.google.com/authenticated"
-              target="_blank"
-              >https://adssettings.google.com/authenticated</a
+              href='https://adssettings.google.com/authenticated'
+              target='_blank'
+            >https://adssettings.google.com/authenticated</a
             >.
           </li>
         </ul>
-        <h2 id="m15">Änderung und Aktualisierung der Datenschutzerklärung</h2>
+        <h2 id='m15'>Änderung und Aktualisierung der Datenschutzerklärung</h2>
         <p>
           Wir bitten Sie, sich regelmäßig über den Inhalt unserer
           Datenschutzerklärung zu informieren. Wir passen die
@@ -1128,7 +1128,7 @@
           bitten wir zu beachten, dass die Adressen sich über die Zeit ändern
           können und bitten die Angaben vor Kontaktaufnahme zu prüfen.
         </p>
-        <h2 id="m10">Rechte der betroffenen Personen</h2>
+        <h2 id='m10'>Rechte der betroffenen Personen</h2>
         <p>
           Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu, die
           sich insbesondere aus Art. 15 bis 21 DSGVO ergeben:
@@ -1136,7 +1136,7 @@
         <ul>
           <li>
             <strong
-              >Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus
+            >Widerspruchsrecht: Sie haben das Recht, aus Gründen, die sich aus
               Ihrer besonderen Situation ergeben, jederzeit gegen die
               Verarbeitung der Sie betreffenden personenbezogenen Daten, die
               aufgrund von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt,
@@ -1169,7 +1169,7 @@
           </li>
           <li>
             <strong
-              >Recht auf Löschung und Einschränkung der Verarbeitung:</strong
+            >Recht auf Löschung und Einschränkung der Verarbeitung:</strong
             >
             Sie haben nach Maßgabe der gesetzlichen Vorgaben das Recht, zu
             verlangen, dass Sie betreffende Daten unverzüglich gelöscht werden,
@@ -1194,7 +1194,7 @@
             Vorgaben der DSGVO verstößt.
           </li>
         </ul>
-        <h2 id="m42">Begriffsdefinitionen</h2>
+        <h2 id='m42'>Begriffsdefinitionen</h2>
         <p>
           In diesem Abschnitt erhalten Sie eine Übersicht über die in dieser
           Datenschutzerklärung verwendeten Begrifflichkeiten. Viele der Begriffe
@@ -1203,7 +1203,7 @@
           Erläuterungen sollen dagegen vor allem dem Verständnis dienen. Die
           Begriffe sind alphabetisch sortiert.
         </p>
-        <ul class="glossary">
+        <ul class='glossary'>
           <li>
             <strong>Personenbezogene Daten:</strong> "Personenbezogene Daten“
             sind alle Informationen, die sich auf eine identifizierte oder
@@ -1262,17 +1262,17 @@
             Übermitteln oder das Löschen.
           </li>
         </ul>
-        <p class="seal">
+        <p class='seal'>
           <a
-            href="https://datenschutz-generator.de/"
-            title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            ><img
-              src="https://datenschutz-generator.de/wp-content/plugins/ts-dsg/images/dsg-seal/dsg-seal-pp-de.png"
-              alt="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
-              width="250"
-              height="250"
+            href='https://datenschutz-generator.de/'
+            title='Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken.'
+            target='_blank'
+            rel='noopener noreferrer nofollow'
+          ><img
+            src='https://datenschutz-generator.de/wp-content/plugins/ts-dsg/images/dsg-seal/dsg-seal-pp-de.png'
+            alt='Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken.'
+            width='250'
+            height='250'
           /></a>
         </p>
       </div>

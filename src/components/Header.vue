@@ -1,23 +1,23 @@
 <template>
-  <header id="header" class="reveal" :class="{ alt: isTransparent }">
-    <a href="/" class="logo">
+  <header id='header' class='reveal' :class='{ alt: isTransparent }'>
+    <a href='/' class='logo'>
       <strong>ClubLive</strong>
       <span>Club-Hits and Charts</span>
     </a>
-    <nav id="menu-desktop">
-      <a class="hamburger" href="#" @click.prevent="toggleMenu()">Menu</a>
+    <nav id='menu-desktop'>
+      <a class='hamburger' href='#' @click.prevent='toggleMenu()'>Menu</a>
     </nav>
-    <nav id="menu-mobile">
-      <a class="hamburger" href="#" @click.prevent="toggleMenu()"></a>
+    <nav id='menu-mobile'>
+      <a class='hamburger' href='#' @click.prevent='toggleMenu()'></a>
     </nav>
   </header>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang='ts'>
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "Header",
+  name: 'Header',
   props: {
     isTransparent: {
       type: Boolean,
@@ -26,10 +26,10 @@ export default defineComponent({
   },
   methods: {
     toggleMenu() {
-      this.$emit("toggle-menu");
+      this.$emit('toggle-menu')
     },
   },
-});
+})
 </script>
 
 <style scoped>
