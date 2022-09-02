@@ -1,6 +1,6 @@
 <template>
   <div class='container'>
-    <img :src='getImageUrl(imageSrc)' :alt='alt' />
+    <img :src='imageSrc' :alt='alt' />
     <div class='overlay'>
       <h3>{{ name }}</h3>
       <p>{{ instrument }}</p>
@@ -21,25 +21,6 @@ export default defineComponent({
   computed: {
     alt(): string {
       return `Bild von ${this.name} - ${this.instrument}`
-    },
-    src(): string {
-      // const url = "index.html"
-      // console.log(url)
-      // console.log(import.meta.env.BASE_URL)
-      // const result = new URL('/en-US/docs', "https://developer.mozilla.org/fr-FR/toto")
-      // console.log(result)
-      // return result.href
-      return ''
-    },
-  },
-  methods: {
-    getImageUrl(src: string) {
-      const url = 'index.html'
-      console.log(url)
-      console.log(import.meta.env.BASE_URL)
-      const result = new URL('assets/images/band/tiffany/tiffany.jpg', import.meta.env.BASE_URL)
-      console.log(result)
-      return result.href
     },
   },
 })
