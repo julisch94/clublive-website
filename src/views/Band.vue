@@ -1,8 +1,8 @@
 <template>
-  <div id="main">
-    <section id="one">
-      <div class="inner pa">
-        <header class="major">
+  <div id='main'>
+    <section id='one'>
+      <div class='inner pa'>
+        <header class='major'>
           <h1>Band</h1>
         </header>
         <p>
@@ -17,22 +17,22 @@
     </section>
 
     <section>
-      <div class="inner pa grid">
+      <div class='inner pa grid'>
         <Musician
-          v-for="musician in musicians"
-          :key="musician.name"
-          :image-src="musician.imageSrc"
-          :name="musician.name"
-          :instrument="musician.instrument"
+          v-for='musician in musicians'
+          :key='musician.name'
+          :image-src='musician.imageSrc'
+          :name='musician.name'
+          :instrument='musician.instrument'
         />
       </div>
     </section>
 
-    <Tiles :articles="articles" />
+    <Tiles :articles='articles' />
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import { defineComponent } from 'vue'
 import Tiles from '@/components/Tiles.vue'
 import tiles from '@/util/tiles'
@@ -40,54 +40,54 @@ import Musician from '@/components/Musician.vue'
 
 export default defineComponent({
   name: 'Band',
+  components: { Tiles, Musician },
   data() {
     return {
       articles: [tiles['music'], tiles['shows']],
       musicians: [
         {
-          imageSrc: 'assets/images/band/tiffany/tiffany.jpg',
+          imageSrc: 'images/band/tiffany/tiffany.jpg',
           name: 'Tiffany',
           instrument: 'Gesang',
         },
         {
-          imageSrc: 'assets/images/band/jules/jules.jpg',
+          imageSrc: 'images/band/jules/jules.jpg',
           name: 'Jules',
           instrument: 'Gesang / Gitarre',
         },
         {
-          imageSrc: 'assets/images/band/felix/felix.jpg',
+          imageSrc: 'images/band/felix/felix.jpg',
           name: 'Felix',
           instrument: 'Keyboard',
         },
         {
-          imageSrc: 'assets/images/band/lasse/lasse.jpg',
+          imageSrc: 'images/band/lasse/lasse.jpg',
           name: 'Lasse',
           instrument: 'Saxophon',
         },
         {
-          imageSrc: 'assets/images/band/moritz/moritz.jpg',
+          imageSrc: 'images/band/moritz/moritz.jpg',
           name: 'Moritz',
           instrument: 'Saxophon',
         },
         {
-          imageSrc: 'assets/images/band/boerni/boerni.jpg',
+          imageSrc: 'images/band/boerni/boerni.jpg',
           name: 'Börni',
           instrument: 'Trompete',
         },
         {
-          imageSrc: 'assets/images/band/bass/tobi.jpg',
+          imageSrc: 'images/band/bass/tobi.jpg',
           name: 'Tobi',
           instrument: 'Bass',
         },
         {
-          imageSrc: 'assets/images/band/chris/chris.jpg',
+          imageSrc: 'images/band/chris/chris.jpg',
           name: 'Chris',
           instrument: 'Drums / DJ',
         },
       ],
     }
   },
-  components: { Tiles, Musician },
 })
 </script>
 

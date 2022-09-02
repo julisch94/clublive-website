@@ -4,7 +4,7 @@
       <section>
         <h3>Kontaktformular / Buchung</h3>
         <div class="overlay-container">
-          <div class="loading-overlay" v-if="isLoading">
+          <div v-if="isLoading" class="loading-overlay">
             <Loader color="#efefef" />
           </div>
           <div>
@@ -13,32 +13,31 @@
               unseren Handys und melden uns umgehend bei dir zurück.
             </p>
             <form
-              @submit.prevent="submitForm"
-              @reset.prevent="reset()"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              @submit.prevent="submitForm"
+              @reset.prevent="reset()"
             >
               <div class="field half first">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" v-model="name" required />
+                <input id="name" v-model="name" type="text" name="name" required />
               </div>
               <div class="field half">
                 <label for="email">E-Mail</label>
                 <input
-                  type="text"
-                  name="email"
                   id="email"
                   v-model="email"
+                  type="text"
+                  name="email"
                   pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
                   required
                 />
               </div>
               <div class="field">
                 <label for="message">Nachricht</label>
-                <textarea name="message" id="message" v-model="message" rows="6" @keyup.ctrl.enter="submitForm()">
-                </textarea>
+                <textarea id="message" v-model="message" name="message" rows="6" @keyup.ctrl.enter="submitForm()" />
               </div>
-              <div data-netlify-recaptcha="true"></div>
+              <div data-netlify-recaptcha="true" />
               <ul class="actions">
                 <li>
                   <button type="reset" :disabled="isLoading">Löschen</button>
@@ -51,11 +50,11 @@
           </div>
           <div class="result" :class="{ shake: success || failure }">
             <div v-if="success">
-              <span class="icon alt fa-check"></span>
+              <span class="icon alt fa-check" />
               <span>Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns baldmöglichst zurück.</span>
             </div>
             <div v-if="failure">
-              <span class="icon alt fa-exclamation"></span>
+              <span class="icon alt fa-exclamation" />
               <span>
                 Oh. Da ist etwas schief gegangen. Kannst du uns bitte stattdessen eine E-Mail an
                 <a href="mailto:contact@clublive.band">contact@clublive.band</a>

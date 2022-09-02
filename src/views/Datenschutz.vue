@@ -18,23 +18,33 @@
         <p>Stand: 20. April 2022</p>
         <h2>Inhaltsübersicht</h2>
         <ul class="index">
-          <li><a class="index-link" href="#m14">Einleitung</a></li>
-          <li><a class="index-link" href="#m3">Verantwortlicher</a></li>
+          <li>
+            <a class="index-link" href="#m14">Einleitung</a>
+          </li>
+          <li>
+            <a class="index-link" href="#m3">Verantwortlicher</a>
+          </li>
           <li>
             <a class="index-link" href="#mOverview">Übersicht der Verarbeitungen</a>
           </li>
           <li>
             <a class="index-link" href="#m13">Maßgebliche Rechtsgrundlagen</a>
           </li>
-          <li><a class="index-link" href="#m27">Sicherheitsmaßnahmen</a></li>
+          <li>
+            <a class="index-link" href="#m27">Sicherheitsmaßnahmen</a>
+          </li>
           <li>
             <a class="index-link" href="#m25">Übermittlung von personenbezogenen Daten</a>
           </li>
           <li>
             <a class="index-link" href="#m24">Datenverarbeitung in Drittländern</a>
           </li>
-          <li><a class="index-link" href="#m12">Löschung von Daten</a></li>
-          <li><a class="index-link" href="#m134">Einsatz von Cookies</a></li>
+          <li>
+            <a class="index-link" href="#m12">Löschung von Daten</a>
+          </li>
+          <li>
+            <a class="index-link" href="#m134">Einsatz von Cookies</a>
+          </li>
           <li>
             <a class="index-link" href="#m317">Geschäftliche Leistungen</a>
           </li>
@@ -59,7 +69,9 @@
           <li>
             <a class="index-link" href="#m10">Rechte der betroffenen Personen</a>
           </li>
-          <li><a class="index-link" href="#m42">Begriffsdefinitionen</a></li>
+          <li>
+            <a class="index-link" href="#m42">Begriffsdefinitionen</a>
+          </li>
         </ul>
         <h2 id="m3">Verantwortlicher</h2>
         <p>Julian Schmidt<br />Ludwig-Marum-Str. 38<br />76185 Karlsruhe</p>

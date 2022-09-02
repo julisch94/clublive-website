@@ -1,5 +1,5 @@
 <template>
-  <div class="alt" id="main">
+  <div id="main" class="alt">
     <section>
       <div class="inner pa">
         <header class="major">

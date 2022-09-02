@@ -2,15 +2,11 @@
 
 ## Project setup
 
-```
-yarn
-```
-
-### Compiles and hot-reloads for development
-
-```
-yarn serve
-```
+1. Install [Node Version Manager](https://github.com/nvm-sh/nvm).
+2. Run `nvm use` and follow the instructions.
+3. Install yarn with `npm i -g yarn`
+4. Install dependencies with `yarn`
+5. Start project with `yarn dev`
 
 ### Compiles and minifies for production
 
@@ -18,11 +14,9 @@ yarn serve
 yarn build
 ```
 
-### Lints and fixes files
+### Hot-reload
 
-```
-yarn lint
-```
+We are using Vite for fast start and hot-reload.
 
 ### Auto-formatting files
 

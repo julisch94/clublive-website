@@ -1,14 +1,14 @@
 <template>
-  <div class="container">
-    <img :src="require(`@/${imageSrc}`)" :alt="alt" />
-    <div class="overlay">
+  <div class='container'>
+    <img :src='imageSrc' :alt='alt' />
+    <div class='overlay'>
       <h3>{{ name }}</h3>
       <p>{{ instrument }}</p>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import { defineComponent } from 'vue'
 
 export default defineComponent({
