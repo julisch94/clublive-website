@@ -46,45 +46,45 @@ export default defineComponent({
       articles: [tiles['music'], tiles['shows']],
       musicians: [
         {
-          imageSrc: 'assets/images/band/tiffany/tiffany.jpg',
+          imageSrc: '/assets/images/band/tiffany/tiffany.jpg',
           name: 'Tiffany',
           instrument: 'Gesang',
         },
-        {
-          imageSrc: 'assets/images/band/jules/jules.jpg',
-          name: 'Jules',
-          instrument: 'Gesang / Gitarre',
-        },
-        {
-          imageSrc: 'assets/images/band/felix/felix.jpg',
-          name: 'Felix',
-          instrument: 'Keyboard',
-        },
-        {
-          imageSrc: 'assets/images/band/lasse/lasse.jpg',
-          name: 'Lasse',
-          instrument: 'Saxophon',
-        },
-        {
-          imageSrc: 'assets/images/band/moritz/moritz.jpg',
-          name: 'Moritz',
-          instrument: 'Saxophon',
-        },
-        {
-          imageSrc: 'assets/images/band/boerni/boerni.jpg',
-          name: 'Börni',
-          instrument: 'Trompete',
-        },
-        {
-          imageSrc: 'assets/images/band/bass/tobi.jpg',
-          name: 'Tobi',
-          instrument: 'Bass',
-        },
-        {
-          imageSrc: 'assets/images/band/chris/chris.jpg',
-          name: 'Chris',
-          instrument: 'Drums / DJ',
-        },
+        // {
+        //   imageSrc: 'assets/images/band/jules/jules.jpg',
+        //   name: 'Jules',
+        //   instrument: 'Gesang / Gitarre',
+        // },
+        // {
+        //   imageSrc: 'assets/images/band/felix/felix.jpg',
+        //   name: 'Felix',
+        //   instrument: 'Keyboard',
+        // },
+        // {
+        //   imageSrc: 'assets/images/band/lasse/lasse.jpg',
+        //   name: 'Lasse',
+        //   instrument: 'Saxophon',
+        // },
+        // {
+        //   imageSrc: 'assets/images/band/moritz/moritz.jpg',
+        //   name: 'Moritz',
+        //   instrument: 'Saxophon',
+        // },
+        // {
+        //   imageSrc: 'assets/images/band/boerni/boerni.jpg',
+        //   name: 'Börni',
+        //   instrument: 'Trompete',
+        // },
+        // {
+        //   imageSrc: 'assets/images/band/bass/tobi.jpg',
+        //   name: 'Tobi',
+        //   instrument: 'Bass',
+        // },
+        // {
+        //   imageSrc: 'assets/images/band/chris/chris.jpg',
+        //   name: 'Chris',
+        //   instrument: 'Drums / DJ',
+        // },
       ],
     }
   },
