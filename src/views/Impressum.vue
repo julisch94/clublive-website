@@ -18,24 +18,18 @@
         Kontaktformular:
         <p><a href="#contact">siehe unten</a></p>
         <h2 id="m172">Social Media und andere Onlinepräsenzen</h2>
-        Dieses Impressum gilt auch für die folgenden Social-Media-Präsenzen und
-        Onlineprofile:
+        Dieses Impressum gilt auch für die folgenden Social-Media-Präsenzen und Onlineprofile:
         <p>
-          <a href="https://www.facebook.com/ClubLive.band/" target="_blank"
-            >https://www.facebook.com/ClubLive.band/</a
-          >
+          <a href="https://www.facebook.com/ClubLive.band/" target="_blank">https://www.facebook.com/ClubLive.band/</a>
         </p>
         <p>
-          <a href="https://instagram.com/clublive.band" target="_blank"
-            >https://instagram.com/clublive.band</a
-          >
+          <a href="https://instagram.com/clublive.band" target="_blank">https://instagram.com/clublive.band</a>
         </p>
         <h2 id="m65">Haftungs- und Schutzrechtshinweise</h2>
         <p>
-          Hinweise auf Rechtsverstöße: Sollten Sie innerhalb unseres
-          Internetauftritts Rechtsverstöße bemerken, bitten wir Sie uns auf
-          diese hinzuweisen. Wir werden rechtswidrige Inhalte und Links nach
-          Kenntnisnahme unverzüglich entfernen.
+          Hinweise auf Rechtsverstöße: Sollten Sie innerhalb unseres Internetauftritts Rechtsverstöße bemerken, bitten
+          wir Sie uns auf diese hinzuweisen. Wir werden rechtswidrige Inhalte und Links nach Kenntnisnahme unverzüglich
+          entfernen.
         </p>
         <h2 id="m169">Bildnachweise</h2>
         Bildquellen und Urheberrechtshinweise:

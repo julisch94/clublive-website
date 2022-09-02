@@ -9,9 +9,8 @@
           </div>
           <div>
             <p>
-              Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt
-              aufzunehmen. Wir lesen deine Nachricht auf unseren Handys und
-              melden uns umgehend bei dir zurück.
+              Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
+              unseren Handys und melden uns umgehend bei dir zurück.
             </p>
             <form
               @submit.prevent="submitForm"
@@ -21,13 +20,7 @@
             >
               <div class="field half first">
                 <label for="name">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  v-model="name"
-                  required
-                />
+                <input type="text" name="name" id="name" v-model="name" required />
               </div>
               <div class="field half">
                 <label for="email">E-Mail</label>
@@ -42,13 +35,7 @@
               </div>
               <div class="field">
                 <label for="message">Nachricht</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  v-model="message"
-                  rows="6"
-                  @keyup.ctrl.enter="submitForm()"
-                >
+                <textarea name="message" id="message" v-model="message" rows="6" @keyup.ctrl.enter="submitForm()">
                 </textarea>
               </div>
               <div data-netlify-recaptcha="true"></div>
@@ -57,9 +44,7 @@
                   <button type="reset" :disabled="isLoading">Löschen</button>
                 </li>
                 <li>
-                  <button type="submit" class="special" :disabled="isLoading">
-                    Abschicken
-                  </button>
+                  <button type="submit" class="special" :disabled="isLoading">Abschicken</button>
                 </li>
               </ul>
             </form>
@@ -67,16 +52,12 @@
           <div class="result" :class="{ shake: success || failure }">
             <div v-if="success">
               <span class="icon alt fa-check"></span>
-              <span
-                >Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns
-                baldmöglichst zurück.</span
-              >
+              <span>Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns baldmöglichst zurück.</span>
             </div>
             <div v-if="failure">
               <span class="icon alt fa-exclamation"></span>
               <span>
-                Oh. Da ist etwas schief gegangen. Kannst du uns bitte
-                stattdessen eine E-Mail an
+                Oh. Da ist etwas schief gegangen. Kannst du uns bitte stattdessen eine E-Mail an
                 <a href="mailto:contact@clublive.band">contact@clublive.band</a>
                 schicken?
               </span>
@@ -89,71 +70,67 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Loader from "vue-spinner/src/ScaleLoader.vue";
+import { defineComponent } from 'vue'
+import Loader from 'vue-spinner/src/ScaleLoader.vue'
 
 export default defineComponent({
-  name: "Contact",
+  name: 'Contact',
   components: {
     Loader,
   },
   data() {
     return {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
       success: false,
       failure: false,
       isLoading: false,
-    };
+    }
   },
   methods: {
     submitForm() {
       const body = {
-        "form-name": "clublive-contact",
+        'form-name': 'clublive-contact',
         name: this.name,
         email: this.email,
         message: this.message,
-      };
-      console.log("form data", body);
+      }
+      console.log('form data', body)
 
-      this.success = false;
-      this.failure = false;
-      this.isLoading = true;
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      this.success = false
+      this.failure = false
+      this.isLoading = true
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(body).toString(),
       })
-        .then((result) => {
-          console.log(result);
-          this.isLoading = false;
+        .then(result => {
+          console.log(result)
+          this.isLoading = false
           if (result.ok) {
-            this.success = true;
-            console.log("Form successfully submitted.");
+            this.success = true
+            console.log('Form successfully submitted.')
           } else {
-            this.failure = true;
-            console.error(
-              "Form submission failed",
-              result.status,
-              result.statusText
-            );
+            this.failure = true
+            console.error('Form submission failed', result.status, result.statusText)
           }
         })
-        .catch((error) => {
-          this.isLoading = false;
-          alert(error);
-        });
+        .catch(error => {
+          this.isLoading = false
+          alert(error)
+        })
     },
     reset() {
-      this.name = "";
-      this.email = "";
-      this.message = "";
-      this.success = false;
-      this.failure = false;
+      this.name = ''
+      this.email = ''
+      this.message = ''
+      this.success = false
+      this.failure = false
     },
   },
-});
+})
 </script>
 
 <style scoped>
@@ -190,7 +167,7 @@ export default defineComponent({
 
 #contact .inner > .split > *:before {
   border-top: solid 1px rgba(212, 212, 255, 0.1);
-  content: "";
+  content: '';
   display: block;
   margin-left: -3em;
   position: absolute;

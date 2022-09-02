@@ -15,9 +15,7 @@
       <div class="copyright-row">
         <ul class="copyright">
           <li>&copy; {{ currentYear }} ClubLive</li>
-          <li>
-            Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
-          </li>
+          <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
           <li>
             Vue.js Integration:
             <a href="https://julianschmidt.codes/">Julian Schmidt</a>
@@ -37,20 +35,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Social from "@/components/Social.vue";
+import { defineComponent } from 'vue'
+import Social from '@/components/Social.vue'
 
 export default defineComponent({
-  name: "Footer",
+  name: 'Footer',
   components: {
     Social,
   },
   computed: {
     currentYear(): number {
-      return new Date().getFullYear();
+      return new Date().getFullYear()
     },
   },
-});
+})
 </script>
 
 <style>
@@ -97,7 +95,7 @@ export default defineComponent({
   }
 
   .copyright-row ul:last-of-type {
-  text-align: unset;
-}
+    text-align: unset;
+  }
 }
 </style>

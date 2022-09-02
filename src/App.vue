@@ -27,14 +27,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Contact from "@/components/Contact.vue";
-import Footer from "@/components/Footer.vue";
-import Header from "@/components/Header.vue";
-import CookieConsent from "@/components/CookieConsent.vue";
+import { defineComponent } from 'vue'
+import Contact from '@/components/Contact.vue'
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
+import CookieConsent from '@/components/CookieConsent.vue'
 
 export default defineComponent({
-  name: "App",
+  name: 'App',
   components: {
     Header,
     Contact,
@@ -45,56 +45,56 @@ export default defineComponent({
     return {
       routes: [
         {
-          name: "Home",
-          route: "/",
+          name: 'Home',
+          route: '/',
         },
         {
-          name: "Musik",
-          route: "/music",
+          name: 'Musik',
+          route: '/music',
         },
         {
-          name: "Band",
-          route: "/band",
+          name: 'Band',
+          route: '/band',
         },
         {
-          name: "Shows",
-          route: "/shows",
+          name: 'Shows',
+          route: '/shows',
         },
         {
-          name: "Downloads",
-          route: "/downloads",
+          name: 'Downloads',
+          route: '/downloads',
         },
         {
-          name: "Datenschutzerklärung",
-          route: "/datenschutzerklaerung",
+          name: 'Datenschutzerklärung',
+          route: '/datenschutzerklaerung',
         },
         {
-          name: "Impressum",
-          route: "/impressum",
+          name: 'Impressum',
+          route: '/impressum',
         },
       ],
       isMenuVisible: false,
       isMainInView: false,
-    };
+    }
   },
   computed: {
     showTransparentNavbar(): boolean {
-      return this.$route.path === "/" && !this.isMainInView;
+      return this.$route.path === '/' && !this.isMainInView
     },
   },
   methods: {
     toggleMenu() {
-      this.isMenuVisible = !this.isMenuVisible;
+      this.isMenuVisible = !this.isMenuVisible
     },
     onMainInView(isInView: boolean) {
-      this.isMainInView = isInView;
+      this.isMainInView = isInView
     },
   },
-});
+})
 </script>
 
 <style>
-@import "./assets/css/main.css";
+@import './assets/css/main.css';
 
 #cookie-consent {
   background-color: #242943;

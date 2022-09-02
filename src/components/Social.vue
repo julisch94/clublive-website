@@ -1,10 +1,7 @@
 <template>
   <ul class="icons">
     <li>
-      <a
-        href="https://instagram.com/clublive.band"
-        class="icon alt fa-instagram"
-      >
+      <a href="https://instagram.com/clublive.band" class="icon alt fa-instagram">
         <span class="label">Instagram</span>
       </a>
     </li>
@@ -14,10 +11,7 @@
       </a>
     </li>
     <li>
-      <a
-        href="https://www.youtube.com/channel/UCpnhZgIseF5XWs5icvU4nuQ"
-        class="icon alt fa-youtube"
-      >
+      <a href="https://www.youtube.com/channel/UCpnhZgIseF5XWs5icvU4nuQ" class="icon alt fa-youtube">
         <span class="label">YouTube</span>
       </a>
     </li>
@@ -25,9 +19,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "Social",
-});
+  name: 'Social',
+})
 </script>

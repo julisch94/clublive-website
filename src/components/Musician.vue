@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "Musician",
+  name: 'Musician',
   props: {
     imageSrc: String,
     name: String,
@@ -20,10 +20,10 @@ export default defineComponent({
   },
   computed: {
     alt(): string {
-      return `Bild von ${this.name} - ${this.instrument}`;
+      return `Bild von ${this.name} - ${this.instrument}`
     },
   },
-});
+})
 </script>
 
 <style scoped>
@@ -53,7 +53,7 @@ export default defineComponent({
 }
 
 .overlay :first-child::after {
-  content: "";
+  content: '';
   background-color: #fff;
   display: block;
   height: 2px;

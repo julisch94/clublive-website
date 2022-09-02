@@ -14,10 +14,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "Header",
+  name: 'Header',
   props: {
     isTransparent: {
       type: Boolean,
@@ -26,10 +26,10 @@ export default defineComponent({
   },
   methods: {
     toggleMenu() {
-      this.$emit("toggle-menu");
+      this.$emit('toggle-menu')
     },
   },
-});
+})
 </script>
 
 <style scoped>
@@ -116,17 +116,17 @@ export default defineComponent({
   padding-right: 1.5em;
 }
 
-#header nav a.hamburger[href="#"] {
+#header nav a.hamburger[href='#'] {
   padding-right: 3.325em !important;
 }
 
-#header nav a.hamburger[href="#"]:before,
-#header nav a.hamburger[href="#"]:after {
+#header nav a.hamburger[href='#']:before,
+#header nav a.hamburger[href='#']:after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %23fff%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 24px 32px;
-  content: "";
+  content: '';
   display: block;
   height: 100%;
   position: absolute;
@@ -136,7 +136,7 @@ export default defineComponent({
   width: 24px;
 }
 
-#header nav a.hamburger[href="#"]:after {
+#header nav a.hamburger[href='#']:after {
   -moz-transition: opacity 0.2s ease-in-out;
   -webkit-transition: opacity 0.2s ease-in-out;
   -ms-transition: opacity 0.2s ease-in-out;
@@ -146,17 +146,17 @@ export default defineComponent({
   z-index: 1;
 }
 
-#header nav a.hamburger[href="#"]:hover:after,
-#header nav a.hamburger[href="#"]:active:after {
+#header nav a.hamburger[href='#']:hover:after,
+#header nav a.hamburger[href='#']:active:after {
   opacity: 1;
 }
 
-#header nav a.hamburger[href="#"]:last-child {
+#header nav a.hamburger[href='#']:last-child {
   padding-right: 3.875em !important;
 }
 
-#header nav a.hamburger[href="#"]:last-child:before,
-#header nav a.hamburger[href="#"]:last-child:after {
+#header nav a.hamburger[href='#']:last-child:before,
+#header nav a.hamburger[href='#']:last-child:after {
   right: 2em;
 }
 

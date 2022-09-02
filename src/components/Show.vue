@@ -12,28 +12,27 @@
       <span class="icon fa-map-marker">&nbsp;</span>
       <a :href="show.mapsLink" target="_blank">Routenplaner</a>
     </p>
-    <hr>
+    <hr />
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
-import {ShowModel} from "@/model/show.model";
-import dayjs from "../plugins/dayjs";
+import { defineComponent } from 'vue'
+import { ShowModel } from '@/model/show.model'
+import dayjs from '../plugins/dayjs'
 
 export default defineComponent({
-  name: "Show",
+  name: 'Show',
   props: {
     show: {
       type: Object as () => ShowModel,
-      required: true
+      required: true,
     },
   },
   computed: {
     prettyDate(): string {
-      return dayjs(this.show.date).format('dd DD.MM.YYYY');
-    }
-  }
-});
-
+      return dayjs(this.show.date).format('dd DD.MM.YYYY')
+    },
+  },
+})
 </script>

@@ -1,4 +1,4 @@
 export interface PastShowModel {
-  date: string;
-  text: string;
+  date: string
+  text: string
 }

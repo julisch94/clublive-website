@@ -6,14 +6,11 @@
           <h1>Band</h1>
         </header>
         <p>
-          Wer sich fragt, ob die heutige Radiomusik überhaupt noch live gespielt
-          werden kann, der kommt bei ClubLive ganz auf seine Kosten. Von Parov
-          Stelar über Clean Bandit, bis hin zu Robin Schulz und Felix Jaehn
-          werden alle Songs handgemacht interpretiert. Dabei zeigt ClubLive,
-          dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen
-          können. 2018 feierte ClubLive Bühnenpremiere und ist seit dem im
-          Großraum Karlsruhe unterwegs. Vom Club bis zur Open Air Show geht bei
-          ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte
+          Wer sich fragt, ob die heutige Radiomusik überhaupt noch live gespielt werden kann, der kommt bei ClubLive
+          ganz auf seine Kosten. Von Parov Stelar über Clean Bandit, bis hin zu Robin Schulz und Felix Jaehn werden alle
+          Songs handgemacht interpretiert. Dabei zeigt ClubLive, dass nicht nur DJs mit aktuellen Hits für ordentlich
+          Party sorgen können. 2018 feierte ClubLive Bühnenpremiere und ist seit dem im Großraum Karlsruhe unterwegs.
+          Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte
           Frisur nach Hause.
         </p>
       </div>
@@ -36,62 +33,62 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import Tiles from "@/components/Tiles.vue";
-import tiles from "@/util/tiles";
-import Musician from "@/components/Musician.vue";
+import { defineComponent } from 'vue'
+import Tiles from '@/components/Tiles.vue'
+import tiles from '@/util/tiles'
+import Musician from '@/components/Musician.vue'
 
 export default defineComponent({
-  name: "Band",
+  name: 'Band',
   data() {
     return {
-      articles: [tiles["music"], tiles["shows"]],
+      articles: [tiles['music'], tiles['shows']],
       musicians: [
         {
-          imageSrc: "assets/images/band/tiffany/tiffany.jpg",
-          name: "Tiffany",
-          instrument: "Gesang",
+          imageSrc: 'assets/images/band/tiffany/tiffany.jpg',
+          name: 'Tiffany',
+          instrument: 'Gesang',
         },
         {
-          imageSrc: "assets/images/band/jules/jules.jpg",
-          name: "Jules",
-          instrument: "Gesang / Gitarre",
+          imageSrc: 'assets/images/band/jules/jules.jpg',
+          name: 'Jules',
+          instrument: 'Gesang / Gitarre',
         },
         {
-          imageSrc: "assets/images/band/felix/felix.jpg",
-          name: "Felix",
-          instrument: "Keyboard",
+          imageSrc: 'assets/images/band/felix/felix.jpg',
+          name: 'Felix',
+          instrument: 'Keyboard',
         },
         {
-          imageSrc: "assets/images/band/lasse/lasse.jpg",
-          name: "Lasse",
-          instrument: "Saxophon",
+          imageSrc: 'assets/images/band/lasse/lasse.jpg',
+          name: 'Lasse',
+          instrument: 'Saxophon',
         },
         {
-          imageSrc: "assets/images/band/moritz/moritz.jpg",
-          name: "Moritz",
-          instrument: "Saxophon",
+          imageSrc: 'assets/images/band/moritz/moritz.jpg',
+          name: 'Moritz',
+          instrument: 'Saxophon',
         },
         {
-          imageSrc: "assets/images/band/boerni/boerni.jpg",
-          name: "Börni",
-          instrument: "Trompete",
+          imageSrc: 'assets/images/band/boerni/boerni.jpg',
+          name: 'Börni',
+          instrument: 'Trompete',
         },
         {
-          imageSrc: "assets/images/band/bass/tobi.jpg",
-          name: "Tobi",
-          instrument: "Bass",
+          imageSrc: 'assets/images/band/bass/tobi.jpg',
+          name: 'Tobi',
+          instrument: 'Bass',
         },
         {
-          imageSrc: "assets/images/band/chris/chris.jpg",
-          name: "Chris",
-          instrument: "Drums / DJ",
+          imageSrc: 'assets/images/band/chris/chris.jpg',
+          name: 'Chris',
+          instrument: 'Drums / DJ',
         },
       ],
-    };
+    }
   },
   components: { Tiles, Musician },
-});
+})
 </script>
 
 <style scoped>
