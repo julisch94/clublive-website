@@ -2,7 +2,7 @@
   <div>
     <Banner />
 
-    <div ref="main" id="main">
+    <div id="main" ref="main">
       <section id="start" class="scroll-target">
         <div class="inner pa">
           <div class="-2u 8u 12u$(small)">
@@ -37,7 +37,7 @@
               frameborder="no"
               allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1430026750&color=%239bf1ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-            ></iframe>
+            />
           </div>
         </div>
       </section>
@@ -64,17 +64,17 @@ export default defineComponent({
       articles: [tiles['music'], tiles['band'], tiles['shows'], tiles['downloads']],
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  unmounted() {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
   computed: {
     startOfMain() {
       const element = (this.$refs.main as Element).getBoundingClientRect()
       return element.y
     },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll(): void {

@@ -1,5 +1,5 @@
 <template>
-  <section class="style2" id="banner">
+  <section id="banner" class="style2">
     <div class="inner pa">
       <header class="major">
         <h1>Shows</h1>
@@ -7,7 +7,7 @@
     </div>
   </section>
 
-  <div class="alt" id="main">
+  <div id="main" class="alt">
     <section id="one">
       <div class="inner pa">
         <div v-if="hasFutureShows">

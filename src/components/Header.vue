@@ -8,7 +8,7 @@
       <a class="hamburger" href="#" @click.prevent="toggleMenu()">Menu</a>
     </nav>
     <nav id="menu-mobile">
-      <a class="hamburger" href="#" @click.prevent="toggleMenu()"></a>
+      <a class="hamburger" href="#" @click.prevent="toggleMenu()" />
     </nav>
   </header>
 </template>

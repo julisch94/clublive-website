@@ -3,10 +3,10 @@
     <article v-for="item in articles" :key="item.name" :class="item.class">
       <header class="major">
         <h2>
-          <a :href="item.route" class="link" :id="headerId(item.name)">{{ item.name }}</a>
+          <a :id="headerId(item.name)" :href="item.route" class="link">{{ item.name }}</a>
         </h2>
       </header>
-      <a :href="item.route" class="link primary" :id="imageLinkId(item.name)"></a>
+      <a :id="imageLinkId(item.name)" :href="item.route" class="link primary" />
     </article>
   </section>
 </template>

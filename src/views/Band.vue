@@ -40,6 +40,7 @@ import Musician from '@/components/Musician.vue'
 
 export default defineComponent({
   name: 'Band',
+  components: { Tiles, Musician },
   data() {
     return {
       articles: [tiles['music'], tiles['shows']],
@@ -87,7 +88,6 @@ export default defineComponent({
       ],
     }
   },
-  components: { Tiles, Musician },
 })
 </script>
 

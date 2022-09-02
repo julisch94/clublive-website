@@ -1,18 +1,18 @@
 <template>
   <div id="overlay" :class="{ 'is-menu-visible': isMenuVisible }">
-    <Header @toggle-menu="toggleMenu" :is-transparent="showTransparentNavbar" />
+    <Header :is-transparent="showTransparentNavbar" @toggle-menu="toggleMenu" />
 
     <nav id="menu">
       <div class="inner">
         <ul class="links">
           <li v-for="item in routes" :key="item.name">
-            <router-link @click.capture="toggleMenu()" :to="item.route">
+            <router-link :to="item.route" @click.capture="toggleMenu()">
               {{ item.name }}
             </router-link>
           </li>
         </ul>
       </div>
-      <a href="#" @click.prevent="toggleMenu()" class="close"></a>
+      <a href="#" class="close" @click.prevent="toggleMenu()" />
     </nav>
 
     <div id="wrapper">

@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Social from './Social.vue'
+import Social from '@/components/Social.vue'
 
 export default defineComponent({
   name: 'Banner',

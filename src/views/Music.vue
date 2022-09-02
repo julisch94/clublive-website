@@ -1,5 +1,5 @@
 <template>
-  <div class="alt" id="main">
+  <div id="main" class="alt">
     <section id="musik">
       <div class="inner pa">
         <header class="major">
@@ -14,29 +14,29 @@
         <div class="row">
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/klPMadnQVL8" frameborder="0" allowfullscreen> </iframe>
+              <iframe src="https://www.youtube.com/embed/klPMadnQVL8" frameborder="0" allowfullscreen />
             </div>
-            <p></p>
+            <p />
           </div>
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/w8EGcCSjuJQ" frameborder="0" allowfullscreen> </iframe>
+              <iframe src="https://www.youtube.com/embed/w8EGcCSjuJQ" frameborder="0" allowfullscreen />
             </div>
-            <p></p>
+            <p />
           </div>
         </div>
         <div class="row">
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/q8VdEr7DpQ4" frameborder="0" allowfullscreen> </iframe>
+              <iframe src="https://www.youtube.com/embed/q8VdEr7DpQ4" frameborder="0" allowfullscreen />
             </div>
-            <p></p>
+            <p />
           </div>
           <div class="6u 12u$(medium)">
             <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/JAw3hM3quzc" frameborder="0" allowfullscreen> </iframe>
+              <iframe src="https://www.youtube.com/embed/JAw3hM3quzc" frameborder="0" allowfullscreen />
             </div>
-            <p></p>
+            <p />
           </div>
         </div>
         <p>Weitere Videos gibt es auf unseren Social-Media-Kanälen:</p>
@@ -56,11 +56,11 @@ import tiles from '@/util/tiles'
 
 export default defineComponent({
   name: 'Music',
+  components: { Social, Tiles },
   data() {
     return {
       articles: [tiles['band'], tiles['shows']],
     }
   },
-  components: { Social, Tiles },
 })
 </script>
