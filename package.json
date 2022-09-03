@@ -19,7 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "@vitejs/plugin-vue": "^3.0.3",
-    "@vue/eslint-config-prettier": "6",
+    "@vue/eslint-config-prettier": "7",
     "@vue/eslint-config-typescript": "^11.0.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.22.0",
