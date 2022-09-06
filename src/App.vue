@@ -64,14 +64,6 @@ export default defineComponent({
           name: 'Downloads',
           route: '/downloads',
         },
-        {
-          name: 'Datenschutzerklärung',
-          route: '/datenschutzerklaerung',
-        },
-        {
-          name: 'Impressum',
-          route: '/impressum',
-        },
       ],
       isMenuVisible: false,
       isMainInView: false,
