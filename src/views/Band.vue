@@ -1,8 +1,8 @@
 <template>
-  <div id='main'>
-    <section id='one'>
-      <div class='inner pa'>
-        <header class='major'>
+  <div id="main">
+    <section id="one">
+      <div class="inner pa">
+        <header class="major">
           <h1>Band</h1>
         </header>
         <p>
@@ -17,22 +17,22 @@
     </section>
 
     <section>
-      <div class='inner pa grid'>
+      <div class="inner pa grid">
         <Musician
-          v-for='musician in musicians'
-          :key='musician.name'
-          :image-src='musician.imageSrc'
-          :name='musician.name'
-          :instrument='musician.instrument'
+          v-for="musician in musicians"
+          :key="musician.name"
+          :image-src="musician.imageSrc"
+          :name="musician.name"
+          :instrument="musician.instrument"
         />
       </div>
     </section>
 
-    <Tiles :articles='articles' />
+    <Tiles :articles="articles" />
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import Tiles from '@/components/Tiles.vue'
 import tiles from '@/util/tiles'
