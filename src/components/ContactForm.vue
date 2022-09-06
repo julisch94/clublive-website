@@ -73,7 +73,7 @@ import { defineComponent } from 'vue'
 import Loader from 'vue-spinner/src/ScaleLoader.vue'
 
 export default defineComponent({
-  name: 'Contact',
+  name: 'ContactForm',
   components: {
     Loader,
   },

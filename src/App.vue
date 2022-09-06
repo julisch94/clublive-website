@@ -18,7 +18,7 @@
     <div id="wrapper">
       <router-view @is-main-in-view="onMainInView($event)" />
 
-      <Contact />
+      <ContactForm />
       <Footer />
     </div>
   </div>
@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Contact from '@/components/Contact.vue'
+import ContactForm from '@/components/ContactForm.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import CookieConsent from '@/components/CookieConsent.vue'
@@ -37,7 +37,7 @@ export default defineComponent({
   name: 'App',
   components: {
     Header,
-    Contact,
+    ContactForm,
     Footer,
     CookieConsent,
   },
