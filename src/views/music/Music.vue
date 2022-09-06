@@ -51,7 +51,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Social from '@/components/Social.vue'
-import Tiles from '@/components/Tiles.vue'
+import Tiles from '@/views/home/Tiles.vue'
 import tiles from '@/util/tiles'
 
 export default defineComponent({

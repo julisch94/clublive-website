@@ -41,11 +41,11 @@ import { defineComponent } from 'vue'
 
 import dayjs from 'dayjs'
 
-import Show from '@/components/Show.vue'
+import Show from '@/views/shows/Show.vue'
 import { ShowModel } from '@/model/show.model'
-import PastShow from '@/components/PastShow.vue'
+import PastShow from '@/views/shows/PastShow.vue'
 import { PastShowModel } from '@/model/pastShow.model'
-import Tiles from '@/components/Tiles.vue'
+import Tiles from '@/views/home/Tiles.vue'
 import tiles from '@/util/tiles'
 
 export default defineComponent({
@@ -148,7 +148,7 @@ export default defineComponent({
 
 <style scoped>
 #banner {
-  background-image: url('../assets/images/shows.jpg');
+  background-image: url('../../assets/images/shows.jpg');
   background-size: cover;
   background-position: center;
 }

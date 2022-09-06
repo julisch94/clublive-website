@@ -34,9 +34,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Tiles from '@/components/Tiles.vue'
+import Tiles from '@/views/home/Tiles.vue'
 import tiles from '@/util/tiles'
-import Musician from '@/components/Musician.vue'
+import Musician from '@/views/band/Musician.vue'
 
 export default defineComponent({
   name: 'Band',

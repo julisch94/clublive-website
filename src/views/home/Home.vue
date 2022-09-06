@@ -49,8 +49,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Banner from '@/components/Banner.vue'
-import Tiles from '@/components/Tiles.vue'
+import Banner from '@/views/home/Banner.vue'
+import Tiles from '@/views/home/Tiles.vue'
 import tiles from '@/util/tiles'
 
 export default defineComponent({
@@ -87,19 +87,19 @@ export default defineComponent({
 
 <style>
 article.music {
-  background-image: url('../assets/images/music.jpg');
+  background-image: url('../../assets/images/music.jpg');
 }
 
 article.band {
-  background-image: url('../assets/images/band.jpg');
+  background-image: url('../../assets/images/band.jpg');
 }
 
 article.shows {
-  background-image: url('../assets/images/shows.jpg');
+  background-image: url('../../assets/images/shows.jpg');
 }
 
 article.downloads {
-  background-image: url('../assets/images/downloads.jpg');
+  background-image: url('../../assets/images/downloads.jpg');
 }
 
 .info-text {

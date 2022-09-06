@@ -147,7 +147,7 @@ export default defineComponent({
   height: 110vh;
   min-height: 30em;
   max-height: 50em;
-  background-image: url('../assets/images/banner/banner_1400.jpg');
+  background-image: url('../../assets/images/banner/banner_1400.jpg');
 }
 
 #banner.major:after {
@@ -226,7 +226,7 @@ export default defineComponent({
     min-height: 0;
     max-height: none;
     background-attachment: scroll;
-    background-image: url('../assets/images/banner/banner_839.jpg');
+    background-image: url('../../assets/images/banner/banner_839.jpg');
   }
 }
 
