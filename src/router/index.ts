@@ -37,6 +37,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Impressum',
     component: () => import('../views/Impressum.vue'),
   },
+  {
+    path: '/:catchAll(.*)',
+    name: 'Not Found',
+    component: () => import('../views/NotFound.vue'),
+  },
 ]
 
 const router = createRouter({
