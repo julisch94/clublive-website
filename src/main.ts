@@ -5,5 +5,4 @@ import VueCookies from 'vue-cookies'
 
 const app = createApp(App).use(VueCookies).use(router)
 
-await router.isReady()
-app.mount('#app')
+router.isReady().then(() => app.mount('#app'))
