@@ -38,7 +38,7 @@
                 <textarea id="message" v-model="message" name="message" rows="6" @keyup.ctrl.enter="submitForm()" />
               </div>
               <div data-netlify-recaptcha="true" />
-              <ul class="actions">
+              <ul v-if="!success" class="actions">
                 <li>
                   <button type="reset" :disabled="isLoading">Löschen</button>
                 </li>
@@ -48,10 +48,10 @@
               </ul>
             </form>
           </div>
-          <div class="result" :class="{ shake: success || failure }">
+          <div ref="result" class="result" :class="{ shake: failure, 'slide-in-from-left': success }">
             <div v-if="success">
               <span class="icon alt fa-check" />
-              <span>Vielen Dank! Die Nachricht wurde übermittelt. Wir melden uns baldmöglichst zurück.</span>
+              <span>Vielen Dank! Deine Nachricht wurde übermittelt. Wir melden uns baldmöglichst zurück.</span>
             </div>
             <div v-if="failure">
               <span class="icon alt fa-exclamation" />
@@ -115,6 +115,8 @@ export default defineComponent({
             this.failure = true
             console.error('Form submission failed', result.status, result.statusText)
           }
+          const resultArea = this.$refs.result as HTMLDivElement
+          resultArea.scrollIntoView()
         })
         .catch(error => {
           this.isLoading = false
@@ -233,6 +235,19 @@ div.result {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.slide-in-from-left {
+  animation: slide-in-from-left 0.3s ease-out 0.2s forwards;
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+@keyframes slide-in-from-left {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .shake {
