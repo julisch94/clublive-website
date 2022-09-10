@@ -29,15 +29,7 @@
       <section>
         <div class="inner pa">
           <div class="-2u 8u 12u$(small)">
-            <h2>Hörbeispiele</h2>
-            <iframe
-              width="100%"
-              height="450"
-              scrolling="no"
-              frameborder="no"
-              allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1430026750&color=%239bf1ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-            />
+            <DemoComponent />
           </div>
         </div>
       </section>
@@ -52,12 +44,14 @@ import { defineComponent } from 'vue'
 import Banner from '@/views/home/Banner.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import tiles from '@/util/tiles'
+import DemoComponent from '@/views/home/DemoComponent.vue'
 
 export default defineComponent({
   name: 'Home',
   components: {
     Banner,
     Tiles,
+    DemoComponent,
   },
   data() {
     return {
