@@ -8,7 +8,7 @@
           <div class="-2u 8u 12u$(small)">
             <h2>Wir spielen Clubmusik live!</h2>
             <video poster="/video/thumbnail.png" autoplay muted controls loop>
-              <source src='/freed-from-desire.mp4' type="video/mp4" />
+              <source src="/video/freed-from-desire.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p class="info-text">
