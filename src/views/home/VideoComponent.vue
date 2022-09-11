@@ -1,7 +1,7 @@
 <template>
   <div class="video">
     <iframe
-      src="https://www.youtube.com/embed/V5-zxR4yRFo?rel=0&amp;autoplay=1&mute=1"
+      src="https://www.youtube.com/embed/V5-zxR4yRFo"
       title="ClubLive YouTube"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
