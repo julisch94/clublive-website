@@ -14,7 +14,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'VideoComponent.vue',
+  name: 'VideoComponent',
 })
 </script>
 
@@ -25,6 +25,7 @@ export default defineComponent({
   padding-top: 0;
   height: 0;
   overflow: hidden;
+  margin-bottom: 1em;
 }
 
 .video iframe,
