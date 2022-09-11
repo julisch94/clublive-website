@@ -7,10 +7,9 @@
         <div class="inner pa">
           <div class="-2u 8u 12u$(small)">
             <h2>Wir spielen Clubmusik live!</h2>
-            <video poster="/video/thumbnail.png" autoplay muted controls loop>
-              <source src="/video/freed-from-desire.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+
+            <VideoComponent />
+
             <p class="info-text">
               Wer sich fragt, ob moderne, hoch-produzierte Musik überhaupt noch live gespielt werden kann, der kommt bei
               ClubLive ganz auf seine Kosten. Avicii, Felix Jaehn, Calvin Harris, Dua Lipa uvm. werden handgemacht
@@ -40,12 +39,14 @@ import { defineComponent } from 'vue'
 import Banner from '@/views/home/Banner.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import tiles from '@/util/tiles'
+import VideoComponent from '@/views/home/VideoComponent.vue'
 
 export default defineComponent({
   name: 'Home',
   components: {
     Banner,
     Tiles,
+    VideoComponent,
   },
   data() {
     return {
@@ -120,10 +121,5 @@ div.cta {
 
 .cta li {
   margin-right: 0;
-}
-
-video {
-  max-width: 100%;
-  height: auto;
 }
 </style>
