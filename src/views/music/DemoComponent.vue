@@ -1,5 +1,4 @@
 <template>
-  <h2>Hörbeispiele</h2>
   <iframe
     width="100%"
     height="450"
