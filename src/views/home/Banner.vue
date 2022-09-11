@@ -8,7 +8,7 @@
         <p>Live Band aus Karlsruhe.</p>
         <ul class="actions">
           <li>
-            <a href="#start" class="button next">Let's go</a>
+            <a href="#start" class="button next">Jetzt reinhören</a>
           </li>
         </ul>
         <Social />
