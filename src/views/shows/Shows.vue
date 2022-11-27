@@ -62,7 +62,6 @@ export default defineComponent({
         {
           date: '2022/12/03',
           place: 'The Irish Pub, Pforzheim',
-          description: 'Eintritt 5 €, Tischreservierung wird empfohlen.',
           website: 'https://www.irishpubpf.de/',
           mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
         },
@@ -73,13 +72,18 @@ export default defineComponent({
         {
           date: '2023/02/18',
           place: 'The Irish Pub, Pforzheim',
-          description: 'Eintritt 5 €, Tischreservierung wird empfohlen.',
           website: 'https://www.irishpubpf.de/',
           mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
         },
         {
           date: '2023/04/29',
           place: 'Private Veranstaltung, Ettlingen',
+        },
+        {
+          date: '2023/05/13',
+          place: 'The Irish Pub, Pforzheim',
+          website: 'https://www.irishpubpf.de/',
+          mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
         },
       ] as ShowModel[],
       pastShows: [
