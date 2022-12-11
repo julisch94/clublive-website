@@ -420,6 +420,31 @@
           <li><strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f. DSGVO).</li>
         </ul>
         <p>
+          <strong>Externes Hosting Netlify</strong>
+        </p>
+        <p>
+          Diese Website wird bei dem externen Dienstleister Netlify 
+          (<a href="https://www.netlify.com">https://www.netlify.com</a>) gehostet (Hoster). 
+          Der Hoster verarbeitet Ihre IP-Adresse und speichert diese in Logfiles. Die Logfiles werden nicht länger 
+          als 30 Tage gespeichert. Die Datenverarbeitung findet automatisiert statt und ist nötig für die 
+          Bereitstellung und die Sicherheit des Webangebots sowie dessen Verbesserung. Diese Informationen sind 
+          nachzulesen in der Datenschutzerklärung von Netlify 
+          (<a href="https://www.netlify.com/privacy/">https://www.netlify.com/privacy/</a>), sowie den 
+          DSGVO-Richtlinien von Netlify (<a href="https://www.netlify.com/gdpr/">https://www.netlify.com/gdpr/</a>).
+        </p>
+        <p>
+          Personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters 
+          gespeichert. Hierbei kann es sich v.a. um Kontaktanfragen, Meta- und Kommunikationsdaten, Kontaktdaten, 
+          Namen, Webseitenzugriffe und sonstige Daten, die über die Website generiert werden, handeln.
+        </p>
+        <p>
+          Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und 
+          bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten 
+          Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). 
+          Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten 
+          erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.
+        </p>
+        <p>
           <strong>Weitere Hinweise zu Verarbeitungsprozessen, Verfahren und Diensten:</strong>
         </p>
         <ul class="m-elements">
