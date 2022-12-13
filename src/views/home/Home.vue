@@ -30,6 +30,14 @@
       </section>
 
       <Tiles :articles="articles" />
+
+      <section id="contact">
+        <div class="inner pa">
+          <section>
+            <div id="wall"></div>
+          </section>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -61,6 +69,17 @@ export default defineComponent({
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+
+    // add Walls.io
+    const walls = document.createElement('script')
+    walls.async = true
+    walls.setAttribute('src', 'https://walls.io/js/wallsio-widget-1.2.js')
+    walls.setAttribute('data-wallurl', 'https://my.walls.io/x5e7f?nobackground=1&amp;show_header=0')
+    walls.setAttribute('data-width', '100%')
+    walls.setAttribute('data-autoheight', '1')
+    walls.setAttribute('data-height', '800')
+    walls.setAttribute('data-lazyload', '1')
+    document.getElementById('wall')?.appendChild(walls)
   },
   unmounted() {
     window.removeEventListener('scroll', this.handleScroll)
