@@ -85,6 +85,10 @@ export default defineComponent({
           website: 'https://www.irishpubpf.de/',
           mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
         },
+        {
+          date: '2023/06/24',
+          place: 'Private Veranstaltung, Bad Wildbad',
+        },
       ] as ShowModel[],
       pastShows: [
         {
