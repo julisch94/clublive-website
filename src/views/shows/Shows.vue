@@ -36,122 +36,36 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-import dayjs from 'dayjs'
-
+<script setup lang="ts">
+import { computed, ComputedRef } from 'vue'
+import { shows } from '@/data/shows'
+import { pastShows } from '@/data/pastShows'
+import { tiles } from '@/utils'
 import Show from '@/views/shows/Show.vue'
 import { ShowModel } from '@/model/show.model'
 import PastShow from '@/views/shows/PastShow.vue'
 import { PastShowModel } from '@/model/pastShow.model'
 import Tiles from '@/views/home/Tiles.vue'
-import { tiles } from '@/utils'
+import dayjs from 'dayjs'
 
-export default defineComponent({
-  name: 'Shows',
-  components: {
-    Show,
-    PastShow,
-    Tiles,
-  },
-  data() {
-    return {
-      displayPastShows: false, // disabled for now because it only contains 4 venues
-      shows: [
-        {
-          date: '2022/12/03',
-          place: 'The Irish Pub, Pforzheim',
-          website: 'https://www.irishpubpf.de/',
-          mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
-        },
-        {
-          date: '2022/10/15',
-          place: 'Private Veranstaltung, Vaihingen a. d. Enz',
-        },
-        {
-          date: '2023/02/18',
-          place: 'The Irish Pub, Pforzheim',
-          website: 'https://www.irishpubpf.de/',
-          mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
-        },
-        {
-          date: '2023/04/29',
-          place: 'Private Veranstaltung, Ettlingen',
-        },
-        {
-          date: '2023/05/13',
-          place: 'The Irish Pub, Pforzheim',
-          website: 'https://www.irishpubpf.de/',
-          mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
-        },
-        {
-          date: '2023/06/24',
-          place: 'Private Veranstaltung, Bad Wildbad',
-        },
-      ] as ShowModel[],
-      pastShows: [
-        {
-          date: '2018/03/09',
-          text: 'Dorfschänke Karlsruhe',
-        },
-        {
-          date: '2018/07/04',
-          text: 'Erasmus Sommerfest, KIT Campus, Karlsruhe',
-        },
-        {
-          date: '2018/10/19',
-          text: 'Dorfschänke Karlsruhe',
-        },
-        {
-          date: '2019/04/26',
-          text: 'Dorfschänke Karlsruhe',
-        },
-        {
-          date: '2019/05/11',
-          text: 'Irish Pub Pforzheim',
-        },
-        {
-          date: '2019/07/18',
-          text: 'Erasmus Sommerfest, KIT Campus, Karlsruhe',
-        },
-        {
-          date: '2019/07/19',
-          text: 'Private Veranstaltung, Rheinfelden bei Lörrach',
-        },
-        {
-          date: '2019/11/09',
-          text: 'Irish Pub Pforzheim',
-        },
-        {
-          date: '2022/04/02',
-          text: 'Irish Pub Pforzheim',
-        },
-      ] as PastShowModel[],
-      articles: [tiles['music'], tiles['band']],
-    }
-  },
-  computed: {
-    futureShows(): ShowModel[] {
-      return this.shows.filter(show => !dayjs().isAfter(show.date)).sort(this.sortByDateAsc)
-    },
-    hasFutureShows(): boolean {
-      return this.futureShows.length > 0
-    },
-    sortedPastShows(): PastShowModel[] {
-      const s = JSON.parse(JSON.stringify(this.pastShows))
-      return s.sort(this.sortByDateDesc)
-    },
-  },
-  methods: {
-    sortByDateAsc(showA: ShowModel, showB: ShowModel) {
-      return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
-    },
-    sortByDateDesc(showA: PastShowModel, showB: PastShowModel) {
-      return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
-    },
-  },
+const displayPastShows = false // disabled for now because it only contains 4 venues
+const articles = [tiles['music'], tiles['band']]
+
+const futureShows: ComputedRef<ShowModel[]> = computed(() =>
+  shows.filter(show => !dayjs().isAfter(show.date)).sort(sortByDateAsc)
+)
+const hasFutureShows = computed(() => futureShows.value.length > 0)
+const sortedPastShows = computed(() => {
+  const s = JSON.parse(JSON.stringify(pastShows))
+  return s.sort(sortByDateDesc)
 })
+
+const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
+  return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
+}
+const sortByDateDesc = (showA: PastShowModel, showB: PastShowModel) => {
+  return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
+}
 </script>
 
 <style scoped>
