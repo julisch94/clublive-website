@@ -6,28 +6,28 @@
           <h1>Band</h1>
         </header>
         <p>
-          Als unsere Band im Jahr 2017 gegründet wurde, probten wir mit einer handvoll Leuten in einem kleinen Proberaum
-          in Karlsruhe-Rheinhafen. Wir spielten Songs, die wir aus dem Radio kannten. Aber wir waren uns schnell einig
-          wohin unsere musikalische Reise gehen sollte. Viele unserer Freunde feierten in <b>Clubs zu DJ-Musik</b>, aber
-          wenige feierten noch handgemachte Livemusik so richtig. Das wollten wir ändern.
+          Als unsere Band im Jahr 2017 gegründet wurde, spielten wir Songs, die wir aus dem Radio kannten. Mit einer
+          handvoll Leuten in einem kleinen Proberaum in Karlsruhe-Rheinhafen. Aber wir waren uns schnell einig, wohin
+          unsere musikalische Reise gehen sollte. Denn wir merkten, dass viele unserer Freunde in <b>Clubs</b> gingen
+          und dort tanzten und zu <b>DJ-Musik</b> feierten. Aber nur wenige feierten noch handgemachte Livemusik von
+          Bands. Das wollten wir ändern.
         </p>
         <blockquote>
           Unsere Vision: Wir wollen wieder junge Menschen für Livemusik begeistern. Deshalb spielen wir Clubmusik live.
         </blockquote>
         <p>
           Und das zieht an. 2018 feierten wir Bühnenpremiere und sind seit dem
-          <b>überall in Baden-Württemberg</b> unterwegs. Wir haben sowohl in Karlsruhe selbst, als auch überregional wie
+          <b>überall in Baden-Württemberg</b> unterwegs. Wir haben sowohl direkt in Karlsruhe, als auch überregional wie
           z.B. in Pforzheim, Vaihingen a.d. Enz und sogar in Rheinfelden <b>an der Schweizer Grenze</b> gespielt. Egal
-          ob öffentliche Veranstaltung oder private Feier, wir haben immer Bock Party zu machen.
+          ob öffentliche Veranstaltung oder private Feier, wir haben immer Bock mit euch Party zu machen.
         </p>
         <blockquote>
           Es erfüllt uns einfach mit Freude, wenn alle T-Shirts verschwitzt und alle Friseuren zerstört sind.
         </blockquote>
         <p>
           Es zeigt sich auch, dass wir mit unserem ausgefallenen Musikstil sehr talentierte Musiker anziehen: Einige
-          unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln und Oldenburg</b>. Mittlerweile haben wir
-          für einige Instrumente auch Ersatzleute in petto, die ggf. bei Krankheit oder Terminkollision einspringen
-          können.
+          unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln oder Oldenburg</b>. Mittlerweile haben wir
+          für einige Instrumente Ersatzleute in petto, die ggf. bei Krankheit oder Terminkollision einspringen können.
         </p>
         <p>
           Spielst auch du ein Instrument und hast Interesse bei uns einzusteigen? Dann schreib uns gerne eine E-Mail an
