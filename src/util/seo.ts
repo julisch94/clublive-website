@@ -4,4 +4,9 @@ export const seo = {
     description:
       'Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht interpretiert und auf der Bühne präsentiert. ClubLive zeigt, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen können. Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur nach Hause.',
   },
+  band: {
+    title: 'ClubLive | Band',
+    description:
+      'Aus verschiedenen Regionen Deutschlands sind wir nach Karlsruhe gekommen und spielen seit 2017 Auftritte in ganz Baden-Württemberg.',
+  },
 }
