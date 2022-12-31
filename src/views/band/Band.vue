@@ -6,11 +6,11 @@
           <h1>Band</h1>
         </header>
         <p>
-          Als unsere Band im Jahr 2017 gegründet wurde, spielten wir Songs, die wir aus dem Radio kannten. Mit einer
-          handvoll Leuten in einem kleinen Proberaum in Karlsruhe-Rheinhafen. Aber wir waren uns schnell einig, wohin
-          unsere musikalische Reise gehen sollte. Denn wir merkten, dass viele unserer Freunde in <b>Clubs</b> gingen
-          und dort tanzten und zu <b>DJ-Musik</b> feierten. Aber nur wenige feierten noch handgemachte Livemusik von
-          Bands. Das wollten wir ändern.
+          Als unsere Band im Jahr 2017 gegründet wurde, spielten wir Songs, die wir aus dem Radio und aus den Clubs
+          kannten – mit einer handvoll Leuten in einem kleinen Proberaum in Karlsruhe-Rheinhafen. Aber wir waren uns
+          schnell einig, wohin unsere musikalische Reise gehen sollte. Denn wir merkten, dass viele unserer Freunde in
+          <b>Clubs</b> gingen und dort tanzten und zu <b>DJ-Musik</b> feierten. Aber nur wenige feierten noch
+          handgemachte Livemusik von Bands. Das wollten wir ändern.
         </p>
         <blockquote>
           Unsere Vision: Wir wollen wieder junge Menschen für Livemusik begeistern. Deshalb spielen wir Clubmusik live.
@@ -25,12 +25,13 @@
           Es erfüllt uns einfach mit Freude, wenn alle T-Shirts verschwitzt und alle Friseuren zerstört sind.
         </blockquote>
         <p>
-          Es zeigt sich auch, dass wir mit unserem ausgefallenen Musikstil sehr talentierte Musiker anziehen: Einige
-          unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln oder Oldenburg</b>. Mittlerweile haben wir
-          für einige Instrumente Ersatzleute in petto, die ggf. bei Krankheit oder Terminkollision einspringen können.
+          Es zeigt sich auch, dass wir mit unserem ausgefallenen Musikstil <b>sehr talentierte Musiker</b> anziehen:
+          Einige unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln oder Oldenburg</b>. Mittlerweile
+          haben wir für einige Instrumente Ersatzleute in petto, die ggf. bei Krankheit oder Terminkollision einspringen
+          können.
         </p>
         <p>
-          Spielst auch du ein Instrument und hast Interesse bei uns einzusteigen? Dann schreib uns gerne eine E-Mail an
+          Spielst auch du ein Instrument und hast Interesse bei uns einzusteigen? Dann schreibe uns gerne eine E-Mail an
           <a href="mailto:contact@clublive.band">contact@clublive.band</a>.
         </p>
       </div>
