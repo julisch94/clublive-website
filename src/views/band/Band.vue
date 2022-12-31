@@ -55,8 +55,7 @@
 <script setup lang="ts">
 import Tiles from '@/views/home/Tiles.vue'
 import Musician from '@/views/band/Musician.vue'
-import { tiles } from '@/utils/tiles'
-import { seo } from '@/utils/seo'
+import { tiles, seo } from '@/utils'
 import { useSeoMeta } from '@unhead/vue'
 
 const articles = [tiles['music'], tiles['shows']]

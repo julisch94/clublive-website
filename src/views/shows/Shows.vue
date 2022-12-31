@@ -46,7 +46,7 @@ import { ShowModel } from '@/model/show.model'
 import PastShow from '@/views/shows/PastShow.vue'
 import { PastShowModel } from '@/model/pastShow.model'
 import Tiles from '@/views/home/Tiles.vue'
-import { tiles } from '@/utils/tiles'
+import { tiles } from '@/utils'
 
 export default defineComponent({
   name: 'Shows',
