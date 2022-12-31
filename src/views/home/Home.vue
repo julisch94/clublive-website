@@ -47,7 +47,9 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import Banner from '@/views/home/Banner.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import tiles from '@/util/tiles'
+import { seo } from '@/util/seo'
 import VideoComponent from '@/views/home/VideoComponent.vue'
+import { useSeoMeta } from '@unhead/vue'
 
 const main = ref(null)
 const emit = defineEmits(['is-main-in-view'])
@@ -84,6 +86,12 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+})
+
+useSeoMeta({
+  ogTitle: seo.home.title,
+  ogDescription: seo.home.description,
+  description: seo.home.description,
 })
 </script>
 
