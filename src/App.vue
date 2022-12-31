@@ -26,63 +26,54 @@
   <CookieConsent />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import ContactForm from '@/components/ContactForm.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import CookieConsent from '@/components/CookieConsent.vue'
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    Header,
-    ContactForm,
-    Footer,
-    CookieConsent,
+const route = useRoute()
+
+const routes = [
+  {
+    name: 'Home',
+    route: '/',
   },
-  data() {
-    return {
-      routes: [
-        {
-          name: 'Home',
-          route: '/',
-        },
-        {
-          name: 'Musik',
-          route: '/music',
-        },
-        {
-          name: 'Band',
-          route: '/band',
-        },
-        {
-          name: 'Shows',
-          route: '/shows',
-        },
-        {
-          name: 'Downloads',
-          route: '/downloads',
-        },
-      ],
-      isMenuVisible: false,
-      isMainInView: false,
-    }
+  {
+    name: 'Musik',
+    route: '/music',
   },
-  computed: {
-    showTransparentNavbar(): boolean {
-      return this.$route.path === '/' && !this.isMainInView
-    },
+  {
+    name: 'Band',
+    route: '/band',
   },
-  methods: {
-    toggleMenu() {
-      this.isMenuVisible = !this.isMenuVisible
-    },
-    onMainInView(isInView: boolean) {
-      this.isMainInView = isInView
-    },
+  {
+    name: 'Shows',
+    route: '/shows',
   },
+  {
+    name: 'Downloads',
+    route: '/downloads',
+  },
+]
+
+const isMenuVisible = ref(false)
+const isMainInView = ref(false)
+
+const showTransparentNavbar = computed(() => {
+  // transparent navbar only on root page
+  return route.path === '/' && !isMainInView.value
 })
+
+const toggleMenu = () => {
+  isMenuVisible.value = !isMenuVisible.value
+}
+
+const onMainInView = (isInView: boolean) => {
+  isMainInView.value = isInView
+}
 </script>
 
 <style>
