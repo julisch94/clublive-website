@@ -31,7 +31,7 @@
 
       <Tiles :articles="articles" />
 
-      <section id="contact">
+      <section id="social">
         <div class="inner pa">
           <section>
             <div id="wall"></div>
