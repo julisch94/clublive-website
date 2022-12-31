@@ -55,7 +55,7 @@
 <script setup lang="ts">
 import Tiles from '@/views/home/Tiles.vue'
 import Musician from '@/views/band/Musician.vue'
-import tiles from '@/util/tiles'
+import { tiles } from '@/util/tiles'
 import { seo } from '@/util/seo'
 import { useSeoMeta } from '@unhead/vue'
 

@@ -1,4 +1,4 @@
-export default {
+export const tiles = {
   music: {
     name: 'Musik',
     route: '/music',

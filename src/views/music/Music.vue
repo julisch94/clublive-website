@@ -27,7 +27,7 @@
 import { defineComponent } from 'vue'
 import Social from '@/components/Social.vue'
 import Tiles from '@/views/home/Tiles.vue'
-import tiles from '@/util/tiles'
+import { tiles } from '@/util/tiles'
 import DemoComponent from '@/views/music/DemoComponent.vue'
 
 export default defineComponent({
