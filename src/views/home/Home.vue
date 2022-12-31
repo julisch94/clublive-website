@@ -62,6 +62,11 @@ const startOfMain = computed(() => {
   return 0
 })
 
+const handleScroll = (): void => {
+  const isMainInView = window.scrollY > startOfMain.value
+  emit('is-main-in-view', isMainInView)
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 
@@ -80,11 +85,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-
-const handleScroll = (): void => {
-  const isMainInView = window.scrollY > startOfMain.value
-  emit('is-main-in-view', isMainInView)
-}
 </script>
 
 <style>
