@@ -9,6 +9,7 @@
     "prettify": "prettier --write src/"
   },
   "dependencies": {
+    "@vueuse/head": "^1.0.22",
     "dayjs": "^1.11.5",
     "vue": "^3.2.39",
     "vue-cookies": "^1.8.1",
