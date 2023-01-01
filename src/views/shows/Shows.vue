@@ -15,7 +15,7 @@
         </p>
         <p>
           Du suchst noch nach einer Band für deine private Feier? Egal ob Hochzeit, Firmenfeier, Weihnachtsfeier,
-          Geburtstagsfeier, Abschlussfeier, ... völlig egal.
+          Geburtstagsfeier, Abschlussfeier, Gartenparty, ... völlig egal.
         </p>
         <blockquote>Wenn du Livemusik für junge Menschen suchst, bist du bei uns genau richtig.</blockquote>
         <p>
