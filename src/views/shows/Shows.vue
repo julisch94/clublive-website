@@ -8,9 +8,9 @@
           <h1>Shows</h1>
         </header>
         <p>
-          Schaue hier regelmäßig vorbei um zu sehen, wann wir wieder in deine Nähe kommen. Komme zu einem unserer
-          Konzerte und feiere mit uns zusammen Clubmusik! Wir spielen auf Festivals, Stadtfesten, Vereinsfesten,
-          privaten Feiern und vielem mehr. Um keine Show von uns zu verpassen, folge uns bei Instagram:
+          Schaue hier regelmäßig vorbei um zu sehen, wann wir wieder in deine Nähe kommen. Komme zu unseren Konzerten
+          und feiere mit uns zusammen Clubmusik! Wir spielen auf Festivals, Stadtfesten, Vereinsfesten, privaten Feiern
+          und vielem mehr. Um keine Show von uns zu verpassen, folge uns bei Instagram:
           <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
         </p>
         <p>
