@@ -57,13 +57,14 @@
 import { computed, ComputedRef } from 'vue'
 import { shows } from '@/data/shows'
 import { pastShows } from '@/data/pastShows'
-import { tiles } from '@/utils'
+import { seo, tiles } from '@/utils'
 import Show from '@/views/shows/Show.vue'
 import { ShowModel } from '@/model/show.model'
 import PastShow from '@/views/shows/PastShow.vue'
 import { PastShowModel } from '@/model/pastShow.model'
 import Tiles from '@/views/home/Tiles.vue'
 import dayjs from 'dayjs'
+import { useSeoMeta } from '@unhead/vue'
 
 const displayPastShows = false // disabled for now because it only contains 4 venues
 const articles = [tiles['music'], tiles['band']]
@@ -83,6 +84,12 @@ const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
 const sortByDateDesc = (showA: PastShowModel, showB: PastShowModel) => {
   return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
 }
+
+useSeoMeta({
+  ogTitle: seo.shows.title,
+  ogDescription: seo.shows.description,
+  description: seo.shows.description,
+})
 </script>
 
 <style scoped>

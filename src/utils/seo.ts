@@ -9,4 +9,9 @@ export const seo = {
     description:
       'Aus verschiedenen Regionen Deutschlands sind wir nach Karlsruhe gekommen und spielen seit 2017 Auftritte in ganz Baden-Württemberg.',
   },
+  shows: {
+    title: 'ClubLive | Shows',
+    description:
+      'Schaue hier regelmäßig vorbei um zu sehen, wann wir Auftritte in deiner Nähe spielen. Du suchst noch nach einer Band für ein Konzert oder deine private Feier? Wenn du Livemusik für junge Menschen suchst, bist du bei uns genau richtig.',
+  },
 }
