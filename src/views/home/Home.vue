@@ -131,7 +131,7 @@ article.downloads {
 }
 
 div.cta {
-  margin-top: 3em;
+  margin-top: 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

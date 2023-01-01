@@ -15,12 +15,8 @@
         </p>
         <p>
           Du suchst noch nach einer Band für deine private Feier? Egal ob Hochzeit, Firmenfeier, Weihnachtsfeier,
-          Geburtstagsfeier, Abschlussfeier, Gartenparty, ... völlig egal.
-        </p>
-        <blockquote>Wenn du Livemusik für junge Menschen suchst, bist du bei uns genau richtig.</blockquote>
-        <p>
-          Nutze für deine Anfrage am besten das <a href="#contact">Kontaktformular</a> unten oder schreibe uns eine
-          E-Mail an <a href="mailto:contact@clublive.band?subject=Booking%20/%20Anfrage">contact@clublive.band</a>.
+          Geburtstagsfeier, Abschlussfeier, Gartenparty – Wenn du Livemusik für junge Menschen suchst, bist du bei uns
+          genau richtig. Schreib uns eine unverbindliche Anfrage über unser <a href="#contact">Kontaktformular</a>.
         </p>
       </div>
     </section>
@@ -29,7 +25,10 @@
       <div class="inner pa">
         <div v-if="hasFutureShows">
           <Show v-for="show of futureShows" :key="show.date" :show="show" />
-          <p>Weitere Auftritte werden regelmäßig bekannt gegeben.</p>
+          <p>
+            Um keine Show von uns zu verpassen, folge uns bei Instagram:
+            <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+          </p>
         </div>
 
         <div v-else>
@@ -48,8 +47,6 @@
         </ul>
       </div>
     </section>
-
-    <Tiles :articles="articles" />
   </div>
 </template>
 
