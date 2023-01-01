@@ -1,14 +1,31 @@
 <template>
-  <section id="banner" class="style2">
-    <div class="inner pa">
-      <header class="major">
-        <h1>Shows</h1>
-      </header>
-    </div>
-  </section>
+  <section id="banner"></section>
 
   <div id="main" class="alt">
-    <section id="one">
+    <section>
+      <div class="inner pa">
+        <header class="major">
+          <h1>Shows</h1>
+        </header>
+        <p>
+          Schaue hier regelmäßig vorbei um zu sehen, wann wir wieder in deine Nähe kommen. Komme zu einem unserer
+          Konzerte und feiere mit uns zusammen Clubmusik! Wir spielen auf Festivals, Stadtfesten, Vereinsfesten,
+          privaten Feiern und vielem mehr. Um keine Show von uns zu verpassen, folge uns bei Instagram:
+          <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+        </p>
+        <p>
+          Du suchst noch nach einer Band für deine private Feier? Egal ob Hochzeit, Firmenfeier, Weihnachtsfeier,
+          Geburtstagsfeier, Abschlussfeier, ... völlig egal.
+        </p>
+        <blockquote>Wenn du Livemusik für junge Menschen suchst, bist du bei uns genau richtig.</blockquote>
+        <p>
+          Nutze für deine Anfrage am besten das <a href="#contact">Kontaktformular</a> unten oder schreibe uns eine
+          E-Mail an <a href="mailto:contact@clublive.band?subject=Booking%20/%20Anfrage">contact@clublive.band</a>.
+        </p>
+      </div>
+    </section>
+
+    <section>
       <div class="inner pa">
         <div v-if="hasFutureShows">
           <Show v-for="show of futureShows" :key="show.date" :show="show" />
@@ -70,8 +87,28 @@ const sortByDateDesc = (showA: PastShowModel, showB: PastShowModel) => {
 
 <style scoped>
 #banner {
+  min-height: 300px;
+  height: 30vw;
   background-image: url('../../assets/images/shows.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.header {
+  width: max-content;
+  margin-bottom: 4em;
+}
+
+h1.underlined {
+  width: calc(100% + 0.5em);
+}
+
+h1.underlined:after {
+  content: '';
+  background-color: #fff;
+  display: block;
+  height: 2px;
+  margin: 0.325em 0 0.5em 0;
+  width: 100%;
 }
 </style>
