@@ -5,7 +5,7 @@
     <nav id="menu">
       <div class="inner">
         <ul class="links">
-          <li v-for="item in routes" :key="item.name">
+          <li v-for="item in menuRoutes" :key="item.name">
             <router-link :to="item.route" @click.capture="toggleMenu()">
               {{ item.name }}
             </router-link>
@@ -33,31 +33,9 @@ import ContactForm from '@/components/ContactForm.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import CookieConsent from '@/components/CookieConsent.vue'
+import { menuRoutes } from '@/router'
 
 const route = useRoute()
-
-const routes = [
-  {
-    name: 'Home',
-    route: '/',
-  },
-  {
-    name: 'Musik',
-    route: '/music',
-  },
-  {
-    name: 'Band',
-    route: '/band',
-  },
-  {
-    name: 'Shows',
-    route: '/shows',
-  },
-  {
-    name: 'Downloads',
-    route: '/downloads',
-  },
-]
 
 const isMenuVisible = ref(false)
 const isMainInView = ref(false)
