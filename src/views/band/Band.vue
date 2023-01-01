@@ -57,7 +57,7 @@
 import Tiles from '@/views/home/Tiles.vue'
 import Musician from '@/views/band/Musician.vue'
 import { tiles, seo } from '@/utils'
-import { useSeoMeta } from '@unhead/vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
 const articles = [tiles['music'], tiles['shows']]
 const musicians = [
@@ -107,6 +107,9 @@ useSeoMeta({
   ogTitle: seo.band.title,
   ogDescription: seo.band.description,
   description: seo.band.description,
+})
+useHead({
+  title: seo.band.title,
 })
 </script>
 

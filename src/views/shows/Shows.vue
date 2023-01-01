@@ -64,7 +64,7 @@ import PastShow from '@/views/shows/PastShow.vue'
 import { PastShowModel } from '@/model/pastShow.model'
 import Tiles from '@/views/home/Tiles.vue'
 import dayjs from 'dayjs'
-import { useSeoMeta } from '@unhead/vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
 const displayPastShows = false // disabled for now because it only contains 4 venues
 const articles = [tiles['music'], tiles['band']]
@@ -89,6 +89,9 @@ useSeoMeta({
   ogTitle: seo.shows.title,
   ogDescription: seo.shows.description,
   description: seo.shows.description,
+})
+useHead({
+  title: seo.shows.title,
 })
 </script>
 

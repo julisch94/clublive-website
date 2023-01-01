@@ -48,7 +48,7 @@ import Banner from '@/views/home/Banner.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import { tiles, seo } from '@/utils'
 import VideoComponent from '@/views/home/VideoComponent.vue'
-import { useSeoMeta } from '@unhead/vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
 const main = ref(null)
 const emit = defineEmits(['is-main-in-view'])
@@ -91,6 +91,9 @@ useSeoMeta({
   ogTitle: seo.home.title,
   ogDescription: seo.home.description,
   description: seo.home.description,
+})
+useHead({
+  title: seo.home.title,
 })
 </script>
 
