@@ -5,7 +5,7 @@
     <nav id="menu">
       <div class="inner">
         <ul class="links">
-          <li v-for="item in routes" :key="item.name">
+          <li v-for="item in menuRoutes" :key="item.name">
             <router-link :to="item.route" @click.capture="toggleMenu()">
               {{ item.name }}
             </router-link>
@@ -26,63 +26,32 @@
   <CookieConsent />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import ContactForm from '@/components/ContactForm.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import CookieConsent from '@/components/CookieConsent.vue'
+import { menuRoutes } from '@/router'
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    Header,
-    ContactForm,
-    Footer,
-    CookieConsent,
-  },
-  data() {
-    return {
-      routes: [
-        {
-          name: 'Home',
-          route: '/',
-        },
-        {
-          name: 'Musik',
-          route: '/music',
-        },
-        {
-          name: 'Band',
-          route: '/band',
-        },
-        {
-          name: 'Shows',
-          route: '/shows',
-        },
-        {
-          name: 'Downloads',
-          route: '/downloads',
-        },
-      ],
-      isMenuVisible: false,
-      isMainInView: false,
-    }
-  },
-  computed: {
-    showTransparentNavbar(): boolean {
-      return this.$route.path === '/' && !this.isMainInView
-    },
-  },
-  methods: {
-    toggleMenu() {
-      this.isMenuVisible = !this.isMenuVisible
-    },
-    onMainInView(isInView: boolean) {
-      this.isMainInView = isInView
-    },
-  },
+const route = useRoute()
+
+const isMenuVisible = ref(false)
+const isMainInView = ref(false)
+
+const showTransparentNavbar = computed(() => {
+  // transparent navbar only on root page
+  return route.path === '/' && !isMainInView.value
 })
+
+const toggleMenu = () => {
+  isMenuVisible.value = !isMenuVisible.value
+}
+
+const onMainInView = (isInView: boolean) => {
+  isMainInView.value = isInView
+}
 </script>
 
 <style>

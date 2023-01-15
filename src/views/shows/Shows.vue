@@ -1,18 +1,34 @@
 <template>
-  <section id="banner" class="style2">
-    <div class="inner pa">
-      <header class="major">
-        <h1>Shows</h1>
-      </header>
-    </div>
-  </section>
+  <section id="banner"></section>
 
   <div id="main" class="alt">
-    <section id="one">
+    <section>
+      <div class="inner pa">
+        <header class="major">
+          <h1>Shows</h1>
+        </header>
+        <p>
+          Schaue hier regelmäßig vorbei um zu sehen, wann wir wieder in deine Nähe kommen. Komme zu unseren Konzerten
+          und feiere mit uns zusammen Clubmusik! Wir spielen auf Festivals, Stadtfesten, Vereinsfesten, privaten Feiern
+          und vielem mehr. Um keine Show von uns zu verpassen, folge uns bei Instagram:
+          <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+        </p>
+        <p>
+          Du suchst noch nach einer Band für deine private Feier? Egal ob Hochzeit, Firmenfeier, Weihnachtsfeier,
+          Geburtstagsfeier, Abschlussfeier, Gartenparty – Wenn du Livemusik für junge Menschen suchst, bist du bei uns
+          genau richtig. Schreib uns eine unverbindliche Anfrage über unser <a href="#contact">Kontaktformular</a>.
+        </p>
+      </div>
+    </section>
+
+    <section>
       <div class="inner pa">
         <div v-if="hasFutureShows">
           <Show v-for="show of futureShows" :key="show.date" :show="show" />
-          <p>Weitere Auftritte werden regelmäßig bekannt gegeben.</p>
+          <p>
+            Um keine Show von uns zu verpassen, folge uns bei Instagram:
+            <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+          </p>
         </div>
 
         <div v-else>
@@ -31,133 +47,75 @@
         </ul>
       </div>
     </section>
-
-    <Tiles :articles="articles" />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-import dayjs from 'dayjs'
-
+<script setup lang="ts">
+import { computed, ComputedRef } from 'vue'
+import { shows } from '@/data/shows'
+import { pastShows } from '@/data/pastShows'
+import { seo, tiles } from '@/utils'
 import Show from '@/views/shows/Show.vue'
 import { ShowModel } from '@/model/show.model'
 import PastShow from '@/views/shows/PastShow.vue'
 import { PastShowModel } from '@/model/pastShow.model'
 import Tiles from '@/views/home/Tiles.vue'
-import tiles from '@/util/tiles'
+import dayjs from 'dayjs'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
-export default defineComponent({
-  name: 'Shows',
-  components: {
-    Show,
-    PastShow,
-    Tiles,
-  },
-  data() {
-    return {
-      displayPastShows: false, // disabled for now because it only contains 4 venues
-      shows: [
-        {
-          date: '2022/12/03',
-          place: 'The Irish Pub, Pforzheim',
-          website: 'https://www.irishpubpf.de/',
-          mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
-        },
-        {
-          date: '2022/10/15',
-          place: 'Private Veranstaltung, Vaihingen a. d. Enz',
-        },
-        {
-          date: '2023/02/18',
-          place: 'The Irish Pub, Pforzheim',
-          website: 'https://www.irishpubpf.de/',
-          mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
-        },
-        {
-          date: '2023/04/29',
-          place: 'Private Veranstaltung, Ettlingen',
-        },
-        {
-          date: '2023/05/13',
-          place: 'The Irish Pub, Pforzheim',
-          website: 'https://www.irishpubpf.de/',
-          mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
-        },
-        {
-          date: '2023/06/24',
-          place: 'Private Veranstaltung, Bad Wildbad',
-        },
-      ] as ShowModel[],
-      pastShows: [
-        {
-          date: '2018/03/09',
-          text: 'Dorfschänke Karlsruhe',
-        },
-        {
-          date: '2018/07/04',
-          text: 'Erasmus Sommerfest, KIT Campus, Karlsruhe',
-        },
-        {
-          date: '2018/10/19',
-          text: 'Dorfschänke Karlsruhe',
-        },
-        {
-          date: '2019/04/26',
-          text: 'Dorfschänke Karlsruhe',
-        },
-        {
-          date: '2019/05/11',
-          text: 'Irish Pub Pforzheim',
-        },
-        {
-          date: '2019/07/18',
-          text: 'Erasmus Sommerfest, KIT Campus, Karlsruhe',
-        },
-        {
-          date: '2019/07/19',
-          text: 'Private Veranstaltung, Rheinfelden bei Lörrach',
-        },
-        {
-          date: '2019/11/09',
-          text: 'Irish Pub Pforzheim',
-        },
-        {
-          date: '2022/04/02',
-          text: 'Irish Pub Pforzheim',
-        },
-      ] as PastShowModel[],
-      articles: [tiles['music'], tiles['band']],
-    }
-  },
-  computed: {
-    futureShows(): ShowModel[] {
-      return this.shows.filter(show => !dayjs().isAfter(show.date)).sort(this.sortByDateAsc)
-    },
-    hasFutureShows(): boolean {
-      return this.futureShows.length > 0
-    },
-    sortedPastShows(): PastShowModel[] {
-      const s = JSON.parse(JSON.stringify(this.pastShows))
-      return s.sort(this.sortByDateDesc)
-    },
-  },
-  methods: {
-    sortByDateAsc(showA: ShowModel, showB: ShowModel) {
-      return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
-    },
-    sortByDateDesc(showA: PastShowModel, showB: PastShowModel) {
-      return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
-    },
-  },
+const displayPastShows = false // disabled for now because it only contains 4 venues
+const articles = [tiles['music'], tiles['band']]
+
+const futureShows: ComputedRef<ShowModel[]> = computed(() =>
+  shows.filter(show => !dayjs().isAfter(show.date)).sort(sortByDateAsc)
+)
+const hasFutureShows = computed(() => futureShows.value.length > 0)
+const sortedPastShows = computed(() => {
+  const s = JSON.parse(JSON.stringify(pastShows))
+  return s.sort(sortByDateDesc)
+})
+
+const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
+  return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
+}
+const sortByDateDesc = (showA: PastShowModel, showB: PastShowModel) => {
+  return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
+}
+
+useSeoMeta({
+  ogTitle: seo.shows.title,
+  ogDescription: seo.shows.description,
+  description: seo.shows.description,
+})
+useHead({
+  title: seo.shows.title,
 })
 </script>
 
 <style scoped>
 #banner {
+  min-height: 300px;
+  height: 30vw;
   background-image: url('../../assets/images/shows.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.header {
+  width: max-content;
+  margin-bottom: 4em;
+}
+
+h1.underlined {
+  width: calc(100% + 0.5em);
+}
+
+h1.underlined:after {
+  content: '';
+  background-color: #fff;
+  display: block;
+  height: 2px;
+  margin: 0.325em 0 0.5em 0;
+  width: 100%;
 }
 </style>

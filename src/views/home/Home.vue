@@ -42,54 +42,58 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import Banner from '@/views/home/Banner.vue'
 import Tiles from '@/views/home/Tiles.vue'
-import tiles from '@/util/tiles'
+import { tiles, seo } from '@/utils'
 import VideoComponent from '@/views/home/VideoComponent.vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
-export default defineComponent({
-  name: 'Home',
-  components: {
-    Banner,
-    Tiles,
-    VideoComponent,
-  },
-  data() {
-    return {
-      articles: [tiles['music'], tiles['band'], tiles['shows'], tiles['downloads']],
-    }
-  },
-  computed: {
-    startOfMain() {
-      const element = (this.$refs.main as Element).getBoundingClientRect()
-      return element.y
-    },
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+const main = ref(null)
+const emit = defineEmits(['is-main-in-view'])
 
-    // add Walls.io
-    const walls = document.createElement('script')
-    walls.async = true
-    walls.setAttribute('src', 'https://walls.io/js/wallsio-widget-1.2.js')
-    walls.setAttribute('data-wallurl', 'https://my.walls.io/x5e7f?nobackground=1&amp;show_header=0')
-    walls.setAttribute('data-width', '100%')
-    walls.setAttribute('data-autoheight', '1')
-    walls.setAttribute('data-height', '800')
-    walls.setAttribute('data-lazyload', '1')
-    document.getElementById('wall')?.appendChild(walls)
-  },
-  unmounted() {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll(): void {
-      const isMainInView = window.scrollY > this.startOfMain
-      this.$emit('is-main-in-view', isMainInView)
-    },
-  },
+const articles = [tiles['music'], tiles['band'], tiles['shows'], tiles['downloads']]
+
+const startOfMain = computed(() => {
+  if (main.value) {
+    const element = (main.value as Element).getBoundingClientRect()
+    return element.y
+  }
+  return 0
+})
+
+const handleScroll = (): void => {
+  const isMainInView = window.scrollY > startOfMain.value
+  emit('is-main-in-view', isMainInView)
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+
+  // add Walls.io
+  const walls = document.createElement('script')
+  walls.async = true
+  walls.setAttribute('src', 'https://walls.io/js/wallsio-widget-1.2.js')
+  walls.setAttribute('data-wallurl', 'https://my.walls.io/x5e7f?nobackground=1&amp;show_header=0')
+  walls.setAttribute('data-width', '100%')
+  walls.setAttribute('data-autoheight', '1')
+  walls.setAttribute('data-height', '800')
+  walls.setAttribute('data-lazyload', '1')
+  document.getElementById('wall')?.appendChild(walls)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+useSeoMeta({
+  ogTitle: seo.home.title,
+  ogDescription: seo.home.description,
+  description: seo.home.description,
+})
+useHead({
+  title: seo.home.title,
 })
 </script>
 
@@ -127,7 +131,7 @@ article.downloads {
 }
 
 div.cta {
-  margin-top: 3em;
+  margin-top: 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
