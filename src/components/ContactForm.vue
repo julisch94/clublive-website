@@ -37,7 +37,7 @@
               <select id="reference" v-model="reference">
                 <option disabled value="">Bitte wöhlen</option>
                 <option value="live">Live-Auftritt</option>
-                <option value="friends">Empfehlung von Freunden / Bekannten</option>
+                <option value="friends">Empfehlung</option>
                 <option value="internet">Internet</option>
                 <option value="press">Presse</option>
                 <option value="other">Etwas anderes</option>
