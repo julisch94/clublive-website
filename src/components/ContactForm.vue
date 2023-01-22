@@ -62,9 +62,6 @@
               <div data-netlify-recaptcha="true" />
               <ul v-if="!success" class="actions">
                 <li>
-                  <button type="reset" :disabled="isLoading">Löschen</button>
-                </li>
-                <li>
                   <button type="submit" class="special" :disabled="isLoading">Abschicken</button>
                 </li>
               </ul>
