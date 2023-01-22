@@ -3,51 +3,66 @@
     <div class="inner pa">
       <section>
         <h3>Kontaktformular / Buchung</h3>
-        <div class="overlay-container">
-          <div v-if="isLoading" class="loading-overlay">
-            <Loader color="#efefef" />
-          </div>
-          <div>
-            <p>
-              Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
-              unseren Handys und melden uns umgehend bei dir zurück.
-            </p>
-            <form
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              @submit.prevent="submitForm"
-              @reset.prevent="reset()"
-            >
-              <div class="field half first">
-                <label for="name">Name</label>
-                <input id="name" v-model="name" type="text" name="name" required />
-              </div>
-              <div class="field half">
-                <label for="email">E-Mail</label>
-                <input
-                  id="email"
-                  v-model="email"
-                  type="text"
-                  name="email"
-                  pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
-                  required
-                />
-              </div>
-              <div class="field">
-                <label for="message">Nachricht</label>
-                <textarea id="message" v-model="message" name="message" rows="6" @keyup.ctrl.enter="submitForm()" />
-              </div>
-              <div data-netlify-recaptcha="true" />
-              <ul v-if="!success" class="actions">
-                <li>
-                  <button type="reset" :disabled="isLoading">Löschen</button>
-                </li>
-                <li>
-                  <button type="submit" class="special" :disabled="isLoading">Abschicken</button>
-                </li>
-              </ul>
-            </form>
-          </div>
+        <div>
+          <p>
+            Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
+            unseren Handys und melden uns umgehend bei dir zurück.
+          </p>
+          <form
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            @submit.prevent="submitForm"
+            @reset.prevent="reset()"
+          >
+            <div class="field half first">
+              <label for="name">Name</label>
+              <input id="name" v-model="name" type="text" name="name" />
+            </div>
+            <div class="field half">
+              <label for="email">E-Mail</label>
+              <input
+                id="email"
+                v-model="email"
+                type="text"
+                name="email"
+                pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
+              />
+            </div>
+            <div class="field">
+              <label for="message">Nachricht</label>
+              <textarea id="message" v-model="message" name="message" rows="6" @keyup.ctrl.enter="submitForm()" />
+            </div>
+            <div class="field first" :class="{ half: showReferenceOther }">
+              <label for="reference">Woher kennst du uns?</label>
+              <select id="reference" v-model="reference">
+                <option disabled value="">Bitte wöhlen</option>
+                <option value="live">Live-Auftritt</option>
+                <option value="friends">Empfehlung</option>
+                <option value="internet">Internet</option>
+                <option value="press">Presse</option>
+                <option value="other">Etwas anderes</option>
+              </select>
+            </div>
+            <div v-if="showReferenceOther" class="field half">
+              <label for="reference">Woher genau?</label>
+              <input
+                id="referenceOther"
+                v-model="referenceOther"
+                placeholder="Bitte angeben"
+                type="text"
+                name="referenceOther"
+              />
+            </div>
+            <div data-netlify-recaptcha="true" />
+            <ul v-if="!success" class="actions">
+              <li>
+                <button type="submit" class="special" :disabled="isLoading">
+                  <span v-if="isLoading">Sendet...</span>
+                  <span v-else>Abschicken</span>
+                </button>
+              </li>
+            </ul>
+          </form>
           <div ref="result" class="result" :class="{ shake: failure, 'slide-in-from-left': success }">
             <div v-if="success">
               <span class="icon alt fa-check" />
@@ -70,13 +85,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Loader from 'vue-spinner/src/ScaleLoader.vue'
 
 export default defineComponent({
   name: 'ContactForm',
-  components: {
-    Loader,
-  },
   data() {
     return {
       name: '',
@@ -85,7 +96,14 @@ export default defineComponent({
       success: false,
       failure: false,
       isLoading: false,
+      reference: '',
+      referenceOther: '',
     }
+  },
+  computed: {
+    showReferenceOther() {
+      return this.reference === 'other'
+    },
   },
   methods: {
     submitForm() {
@@ -94,6 +112,8 @@ export default defineComponent({
         name: this.name,
         email: this.email,
         message: this.message,
+        reference: this.reference,
+        referenceOther: this.referenceOther,
       }
       console.log('form data', body)
 
@@ -207,24 +227,6 @@ export default defineComponent({
 
 div.result {
   margin-top: 1em;
-}
-
-.overlay-container {
-  position: relative;
-}
-
-.loading-overlay {
-  position: absolute;
-  background-color: #00000044;
-  user-select: none;
-  top: -10px;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
 }
 
 .actions {
