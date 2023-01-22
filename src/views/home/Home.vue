@@ -29,8 +29,6 @@
         </div>
       </section>
 
-      <Tiles :articles="articles" />
-
       <section id="social">
         <div class="inner pa">
           <section>
@@ -38,6 +36,8 @@
           </section>
         </div>
       </section>
+
+      <Tiles :articles="articles" />
     </div>
   </div>
 </template>
