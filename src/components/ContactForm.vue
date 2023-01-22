@@ -37,6 +37,28 @@
                 <label for="message">Nachricht</label>
                 <textarea id="message" v-model="message" name="message" rows="6" @keyup.ctrl.enter="submitForm()" />
               </div>
+              <div class="field first" :class="{ half: showReferenceOther }">
+                <label for="reference">Woher kennst du uns?</label>
+                <select id="reference" v-model="reference" required>
+                  <option disabled value="">Bitte wöhlen</option>
+                  <option value="live">Live-Auftritt</option>
+                  <option value="friends">Empfehlung von Freunden / Bekannten</option>
+                  <option value="internet">Internet</option>
+                  <option value="press">Presse</option>
+                  <option value="other">Etwas anderes</option>
+                </select>
+              </div>
+              <div v-if="showReferenceOther" class="field half">
+                <label for="reference">Woher genau?</label>
+                <input
+                  id="referenceOther"
+                  v-model="referenceOther"
+                  placeholder="Bitte angeben"
+                  type="text"
+                  name="referenceOther"
+                  required
+                />
+              </div>
               <div data-netlify-recaptcha="true" />
               <ul v-if="!success" class="actions">
                 <li>
@@ -85,7 +107,14 @@ export default defineComponent({
       success: false,
       failure: false,
       isLoading: false,
+      reference: '',
+      referenceOther: '',
     }
+  },
+  computed: {
+    showReferenceOther() {
+      return this.reference === 'other'
+    },
   },
   methods: {
     submitForm() {
@@ -94,6 +123,8 @@ export default defineComponent({
         name: this.name,
         email: this.email,
         message: this.message,
+        reference: this.reference,
+        referenceOther: this.referenceOther,
       }
       console.log('form data', body)
 
