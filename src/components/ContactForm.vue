@@ -125,18 +125,6 @@ export default defineComponent({
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(body).toString(),
       })
-        .then(() => {
-          return new Promise(resolve => {
-            setTimeout(resolve, 2000)
-          })
-        })
-        .then(() => {
-          return {
-            ok: true,
-            status: 200,
-            statusText: 'SUCCESS',
-          }
-        })
         .then(result => {
           console.log(result)
           this.isLoading = false
