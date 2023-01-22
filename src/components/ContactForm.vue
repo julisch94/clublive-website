@@ -16,7 +16,7 @@
           >
             <div class="field half first">
               <label for="name">Name</label>
-              <input id="name" v-model="name" type="text" name="name" />
+              <input id="name" v-model="name" type="text" name="name" required />
             </div>
             <div class="field half">
               <label for="email">E-Mail</label>
@@ -26,15 +26,23 @@
                 type="text"
                 name="email"
                 pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
+                required
               />
             </div>
             <div class="field">
               <label for="message">Nachricht</label>
-              <textarea id="message" v-model="message" name="message" rows="6" @keyup.ctrl.enter="submitForm()" />
+              <textarea
+                id="message"
+                v-model="message"
+                name="message"
+                rows="6"
+                required
+                @keyup.ctrl.enter="submitForm()"
+              />
             </div>
             <div class="field first" :class="{ half: showReferenceOther }">
               <label for="reference">Woher kennst du uns?</label>
-              <select id="reference" v-model="reference">
+              <select id="reference" v-model="reference" required>
                 <option disabled value="">Bitte wöhlen</option>
                 <option value="live">Live-Auftritt</option>
                 <option value="friends">Empfehlung</option>
@@ -51,6 +59,7 @@
                 placeholder="Bitte angeben"
                 type="text"
                 name="referenceOther"
+                required
               />
             </div>
             <div data-netlify-recaptcha="true" />
