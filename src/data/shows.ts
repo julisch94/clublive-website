@@ -31,4 +31,12 @@ export const shows: ShowModel[] = [
     date: '2023/06/24',
     place: 'Private Veranstaltung, Bad Wildbad',
   },
+  {
+    date: '2023/07/01',
+    place: 'Private Veranstaltung, Freudenstadt',
+  },
+  {
+    date: '2023/07/15',
+    place: 'Private Veranstaltung, Karlsruhe',
+  },
 ]
