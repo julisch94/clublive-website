@@ -13,23 +13,16 @@
   </header>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { defineEmits } from 'vue'
 
-export default defineComponent({
-  name: 'Header',
-  props: {
-    isTransparent: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {
-    toggleMenu() {
-      this.$emit('toggle-menu')
-    },
-  },
-})
+const emit = defineEmits(['toggle-menu'])
+
+const isTransparent = true
+
+const toggleMenu = () => {
+  emit('toggle-menu')
+}
 </script>
 
 <style scoped>
