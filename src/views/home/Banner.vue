@@ -1,5 +1,5 @@
 <template>
-  <section id="banner" class="major" :class="{ 'is-loading': isLoading }">
+  <section id="banner" class="major" :class="{ 'is-loading': state.isLoading }">
     <div class="inner">
       <header class="major">
         <h1>ClubLive</h1>
@@ -17,23 +17,15 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import Social from '@/components/Social.vue'
+<script setup lang="ts">
+import { onMounted, reactive } from 'vue'
 
-export default defineComponent({
-  name: 'Banner',
-  components: { Social },
-  data() {
-    return {
-      isLoading: true,
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.isLoading = false
-    }, 0)
-  },
+const state = reactive({ isLoading: true })
+
+onMounted(() => {
+  setTimeout(() => {
+    state.isLoading = false
+  }, 500)
 })
 </script>
 
