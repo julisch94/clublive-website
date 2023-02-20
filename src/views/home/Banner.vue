@@ -1,5 +1,9 @@
 <template>
   <section id="banner" class="major" :class="{ 'is-loading': state.isLoading }">
+    <video v-if="!isMobile" id="hero-video" autoplay muted loop>
+      <source :src="`${baseUrl}public/video/freed-from-desire.mp4`" type="video/mp4" />
+    </video>
+
     <div class="inner">
       <header class="major">
         <h1>ClubLive</h1>
@@ -19,6 +23,10 @@
 
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
+import { useIsMobile } from '@/utils/is-mobile'
+
+const baseUrl = import.meta.env.BASE_URL
+const { isMobile } = useIsMobile()
 
 const state = reactive({ isLoading: true })
 
@@ -30,6 +38,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+#hero-video {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  bottom: 0;
+}
+
 #banner {
   -moz-align-items: center;
   -webkit-align-items: center;
