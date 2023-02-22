@@ -1,5 +1,5 @@
 <template>
-  <header id="header" class="reveal" :class="{ alt: isTransparent }">
+  <header id="header" class="reveal" :class="{ alt: props.isTransparent }">
     <a href="/" class="logo">
       <strong>ClubLive</strong>
       <span>Club-Hits and Charts</span>
@@ -14,11 +14,13 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
 const emit = defineEmits(['toggle-menu'])
 
-const isTransparent = true
+const props = defineProps(({
+  isTransparent: Boolean
+}))
 
 const toggleMenu = () => {
   emit('toggle-menu')
