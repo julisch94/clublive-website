@@ -26,6 +26,7 @@
             E-Mail:
             <a href="mailto:contact@clublive.band">contact@clublive.band</a>
           </li>
+          <li><a href="/downloads">Downloads</a></li>
           <li><a href="/datenschutzerklaerung">Datenschutzerklärung</a></li>
           <li><a href="/impressum">Impressum</a></li>
         </ul>
@@ -34,20 +35,12 @@
   </footer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import Social from '@/components/Social.vue'
 
-export default defineComponent({
-  name: 'Footer',
-  components: {
-    Social,
-  },
-  computed: {
-    currentYear(): number {
-      return new Date().getFullYear()
-    },
-  },
+const currentYear = computed(() => {
+  return new Date().getFullYear()
 })
 </script>
 

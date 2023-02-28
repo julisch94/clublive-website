@@ -14,9 +14,4 @@ export const tiles = {
     route: '/shows',
     class: 'shows',
   },
-  downloads: {
-    name: 'Downloads',
-    route: '/downloads',
-    class: 'downloads',
-  },
 }

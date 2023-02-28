@@ -53,7 +53,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 const main = ref(null)
 const emit = defineEmits(['is-main-in-view'])
 
-const articles = [tiles['music'], tiles['band'], tiles['shows'], tiles['downloads']]
+const articles = [tiles['music'], tiles['band'], tiles['shows']]
 
 const startOfMain = computed(() => {
   if (main.value) {
