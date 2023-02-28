@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <h2>
-      <span>{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</span>
-    </h2>
-    <p v-if="show.description">
-      {{ show.description }}
-    </p>
-    <p v-if="show.website">
-      <span class="icon fa-globe">&nbsp;</span>
-      <a :href="show.website" target="_blank">{{ show.website }}</a>
-    </p>
-    <p v-if="show.mapsLink">
-      <span class="icon fa-map-marker">&nbsp;</span>
-      <a :href="show.mapsLink" target="_blank">Routenplaner</a>
-    </p>
+  <div class="container">
+    <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
+    <div v-if="hasFurtherInformation" class="info-container">
+      <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
+      <span v-if="show.description">{{ show.description }}</span>
+      <span v-if="show.website" class="icon fa-globe" style="justify-self: center">&nbsp;</span>
+      <span v-if="show.website">
+        <a :href="show.website" target="_blank">{{ show.website }}</a>
+      </span>
+      <span v-if="show.mapsLink" class="icon fa-map-marker" style="justify-self: center">&nbsp;</span>
+      <span v-if="show.mapsLink"><a :href="show.mapsLink" target="_blank">Google Maps Link</a></span>
+    </div>
     <hr />
   </div>
 </template>
@@ -35,6 +32,29 @@ export default defineComponent({
     prettyDate(): string {
       return dayjs(this.show.date).format('dd DD.MM.YYYY')
     },
+    hasFurtherInformation(): boolean {
+      return !!this.show.description || !!this.show.website || !!this.show.mapsLink
+    },
   },
 })
 </script>
+
+<style scoped>
+.title {
+  font-size: 1.8em;
+  line-height: 2.2rem;
+  margin-bottom: 0;
+}
+
+.container {
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+}
+
+.info-container {
+  padding-top: 1em;
+  display: grid;
+  grid-template-columns: 2em auto;
+  row-gap: 1em;
+}
+</style>

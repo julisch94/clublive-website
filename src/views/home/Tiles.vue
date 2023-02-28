@@ -75,6 +75,22 @@ const imageLinkId = (pageName: string): string => {
   display: none;
 }
 
+article.shows {
+  background-image: url('../../assets/images/shows.jpg');
+}
+
+article.downloads {
+  background-image: url('../../assets/images/downloads.jpg');
+}
+
+article.music {
+  background-image: url('../../assets/images/music.jpg');
+}
+
+article.band {
+  background-image: url('../../assets/images/band.jpg');
+}
+
 .tiles article header {
   position: relative;
   z-index: 3;

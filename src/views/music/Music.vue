@@ -35,7 +35,7 @@ export default defineComponent({
   components: { Social, Tiles, DemoComponent },
   data() {
     return {
-      articles: [tiles['band'], tiles['shows']],
+      articles: [tiles['band'], tiles['downloads']],
     }
   },
 })

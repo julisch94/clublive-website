@@ -59,7 +59,7 @@ import Musician from '@/views/band/Musician.vue'
 import { tiles, seo } from '@/utils'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
-const articles = [tiles['music'], tiles['shows']]
+const articles = [tiles['music'], tiles['downloads']]
 const musicians = [
   {
     imageSrc: 'images/band/tiffany/tiffany.jpg',
