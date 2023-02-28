@@ -43,7 +43,7 @@
             <div class="field first" :class="{ half: showReferenceOther }">
               <label for="reference">Woher kennst du uns?</label>
               <select id="reference" v-model="reference" required>
-                <option disabled value="">Bitte wöhlen</option>
+                <option disabled value="">Bitte wählen</option>
                 <option value="live">Live-Auftritt</option>
                 <option value="friends">Empfehlung</option>
                 <option value="internet">Internet</option>
