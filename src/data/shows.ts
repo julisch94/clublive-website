@@ -41,7 +41,7 @@ export const shows: ShowModel[] = [
   },
   {
     date: '2023/07/07',
-    place: 'Jockrim',
+    place: 'Open Air, Jockrim',
     website: 'https://zum-bahnhof-jockgrim.de/',
     mapsLink: 'https://goo.gl/maps/B5f36re1Y6SRibNo8',
   },
