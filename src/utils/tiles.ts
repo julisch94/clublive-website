@@ -9,11 +9,6 @@ export const tiles = {
     route: '/band',
     class: 'band',
   },
-  shows: {
-    name: 'Shows',
-    route: '/shows',
-    class: 'shows',
-  },
   downloads: {
     name: 'Downloads',
     route: '/downloads',

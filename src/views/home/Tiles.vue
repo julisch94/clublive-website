@@ -11,31 +11,20 @@
   </section>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import { PropType } from 'vue'
 import { TileArticle } from '@/model/tileArticle.model'
-import { defineComponent, PropType } from 'vue'
 
-export default defineComponent({
-  name: 'Tiles',
-  data() {
-    return {
-      greeting: 'jules',
-    }
-  },
-  props: {
-    articles: {
-      type: Array as PropType<TileArticle[]>,
-    },
-  },
-  methods: {
-    headerId(pageName: string): string {
-      return `tile-header-${pageName}`
-    },
-    imageLinkId(pageName: string): string {
-      return `tile-image-${pageName}`
-    },
-  },
+defineProps({
+  articles: { type: [] as PropType<TileArticle[]>, default: [] },
 })
+
+const headerId = (pageName: string): string => {
+  return `tile-header-${pageName}`
+}
+const imageLinkId = (pageName: string): string => {
+  return `tile-image-${pageName}`
+}
 </script>
 
 <style>
@@ -84,6 +73,22 @@ export default defineComponent({
 
 .tiles article .image {
   display: none;
+}
+
+article.shows {
+  background-image: url('../../assets/images/shows.jpg');
+}
+
+article.downloads {
+  background-image: url('../../assets/images/downloads.jpg');
+}
+
+article.music {
+  background-image: url('../../assets/images/music.jpg');
+}
+
+article.band {
+  background-image: url('../../assets/images/band.jpg');
 }
 
 .tiles article header {

@@ -23,18 +23,12 @@
 
     <section>
       <div class="inner pa">
-        <div v-if="hasFutureShows">
-          <Show v-for="show of futureShows" :key="show.date" :show="show" />
-          <p>
-            Um keine Show von uns zu verpassen, folge uns bei Instagram:
-            <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
-          </p>
-        </div>
+        <ShowList />
 
-        <div v-else>
-          <h3 id="noShows">Bald werden wir wieder durchstarten! #corona</h3>
-          <p>Sobald neue Auftritte anstehen, erscheinen sie hier.</p>
-        </div>
+        <p>
+          Um keinen Auftritt von uns zu verpassen, folge uns bei Instagram:
+          <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+        </p>
       </div>
     </section>
 
@@ -51,33 +45,22 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ComputedRef } from 'vue'
-import { shows } from '@/data/shows'
+import { computed } from 'vue'
 import { pastShows } from '@/data/pastShows'
-import { seo, tiles } from '@/utils'
-import Show from '@/views/shows/Show.vue'
-import { ShowModel } from '@/model/show.model'
+import { seo } from '@/utils'
 import PastShow from '@/views/shows/PastShow.vue'
 import { PastShowModel } from '@/model/pastShow.model'
-import Tiles from '@/views/home/Tiles.vue'
 import dayjs from 'dayjs'
 import { useHead, useSeoMeta } from '@unhead/vue'
+import ShowList from '@/components/ShowList.vue'
 
 const displayPastShows = false // disabled for now because it only contains 4 venues
-const articles = [tiles['music'], tiles['band']]
 
-const futureShows: ComputedRef<ShowModel[]> = computed(() =>
-  shows.filter(show => !dayjs().isAfter(show.date)).sort(sortByDateAsc)
-)
-const hasFutureShows = computed(() => futureShows.value.length > 0)
 const sortedPastShows = computed(() => {
   const s = JSON.parse(JSON.stringify(pastShows))
   return s.sort(sortByDateDesc)
 })
 
-const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
-  return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
-}
 const sortByDateDesc = (showA: PastShowModel, showB: PastShowModel) => {
   return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
 }
@@ -99,23 +82,5 @@ useHead({
   background-image: url('../../assets/images/shows.jpg');
   background-size: cover;
   background-position: center;
-}
-
-.header {
-  width: max-content;
-  margin-bottom: 4em;
-}
-
-h1.underlined {
-  width: calc(100% + 0.5em);
-}
-
-h1.underlined:after {
-  content: '';
-  background-color: #fff;
-  display: block;
-  height: 2px;
-  margin: 0.325em 0 0.5em 0;
-  width: 100%;
 }
 </style>

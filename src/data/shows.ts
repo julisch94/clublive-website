@@ -39,4 +39,11 @@ export const shows: ShowModel[] = [
     date: '2023/07/15',
     place: 'Private Veranstaltung, Karlsruhe',
   },
+  {
+    date: '2023/07/07',
+    place: 'Open Air, Jockrim',
+    website: 'https://zum-bahnhof-jockgrim.de/',
+    mapsLink: 'https://goo.gl/maps/B5f36re1Y6SRibNo8',
+    description: '40 Jahre Gasthaus "Zum Bahnhof"',
+  },
 ]

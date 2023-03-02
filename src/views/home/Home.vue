@@ -37,6 +37,22 @@
         </div>
       </section>
 
+      <section>
+        <div class="inner pa">
+          <header class="major" style="margin-bottom: 4em">
+            <h2>Anstehende Shows</h2>
+          </header>
+          <ShowList excerpt />
+          <div>
+            <ul class="actions">
+              <li>
+                <a href="/shows" class="button next">Mehr Shows</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <Tiles :articles="articles" />
     </div>
   </div>
@@ -49,11 +65,12 @@ import Tiles from '@/views/home/Tiles.vue'
 import { tiles, seo } from '@/utils'
 import VideoComponent from '@/views/home/VideoComponent.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
+import ShowList from '@/components/ShowList.vue'
 
 const main = ref(null)
 const emit = defineEmits(['is-main-in-view'])
 
-const articles = [tiles['music'], tiles['band'], tiles['shows'], tiles['downloads']]
+const articles = [tiles['music'], tiles['band']]
 
 const startOfMain = computed(() => {
   if (main.value) {
@@ -98,22 +115,6 @@ useHead({
 </script>
 
 <style>
-article.music {
-  background-image: url('../../assets/images/music.jpg');
-}
-
-article.band {
-  background-image: url('../../assets/images/band.jpg');
-}
-
-article.shows {
-  background-image: url('../../assets/images/shows.jpg');
-}
-
-article.downloads {
-  background-image: url('../../assets/images/downloads.jpg');
-}
-
 .info-text {
   text-align: justify;
 }
