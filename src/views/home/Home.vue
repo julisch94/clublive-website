@@ -37,8 +37,6 @@
         </div>
       </section>
 
-      <Tiles :articles="articles" />
-
       <section>
         <div class="inner pa">
           <header class="major" style="margin-bottom: 4em">
@@ -54,6 +52,8 @@
           </div>
         </div>
       </section>
+
+      <Tiles :articles="articles" />
     </div>
   </div>
 </template>
