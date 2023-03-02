@@ -24,6 +24,11 @@
     <section>
       <div class="inner pa">
         <ShowList />
+
+        <p>
+          Um keinen Auftritt von uns zu verpassen, folge uns bei Instagram:
+          <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+        </p>
       </div>
     </section>
 

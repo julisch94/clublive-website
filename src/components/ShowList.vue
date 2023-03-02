@@ -7,11 +7,6 @@
     <p>In naher Zukunft sind keine öffentlichen Auftritte geplant.</p>
     <p>Wir werden aber schon bald neue Termine bekannt geben!</p>
   </div>
-
-  <p>
-    Um keinen Auftritt von uns zu verpassen, folge uns bei Instagram:
-    <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
-  </p>
 </template>
 
 <script setup lang="ts">
@@ -21,9 +16,17 @@ import { ShowModel } from '@/model/show.model'
 import { shows } from '@/data/shows'
 import dayjs from 'dayjs'
 
-const futureShows: ComputedRef<ShowModel[]> = computed(() =>
-  shows.filter(show => !dayjs().isAfter(show.date)).sort(sortByDateAsc)
-)
+const props = defineProps({
+  excerpt: { type: Boolean, default: false },
+})
+
+const futureShows: ComputedRef<ShowModel[]> = computed(() => {
+  const allShows = shows.filter(show => !dayjs().isAfter(show.date)).sort(sortByDateAsc)
+  if (props.excerpt) {
+    return allShows.slice(0, 3)
+  }
+  return allShows
+})
 
 const hasFutureShows = computed(() => futureShows.value.length > 0)
 

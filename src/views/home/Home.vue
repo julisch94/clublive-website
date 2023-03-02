@@ -42,9 +42,16 @@
       <section>
         <div class="inner pa">
           <header class="major" style="margin-bottom: 4em">
-            <h1>Anstehende Shows</h1>
+            <h2>Anstehende Shows</h2>
           </header>
-          <ShowList />
+          <ShowList excerpt />
+          <div>
+            <ul class="actions">
+              <li>
+                <a href="/shows" class="button next">Mehr Shows</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
