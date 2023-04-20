@@ -46,4 +46,11 @@ export const shows: ShowModel[] = [
     mapsLink: 'https://goo.gl/maps/B5f36re1Y6SRibNo8',
     description: '40 Jahre Gasthaus "Zum Bahnhof"',
   },
+  {
+    date: '2023/07/19',
+    place: 'BGU Sommerfest, Karlsruhe',
+    website: 'https://www.fs-bau.kit.edu/index.php',
+    mapsLink: 'https://goo.gl/maps/iyh1jSFwAH1yyQmb8',
+    description: 'Bauigel-Fest, Sommerfest der Fachschaft Bauingenieur am KIT, Eintritt frei, ab 20 Uhr, Essen und Getränke vor Ort',
+  },
 ]
