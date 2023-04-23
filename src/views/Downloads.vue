@@ -41,12 +41,12 @@
                 >
               </li>
               <li>
-                <a class="button special" href="https://drive.google.com/file/d/1EwWtX9lejSjLRkHv22TLDlsywY5eywRn/view"
+                <a class="button special" href="https://drive.google.com/file/d/1IOWMwVUNzpsegFWs5QILlviElQXgoITu/view"
                   >Technical Rider</a
                 >
               </li>
             </ul>
-            <p>Nichts passendes dabei?<br />Schreiben Sie uns gerne eine Mail.</p>
+            <p>Nichts passendes dabei?<br />Schreibe uns gerne eine E-Mail.</p>
           </div>
         </div>
       </div>
