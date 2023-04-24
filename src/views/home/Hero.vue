@@ -105,14 +105,21 @@ video {
 
 .hero-sound-toggle {
   position: absolute;
-  bottom: 3rem;
-  right: 3rem;
-  z-index: 1;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  box-shadow: none;
+  z-index: 10;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.hero-sound-toggle:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 </style>
