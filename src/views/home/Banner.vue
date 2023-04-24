@@ -26,7 +26,9 @@
         <Social />
       </div>
     </div>
-    <button @click="toggleMute" class="mute-toggle">{{ state.isMuted ? 'Unmute' : 'Mute' }}</button>
+    <button class="mute-toggle" @click="toggleMute">
+      <i class="icon alt" :class="[state.isMuted ? 'fa-volume-off' : 'fa-volume-up']"></i>
+    </button>
   </div>
 </template>
 
@@ -93,6 +95,14 @@ onMounted(() => {
   min-height: 30em;
   position: relative;
   top: -3.25em;
+}
+
+.mute-toggle {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.25rem;
+  box-shadow: none;
 }
 
 #banner h1 {
