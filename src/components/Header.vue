@@ -2,7 +2,7 @@
   <header id="header" class="reveal" :class="{ alt: props.isTransparent }">
     <a href="/" class="logo">
       <strong>ClubLive</strong>
-      <span>Club-Hits and Charts</span>
+      <span>Clubmusik live performt</span>
     </a>
     <nav id="menu-desktop">
       <a class="hamburger" href="#" @click.prevent="toggleMenu()">Menu</a>

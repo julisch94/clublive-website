@@ -1,9 +1,17 @@
 <template>
-  <section id="banner" class="major" :class="{ 'is-loading': state.isLoading }">
-    <video v-if="!isMobile" id="hero-video" autoplay muted loop>
-      <source :src="`${baseUrl}public/video/freed-from-desire.mp4`" type="video/mp4" />
+  <div id="banner" class="hero" :class="{ 'is-loading': state.isLoading }">
+    <div class="banner-bg"></div>
+    <video
+      v-if="!isMobile"
+      id="hero-video"
+      preload="auto"
+      autoplay
+      muted
+      loop
+      poster="assets/images/banner/banner_1400.jpg"
+    >
+      <source src="/video/ClubLive-web.mp4" type="video/mp4" />
     </video>
-
     <div class="inner">
       <header class="major">
         <h1>ClubLive</h1>
@@ -18,14 +26,13 @@
         <Social />
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
 import { useIsMobile } from '@/utils/is-mobile'
 
-const baseUrl = import.meta.env.BASE_URL
 const { isMobile } = useIsMobile()
 
 const state = reactive({ isLoading: true })
@@ -38,11 +45,30 @@ onMounted(() => {
 </script>
 
 <style scoped>
-#hero-video {
+.banner-bg {
   position: absolute;
-  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   min-width: 100%;
-  bottom: 0;
+  min-height: 100%;
+  z-index: -1;
+  background: url('/src/assets/images/banner/banner_1400.jpg') center center no-repeat;
+  background-size: cover;
+  filter: brightness(0.7);
+  pointer-events: none;
+}
+
+#banner video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  pointer-events: none;
+  filter: brightness(0.7);
 }
 
 #banner {
@@ -55,43 +81,13 @@ onMounted(() => {
   display: -ms-flex;
   display: flex;
   padding: 6em 0 3em 0;
-  background-attachment: fixed;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
-  height: 80vh;
+  height: 100vh;
   margin-bottom: -3.25em;
-  max-height: 32em;
-  min-height: 22em;
+  min-height: 30em;
   position: relative;
   top: -3.25em;
-}
-
-#banner:after {
-  -moz-transition: opacity 0.5s ease;
-  -webkit-transition: opacity 0.5s ease;
-  -ms-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
-  -moz-transition-delay: 0.35s;
-  -webkit-transition-delay: 0.35s;
-  -ms-transition-delay: 0.35s;
-  transition-delay: 0.35s;
-  -moz-pointer-events: none;
-  -webkit-pointer-events: none;
-  -ms-pointer-events: none;
-  pointer-events: none;
-  background-color: #242943;
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0.25;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
 }
 
 #banner h1 {
@@ -150,50 +146,11 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
-#banner.major {
-  height: 110vh;
-  min-height: 30em;
-  max-height: 50em;
-  background-image: url('../../assets/images/banner/banner_1400.jpg');
-}
-
-#banner.major:after {
-  opacity: 0;
-}
-
-#banner.major.alt {
-  opacity: 0.75;
-}
-
-#banner.style1:after {
-  background-color: #6fc3df;
-}
-
-#banner.style2:after {
-  background-color: #6fc3df;
-}
-
-#banner.style3:after {
-  background-color: #ec8d81;
-}
-
-#banner.style4:after {
-  background-color: #e7b788;
-}
-
-#banner.style5:after {
-  background-color: #8ea9e8;
-}
-
-#banner.style6:after {
-  background-color: #87c5a4;
-}
-
-#banner.is-loading:after {
+.is-loading:after {
   opacity: 1;
 }
 
-#banner.is-loading .inner {
+.is-loading .inner {
   -moz-filter: blur(0.125em);
   -webkit-filter: blur(0.125em);
   -ms-filter: blur(0.125em);
@@ -208,10 +165,7 @@ onMounted(() => {
 @media screen and (max-width: 840px) {
   #banner {
     padding: 5em 0 2em 0;
-    height: auto;
     margin-bottom: -2.75em;
-    max-height: none;
-    min-height: 0;
     top: -2.75em;
   }
 
@@ -227,27 +181,15 @@ onMounted(() => {
     margin-left: 0;
     margin-bottom: 1em;
   }
-
-  #banner.major {
-    height: auto;
-    min-height: 0;
-    max-height: none;
-    background-attachment: scroll;
-    background-image: url('../../assets/images/banner/banner_839.jpg');
-  }
 }
 
 @media screen and (max-width: 760px) {
   #banner {
-    padding: 6em 0 3em 0;
+    padding: 8em 0 5em 0;
   }
 
   #banner .inner .content p br {
     display: none;
-  }
-
-  #banner.major {
-    padding: 8em 0 5em 0;
   }
 }
 
