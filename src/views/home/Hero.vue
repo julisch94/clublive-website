@@ -17,11 +17,20 @@ import { ref, defineComponent, onMounted } from 'vue'
 
 export default defineComponent({
   props: {
-    title: String,
-    subtitle: String,
-    videoSrc: String,
+    title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+      required: true,
+    },
+    videoSrc: {
+      type: String,
+      required: true,
+    },
   },
-  setup(props) {
+  setup() {
     const isMuted = ref(true)
     const videoRef = ref<HTMLVideoElement | null>(null)
 
