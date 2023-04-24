@@ -6,7 +6,7 @@
       id="hero-video"
       preload="auto"
       autoplay
-      muted
+      :muted="state.isMuted"
       loop
       poster="assets/images/banner/banner_1400.jpg"
     >
@@ -26,6 +26,7 @@
         <Social />
       </div>
     </div>
+    <button @click="toggleMute" class="mute-toggle">{{ state.isMuted ? 'Unmute' : 'Mute' }}</button>
   </div>
 </template>
 
@@ -35,7 +36,11 @@ import { useIsMobile } from '@/utils/is-mobile'
 
 const { isMobile } = useIsMobile()
 
-const state = reactive({ isLoading: true })
+const state = reactive({ isLoading: true, isMuted: true })
+
+const toggleMute = () => {
+  state.isMuted = !state.isMuted
+}
 
 onMounted(() => {
   setTimeout(() => {
