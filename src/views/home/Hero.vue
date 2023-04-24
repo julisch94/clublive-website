@@ -104,5 +104,6 @@ video {
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
+  box-shadow: none;
 }
 </style>
