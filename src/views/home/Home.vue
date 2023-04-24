@@ -1,5 +1,7 @@
 <template>
   <div>
+    <Hero video-src="/video/ClubLive-web.mp4" title="hello" subtitle="test" />
+
     <Banner />
 
     <div id="main" ref="main">
@@ -61,6 +63,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import Banner from '@/views/home/Banner.vue'
+import Hero from '@/views/home/Hero.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import { tiles, seo } from '@/utils'
 import VideoComponent from '@/views/home/VideoComponent.vue'
