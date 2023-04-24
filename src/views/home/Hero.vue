@@ -61,6 +61,7 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 video {
@@ -70,6 +71,7 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
 }
 
 .hero-content {
