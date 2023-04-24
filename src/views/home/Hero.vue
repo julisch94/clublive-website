@@ -7,7 +7,7 @@
       <p class="hero-subtitle">{{ subtitle }}</p>
     </div>
     <button class="hero-sound-toggle" @click="toggleMute">
-      <i class='icon alt' :class="[isMuted ? 'fa-volume-off' : 'fa-volume-up']"></i>
+      <i class="icon alt" :class="[isMuted ? 'fa-volume-off' : 'fa-volume-up']"></i>
     </button>
   </div>
 </template>
@@ -107,8 +107,7 @@ video {
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
@@ -117,6 +116,7 @@ video {
   cursor: pointer;
   z-index: 10;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.5rem;
 }
 
 .hero-sound-toggle:hover {
