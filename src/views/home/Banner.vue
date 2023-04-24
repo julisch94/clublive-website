@@ -26,7 +26,7 @@
         <Social />
       </div>
     </div>
-    <button class="mute-toggle" @click="toggleMute">
+    <button v-if="!isMobile" class="mute-toggle" @click="toggleMute">
       <i class="icon alt" :class="[state.isMuted ? 'fa-volume-off' : 'fa-volume-up']"></i>
     </button>
   </div>
