@@ -3229,3 +3229,7 @@ button:disabled,
     padding: 4em 0 2em 0;
   }
 }
+
+select {
+  background-color: rgb(42 47 74);
+}
