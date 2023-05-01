@@ -14,21 +14,24 @@
             @submit.prevent="submitForm"
             @reset.prevent="reset()"
           >
-            <div class="field half first">
-              <label for="name">Name</label>
-              <input id="name" v-model="name" type="text" name="name" required />
+            <div class="row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" v-model="name" type="text" name="name" required />
+              </div>
+              <div class="field">
+                <label for="email">E-Mail</label>
+                <input
+                  id="email"
+                  v-model="email"
+                  type="text"
+                  name="email"
+                  pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
+                  required
+                />
+              </div>
             </div>
-            <div class="field half">
-              <label for="email">E-Mail</label>
-              <input
-                id="email"
-                v-model="email"
-                type="text"
-                name="email"
-                pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
-                required
-              />
-            </div>
+
             <div class="field">
               <label for="message">Nachricht</label>
               <textarea
@@ -40,29 +43,34 @@
                 @keyup.ctrl.enter="submitForm()"
               />
             </div>
-            <div class="field first" :class="{ half: showReferenceOther }">
-              <label for="reference">Woher kennst du uns?</label>
-              <select id="reference" v-model="reference" name="reference" required>
-                <option disabled value="">Bitte wählen</option>
-                <option value="live">Live-Auftritt</option>
-                <option value="friends">Empfehlung</option>
-                <option value="internet">Internet</option>
-                <option value="press">Presse</option>
-                <option value="other">Etwas anderes</option>
-              </select>
+
+            <div class="row">
+              <div class="field">
+                <label for="reference">Woher kennst du uns?</label>
+                <select id="reference" v-model="reference" name="reference" required>
+                  <option disabled value="">Bitte wählen</option>
+                  <option value="live">Live-Auftritt</option>
+                  <option value="friends">Empfehlung</option>
+                  <option value="internet">Internet</option>
+                  <option value="press">Presse</option>
+                  <option value="other">Etwas anderes</option>
+                </select>
+              </div>
+              <div v-if="showReferenceOther" class="field">
+                <label for="reference">Woher genau?</label>
+                <input
+                  id="referenceOther"
+                  v-model="referenceOther"
+                  placeholder="Bitte angeben"
+                  type="text"
+                  name="referenceOther"
+                  required
+                />
+              </div>
             </div>
-            <div v-if="showReferenceOther" class="field half">
-              <label for="reference">Woher genau?</label>
-              <input
-                id="referenceOther"
-                v-model="referenceOther"
-                placeholder="Bitte angeben"
-                type="text"
-                name="referenceOther"
-                required
-              />
-            </div>
+
             <div data-netlify-recaptcha="true" />
+
             <ul v-if="!success" class="actions">
               <li>
                 <button type="submit" class="special" :disabled="isLoading">
@@ -72,6 +80,7 @@
               </li>
             </ul>
           </form>
+
           <div ref="result" class="result" :class="{ shake: failure, 'slide-in-from-left': success }">
             <div v-if="success">
               <span class="icon alt fa-check" />
@@ -232,6 +241,16 @@ export default defineComponent({
   #contact .inner > .split > :first-child:before {
     display: block;
   }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row .field {
+  flex: 1 1 20em;
+  min-width: 20em;
 }
 
 div.result {
