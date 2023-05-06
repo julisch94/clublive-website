@@ -81,6 +81,6 @@ useHead({
   height: 30vw;
   background-image: url('../../assets/images/shows.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 </style>
