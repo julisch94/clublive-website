@@ -35,7 +35,7 @@
                 >
               </li>
               <li>
-                <a class="button icon fa-download" href="https://drive.google.com/file/d/1IOWMwVUNzpsegFWs5QILlviElQXgoITu/view"
+                <a class="button icon fa-download" href="https://docs.google.com/document/d/1AooJzmKIZVnO1OPj85vuYYvG90yLNqWNW9zRvdBf9mg/view"
                   >Nur Technical Rider</a
                 >
               </li>
