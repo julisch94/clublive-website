@@ -11,11 +11,7 @@
             <VideoComponent />
 
             <p class="info-text">
-              Wer sich fragt, ob moderne, hoch-produzierte Musik überhaupt noch live gespielt werden kann, der kommt bei
-              ClubLive ganz auf seine Kosten. Avicii, Felix Jaehn, Calvin Harris, Dua Lipa uvm. werden handgemacht
-              interpretiert. Dabei zeigt ClubLive, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen
-              können. Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und
-              zerstörte Frisur nach Hause.
+              {{ pressText }}
             </p>
             <div class="cta">
               <p>Das ist genau, was du für deine Veranstaltung suchst?</p>
@@ -60,12 +56,14 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
+
 import Banner from '@/views/home/Banner.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import { tiles, seo } from '@/utils'
 import VideoComponent from '@/views/home/VideoComponent.vue'
-import { useHead, useSeoMeta } from '@unhead/vue'
 import ShowList from '@/components/ShowList.vue'
+import { pressText } from '@/data/pressText'
 
 const main = ref(null)
 const emit = defineEmits(['is-main-in-view'])
