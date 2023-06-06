@@ -4,4 +4,5 @@ export interface ShowModel {
   description?: string
   website?: string
   mapsLink?: string
+  imageSrc?: string
 }
