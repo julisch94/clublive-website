@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import Show from '@/views/shows/Show.vue'
+import Show from '@/components/Show.vue'
 import { computed, ComputedRef } from 'vue'
 import { ShowModel } from '@/model/show.model'
 import { shows } from '@/data/shows'
