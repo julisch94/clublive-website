@@ -5,7 +5,7 @@
         <p class="title">
           <span>{{ prettyDate }}</span>
           <span class="separator">&nbsp;//&nbsp;</span>
-          <span class="place">{{ show.place }}</span>
+          <span class="place">{{ placeWithProtectedWhiteSpaces }}</span>
         </p>
         <div v-if="hasFurtherInformation" class="info-container">
           <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
@@ -41,6 +41,12 @@ const props = defineProps({
 const prettyDate = computed(() => dayjs(props.show.date).format('dd DD.MM.YYYY'))
 const hasFurtherInformation = computed(() => !!props.show.description || !!props.show.website || !!props.show.mapsLink)
 const hasImage = computed(() => !!props.show.imageSrc)
+const placeWithProtectedWhiteSpaces = computed(() => {
+  return props.show?.place
+    .split(', ')
+    .map(part => part.replaceAll(' ', '\u00a0'))
+    .join(', ')
+})
 </script>
 
 <style scoped>
