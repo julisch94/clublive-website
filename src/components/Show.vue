@@ -3,9 +3,9 @@
     <div class="grid">
       <div class="left">
         <p class="title">
-          <span>{{ prettyDate }}</span>
+          <span>{{ formattedDate }}</span>
           <span class="separator">&nbsp;//&nbsp;</span>
-          <span class="place">{{ placeWithProtectedWhiteSpaces }}</span>
+          <span class="place">{{ formattedPlace }}</span>
         </p>
         <div v-if="hasFurtherInformation" class="info-container">
           <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
@@ -38,15 +38,17 @@ const props = defineProps({
   },
 })
 
-const prettyDate = computed(() => dayjs(props.show.date).format('dd DD.MM.YYYY'))
-const hasFurtherInformation = computed(() => !!props.show.description || !!props.show.website || !!props.show.mapsLink)
-const hasImage = computed(() => !!props.show.imageSrc)
-const placeWithProtectedWhiteSpaces = computed(() => {
+const formattedDate = computed(() => dayjs(props.show.date).format('dd DD.MM.YYYY'))
+const formattedPlace = computed(() => {
+  // we protect white spaces in parts like:
+  // Private~Veranstaltung, Bad~Wildbad
   return props.show?.place
     .split(', ')
     .map(part => part.replaceAll(' ', '\u00a0'))
     .join(', ')
 })
+const hasFurtherInformation = computed(() => !!props.show.description || !!props.show.website || !!props.show.mapsLink)
+const hasImage = computed(() => !!props.show.imageSrc)
 </script>
 
 <style scoped>
