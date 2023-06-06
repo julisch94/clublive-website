@@ -53,4 +53,11 @@ export const shows: ShowModel[] = [
     mapsLink: 'https://goo.gl/maps/iyh1jSFwAH1yyQmb8',
     description: 'Bauigel-Fest, Sommerfest der Fachschaft Bauingenieur am KIT, Eintritt frei, ab 20 Uhr',
   },
+  {
+    date: '2023/08/13',
+    place: 'Fischerfest, Plittersdorf',
+    website: 'https://fischergilde-plittersdorf.de/',
+    mapsLink: 'https://goo.gl/maps/TrdwZUYAPV5ZwQKZ7',
+    description: 'Festplatz Niedersand, Fischerfest der Fischergilde Plittersdorf 1964 e.V., Eintritt frei, Beginn ab 19 Uhr',
+  },
 ]
