@@ -2,7 +2,11 @@
   <div class="container">
     <div class="grid">
       <div class="left">
-        <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
+        <p class="title">
+          <span>{{ prettyDate }}</span>
+          <span class="separator">&nbsp;//&nbsp;</span>
+          <span class="place">{{ show.place }}</span>
+        </p>
         <div v-if="hasFurtherInformation" class="info-container">
           <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
           <span v-if="show.description">{{ show.description }}</span>
@@ -44,6 +48,16 @@ const hasImage = computed(() => !!props.show.imageSrc)
   font-size: 1.2em;
   line-height: 1.2em;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 760px) {
+  .title .place {
+    display: block;
+  }
+
+  .title .separator {
+    display: none;
+  }
 }
 
 .container {
