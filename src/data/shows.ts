@@ -58,14 +58,14 @@ export const shows: ShowModel[] = [
     place: 'Fischerfest, Plittersdorf',
     website: 'https://fischergilde-plittersdorf.de/',
     mapsLink: 'https://goo.gl/maps/TrdwZUYAPV5ZwQKZ7',
-    description: 'Festplatz Niedersand, Fischerfest der Fischergilde Plittersdorf 1964 e.V., Eintritt frei, Beginn ab 19 Uhr',
+    description:
+      'Festplatz Niedersand, Fischerfest der Fischergilde Plittersdorf 1964 e.V., Eintritt frei, Beginn ab 19 Uhr',
   },
   {
     date: '2023/09/09',
     place: 'KARLSRUHE TRIFFT SICH, Marktplatz Karlsruhe',
     website: 'https://www.die-neue-welle.de/',
     mapsLink: 'https://goo.gl/maps/Pp4kxqW7vMHHZLt69',
-    description: 'Die Veranstaltung wird organisiert von \'die neue welle\', Eintritt frei',
-    imageSrc: 'images/shows/die-neue-welle.png'
+    description: "Die Veranstaltung wird organisiert von 'die neue welle', Eintritt frei",
   },
 ]
