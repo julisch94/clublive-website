@@ -9,14 +9,14 @@
   <title>ClubLive | Live Band aus Karlsruhe | Wir spielen Clubmusik live!</title>
 
   <meta name='description'
-    content='Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht interpretiert und auf der Bühne präsentiert. ClubLive zeigt, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen können. Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur nach Hause.' />
+        content='Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht interpretiert und auf der Bühne präsentiert. ClubLive zeigt, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen können. Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur nach Hause.' />
   <meta name='keywords' content='Club, Live, Band, Karlsruhe, Party, Dance, Charts, DJ, Pforzheim' />
 
   <meta name='google-site-verification' content='F0NAbtXxHPwMA3hV0KhklZo6vVWBc-aw78p3wVkQd-A' />
 
   <meta property='og:title' content='ClubLive | Live Band aus Karlsruhe | Wir spielen Clubmusik live!' />
   <meta property='og:description'
-    content='Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht interpretiert und auf der Bühne präsentiert. ClubLive zeigt, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen können. Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur nach Hause.' />
+        content='Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht interpretiert und auf der Bühne präsentiert. ClubLive zeigt, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen können. Vom Club bis zur Open Air Show geht bei ClubLive garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur nach Hause.' />
   <meta property='og:type' content='website' />
   <meta property='og:url' content='https://www.clublive.band' />
   <meta property='og:image' content='https://www.clublive.band/images/og/band.jpg' />
@@ -67,15 +67,40 @@
       ]
     }
   </script>
+  <!--  PostHog initialization-->
+  <script>
+    !function(t, e) {
+      var o, n, p, r
+      e.__SV || (window.posthog = e, e._i = [], e.init = function(i, s, a) {
+        function g(t, e) {
+          var o = e.split('.')
+          2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function() {
+            t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+          }
+        }
+
+        (p = t.createElement('script')).type = 'text/javascript', p.async = !0, p.src = s.api_host + '/static/array.js', (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r)
+        var u = e
+        for (void 0 !== a ? u = e[a] = [] : a = 'posthog', u.people = u.people || [], u.toString = function(t) {
+          var e = 'posthog'
+          return 'posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e
+        }, u.people.toString = function() {
+          return u.toString(1) + '.people (stub)'
+        }, o = 'capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags'.split(' '), n = 0; n < o.length; n++) g(u, o[n])
+        e._i.push([i, s, a])
+      }, e.__SV = 1)
+    }(document, window.posthog || [])
+    posthog.init('phc_LaMi5BDvmelKrKDd4lL5Ftg6IcCGq7yPXObL7ZyjCnh', { api_host: 'https://eu.posthog.com' })
+  </script>
 </head>
 
 <body>
-  <noscript>
-    <strong>We're sorry but this page doesn't work properly without JavaScript
-      enabled. Please enable it to continue.</strong>
-  </noscript>
-  <div id='app'></div>
-  <script type='module' src='/src/main.ts'></script>
+<noscript>
+  <strong>We're sorry but this page doesn't work properly without JavaScript
+    enabled. Please enable it to continue.</strong>
+</noscript>
+<div id='app'></div>
+<script type='module' src='/src/main.ts'></script>
 </body>
 <form name='clublive-contact' method='post' data-netlify='true' data-netlify-honeypot='bot-field' hidden>
   <input type='text' name='name' />
