@@ -64,8 +64,8 @@ export const shows: ShowModel[] = [
   {
     date: '2023/09/09',
     place: 'KARLSRUHE TRIFFT SICH, Marktplatz Karlsruhe',
-    website: 'https://www.die-neue-welle.de/',
+    website: 'https://www.karlsruhe-erleben.de/projekte/city-transformation/karlsruhe-trifft-sich',
     mapsLink: 'https://goo.gl/maps/Pp4kxqW7vMHHZLt69',
-    description: "Die Veranstaltung wird organisiert von 'die neue welle', Eintritt frei",
+    description: "Eintritt frei, Präsentiert von der Stadt Karlsruhe in Zusammenarbeit mit dem Radiosender die neue welle und der City Initiative Karlsruhe e.V.",
   },
 ]
