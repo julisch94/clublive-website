@@ -32,38 +32,57 @@
       </div>
     </section>
 
-    <section v-if="displayPastShows">
+    <section>
       <div class="inner pa">
         <h3>Vergangene Shows</h3>
-        <ul>
-          <PastShow v-for="show in sortedPastShows" :key="show.date" :show="show" />
-          <li>...</li>
-        </ul>
+        <vue-word-cloud
+          style="height: 50vh; width: 100%; max-width: 800px; margin: 0 auto;"
+          :words="[
+            ['Karlsruhe', 8],
+            ['Pforzheim', 6],
+            ['Vaihingen a.d. Enz', 3],
+            ['Bad Wildbad', 3],
+            ['Freudenstadt', 3],
+            ['Durlach', 2],
+            ['KIT Campus', 3],
+            ['Dorfschänke, Karlsruhe', 2],
+            ['The Irish Pub, Pforzheim', 2],
+            ['Erasmus Sommerfest', 2],
+            ['Rheinfelden bei Lörrach', 3],
+          ]"
+          color="White"
+          font-family="Montserrat"
+          :spacing="spacing"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { pastShows } from '@/data/pastShows'
+import { ref, onMounted } from 'vue'
 import { seo } from '@/utils'
-import PastShow from '@/views/shows/PastShow.vue'
-import { PastShowModel } from '@/model/pastShow.model'
-import dayjs from 'dayjs'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import ShowList from '@/components/ShowList.vue'
+import VueWordCloud from 'vuewordcloud'
 
-const displayPastShows = false // disabled for now because it only contains 4 venues
+const spacing = ref(0.7)
 
-const sortedPastShows = computed(() => {
-  const s = JSON.parse(JSON.stringify(pastShows))
-  return s.sort(sortByDateDesc)
-})
-
-const sortByDateDesc = (showA: PastShowModel, showB: PastShowModel) => {
-  return dayjs(showA.date).isBefore(showB.date) ? 1 : -1
+const moveWordcloudAround = () => {
+  if (spacing.value === 0.6) {
+    spacing.value = 0.7
+  } else if (spacing.value === 0.7) {
+    spacing.value = 0.8
+  } else if (spacing.value == 0.8) {
+    spacing.value = 0.6
+  }
 }
+
+onMounted(() => {
+  setInterval(() => {
+    moveWordcloudAround()
+  }, 4000)
+})
 
 useSeoMeta({
   ogTitle: seo.shows.title,
