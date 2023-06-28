@@ -15,7 +15,7 @@
         </p>
         <p>
           Du suchst noch nach einer Band für deine private Feier? Egal ob Hochzeit, Firmenfeier, Weihnachtsfeier,
-          Geburtstagsfeier, Abschlussfeier, Gartenparty – Wenn du Livemusik für junge Menschen suchst, bist du bei uns
+          Geburtstagsfeier, Abschlussfeier, Gartenparty – Wenn du Livemusik für eine mega Party suchst, bist du bei uns
           genau richtig. Schreib uns eine unverbindliche Anfrage über unser <a href="#contact">Kontaktformular</a>.
         </p>
       </div>
@@ -43,7 +43,6 @@
             ['Vaihingen a.d. Enz', 4],
             ['Bad Wildbad', 4],
             ['Ettlingen', 4],
-            ['Freudenstadt', 4],
             ['Rheinfelden bei Lörrach', 3],
             ['Schluttenbach', 3],
             ['Durlach', 3],
