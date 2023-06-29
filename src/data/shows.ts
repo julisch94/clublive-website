@@ -44,7 +44,7 @@ export const shows: ShowModel[] = [
     place: 'Open Air, Jockgrim',
     website: 'https://zum-bahnhof-jockgrim.de/',
     mapsLink: 'https://goo.gl/maps/B5f36re1Y6SRibNo8',
-    description: '40 Jahre Gasthaus "Zum Bahnhof", Eintritt frei',
+    description: '40 Jahre Gasthaus "Zum Bahnhof", Eintritt frei, ab 19 Uhr',
   },
   {
     date: '2023/07/19',
