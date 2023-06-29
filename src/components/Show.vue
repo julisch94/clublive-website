@@ -41,7 +41,7 @@ export default defineComponent({
 
 <style scoped>
 .title {
-  font-size: 1.2em;
+  font-size: 1.6em;
   line-height: 1.2em;
   margin-bottom: 0;
 }
