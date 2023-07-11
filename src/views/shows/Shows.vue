@@ -46,6 +46,7 @@
             ['Ettlingen', 4],
             ['Rheinfelden bei Lörrach', 3],
             ['Schluttenbach', 3],
+            ['Jockgrim', 3],
             ['Durlach', 3],
             ['KIT Campus', 3],
             ['Dorfschänke, Karlsruhe', 2],
