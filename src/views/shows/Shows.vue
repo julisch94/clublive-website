@@ -37,22 +37,7 @@
         <h3>Referenzen</h3>
         <vue-word-cloud
           style="height: 50vh; width: 100%; max-width: 800px; margin: 0 auto"
-          :words="[
-            ['Karlsruhe', 8],
-            ['Pforzheim', 6],
-            ['Vaihingen a.d. Enz', 4],
-            ['Bad Wildbad', 4],
-            ['Freudenstadt', 4],
-            ['Ettlingen', 4],
-            ['Rheinfelden bei Lörrach', 3],
-            ['Schluttenbach', 3],
-            ['Jockgrim', 3],
-            ['Durlach', 3],
-            ['KIT Campus', 3],
-            ['Dorfschänke, Karlsruhe', 2],
-            ['The Irish Pub, Pforzheim', 2],
-            ['Erasmus Sommerfest', 2],
-          ]"
+          :words="pastShows"
           color="White"
           font-family="Montserrat"
           :spacing="spacing"
@@ -68,6 +53,7 @@ import { seo } from '@/utils'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import ShowList from '@/components/ShowList.vue'
 import VueWordCloud from 'vuewordcloud'
+import { pastShows } from '@/data/pastShows'
 
 const spacing = ref(0.7)
 
