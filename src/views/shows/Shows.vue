@@ -36,12 +36,13 @@
       <div class="inner pa">
         <h3>Referenzen</h3>
         <vue-word-cloud
-          style="height: 50vh; width: 100%; max-width: 800px; margin: 0 auto;"
+          style="height: 50vh; width: 100%; max-width: 800px; margin: 0 auto"
           :words="[
             ['Karlsruhe', 8],
             ['Pforzheim', 6],
             ['Vaihingen a.d. Enz', 4],
             ['Bad Wildbad', 4],
+            ['Freudenstadt', 4],
             ['Ettlingen', 4],
             ['Rheinfelden bei Lörrach', 3],
             ['Schluttenbach', 3],
