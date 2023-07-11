@@ -1,4 +1,1 @@
-export interface PastShowModel {
-  date: string
-  text: string
-}
+export type PastShowModel = Array<string | number>
