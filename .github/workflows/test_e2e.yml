@@ -26,6 +26,9 @@ jobs:
       - name: list files in the current directory
         run: ls -a
 
+      - name: Build the project
+        run: yarn build
+
       - name: list files in dist directory
         run: ls -a dist
 
