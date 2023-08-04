@@ -14,6 +14,9 @@ import { test, expect } from '@playwright/test'
 test('page title is correct', async ({ page }) => {
   await page.goto('/')
 
+  console.log(await page.content())
+  console.log(await page.title())
+
   expect(await page.title()).toBe('ClubLive | Live Band aus Karlsruhe | Wir spielen Clubmusik live!')
 })
 
