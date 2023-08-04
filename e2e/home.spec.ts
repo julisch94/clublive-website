@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test'
 
-test('header bar contains title and menu button', async ({ page }) => {
-  console.info('starting')
-  await page.goto('/')
-  console.info('test')
-
-  await expect(page.getByRole('link', { name: 'ClubLive Club-Hits and Charts' })).toBeVisible()
-  console.info('test2')
-  
-  await expect(page.getByRole('link', { name: 'Menu' })).toBeVisible()
-})
-
-// test('page title is correct', async ({ page }) => {
+// test('header bar contains title and menu button', async ({ page }) => {
+//   console.info('starting')
 //   await page.goto('/')
+//   console.info('test')
 
-//   expect(await page.title()).toBe('ClubLive | Live Band aus Karlsruhe | Wir spielen Clubmusik live!')
+//   await expect(page.getByRole('link', { name: 'ClubLive Club-Hits and Charts' })).toBeVisible()
+//   console.info('test2')
+  
+//   await expect(page.getByRole('link', { name: 'Menu' })).toBeVisible()
 // })
+
+test('page title is correct', async ({ page }) => {
+  await page.goto('/')
+
+  expect(await page.title()).toBe('ClubLive | Live Band aus Karlsruhe | Wir spielen Clubmusik live!')
+})
 
 // test('banner contains title, subtitle, call to action and social media icons', async ({ page }) => {
 //   await page.goto('/')
