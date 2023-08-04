@@ -23,6 +23,12 @@ jobs:
       - name: Install dependencies with Yarn
         run: npm install -g yarn && yarn install --frozen-lockfile
 
+      - name: list files in the current directory
+        run: ls -a
+
+      - name: list files in dist directory
+        run: ls -a dist
+
       - name: Install Playwright browsers
         run: yarn playwright install --with-deps
 
