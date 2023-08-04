@@ -15,16 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Node.js with Yarn
+      - name: Setup Node.js with Yarn(?)
         uses: actions/setup-node@v2
         with:
           node-version: '16'  # Set the desired Node.js version here
 
       - name: Install dependencies with Yarn
-        run: yarn install --frozen-lockfile
+        run: npm install -g yarn && yarn install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: npx playwright install
+        run: yarn playwright install --with-deps
 
       - name: Run Playwright tests
         run: yarn test:e2e
