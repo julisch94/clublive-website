@@ -6,6 +6,8 @@ test('header bar contains title and menu button', async ({ page }) => {
   console.info('test')
 
   await expect(page.getByRole('link', { name: 'ClubLive Club-Hits and Charts' })).toBeVisible()
+  console.info('test2')
+  
   await expect(page.getByRole('link', { name: 'Menu' })).toBeVisible()
 })
 
