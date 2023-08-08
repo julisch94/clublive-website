@@ -74,6 +74,8 @@ const startImageRotation = () => {
 const changeActiveImage = index => {
   activeImageIndex.value = index
   updateBackground()
+  clearInterval(intervalId)
+  startImageRotation()
 }
 </script>
 
@@ -91,9 +93,11 @@ const changeActiveImage = index => {
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
   bottom: 1em;
   left: 0;
   right: 0;
+  transition: transform 0.5s ease;
 }
 
 @media screen and (max-width: 760px) {
