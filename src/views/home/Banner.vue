@@ -34,11 +34,14 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import image1 from '@/assets/images/banner/Club-Live-231.jpg'
+import image2 from '@/assets/images/banner/Club-Live-81.jpg'
+import image3 from '@/assets/images/banner/Club-Live-194.jpg'
 
 const imageUrls = [
-  'https://picsum.photos/1400/600',
-  'https://fastly.picsum.photos/id/227/1400/600.jpg?hmac=tUFPTaIkvlXuNwhltWhmDi6toBxHofUJFVFlTq5z_lo',
-  'https://fastly.picsum.photos/id/393/1400/600.jpg?hmac=rGv9YaUwt0CS60tgQQ_rQXMTxhG0Nrmu0koA36jIqZQ',
+  image1,
+  image2,
+  image3,
 ]
 
 const isLoading = ref(true)
