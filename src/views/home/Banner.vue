@@ -1,5 +1,10 @@
 <template>
-  <section id="banner" class="major" :class="{ 'is-loading': isLoading }" :style="{ backgroundImage: 'url(' + image + ')' }" >
+  <section
+    id="banner"
+    class="major"
+    :class="{ 'is-loading': isLoading }"
+    :style="{ backgroundImage: 'url(' + image + ')' }"
+  >
     <div class="inner">
       <header class="major">
         <h1>ClubLive</h1>
@@ -15,7 +20,7 @@
       </div>
     </div>
     <div class="image-overlay"></div>
-    <div class="image-circle-row" v-if="showImageCircles">
+    <div class="image-circle-row">
       <div
         v-for="(imageUrl, index) in imageUrls"
         :key="imageUrl"
@@ -40,14 +45,13 @@ const isLoading = ref(true)
 const activeImageIndex = ref(0)
 const image = ref(imageUrls[activeImageIndex.value])
 
-const showImageCircles = window.innerWidth > 768
+const shouldUseCarousel = window.innerWidth > 768
 let intervalId
 
 onMounted(() => {
   isLoading.value = false
-  updateBackground()
 
-  if (showImageCircles) {
+  if (shouldUseCarousel) {
     startImageRotation()
   }
 })
@@ -67,7 +71,7 @@ const startImageRotation = () => {
   }, 5000)
 }
 
-const changeActiveImage = (index) => {
+const changeActiveImage = index => {
   activeImageIndex.value = index
   updateBackground()
 }
@@ -83,11 +87,19 @@ const changeActiveImage = (index) => {
   background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
 }
 
-/* Additional styles for the image circles */
 .image-circle-row {
+  position: absolute;
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  bottom: 1em;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 760px) {
+  .image-circle-row {
+    display: none;
+  }
 }
 
 .image-circle {
@@ -95,7 +107,7 @@ const changeActiveImage = (index) => {
   height: 10px;
   margin: 0 0.5rem;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
+  background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
@@ -224,10 +236,9 @@ const changeActiveImage = (index) => {
 }
 
 #banner.major {
-  height: 110vh;
+  height: 100vh;
   min-height: 30em;
   max-height: 50em;
-  background-image: url('../../assets/images/banner/banner_1400.jpg');
 }
 
 #banner.major:after {
@@ -281,7 +292,6 @@ const changeActiveImage = (index) => {
 @media screen and (max-width: 840px) {
   #banner {
     padding: 5em 0 2em 0;
-    height: auto;
     margin-bottom: -2.75em;
     max-height: none;
     min-height: 0;
@@ -302,11 +312,9 @@ const changeActiveImage = (index) => {
   }
 
   #banner.major {
-    height: auto;
     min-height: 0;
     max-height: none;
     background-attachment: scroll;
-    background-image: url('../../assets/images/banner/banner_839.jpg');
   }
 }
 
