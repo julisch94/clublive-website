@@ -32,7 +32,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-test-id="references">
       <div class="inner pa">
         <h3>Referenzen</h3>
         <vue-word-cloud

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <article class="show" data-testid="show">
     <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
     <div v-if="hasFurtherInformation" class="info-container">
       <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
@@ -12,7 +12,7 @@
       <span v-if="show.mapsLink"><a :href="show.mapsLink" target="_blank">Google Maps Link</a></span>
     </div>
     <hr />
-  </div>
+  </article>
 </template>
 
 <script lang="ts">
@@ -46,7 +46,7 @@ export default defineComponent({
   margin-bottom: 0;
 }
 
-.container {
+.show {
   margin-bottom: 1.5em;
   margin-top: 1.5em;
 }

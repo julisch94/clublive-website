@@ -21,7 +21,7 @@ const props = defineProps({
 })
 
 const futureShows: ComputedRef<ShowModel[]> = computed(() => {
-  const allShows = shows.filter(show => !dayjs().isAfter(show.date)).sort(sortByDateAsc)
+  const allShows = shows.filter(show => !dayjs().isAfter(show.date, 'day')).sort(sortByDateAsc)
   if (props.excerpt) {
     return allShows.slice(0, 3)
   }
