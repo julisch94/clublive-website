@@ -97,7 +97,6 @@ const changeActiveImage = index => {
   bottom: 1em;
   left: 0;
   right: 0;
-  transition: transform 0.5s ease;
 }
 
 @media screen and (max-width: 760px) {
