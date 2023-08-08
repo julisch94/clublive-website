@@ -1,5 +1,5 @@
 <template>
-  <section id="banner" class="major" :class="{ 'is-loading': isLoading }">
+  <section id="banner" class="major" :class="{ 'is-loading': isLoading }" :style="{ backgroundImage: 'url(' + image + ')' }" >
     <div class="inner">
       <header class="major">
         <h1>ClubLive</h1>
@@ -14,30 +14,95 @@
         <Social />
       </div>
     </div>
+    <div class="image-overlay"></div>
+    <div class="image-circle-row" v-if="showImageCircles">
+      <div
+        v-for="(imageUrl, index) in imageUrls"
+        :key="imageUrl"
+        class="image-circle"
+        :class="{ active: index === activeImageIndex }"
+        @click="changeActiveImage(index)"
+      ></div>
+    </div>
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import Social from '@/components/Social.vue'
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 
-export default defineComponent({
-  name: 'Banner',
-  components: { Social },
-  data() {
-    return {
-      isLoading: true,
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.isLoading = false
-    }, 0)
-  },
+const imageUrls = [
+  'https://picsum.photos/1400/600',
+  'https://fastly.picsum.photos/id/227/1400/600.jpg?hmac=tUFPTaIkvlXuNwhltWhmDi6toBxHofUJFVFlTq5z_lo',
+  'https://fastly.picsum.photos/id/393/1400/600.jpg?hmac=rGv9YaUwt0CS60tgQQ_rQXMTxhG0Nrmu0koA36jIqZQ',
+]
+
+const isLoading = ref(true)
+const activeImageIndex = ref(0)
+const image = ref(imageUrls[activeImageIndex.value])
+
+const showImageCircles = window.innerWidth > 768
+let intervalId
+
+onMounted(() => {
+  isLoading.value = false
+  updateBackground()
+
+  if (showImageCircles) {
+    startImageRotation()
+  }
 })
+
+onUnmounted(() => {
+  clearInterval(intervalId)
+})
+
+const updateBackground = () => {
+  image.value = imageUrls[activeImageIndex.value]
+}
+
+const startImageRotation = () => {
+  intervalId = setInterval(() => {
+    activeImageIndex.value = (activeImageIndex.value + 1) % imageUrls.length
+    updateBackground()
+  }, 5000)
+}
+
+const changeActiveImage = (index) => {
+  activeImageIndex.value = index
+  updateBackground()
+}
 </script>
 
 <style scoped>
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+}
+
+/* Additional styles for the image circles */
+.image-circle-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.image-circle {
+  width: 10px;
+  height: 10px;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust the opacity as needed */
+  cursor: pointer;
+}
+
+.image-circle.active {
+  background-color: white;
+}
+
 #banner {
   -moz-align-items: center;
   -webkit-align-items: center;
@@ -93,11 +158,26 @@ export default defineComponent({
 }
 
 #banner .inner {
-  -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease,
+  -moz-transition:
+    opacity 1.5s ease,
+    -moz-transform 0.5s ease-out,
+    -moz-filter 0.5s ease,
     -webkit-filter 0.5s ease;
-  -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
-  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
+  -webkit-transition:
+    opacity 1.5s ease,
+    -webkit-transform 0.5s ease-out,
+    -webkit-filter 0.5s ease,
+    -webkit-filter 0.5s ease;
+  -ms-transition:
+    opacity 1.5s ease,
+    -ms-transform 0.5s ease-out,
+    -ms-filter 0.5s ease,
+    -webkit-filter 0.5s ease;
+  transition:
+    opacity 1.5s ease,
+    transform 0.5s ease-out,
+    filter 0.5s ease,
+    -webkit-filter 0.5s ease;
   padding: 0 !important;
   position: relative;
   z-index: 2;
