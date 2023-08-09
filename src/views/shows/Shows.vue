@@ -40,7 +40,7 @@
           :words="pastShows"
           color="White"
           font-family="Montserrat"
-          :spacing="spacing"
+          :spacing="1"
         />
       </div>
     </section>
@@ -48,30 +48,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { seo } from '@/utils'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import ShowList from '@/components/ShowList.vue'
 import VueWordCloud from 'vuewordcloud'
 import { pastShows } from '@/data/pastShows'
-
-const spacing = ref(0.7)
-
-// const moveWordcloudAround = () => {
-//   if (spacing.value === 0.6) {
-//     spacing.value = 0.7
-//   } else if (spacing.value === 0.7) {
-//     spacing.value = 0.8
-//   } else if (spacing.value == 0.8) {
-//     spacing.value = 0.6
-//   }
-// }
-
-// onMounted(() => {
-//   setInterval(() => {
-//     moveWordcloudAround()
-//   }, 4000)
-// })
 
 useSeoMeta({
   ogTitle: seo.shows.title,
