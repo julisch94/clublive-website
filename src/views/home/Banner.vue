@@ -21,8 +21,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import CarouselContainer from '@/components/CarouselContainer.vue'
+import Social from '@/components/Social.vue'
 
 const isLoading = ref(true)
 
