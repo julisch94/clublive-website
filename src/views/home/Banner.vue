@@ -54,7 +54,8 @@ const isLoading = ref(true)
 const activeImageIndex = ref(0)
 const image = ref(imageUrls[activeImageIndex.value])
 
-const shouldUseCarousel = window.innerWidth > 768
+// const shouldUseCarousel = window.innerWidth > 768
+const shouldUseCarousel = true
 let intervalId
 
 onMounted(() => {
