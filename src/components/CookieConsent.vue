@@ -44,6 +44,7 @@ div.cookie-consent {
   background-color: #2e3450;
   transform: translateY(100px);
   animation: moveup 0.2s 1.5s ease-out forwards;
+  z-index: 2;
 }
 
 @keyframes moveup {
