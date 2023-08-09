@@ -15,7 +15,7 @@ import { useIsMobile } from '@/utils'
 
 const { isMobile } = useIsMobile()
 
-const imageFolder = isMobile ? '/src/assets/images/banner/sm' : '/src/assets/images/banner'
+const imageFolder = isMobile ? '/images/banner/sm' : '/images/banner'
 
 const slides = ['crowd.jpg', 'felix.jpg', 'blaeser.jpg', 'tiffany.jpg', 'tobi.jpg'].map(image => ({
   image: new URL(`${imageFolder}/${image}`, import.meta.url).href,
