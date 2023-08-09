@@ -32,7 +32,7 @@ describe('CarouselContainer', () => {
 
     const wrapper = mount(CarouselContainer)
 
-    expect(wrapper.vm.slides).toEqual([
+    expect(wrapper.vm['slides']).toEqual([
       { image: 'file:///images/banner/sm/crowd.jpg' },
       { image: 'file:///images/banner/sm/felix.jpg' },
       { image: 'file:///images/banner/sm/blaeser.jpg' },
@@ -53,6 +53,6 @@ describe('CarouselContainer', () => {
       { image: 'file:///images/banner/tiffany.jpg' },
       { image: 'file:///images/banner/tobi.jpg' },
     ]
-    expect(wrapper.vm.slides).toEqual(expected)
+    expect(wrapper.vm['slides']).toEqual(expected)
   })
 })
