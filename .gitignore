@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 # Playwright test output
 playwright-report/
+
+# Vitest coverage
+coverage/

@@ -14,30 +14,33 @@
         <Social />
       </div>
     </div>
+    <div class="carousel">
+      <CarouselContainer />
+    </div>
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import CarouselContainer from '@/components/CarouselContainer.vue'
 import Social from '@/components/Social.vue'
 
-export default defineComponent({
-  name: 'Banner',
-  components: { Social },
-  data() {
-    return {
-      isLoading: true,
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.isLoading = false
-    }, 0)
-  },
+const isLoading = ref(true)
+
+onMounted(() => {
+  isLoading.value = false
 })
 </script>
 
 <style scoped>
+.carousel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 #banner {
   -moz-align-items: center;
   -webkit-align-items: center;
@@ -48,10 +51,6 @@ export default defineComponent({
   display: -ms-flex;
   display: flex;
   padding: 6em 0 3em 0;
-  background-attachment: fixed;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
   height: 80vh;
@@ -93,11 +92,26 @@ export default defineComponent({
 }
 
 #banner .inner {
-  -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease,
+  -moz-transition:
+    opacity 1.5s ease,
+    -moz-transform 0.5s ease-out,
+    -moz-filter 0.5s ease,
     -webkit-filter 0.5s ease;
-  -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
-  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
+  -webkit-transition:
+    opacity 1.5s ease,
+    -webkit-transform 0.5s ease-out,
+    -webkit-filter 0.5s ease,
+    -webkit-filter 0.5s ease;
+  -ms-transition:
+    opacity 1.5s ease,
+    -ms-transform 0.5s ease-out,
+    -ms-filter 0.5s ease,
+    -webkit-filter 0.5s ease;
+  transition:
+    opacity 1.5s ease,
+    transform 0.5s ease-out,
+    filter 0.5s ease,
+    -webkit-filter 0.5s ease;
   padding: 0 !important;
   position: relative;
   z-index: 2;
@@ -144,10 +158,9 @@ export default defineComponent({
 }
 
 #banner.major {
-  height: 110vh;
+  height: 100vh;
   min-height: 30em;
   max-height: 50em;
-  background-image: url('../../assets/images/banner/banner_1400.jpg');
 }
 
 #banner.major:after {
@@ -156,30 +169,6 @@ export default defineComponent({
 
 #banner.major.alt {
   opacity: 0.75;
-}
-
-#banner.style1:after {
-  background-color: #6fc3df;
-}
-
-#banner.style2:after {
-  background-color: #6fc3df;
-}
-
-#banner.style3:after {
-  background-color: #ec8d81;
-}
-
-#banner.style4:after {
-  background-color: #e7b788;
-}
-
-#banner.style5:after {
-  background-color: #8ea9e8;
-}
-
-#banner.style6:after {
-  background-color: #87c5a4;
 }
 
 #banner.is-loading:after {
@@ -201,7 +190,6 @@ export default defineComponent({
 @media screen and (max-width: 840px) {
   #banner {
     padding: 5em 0 2em 0;
-    height: auto;
     margin-bottom: -2.75em;
     max-height: none;
     min-height: 0;
@@ -222,11 +210,9 @@ export default defineComponent({
   }
 
   #banner.major {
-    height: auto;
     min-height: 0;
     max-height: none;
     background-attachment: scroll;
-    background-image: url('../../assets/images/banner/banner_839.jpg');
   }
 }
 
