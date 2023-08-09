@@ -18,7 +18,7 @@
         <p>
           Und das zieht an. 2018 feierten wir Bühnenpremiere und sind seit dem
           <b>überall in Baden-Württemberg</b> unterwegs. Wir haben sowohl direkt in Karlsruhe, als auch überregional wie
-          z.B. in Karlsruhe, Pforzheim, Bad Wildbad, Rastatt, Freudenstadt, Vaihingen a.d. Enz und sogar in Rheinfelden <b>an der Schweizer Grenze</b> gespielt. Egal
+          z.B. in Karlsruhe, Pforzheim, Bad Wildbad, Rastatt, Freudenstadt und sogar in Rheinfelden <b>an der Schweizer Grenze</b> gespielt. Egal
           ob öffentliche Veranstaltung oder private Feier, wir haben immer Bock mit euch Party zu machen.
         </p>
         <blockquote>
