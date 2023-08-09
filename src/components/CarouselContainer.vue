@@ -11,30 +11,15 @@
 <script setup lang="ts">
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
+import { useIsMobile } from '@/utils'
 
-import image1 from '@/assets/images/banner/Club-Live-231.jpg'
-import image3 from '@/assets/images/banner/Club-Live-258.jpg'
-import image4 from '@/assets/images/banner/Club-Live-81.jpg'
-import image5 from '@/assets/images/banner/Club-Live-194.jpg'
-import image6 from '@/assets/images/banner/Club-Live-261.jpg'
+const { isMobile } = useIsMobile()
 
-const slides = [
-  {
-    image: image1,
-  },
-  {
-    image: image3,
-  },
-  {
-    image: image4,
-  },
-  {
-    image: image5,
-  },
-  {
-    image: image6,
-  },
-]
+const imageFolder = isMobile ? '/src/assets/images/banner/sm' : '/src/assets/images/banner'
+
+const slides = ['crowd.jpg', 'felix.jpg', 'blaeser.jpg', 'tiffany.jpg', 'tobi.jpg'].map(image => ({
+  image: new URL(`${imageFolder}/${image}`, import.meta.url).href,
+}))
 </script>
 
 <style>
