@@ -1,6 +1,6 @@
 <template>
   <div class="carousel-container">
-    <vueper-slides fade autoplay fixed-height="100%" :arrows="false">
+    <vueper-slides fade autoplay lazy fixed-height="100%" :arrows="false">
       <vueper-slide v-for="(slide, index) in slides" :key="index" :image="slide.image" :duration="8000" />
     </vueper-slides>
 
