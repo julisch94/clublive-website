@@ -13,18 +13,14 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 
 import image1 from '@/assets/images/banner/Club-Live-231.jpg'
-import image2 from '@/assets/images/banner/Club-Live-65.jpg'
 import image3 from '@/assets/images/banner/Club-Live-258.jpg'
 import image4 from '@/assets/images/banner/Club-Live-81.jpg'
-import image5 from '@/assets/images/banner/Club-Live-261.jpg'
-import image6 from '@/assets/images/banner/Club-Live-194.jpg'
+import image5 from '@/assets/images/banner/Club-Live-194.jpg'
+import image6 from '@/assets/images/banner/Club-Live-261.jpg'
 
 const slides = [
   {
     image: image1,
-  },
-  {
-    image: image2,
   },
   {
     image: image3,
