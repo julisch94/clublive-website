@@ -35,13 +35,19 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import image1 from '@/assets/images/banner/Club-Live-231.jpg'
-import image2 from '@/assets/images/banner/Club-Live-81.jpg'
-import image3 from '@/assets/images/banner/Club-Live-194.jpg'
+import image2 from '@/assets/images/banner/Club-Live-65.jpg'
+import image3 from '@/assets/images/banner/Club-Live-258.jpg'
+import image4 from '@/assets/images/banner/Club-Live-81.jpg'
+import image5 from '@/assets/images/banner/Club-Live-261.jpg'
+import image6 from '@/assets/images/banner/Club-Live-194.jpg'
 
 const imageUrls = [
   image1,
   image2,
   image3,
+  image4,
+  image5,
+  image6
 ]
 
 const isLoading = ref(true)
