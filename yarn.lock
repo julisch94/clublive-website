@@ -3126,6 +3126,11 @@ vue@3.3.4:
     "@vue/server-renderer" "3.3.4"
     "@vue/shared" "3.3.4"
 
+vueperslides@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/vueperslides/-/vueperslides-3.5.1.tgz#b1a04ffbf3e1ceb48f32cd69b55a7d83def1a8e9"
+  integrity sha512-g/Lauv1svlSaERzLNeys0oeLmpDFiXkIa+lxg+lJma6m6wXqJKzKKVIi8Kvc95XPnl42n7PYYJyr0+FMV6WZGw==
+
 vuewordcloud@^19.0.0:
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/vuewordcloud/-/vuewordcloud-19.0.0.tgz#11386518f30e60a5fb6d750ab0d7455c388c8126"
