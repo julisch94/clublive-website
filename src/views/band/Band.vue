@@ -92,7 +92,7 @@ const musicians = [
     instrument: 'Trompete',
   },
   {
-    imageSrc: 'images/band/bass/tobi.jpg',
+    imageSrc: 'images/band/tobi/tobi.jpg',
     name: 'Tobi',
     instrument: 'Bass',
   },
