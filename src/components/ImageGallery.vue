@@ -3,11 +3,10 @@
     <vueper-slides
       lazy
       class="no-shadow"
-      :visible-slides="3"
+      :visible-slides="4"
+      slide-multiple
       :arrows-outside="false"
-      :scroll-multiple="3"
       fixed-height="100%"
-      :slide-ratio="1 / 4"
       :dragging-distance="50"
       :breakpoints="breakpoints"
     >
@@ -39,14 +38,27 @@ const images = [
 const breakpoints = {
   800: {
     visibleSlides: 1,
-    scrollMultiple: 1,
   },
+  1000: {
+    visibleSlides: 2,
+  },
+  1280: {
+    visibleSlides: 3,
+  }
 }
 </script>
 
 <style>
 .container {
-  height: 100vh;
+  height: 80vh;
+  max-height: 30vw;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    height: 60vh;
+    max-height: none;
+  }
 }
 
 button.vueperslides__bullet,
