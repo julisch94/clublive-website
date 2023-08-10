@@ -51,14 +51,12 @@ const breakpoints = {
 <style>
 .container {
   height: 80vh;
-  max-height: 30vw;
   padding-bottom: 5em;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 800px) {
   .container {
-    height: 60vh;
-    max-height: none;
+    padding-bottom: 0;
   }
 }
 
