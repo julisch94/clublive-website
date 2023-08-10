@@ -3,9 +3,9 @@ import { useIsMobile } from './is-mobile'
 export const getImageURL = (key: string) => {
   const { isMobile } = useIsMobile()
 
-  const path = isMobile ? imageMap[key].sm : imageMap[key].default
+  const path = isMobile ? imageMap[key]?.sm : imageMap[key]?.default
 
-  return new URL(path, import.meta.url).href
+  return path ? new URL(path, import.meta.url).href : undefined
 }
 
 const imageMap = {
