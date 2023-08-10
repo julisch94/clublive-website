@@ -1,13 +1,15 @@
 <template>
   <div class="container">
     <vueper-slides
+      lazy
       class="no-shadow"
       :visible-slides="3"
       :arrows-outside="false"
+      :scroll-multiple="3"
       fixed-height="100%"
       :slide-ratio="1 / 4"
-      :dragging-distance="200"
-      :breakpoints="{ 800: { visibleSlides: 1, slideMultiple: 1 } }"
+      :dragging-distance="50"
+      :breakpoints="breakpoints"
     >
       <vueper-slide v-for="(slide, i) in images" :key="i" :image="slide.image" />
     </vueper-slides>
@@ -29,13 +31,20 @@ const images = [
   'jules.jpg',
   'felix.jpg',
   'tobi.jpg',
+  'andre-side.jpg',
   'lasse.jpg',
   'green.jpg',
   'tobi-erasmus.jpg',
-  'andre-side.jpg',
 ].map(image => ({
   image: new URL(`${imageFolder}/${image}`, import.meta.url).href,
 }))
+
+const breakpoints = {
+  800: {
+    visibleSlides: 1,
+    scrollMultiple: 1,
+  },
+}
 </script>
 
 <style>
@@ -62,9 +71,5 @@ button.vueperslides__arrow:active {
   border: none;
   box-shadow: none;
   background-color: inherit;
-}
-
-.vueperslides__arrows {
-  user-select: none;
 }
 </style>
