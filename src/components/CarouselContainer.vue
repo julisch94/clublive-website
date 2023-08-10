@@ -45,13 +45,8 @@ const slides = ['crowd.jpg', 'felix.jpg', 'blaeser.jpg', 'tiffany.jpg', 'tobi.jp
   z-index: 1;
 }
 
-button.vueperslides__bullet {
-  border: none;
-  box-shadow: none;
-}
-
 button.vueperslides__bullet,
-button.vueperslides__bullet:hover {
+button.vueperslides__bullet:hover  {
   border: none;
   box-shadow: none;
 }
