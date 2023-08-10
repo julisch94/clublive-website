@@ -11,7 +11,7 @@
       :dragging-distance="50"
       :breakpoints="breakpoints"
     >
-      <vueper-slide v-for="(slide, i) in images" :key="i" :image="slide.image" />
+      <vueper-slide v-for="(image, i) in images" :key="i" :image="image" />
     </vueper-slides>
   </div>
 </template>
@@ -19,25 +19,22 @@
 <script setup lang="ts">
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
-
-const imageFolder = '/images/gallery'
+import { getImageURL } from '@/utils'
 
 const images = [
-  'andre.jpg',
-  'crowd.jpg',
-  'tiffany-erasmus.jpg',
-  'blaeser.jpg',
-  'crowd-red.jpg',
-  'jules.jpg',
-  'felix.jpg',
-  'tobi.jpg',
-  'andre-side.jpg',
-  'lasse.jpg',
-  'green.jpg',
-  'tobi-erasmus.jpg',
-].map(image => ({
-  image: new URL(`${imageFolder}/${image}`, import.meta.url).href,
-}))
+  'andre',
+  'crowd',
+  'tiffany-erasmus',
+  'blaeser',
+  'crowd-red',
+  'jules',
+  'felix',
+  'tobi',
+  'andre-side',
+  'lasse',
+  'green',
+  'tobi-erasmus',
+].map(image => getImageURL(image))
 
 const breakpoints = {
   800: {

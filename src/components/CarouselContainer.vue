@@ -1,7 +1,7 @@
 <template>
   <div class="carousel-container">
     <vueper-slides fade autoplay lazy fixed-height="100%" :arrows="false">
-      <vueper-slide v-for="(slide, index) in slides" :key="index" :image="slide.image" :duration="8000" />
+      <vueper-slide v-for="(image, index) in images" :key="index" :image="image" :duration="8000" />
     </vueper-slides>
 
     <div class="image-overlay"></div>
@@ -11,15 +11,9 @@
 <script setup lang="ts">
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
-import { useIsMobile } from '@/utils'
+import { getImageURL } from '@/utils'
 
-const { isMobile } = useIsMobile()
-
-const imageFolder = isMobile ? '/images/banner/sm' : '/images/banner'
-
-const slides = ['crowd.jpg', 'felix.jpg', 'blaeser.jpg', 'tiffany.jpg', 'tobi.jpg'].map(image => ({
-  image: new URL(`${imageFolder}/${image}`, import.meta.url).href,
-}))
+const images = ['crowd', 'felix', 'blaeser', 'tiffany', 'tobi'].map(image => getImageURL(image))
 </script>
 
 <style>
@@ -46,7 +40,7 @@ const slides = ['crowd.jpg', 'felix.jpg', 'blaeser.jpg', 'tiffany.jpg', 'tobi.jp
 }
 
 button.vueperslides__bullet,
-button.vueperslides__bullet:hover  {
+button.vueperslides__bullet:hover {
   border: none;
   box-shadow: none;
 }
