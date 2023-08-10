@@ -25,7 +25,7 @@
         </div>
       </section>
 
-      <section id="social">
+      <section id="gallery">
         <ImageGallery />
       </section>
 
