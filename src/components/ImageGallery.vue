@@ -2,6 +2,7 @@
   <div class="container">
     <vueper-slides
       lazy
+      lazy-load-on-drag
       class="no-shadow"
       :visible-slides="4"
       slide-multiple
