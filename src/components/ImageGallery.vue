@@ -5,6 +5,7 @@
       lazy-load-on-drag
       class="no-shadow"
       :visible-slides="4"
+      :touchable="false"
       slide-multiple
       :arrows-outside="false"
       fixed-height="100%"
@@ -39,13 +40,14 @@ const images = [
 const breakpoints = {
   800: {
     visibleSlides: 1,
+    touchable: true,
   },
   1000: {
     visibleSlides: 2,
   },
   1280: {
     visibleSlides: 3,
-  }
+  },
 }
 </script>
 
