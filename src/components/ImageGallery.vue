@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="image-gallery-container">
     <vueper-slides
       lazy
       lazy-load-on-drag
@@ -52,13 +52,13 @@ const breakpoints = {
 </script>
 
 <style>
-.container {
+.image-gallery-container {
   height: 80vh;
   padding-bottom: 5em;
 }
 
 @media screen and (max-width: 800px) {
-  .container {
+  .image-gallery-container {
     padding-bottom: 0;
   }
 }
