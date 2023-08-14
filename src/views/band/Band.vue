@@ -18,15 +18,15 @@
         <p>
           Und das zieht an. 2018 feierten wir Bühnenpremiere und sind seit dem
           <b>überall in Baden-Württemberg</b> unterwegs. Wir haben sowohl direkt in Karlsruhe, als auch überregional wie
-          z.B. in Pforzheim, Vaihingen a.d. Enz und sogar in Rheinfelden <b>an der Schweizer Grenze</b> gespielt. Egal
+          z.B. in Pforzheim, Bad Wildbad, Rastatt, Freudenstadt und sogar in Rheinfelden <b>an der Schweizer Grenze</b> gespielt. Egal
           ob öffentliche Veranstaltung oder private Feier, wir haben immer Bock mit euch Party zu machen.
         </p>
         <blockquote>
-          Es erfüllt uns einfach mit Freude, wenn alle T-Shirts verschwitzt und alle Friseuren zerstört sind.
+          Es erfüllt uns einfach mit Freude, wenn alle T-Shirts verschwitzt und alle Frisuren zerstört sind.
         </blockquote>
         <p>
           Es zeigt sich auch, dass wir mit unserem ausgefallenen Musikstil <b>sehr talentierte Musiker</b> anziehen:
-          Einige unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln oder Oldenburg</b>. Mittlerweile
+          Einige unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln, München oder Oldenburg</b>. Mittlerweile
           haben wir für einige Instrumente Ersatzleute in petto, die ggf. bei Krankheit oder Terminkollision einspringen
           können.
         </p>
@@ -92,7 +92,7 @@ const musicians = [
     instrument: 'Trompete',
   },
   {
-    imageSrc: 'images/band/bass/tobi.jpg',
+    imageSrc: 'images/band/tobi/tobi.jpg',
     name: 'Tobi',
     instrument: 'Bass',
   },
