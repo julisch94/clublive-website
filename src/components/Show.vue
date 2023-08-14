@@ -15,27 +15,24 @@
   </article>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import { ShowModel } from '@/model/show.model'
 import dayjs from '@/plugins/dayjs'
 
-export default defineComponent({
-  name: 'Show',
-  props: {
-    show: {
-      type: Object as () => ShowModel,
-      required: true,
-    },
+const props = defineProps({
+  show: {
+    type: Object as () => ShowModel,
+    required: true,
   },
-  computed: {
-    prettyDate(): string {
-      return dayjs(this.show.date).format('dd DD.MM.YYYY')
-    },
-    hasFurtherInformation(): boolean {
-      return !!this.show.description || !!this.show.website || !!this.show.mapsLink
-    },
-  },
+})
+
+const prettyDate = computed(() => {
+  return dayjs(props.show.date).format('dd DD.MM.YYYY')
+})
+
+const hasFurtherInformation = computed(() => {
+  return !!props.show.description || !!props.show.website || !!props.show.mapsLink
 })
 </script>
 
