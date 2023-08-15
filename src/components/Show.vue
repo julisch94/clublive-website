@@ -1,7 +1,7 @@
 <template>
   <article class="show" data-testid="show">
     <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
-    <div v-if="hasFurtherInformation" class="info-container">
+    <div v-if="displayDetails" class="info-container">
       <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
       <span v-if="show.description">{{ show.description }}</span>
       <span v-if="show.website" class="icon fa-globe" style="justify-self: center">&nbsp;</span>
@@ -25,10 +25,18 @@ const props = defineProps({
     type: Object as () => ShowModel,
     required: true,
   },
+  short: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const prettyDate = computed(() => {
   return dayjs(props.show.date).format('dd DD.MM.YYYY')
+})
+
+const displayDetails = computed(() => {
+  return !props.short && hasFurtherInformation.value
 })
 
 const hasFurtherInformation = computed(() => {
