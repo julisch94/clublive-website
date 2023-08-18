@@ -38,7 +38,7 @@
           <div>
             <ul class="actions">
               <li>
-                <a href="/shows" class="button next">Mehr Shows</a>
+                <a href="/shows" class="button next">Mehr Infos</a>
               </li>
             </ul>
           </div>

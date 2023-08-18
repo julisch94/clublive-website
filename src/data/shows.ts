@@ -68,4 +68,11 @@ export const shows: ShowModel[] = [
     mapsLink: 'https://goo.gl/maps/Pp4kxqW7vMHHZLt69',
     description: "Eintritt frei, Präsentiert von der Stadt Karlsruhe in Zusammenarbeit mit dem Radiosender die neue welle und der City Initiative Karlsruhe e.V.",
   },
+  {
+    date: '2024/01/13',
+    place: 'The Irish Pub, Pforzheim',
+    website: 'https://www.irishpubpf.de/',
+    mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
+    description: "Beginn ab 21:30 Uhr",
+  },
 ]

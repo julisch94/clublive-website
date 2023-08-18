@@ -1,6 +1,6 @@
 <template>
   <div v-if="hasFutureShows">
-    <Show v-for="show of futureShows" :key="show.date" :show="show" />
+    <Show v-for="show of futureShows" :key="show.date" :show="show" :short="excerpt" />
   </div>
 
   <div v-else id="noShows">
