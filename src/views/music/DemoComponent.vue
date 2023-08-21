@@ -1,20 +1,40 @@
 <template>
-  <iframe
-    width="100%"
-    height="450"
-    scrolling="no"
-    frameborder="no"
-    allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1430026750&color=%239bf1ff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+  <AudioPlayer
+    :option="{
+      src: '/music/m-little-party-2.mp3',
+      title: 'A Little Party Never Killed Nobody',
+    }"
+  />
+  <AudioPlayer
+    :option="{
+      src: '/music/m-dance-monkey-1.mp3',
+      title: 'Dance Monkey',
+    }"
+  />
+  <AudioPlayer
+    :option="{
+      src: '/music/m-party-rock-anthem.mp3',
+      title: 'Party Rock Anthem',
+    }"
+  />
+  <AudioPlayer
+    :option="{
+      src: '/music/m-wildberry-lillet-2.mp3',
+      title: 'Wildberry Lillet',
+    }"
   />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import AudioPlayer from 'vue3-audio-player'
+import 'vue3-audio-player/dist/style.css'
 
-export default defineComponent({
-  name: 'DemoComponent',
-})
+// const list = {
+  // title: 'secret base~君がくれたもの~',
+  // artist: 'Silent Siren',
+  // src: 'public/music/m-little-party-2.mp3',
+  // pic: 'https://moeplayer.b0.upaiyun.com/aplayer/secretbase.jpg',
+// }
 </script>
 
 <style scoped></style>
