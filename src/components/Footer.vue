@@ -14,7 +14,7 @@
 
       <div class="copyright-row">
         <ul class="copyright">
-          <li>&copy; {{ currentYear }} ClubLive</li>
+          <li>&copy; {{ currentYear }} Club Live</li>
           <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
           <li>
             Vue.js Integration:

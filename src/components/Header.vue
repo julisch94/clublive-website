@@ -1,7 +1,7 @@
 <template>
   <header id="header" class="reveal" :class="{ alt: isTransparent }">
     <a href="/" class="logo">
-      <strong>ClubLive</strong>
+      <strong>Club Live</strong>
       <span>Club-Hits and Charts</span>
     </a>
     <nav id="menu-desktop">

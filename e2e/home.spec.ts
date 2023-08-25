@@ -3,14 +3,14 @@ import { test, expect } from '@playwright/test'
 test('page title is correct', async ({ page }) => {
   await page.goto('/')
 
-  expect(await page.title()).toBe('ClubLive | Live Band aus Karlsruhe | Wir spielen Clubmusik live!')
+  expect(await page.title()).toBe('Club Live | Live Band aus Karlsruhe | Wir spielen Clubmusik live!')
 })
 
 test('header bar contains title and menu button', async ({ page }) => {
   console.info('starting')
   await page.goto('/')
 
-  await expect(page.getByRole('link', { name: 'ClubLive Club-Hits and Charts' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Club Live Club-Hits and Charts' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Menu' })).toBeVisible()
 })
 
@@ -49,7 +49,7 @@ test('start section contains heading, video and info paragraph', async ({ page }
   await page.goto('/#start')
 
   await expect(page.locator('#start').getByRole('heading', { name: 'Wir spielen Clubmusik live!' })).toBeVisible()
-  await expect(page.locator('#start iframe[title="ClubLive YouTube"]')).toBeVisible()
+  await expect(page.locator('#start iframe[title="Club Live YouTube"]')).toBeVisible()
   await expect(
     page.locator('#start').getByText('Wer sich fragt, ob moderne, hoch-produzierte Musik überhaupt')
   ).toBeVisible()
@@ -59,7 +59,7 @@ test('start section contains heading, video and info paragraph', async ({ page }
 test('home link leads back to root', async ({ page }) => {
   await page.goto('/#start')
 
-  await page.getByRole('link', { name: 'ClubLive Club-Hits and Charts' }).click()
+  await page.getByRole('link', { name: 'Club Live Club-Hits and Charts' }).click()
 
   await page.waitForURL('/')
 })

@@ -2,7 +2,7 @@
   <div class="video">
     <iframe
       src="https://www.youtube.com/embed/V5-zxR4yRFo"
-      title="ClubLive YouTube"
+      title="Club Live YouTube"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
