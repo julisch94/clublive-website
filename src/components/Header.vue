@@ -59,10 +59,6 @@ export default defineComponent({
     color 0.2s ease-in-out;
 }
 
-a.logo:hover .clublive-logo {
-  background-color: #9bf1ff;
-}
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -75,7 +71,17 @@ a.logo:hover .clublive-logo {
 .clublive-logo img {
   max-width: 100%;
   max-height: 100%;
-  height: 1.25rem;
+  height: 1.5rem;
+}
+
+a.logo:hover .clublive-logo,
+a.logo:active .clublive-logo {
+  background-color: #9bf1ff;
+}
+
+a.logo:hover .clublive-logo img,
+a.logo:active .clublive-logo img {
+  content: url('/images/logo-horizontal-black.svg');
 }
 
 #header {
@@ -128,14 +134,6 @@ a.logo:hover .clublive-logo {
   line-height: 1.65em;
   margin-right: 0.325em;
   padding: 0 0.125em 0 0.375em;
-}
-
-#header .logo:hover strong {
-  background-color: #9bf1ff;
-}
-
-#header .logo:active strong {
-  background-color: #53e3fb;
 }
 
 #header nav {
