@@ -1,14 +1,9 @@
 <template>
   <header id="header" class="reveal" :class="{ alt: isTransparent }">
     <a href="/" class="logo">
-      <div class="logo-container">
-        <div class="clublive-logo">
-          <img src="/images/logo-horizontal-white.svg" alt="ClubLive Logo" />
-        </div>
-        <span class="logo-text">Club-Hits and Charts</span>
-      </div>
+      <strong>ClubLive</strong>
+      <span>Club-Hits and Charts</span>
     </a>
-
     <nav id="menu-desktop">
       <a class="hamburger" href="#" @click.prevent="toggleMenu()">Menu</a>
     </nav>
@@ -38,47 +33,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.clublive-logo {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: white; */
-  border-radius: 0.3rem;
-  /* padding: 0.4rem; */
-  -moz-transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-  -webkit-transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-  -ms-transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-  transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo-text {
-  margin-left: 1rem;
-}
-
-.clublive-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  height: 1rem;
-  transition: filter 0.2s ease-in-out;
-}
-
-.logo:hover .clublive-logo img {
-  filter: brightness(70%) sepia(100%) hue-rotate(150deg);
-}
-
 #header {
   display: -moz-flex;
   display: -webkit-flex;
@@ -103,32 +57,31 @@ export default defineComponent({
 #header .logo {
   border: 0;
   display: inline-block;
-  align-items: center;
-  font-size: 0.8em;
+    font-size: 0.8em;
   height: inherit;
   line-height: inherit;
   padding: 0 1.5em;
 }
 
 #header .logo strong {
-  -moz-transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-  -webkit-transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-  -ms-transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-  transition:
-    background-color 0.2s ease-in-out,
-    color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   background-color: #fff;
   color: #242943;
   display: inline-block;
   line-height: 1.65em;
   margin-right: 0.325em;
   padding: 0 0.125em 0 0.375em;
+}
+
+#header .logo:hover strong {
+  background-color: #9bf1ff;
+}
+
+#header .logo:active strong {
+  background-color: #53e3fb;
 }
 
 #header nav {
