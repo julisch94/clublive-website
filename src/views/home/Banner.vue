@@ -5,7 +5,7 @@
         <h1>ClubLive</h1>
       </header>
       <div class="content">
-        <p>Live Band aus Karlsruhe.</p>
+        <h1>Live-Band aus Karlsruhe</h1>
         <ul class="actions">
           <li>
             <a href="#start" class="button next">Jetzt reinhören</a>
@@ -150,9 +150,18 @@ onMounted(() => {
   margin-left: 0;
 }
 
+/* this can be deleted */
 #banner .inner .content p {
   font-size: 0.7em;
   font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+#banner .inner .content h1 {
+  font-size: 0.7em;
+  font-weight: 700;
+  font-family: inherit;
   letter-spacing: 0.25em;
   text-transform: uppercase;
 }
