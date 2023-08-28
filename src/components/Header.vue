@@ -57,7 +57,7 @@ export default defineComponent({
 #header .logo {
   border: 0;
   display: inline-block;
-    font-size: 0.8em;
+  font-size: 0.8em;
   height: inherit;
   line-height: inherit;
   padding: 0 1.5em;
