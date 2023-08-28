@@ -163,6 +163,14 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
+#banner .inner .content h1 {
+  font-size: 0.7em;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
 #banner.major {
   height: 100vh;
   min-height: 30em;
