@@ -3,7 +3,7 @@
     <a href="/" class="logo">
       <div class="logo-container">
         <div class="clublive-logo">
-          <img src="/images/logo-horizontal-gradient.svg" alt="ClubLive Logo" />
+          <img src="/images/logo-horizontal-white.svg" alt="ClubLive Logo" />
         </div>
         <span class="logo-text">Club-Hits and Charts</span>
       </div>
@@ -42,9 +42,9 @@ export default defineComponent({
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 0.3rem;
-  padding: 0.4rem;
+  /* padding: 0.4rem; */
   -moz-transition:
     background-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
@@ -71,17 +71,12 @@ export default defineComponent({
 .clublive-logo img {
   max-width: 100%;
   max-height: 100%;
-  height: 1.5rem;
+  height: 1rem;
+  transition: filter 0.2s ease-in-out;
 }
 
-a.logo:hover .clublive-logo,
-a.logo:active .clublive-logo {
-  background-color: #9bf1ff;
-}
-
-a.logo:hover .clublive-logo img,
-a.logo:active .clublive-logo img {
-  content: url('/images/logo-horizontal-black.svg');
+.logo:hover .clublive-logo img {
+  filter: brightness(70%) sepia(100%) hue-rotate(150deg);
 }
 
 #header {
