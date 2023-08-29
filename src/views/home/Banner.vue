@@ -3,7 +3,7 @@
     <div class="inner">
       <header class="major">
         <div class="clublive-logo">
-          <img src="/images/logo-horizontal-white.svg" alt="ClubLive Logo" />
+          <img src="/images/logo-horizontal-white.svg" alt="Club Live Logo" />
         </div>
       </header>
       <div class="content">
