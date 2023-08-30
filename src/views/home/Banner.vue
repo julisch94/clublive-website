@@ -2,10 +2,12 @@
   <section id="banner" class="major" :class="{ 'is-loading': isLoading }">
     <div class="inner">
       <header class="major">
-        <h1>ClubLive</h1>
+        <div class="clublive-logo">
+          <img src="/images/logo-horizontal-white.svg" alt="Club Live Logo" />
+        </div>
       </header>
       <div class="content">
-        <p>Live Band aus Karlsruhe.</p>
+        <h1>Live-Band aus Karlsruhe</h1>
         <ul class="actions">
           <li>
             <a href="#start" class="button next">Jetzt reinhören</a>
@@ -33,6 +35,14 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.clublive-logo img {
+  height: 1em;
+}
+
+.clublive-logo {
+  font-size: 3.25em;
+}
+
 .carousel {
   position: absolute;
   top: 0;
@@ -84,11 +94,6 @@ onMounted(() => {
   top: 0;
   width: 100%;
   z-index: 1;
-}
-
-#banner h1 {
-  font-size: 3.25em;
-  text-transform: uppercase;
 }
 
 #banner .inner {
@@ -150,9 +155,10 @@ onMounted(() => {
   margin-left: 0;
 }
 
-#banner .inner .content p {
+#banner .inner .content h1 {
   font-size: 0.7em;
   font-weight: 700;
+  font-family: inherit;
   letter-spacing: 0.25em;
   text-transform: uppercase;
 }
@@ -196,7 +202,7 @@ onMounted(() => {
     top: -2.75em;
   }
 
-  #banner h1 {
+  .clublive-logo {
     font-size: 2em;
   }
 
