@@ -8,9 +8,9 @@
 
         <div class="row">
           <div class="6u 12u$(small)">
-            <h3>Pressetext von ClubLive</h3>
+            <h3>Pressetext von "Club Live"</h3>
             <p style="text-align: justify">
-              ClubLive – Clubmusik live performt.<br />
+              Club Live – Clubmusik live performt.<br />
               {{ pressText }}
             </p>
           </div>

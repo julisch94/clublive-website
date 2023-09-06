@@ -1,7 +1,7 @@
 <template>
   <header id="header" class="reveal" :class="{ alt: isTransparent }">
     <a href="/" class="logo">
-      <strong>ClubLive</strong>
+      <strong>Club Live</strong>
       <span>Club-Hits and Charts</span>
     </a>
     <nav id="menu-desktop">
@@ -72,7 +72,7 @@ export default defineComponent({
   color: #242943;
   display: inline-block;
   line-height: 1.65em;
-  margin-right: 0.325em;
+  margin-right: 1em;
   padding: 0 0.125em 0 0.375em;
 }
 
