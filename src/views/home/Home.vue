@@ -6,7 +6,7 @@
       <section id="start" class="scroll-target">
         <div class="inner pa">
           <div class="-2u 8u 12u$(small)">
-            <h2>Wir spielen Clubmusik live!</h2>
+            <h2>Club Live spielt Clubmusik live!</h2>
 
             <VideoComponent />
 
