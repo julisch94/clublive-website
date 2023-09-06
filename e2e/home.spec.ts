@@ -48,7 +48,7 @@ test('when user clicks on the call to action button, the browser scrolls #start 
 test('start section contains heading, video and info paragraph', async ({ page }) => {
   await page.goto('/#start')
 
-  await expect(page.locator('#start').getByRole('heading', { name: 'Wir spielen Clubmusik live!' })).toBeVisible()
+  await expect(page.locator('#start').getByRole('heading', { name: 'Club Live spielt Clubmusik live!' })).toBeVisible()
   await expect(page.locator('#start iframe[title="Club Live YouTube"]')).toBeVisible()
   await expect(
     page.locator('#start').getByText('Wer sich fragt, ob moderne, hoch-produzierte Musik überhaupt')
