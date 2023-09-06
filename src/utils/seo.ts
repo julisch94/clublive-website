@@ -1,6 +1,6 @@
 export const seo = {
   home: {
-    title: 'Club Live | Live Band aus Karlsruhe | Wir spielen Clubmusik live!',
+    title: 'Club Live | Live-Band aus Karlsruhe | Wir spielen Clubmusik live!',
     description:
       'Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht interpretiert und auf der Bühne präsentiert. Club Live zeigt, dass nicht nur DJs mit aktuellen Hits für ordentlich Party sorgen können. Vom Club bis zur Open Air Show geht bei Club Live garantiert keiner ohne verschwitztes Shirt und zerstörte Frisur nach Hause.',
   },

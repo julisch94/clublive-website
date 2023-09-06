@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 test('page title is correct', async ({ page }) => {
   await page.goto('/')
 
-  expect(await page.title()).toBe('Club Live | Live Band aus Karlsruhe | Wir spielen Clubmusik live!')
+  expect(await page.title()).toBe('Club Live | Live-Band aus Karlsruhe | Wir spielen Clubmusik live!')
 })
 
 test('header bar contains title and menu button', async ({ page }) => {
