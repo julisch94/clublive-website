@@ -17,8 +17,8 @@ test('header bar contains title and menu button', async ({ page }) => {
 test('banner contains title, subtitle, call to action and social media icons', async ({ page }) => {
   await page.goto('/')
 
-  await expect(page.getByRole('img', {name: 'Club Live Logo'})).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Live-Band aus Karlsruhe' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'ClubLive' })).toBeVisible()
+  await expect(page.getByText('Live Band aus Karlsruhe.')).toBeVisible()
   await expect(page.getByRole('link', { name: 'Jetzt reinhören' })).toBeVisible()
 
   await expect(page.locator('#banner').getByRole('link', { name: 'Instagram' })).toHaveAttribute(
