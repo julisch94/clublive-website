@@ -1,4 +1,4 @@
-# ClubLive Website
+# Club Live Website
 
 [![Website](https://img.shields.io/badge/Website-Link-blue)](https://clublive.band/)
 [![GitHub Actions Status](https://github.com/julisch94/clublive-website/workflows/Run%20Playwright%20Tests/badge.svg)](https://github.com/julisch94/clublive-website/actions)
