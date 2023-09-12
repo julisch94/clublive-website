@@ -17,7 +17,7 @@ test('header bar contains title and menu button', async ({ page }) => {
 test('banner contains title, subtitle, call to action and social media icons', async ({ page }) => {
   await page.goto('/')
 
-  await expect(page.getByRole('img', {name: 'Club Live Logo'})).toBeVisible()
+  await expect(page.getByRole('img', { name: 'Club Live Logo' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Live-Band aus Karlsruhe' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Jetzt reinhören' })).toBeVisible()
 
@@ -49,7 +49,10 @@ test('start section contains heading, video and info paragraph', async ({ page }
   await page.goto('/#start')
 
   await expect(page.locator('#start').getByRole('heading', { name: 'Club Live spielt Clubmusik live!' })).toBeVisible()
-  await expect(page.locator('#start iframe[title="Club Live YouTube"]')).toBeVisible()
+
+  await expect(page.locator('video')).toBeVisible()
+  await expect(page.locator('video source')).toHaveAttribute('src', '/videos/irish-pub.mp4')
+
   await expect(
     page.locator('#start').getByText('Wer sich fragt, ob moderne, hoch-produzierte Musik überhaupt')
   ).toBeVisible()
