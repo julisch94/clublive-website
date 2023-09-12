@@ -1,12 +1,9 @@
 <template>
   <div class="video">
-    <iframe
-      src="https://www.youtube.com/embed/V5-zxR4yRFo"
-      title="Club Live YouTube"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <video controls>
+      <source src="/videos/irish-pub.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </template>
 
@@ -28,9 +25,7 @@ export default defineComponent({
   margin-bottom: 1em;
 }
 
-.video iframe,
-.video object,
-.video embed {
+.video video {
   position: absolute;
   top: 0;
   left: 0;
