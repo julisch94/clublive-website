@@ -36,3 +36,26 @@ test('references are loaded correctly', async ({ page }) => {
     page.locator('[data-test-id="references"]').getByText('Vaihingen a.d. Enz', { exact: true })
   ).toBeVisible()
 })
+
+
+test('should contain the correct title', async ({ page }) => {
+  await page.goto('/shows')
+
+  await page.waitForFunction(() => document.title === 'Club Live | Shows')
+
+  const title = await page.evaluate(() => document.title)
+  expect(title).toBe('Club Live | Shows')
+})
+
+test('should contain the correct meta tags', async ({ page }) => {
+  await page.goto('/shows')
+
+  const ogDescription = await page.$eval('meta[property="og:description"]', el => (el as HTMLMetaElement).content)
+  expect(ogDescription).toMatch(/^Schaue hier regelmäßig vorbei /)
+
+  const ogTitle = await page.$eval('meta[property="og:title"]', el => (el as HTMLMetaElement).content)
+  expect(ogTitle).toBe('Club Live | Shows')
+
+  const description = await page.$eval('meta[name="description"]', el => (el as HTMLMetaElement).content)
+  expect(description).toMatch(/^Schaue hier regelmäßig vorbei /)
+})

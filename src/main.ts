@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router'
 import VueCookies from 'vue-cookies'
-import { createHead } from '@vueuse/head'
+import { createHead } from '@unhead/vue'
 import posthog from './plugins/posthog'
 
 const app = createApp(App)
