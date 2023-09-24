@@ -37,7 +37,6 @@ test('references are loaded correctly', async ({ page }) => {
   ).toBeVisible()
 })
 
-
 test('should contain the correct title', async ({ page }) => {
   await page.goto('/shows')
 
@@ -49,6 +48,8 @@ test('should contain the correct title', async ({ page }) => {
 
 test('should contain the correct meta tags', async ({ page }) => {
   await page.goto('/shows')
+
+  await page.waitForLoadState()
 
   const ogDescription = await page.$eval('meta[property="og:description"]', el => (el as HTMLMetaElement).content)
   expect(ogDescription).toMatch(/^Schaue hier regelmäßig vorbei /)

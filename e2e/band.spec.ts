@@ -12,6 +12,8 @@ test('should contain the correct title', async ({ page }) => {
 test('should contain the correct meta tags', async ({ page }) => {
   await page.goto('/band')
 
+  await page.waitForLoadState()
+
   const ogDescription = await page.$eval('meta[property="og:description"]', el => (el as HTMLMetaElement).content)
   expect(ogDescription).toMatch(/^Aus verschiedenen Regionen Deutschlands/)
 
