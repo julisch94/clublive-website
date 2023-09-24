@@ -66,3 +66,19 @@ test('home link leads back to root', async ({ page }) => {
 
   await page.waitForURL('/')
 })
+
+
+test('should contain the correct meta tags', async ({ page }) => {
+  await page.goto('/')
+
+  await page.waitForLoadState()
+
+  const ogDescription = await page.$eval('meta[property="og:description"]', el => (el as HTMLMetaElement).content)
+  expect(ogDescription).toMatch(/^Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht/)
+
+  const ogTitle = await page.$eval('meta[property="og:title"]', el => (el as HTMLMetaElement).content)
+  expect(ogTitle).toBe('Club Live | Live-Band aus Karlsruhe | Wir spielen Clubmusik live!')
+
+  const description = await page.$eval('meta[name="description"]', el => (el as HTMLMetaElement).content)
+  expect(description).toMatch(/^Wir spielen Clubmusik live! Charts und Dance Hits aus dem Club handgemacht/)
+})
