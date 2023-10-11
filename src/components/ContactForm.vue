@@ -8,12 +8,7 @@
             Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
             unseren Handys und melden uns umgehend bei dir zurück.
           </p>
-          <form
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            @submit.prevent="submitForm"
-            @reset.prevent="reset()"
-          >
+          <form data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submitForm">
             <div class="row">
               <div class="field">
                 <label for="name">Name</label>
@@ -81,7 +76,7 @@
             </ul>
           </form>
 
-          <div ref="result" class="result" :class="{ shake: failure, 'slide-in-from-left': success }">
+          <div ref="resultArea" class="result" :class="{ shake: failure, 'slide-in-from-left': success }">
             <div v-if="success">
               <span class="icon alt fa-check" />
               <span>Vielen Dank! Deine Nachricht wurde übermittelt. Wir melden uns baldmöglichst zurück.</span>
@@ -101,68 +96,52 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { sendContactForm } from '@/utils'
+<script setup lang="ts">
+import { Ref, computed, ref } from 'vue'
+import { sendContactForm } from '@/utils/api'
 
-export default defineComponent({
-  name: 'ContactForm',
-  data() {
-    return {
-      name: '',
-      email: '',
-      message: '',
-      success: false,
-      failure: false,
-      isLoading: false,
-      reference: '',
-      referenceOther: '',
+const name = ref('')
+const email = ref('')
+const message = ref('')
+const success = ref(false)
+const failure = ref(false)
+const isLoading = ref(false)
+const reference = ref('')
+const referenceOther = ref('')
+
+const resultArea: Ref<HTMLDivElement | null> = ref(null)
+
+const showReferenceOther = computed(() => reference.value === 'other')
+
+const submitForm = async () => {
+  const body = {
+    name: name.value,
+    email: email.value,
+    message: message.value,
+    reference: reference.value,
+    referenceOther: referenceOther.value,
+  }
+
+  success.value = false
+  failure.value = false
+  isLoading.value = true
+
+  try {
+    const result = await sendContactForm(body)
+
+    isLoading.value = false
+    if (result?.ok) {
+      success.value = true
+    } else {
+      failure.value = true
     }
-  },
-  computed: {
-    showReferenceOther() {
-      return this.reference === 'other'
-    },
-  },
-  methods: {
-    submitForm() {
-      const body = {
-        name: this.name,
-        email: this.email,
-        message: this.message,
-        reference: this.reference,
-        referenceOther: this.referenceOther,
-      }
+  } catch (error) {
+    console.error(error)
+    isLoading.value = false
+  }
 
-      this.success = false
-      this.failure = false
-      this.isLoading = true
-
-      sendContactForm(body)
-        .then(result => {
-          this.isLoading = false
-          if (result?.ok) {
-            this.success = true
-          } else {
-            this.failure = true
-          }
-          const resultArea = this.$refs.result as HTMLDivElement
-          resultArea.scrollIntoView()
-        })
-        .catch(error => {
-          console.error(error)
-          this.isLoading = false
-        })
-    },
-    reset() {
-      this.name = ''
-      this.email = ''
-      this.message = ''
-      this.success = false
-      this.failure = false
-    },
-  },
-})
+  resultArea.value?.scrollIntoView()
+}
 </script>
 
 <style scoped>
