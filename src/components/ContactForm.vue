@@ -103,6 +103,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { sendContactForm } from '@/utils'
 
 export default defineComponent({
   name: 'ContactForm',
@@ -126,39 +127,31 @@ export default defineComponent({
   methods: {
     submitForm() {
       const body = {
-        'form-name': 'clublive-contact',
         name: this.name,
         email: this.email,
         message: this.message,
         reference: this.reference,
         referenceOther: this.referenceOther,
       }
-      console.log('form data', body)
 
       this.success = false
       this.failure = false
       this.isLoading = true
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(body).toString(),
-      })
+
+      sendContactForm(body)
         .then(result => {
-          console.log(result)
           this.isLoading = false
-          if (result.ok) {
+          if (result?.ok) {
             this.success = true
-            console.log('Form successfully submitted.')
           } else {
             this.failure = true
-            console.error('Form submission failed', result.status, result.statusText)
           }
           const resultArea = this.$refs.result as HTMLDivElement
           resultArea.scrollIntoView()
         })
         .catch(error => {
+          console.error(error)
           this.isLoading = false
-          alert(error)
         })
     },
     reset() {
