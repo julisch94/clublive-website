@@ -1,8 +1,14 @@
-import { describe, expect, it, vi } from 'vitest'
+import { beforeAll, describe, expect, it, vi } from 'vitest'
 import ContactForm from '../ContactForm.vue'
 import { render } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'
 import * as api from '@/utils/api'
+
+beforeAll(() => {
+  // this is required to make scrollIntoView work,
+  // otherwise we'd have to wrap all of them with try/catch
+  window.HTMLElement.prototype.scrollIntoView = () => {}
+})
 
 describe('ContactForm', () => {
   it('displays texts correctly', () => {
