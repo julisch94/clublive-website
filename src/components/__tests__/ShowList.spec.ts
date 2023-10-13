@@ -1,6 +1,6 @@
 import { test, expect, beforeEach, afterEach } from 'vitest'
 import ShowList from '../ShowList.vue'
-import { render } from '@testing-library/vue'
+import { render, screen } from '@testing-library/vue'
 import { vi } from 'vitest'
 import { ShowModel } from '@/model/show.model'
 
@@ -40,13 +40,11 @@ test('future shows are displayed', () => {
     return { shows }
   })
 
-  const screen = render(ShowList)
+  render(ShowList)
 
   expect(screen.queryAllByTestId('show').length).toBe(3)
   expect(screen.getByText(/The Irish Pub, Pforzheim/)).to.exist
   expect(screen.getByText(/Private Veranstaltung, Karlsruhe/)).to.exist
   expect(screen.getByText(/Gig this evening/)).to.exist
   expect(screen.queryByText(/Old gig/i)).not.to.exist
-
-  screen.unmount()
 })
