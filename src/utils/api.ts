@@ -10,7 +10,7 @@ export const sendContactForm = async (values: {
     ...values,
   }
 
-  return fetch('/api/contact', {
+  return fetch('/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

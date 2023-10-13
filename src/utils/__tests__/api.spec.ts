@@ -1,18 +1,32 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { sendContactForm } from '../api'
 
 describe('api', () => {
-  it('should be true', async () => {
-    
+  it('should send the contact form correctly', async () => {
+    const fetchMock = vi.fn()
+    vi.stubGlobal('fetch', fetchMock)
 
-    const result = await sendContactForm({
-        name: 'test',
-        email: 'test',
-        message: 'test',
-        reference: 'test',
-        referenceOther: 'test',
+    await sendContactForm({
+      name: 'name',
+      email: 'email',
+      message: 'message',
+      reference: 'reference',
+      referenceOther: 'other',
     })
 
-    expect(true).toBe(true)
+    expect(fetchMock).toHaveBeenCalledWith('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: new URLSearchParams({
+        'form-name': 'clublive-contact',
+        name: 'name',
+        email: 'email',
+        message: 'message',
+        reference: 'reference',
+        referenceOther: 'other',
+      }).toString(),
+    })
   })
 })
