@@ -16,9 +16,7 @@ describe('api', () => {
 
     expect(fetchMock).toHaveBeenCalledWith('/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
         'form-name': 'clublive-contact',
         name: 'name',

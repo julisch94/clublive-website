@@ -12,9 +12,7 @@ export const sendContactForm = async (values: {
 
   return fetch('/', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(body).toString(),
   })
 }
