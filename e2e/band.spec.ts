@@ -1,4 +1,5 @@
 import test, { expect } from '@playwright/test'
+import { waitForHead } from './wait-for-head'
 
 test('should contain the correct title', async ({ page }) => {
   await page.goto('/band')
@@ -9,11 +10,10 @@ test('should contain the correct title', async ({ page }) => {
   expect(title).toBe('Club Live | Band')
 })
 
-// flaky
-test.skip('should contain the correct meta tags', async ({ page }) => {
+test('should contain the correct meta tags', async ({ page }) => {
   await page.goto('/band')
 
-  await page.waitForLoadState()
+  await waitForHead()
 
   const ogDescription = await page.$eval('meta[property="og:description"]', el => (el as HTMLMetaElement).content)
   expect(ogDescription).toMatch(/^Aus verschiedenen Regionen Deutschlands/)

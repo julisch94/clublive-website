@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { waitForHead } from './wait-for-head'
 
 test('open up menu and go to shows', async ({ page }) => {
   await page.goto('/')
@@ -49,7 +50,7 @@ test('should contain the correct title', async ({ page }) => {
 test('should contain the correct meta tags', async ({ page }) => {
   await page.goto('/shows')
 
-  await page.waitForLoadState()
+  await waitForHead()
 
   const ogDescription = await page.locator('meta[property="og:description"]').getAttribute('content')
   expect(ogDescription).toMatch(/^Schaue hier regelmäßig vorbei /)
