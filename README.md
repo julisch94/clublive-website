@@ -27,6 +27,7 @@ We are using prettier for auto-formatting. Make sure you have a prettier plugin 
 Please also make sure that it's using the `.prettierrc` config file provided in this project.
 
 To confirm your configuration run the following command. It should not make any changes to your code base:
+
 ```
 yarn prettify
 ```
@@ -37,3 +38,16 @@ We are using Netlify to deploy the page. Pushes to the main branch automatically
 Opening a PR will also trigger a deployment, though to a dedicated ephemeral environment. Netlify has GitHub hooks
 in-place that will post a URL to your PR deployment as part of the GitHub checks. You should be able to simply click
 on that link and check out your changes live.
+
+## Troubleshooting
+
+### Flaky E2E Tests
+
+In case you ever run into flaky e2e tests, you can try to run them locally in **headless** mode and **repeat each** test multiple times. To narrow down the issue, you can run a **single test case** using `test.only()`.
+
+Make sure to set `headless: true` in `playwright.config.ts` and run the following command:
+
+```bash
+# Run each test 5 times
+yarn playwright test --repeat-each 5
+```
