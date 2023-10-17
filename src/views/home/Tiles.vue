@@ -16,7 +16,10 @@ import { PropType } from 'vue'
 import { TileArticle } from '@/model/tileArticle.model'
 
 defineProps({
-  articles: { type: [] as PropType<TileArticle[]>, default: [] },
+  articles: {
+    type: Array as PropType<TileArticle[]>,
+    default: [],
+  },
 })
 
 const headerId = (pageName: string): string => {
