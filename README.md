@@ -49,5 +49,5 @@ Make sure to set `headless: true` in `playwright.config.ts` and run the followin
 
 ```bash
 # Run each test 5 times
-npx playwright test --repeat-each 5
+yarn playwright test --repeat-each 5
 ```
