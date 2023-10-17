@@ -46,18 +46,17 @@ test('should contain the correct title', async ({ page }) => {
   expect(title).toBe('Club Live | Shows')
 })
 
-// flaky
-test.skip('should contain the correct meta tags', async ({ page }) => {
+test('should contain the correct meta tags', async ({ page }) => {
   await page.goto('/shows')
 
   await page.waitForLoadState()
 
-  const ogDescription = await page.$eval('meta[property="og:description"]', el => (el as HTMLMetaElement).content)
+  const ogDescription = await page.locator('meta[property="og:description"]').getAttribute('content')
   expect(ogDescription).toMatch(/^Schaue hier regelmäßig vorbei /)
 
-  const ogTitle = await page.$eval('meta[property="og:title"]', el => (el as HTMLMetaElement).content)
+  const ogTitle = await page.locator('meta[property="og:title"]').getAttribute('content')
   expect(ogTitle).toBe('Club Live | Shows')
 
-  const description = await page.$eval('meta[name="description"]', el => (el as HTMLMetaElement).content)
+  const description = await page.locator('meta[name="description"]').getAttribute('content')
   expect(description).toMatch(/^Schaue hier regelmäßig vorbei /)
 })
