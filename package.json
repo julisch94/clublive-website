@@ -14,7 +14,7 @@
     "@unhead/vue": "^1.7.4",
     "dayjs": "1.11.10",
     "posthog-js": "^1.83.3",
-    "vue": "3.3.4",
+    "vue": "3.3.5",
     "vue-cookies": "^1.8.3",
     "vue-router": "4.2.5",
     "vueperslides": "^3.5.1",
