@@ -13,7 +13,7 @@
   "dependencies": {
     "@unhead/vue": "^1.8.3",
     "dayjs": "1.11.10",
-    "posthog-js": "^1.88.1",
+    "posthog-js": "^1.89.0",
     "vue": "3.3.8",
     "vue-cookies": "^1.8.3",
     "vue-router": "4.2.5",
