@@ -14,10 +14,9 @@
 
       <div class="copyright-row">
         <ul class="copyright">
-          <li>&copy; {{ currentYear }} Club Live</li>
-          <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+          <li>&copy; 2017 - {{ currentYear }} Club Live</li>
           <li>
-            Vue.js Integration:
+            Webentwicklung:
             <a href="https://julianschmidt.codes/">Julian Schmidt</a>
           </li>
         </ul>
