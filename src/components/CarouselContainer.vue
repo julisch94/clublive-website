@@ -46,6 +46,6 @@ button.vueperslides__bullet:hover {
 }
 
 button.vueperslides__bullet--active {
-  color: #9bf1ff;
+  color: var(--color-accent-2);
 }
 </style>

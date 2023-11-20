@@ -38,7 +38,7 @@ export default defineComponent({
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background-color: #2a2f4a;
+  background-color: var(--color-accent-3);
   box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
   cursor: default;
   font-weight: 700;
@@ -68,8 +68,8 @@ export default defineComponent({
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  background-color: #fff;
-  color: #242943;
+  background-color: var(--color-fg);
+  color: var(--color-accent-1);
   display: inline-block;
   line-height: 1.65em;
   margin-right: 1em;
@@ -77,11 +77,11 @@ export default defineComponent({
 }
 
 #header .logo:hover strong {
-  background-color: #9bf1ff;
+  background-color: var(--color-accent-2);
 }
 
 #header .logo:active strong {
-  background-color: #53e3fb;
+  background-color: var(--color-accent-4);
 }
 
 #header nav {
@@ -183,30 +183,6 @@ export default defineComponent({
   background-color: transparent;
   box-shadow: none;
   position: absolute;
-}
-
-#header.alt.style1 .logo strong {
-  color: #6fc3df;
-}
-
-#header.alt.style2 .logo strong {
-  color: #8d82c4;
-}
-
-#header.alt.style3 .logo strong {
-  color: #ec8d81;
-}
-
-#header.alt.style4 .logo strong {
-  color: #e7b788;
-}
-
-#header.alt.style5 .logo strong {
-  color: #8ea9e8;
-}
-
-#header.alt.style6 .logo strong {
-  color: #87c5a4;
 }
 
 body.is-loading #header.alt {

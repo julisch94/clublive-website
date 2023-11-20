@@ -58,7 +58,7 @@ const onMainInView = (isInView: boolean) => {
 @import './assets/css/main.css';
 
 #cookie-consent {
-  background-color: #242943;
+  background-color: var(--color-accent-1);
   display: flex;
   justify-content: flex-end;
   align-items: center;

@@ -52,7 +52,7 @@ const currentYear = computed(() => {
 }
 
 #footer .copyright li {
-  border-left: solid 1px white;
+  border-left: solid 1px var(--color-fg);
   display: inline-block;
   line-height: 1;
   margin-left: 1em;
