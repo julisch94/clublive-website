@@ -38,7 +38,7 @@ export default defineComponent({
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background-color: var(--color-accent-3);
+  background-color: var(--color-accent-1);
   box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
   cursor: default;
   font-weight: 700;

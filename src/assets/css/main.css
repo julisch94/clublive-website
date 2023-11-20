@@ -3057,7 +3057,7 @@ button:disabled,
 }
 
 #main {
-  background-color: var(--color-accent-3);
+  background-color: var(--color-accent-1);
 }
 
 #main > * {
