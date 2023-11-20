@@ -161,7 +161,7 @@ div.cta {
 .video-container {
   position: relative;
   width: 100%;
-  padding-top: 177.77%; /* 16/9 aspect ratio (9 divided by 16) */
+  padding-top: 177.77%; /* 16/9 aspect ratio (16 divided by 9) */
   margin-bottom: 1em;
 }
 
