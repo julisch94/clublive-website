@@ -10,8 +10,14 @@
           ständig neue Songs dazu. Unsere aktuelle Setlist enthält Songs von Alle Farben, Felix Jaehn, Jess Glynne,
           Avicii, LMFAO, Marteria, Flo Rida, DJ Snake, Stromae, Macklemore, Zara Larsson, Calvin Harris und vielen mehr.
         </p>
-        <p>Hier sind Aufnahmen aus dem Proberaum:</p>
-        <div style="margin-bottom: 2em">
+        <p>Hier kommen bald noch mehr Aufnahmen!</p>
+        <div class="demo-grid">
+          <div class="video-container">
+            <video controls>
+              <source src="/videos/irish-pub.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <DemoComponent />
         </div>
         <p>Weitere Aufnahmen und Videos gibt es auf unseren Social-Media-Kanälen:</p>
@@ -40,3 +46,32 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+.demo-grid {
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.demo-grid > .video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16/9 aspect ratio (9 divided by 16) */
+}
+
+.video-container > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 760px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

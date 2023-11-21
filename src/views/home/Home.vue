@@ -6,20 +6,30 @@
       <section id="start" class="scroll-target">
         <div class="inner pa">
           <div class="-2u 8u 12u$(small)">
-            <h2>Club Live spielt Clubmusik live!</h2>
+            <h2>Clubmusik live performt!</h2>
 
-            <VideoComponent />
-
-            <p class="info-text">
-              {{ pressText }}
-            </p>
-            <div class="cta">
-              <p>Das ist genau, was du für deine Veranstaltung suchst?</p>
-              <ul class="actions">
-                <li>
-                  <a href="#contact" class="button next">Schreibe uns</a>
-                </li>
-              </ul>
+            <div class="grid-container">
+              <div class="grid-item">
+                <div class="video-container">
+                  <video controls loop>
+                    <source src="/videos/sommer-23.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <div class="grid-item">
+                <p class="info-text">
+                  {{ pressText }}
+                </p>
+                <div class="cta">
+                  <p>Das ist genau, was du für deine Veranstaltung suchst?</p>
+                  <ul class="actions">
+                    <li>
+                      <a href="#contact" class="button next">Schreibe uns</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -57,7 +67,6 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import Banner from '@/views/home/Banner.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import { tiles, seo } from '@/utils'
-import VideoComponent from '@/views/home/VideoComponent.vue'
 import ShowList from '@/components/ShowList.vue'
 import { pressText } from '@/data/pressText'
 import ImageGallery from '@/components/ImageGallery.vue'
@@ -129,5 +138,38 @@ div.cta {
 
 .cta li {
   margin-right: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2em;
+}
+
+@media (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 177.77%; /* 16/9 aspect ratio (16 divided by 9) */
+  margin-bottom: 1em;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
