@@ -1,7 +1,7 @@
 <template>
   <iframe
     width="100%"
-    height="450"
+    height="420"
     scrolling="no"
     frameborder="no"
     allow="autoplay"

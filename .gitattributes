@@ -1,2 +1,2 @@
-public/videos/** filter=lfs diff=lfs merge=lfs -text
 * text=auto eol=lf
+/public/videos/sommer-23.mp4 filter=lfs diff=lfs merge=lfs -text
