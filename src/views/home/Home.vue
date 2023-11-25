@@ -12,7 +12,7 @@
               <div class="grid-item">
                 <div class="video-container">
                   <video controls loop>
-                    <source src="/videos/sommer-23.mp4" type="video/mp4" />
+                    <source src="https://clublive.blob.core.windows.net/movies/sommer-23.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>

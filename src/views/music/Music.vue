@@ -14,7 +14,7 @@
         <div class="demo-grid">
           <div class="video-container">
             <video controls>
-              <source src="/videos/irish-pub.mp4" type="video/mp4" />
+              <source src="https://clublive.blob.core.windows.net/movies/irish-pub.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
