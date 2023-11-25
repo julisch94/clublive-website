@@ -51,7 +51,10 @@ test('start section contains heading, video and info paragraph', async ({ page }
   await expect(page.locator('#start').getByRole('heading', { name: 'Clubmusik live performt!' })).toBeVisible()
 
   await expect(page.locator('video')).toBeVisible()
-  await expect(page.locator('video source')).toHaveAttribute('src', '/videos/sommer-23.mp4')
+  await expect(page.locator('video source')).toHaveAttribute(
+    'src',
+    'https://clublive.blob.core.windows.net/movies/sommer-23.mp4'
+  )
 
   await expect(
     page.locator('#start').getByText('Wer sich fragt, ob moderne, hoch-produzierte Musik überhaupt')
@@ -66,7 +69,6 @@ test('home link leads back to root', async ({ page }) => {
 
   await page.waitForURL('/')
 })
-
 
 test('should contain the correct meta tags', async ({ page }) => {
   await page.goto('/')
