@@ -43,7 +43,7 @@ div.cookie-consent {
   border-top: solid 1px rgba(212, 212, 255, 0.1);
   background-color: #2e3450;
   transform: translateY(100px);
-  animation: moveup 0.2s 1.5s ease-out forwards;
+  animation: moveup 0.2s ease-out forwards;
   z-index: 2;
 }
 

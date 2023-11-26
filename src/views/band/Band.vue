@@ -62,42 +62,42 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 const articles = [tiles['music'], tiles['downloads']]
 const musicians = [
   {
-    imageSrc: 'images/band/tiffany/tiffany.jpg',
+    imageSrc: 'images/band/tiffany/tiffany.webp',
     name: 'Tiffany',
     instrument: 'Gesang',
   },
   {
-    imageSrc: 'images/band/jules/jules.jpg',
+    imageSrc: 'images/band/jules/jules.webp',
     name: 'Jules',
     instrument: 'Gesang / Gitarre',
   },
   {
-    imageSrc: 'images/band/felix/felix.jpg',
+    imageSrc: 'images/band/felix/felix.webp',
     name: 'Felix',
     instrument: 'Keyboard',
   },
   {
-    imageSrc: 'images/band/lasse/lasse.jpg',
+    imageSrc: 'images/band/lasse/lasse.webp',
     name: 'Lasse',
     instrument: 'Saxophon',
   },
   {
-    imageSrc: 'images/band/moritz/moritz.jpg',
+    imageSrc: 'images/band/moritz/moritz.webp',
     name: 'Moritz',
     instrument: 'Saxophon',
   },
   {
-    imageSrc: 'images/band/boerni/boerni.jpg',
+    imageSrc: 'images/band/boerni/boerni.webp',
     name: 'Börni',
     instrument: 'Trompete',
   },
   {
-    imageSrc: 'images/band/tobi/tobi.jpg',
+    imageSrc: 'images/band/tobi/tobi.webp',
     name: 'Tobi',
     instrument: 'Bass',
   },
   {
-    imageSrc: 'images/band/chris/chris.jpg',
+    imageSrc: 'images/band/chris/chris.webp',
     name: 'Chris',
     instrument: 'Drums / DJ',
   },

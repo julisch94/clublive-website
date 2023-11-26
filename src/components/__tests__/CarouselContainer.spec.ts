@@ -6,7 +6,7 @@ import { mount } from '@vue/test-utils'
 vi.mock('@/utils', () => {
   return {
     getImageURL: image => {
-      return `file:///images/my-gallery/${image}.jpg`
+      return `file:///images/my-gallery/${image}.webp`
     },
   }
 })
@@ -29,11 +29,11 @@ describe('CarouselContainer', () => {
     const wrapper = mount(CarouselContainer)
 
     expect(wrapper.vm['images']).toEqual([
-      'file:///images/my-gallery/crowd.jpg',
-      'file:///images/my-gallery/felix.jpg',
-      'file:///images/my-gallery/blaeser.jpg',
-      'file:///images/my-gallery/tiffany.jpg',
-      'file:///images/my-gallery/tobi.jpg',
+      'file:///images/my-gallery/crowd.webp',
+      'file:///images/my-gallery/felix.webp',
+      'file:///images/my-gallery/blaeser.webp',
+      'file:///images/my-gallery/tiffany.webp',
+      'file:///images/my-gallery/tobi.webp',
     ])
   })
 })
