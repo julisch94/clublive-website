@@ -79,19 +79,19 @@ const imageLinkId = (pageName: string): string => {
 }
 
 article.shows {
-  background-image: url('../../assets/images/shows.jpg');
+  background-image: url('../../assets/images/shows.webp');
 }
 
 article.downloads {
-  background-image: url('../../assets/images/downloads.jpg');
+  background-image: url('../../assets/images/downloads.webp');
 }
 
 article.music {
-  background-image: url('../../assets/images/music.jpg');
+  background-image: url('../../assets/images/music.webp');
 }
 
 article.band {
-  background-image: url('../../assets/images/band.jpg');
+  background-image: url('../../assets/images/band.webp');
 }
 
 .tiles article header {

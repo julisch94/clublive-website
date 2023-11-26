@@ -18,7 +18,7 @@ describe('image manager', () => {
 
     const url = getImageURL('andre')
 
-    expect(url).toEqual('file:///images/gallery/sm/andre.jpg')
+    expect(url).toEqual('file:///images/gallery/sm/andre.webp')
   })
 
   test('image manager returns URLs for big big images when not mobile', () => {
@@ -26,7 +26,7 @@ describe('image manager', () => {
 
     const url = getImageURL('andre')
 
-    expect(url).toEqual('file:///images/gallery/andre.jpg')
+    expect(url).toEqual('file:///images/gallery/andre.webp')
   })
 
   test('returns undefined when image key is not found', () => {

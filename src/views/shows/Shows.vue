@@ -68,7 +68,7 @@ useHead({
 #banner {
   min-height: 300px;
   height: 30vw;
-  background-image: url('../../assets/images/shows.jpg');
+  background-image: url('../../assets/images/shows.webp');
   background-size: cover;
   background-position: top;
 }

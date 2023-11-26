@@ -10,55 +10,55 @@ export const getImageURL = (key: string) => {
 
 const imageMap = {
   'andre-side': {
-    default: '/images/gallery/andre-side.jpg',
-    sm: '/images/gallery/sm/andre-side.jpg',
+    default: '/images/gallery/andre-side.webp',
+    sm: '/images/gallery/sm/andre-side.webp',
   },
   andre: {
-    default: '/images/gallery/andre.jpg',
-    sm: '/images/gallery/sm/andre.jpg',
+    default: '/images/gallery/andre.webp',
+    sm: '/images/gallery/sm/andre.webp',
   },
   blaeser: {
-    default: '/images/gallery/blaeser.jpg',
-    sm: '/images/gallery/sm/blaeser.jpg',
+    default: '/images/gallery/blaeser.webp',
+    sm: '/images/gallery/sm/blaeser.webp',
   },
   'crowd-red': {
-    default: '/images/gallery/crowd-red.jpg',
-    sm: '/images/gallery/sm/crowd-red.jpg',
+    default: '/images/gallery/crowd-red.webp',
+    sm: '/images/gallery/sm/crowd-red.webp',
   },
   crowd: {
-    default: '/images/gallery/crowd.jpg',
-    sm: '/images/gallery/sm/crowd.jpg',
+    default: '/images/gallery/crowd.webp',
+    sm: '/images/gallery/sm/crowd.webp',
   },
   felix: {
-    default: '/images/gallery/felix.jpg',
-    sm: '/images/gallery/sm/felix.jpg',
+    default: '/images/gallery/felix.webp',
+    sm: '/images/gallery/sm/felix.webp',
   },
   green: {
-    default: '/images/gallery/green.jpg',
-    sm: '/images/gallery/sm/green.jpg',
+    default: '/images/gallery/green.webp',
+    sm: '/images/gallery/sm/green.webp',
   },
   jules: {
-    default: '/images/gallery/jules.jpg',
-    sm: '/images/gallery/sm/jules.jpg',
+    default: '/images/gallery/jules.webp',
+    sm: '/images/gallery/sm/jules.webp',
   },
   lasse: {
-    default: '/images/gallery/lasse.jpg',
-    sm: '/images/gallery/sm/lasse.jpg',
+    default: '/images/gallery/lasse.webp',
+    sm: '/images/gallery/sm/lasse.webp',
   },
   'tiffany-erasmus': {
-    default: '/images/gallery/tiffany-erasmus.jpg',
-    sm: '/images/gallery/sm/tiffany-erasmus.jpg',
+    default: '/images/gallery/tiffany-erasmus.webp',
+    sm: '/images/gallery/sm/tiffany-erasmus.webp',
   },
   tiffany: {
-    default: '/images/gallery/tiffany.jpg',
-    sm: '/images/gallery/sm/tiffany.jpg',
+    default: '/images/gallery/tiffany.webp',
+    sm: '/images/gallery/sm/tiffany.webp',
   },
   'tobi-erasmus': {
-    default: '/images/gallery/tobi-erasmus.jpg',
-    sm: '/images/gallery/sm/tobi-erasmus.jpg',
+    default: '/images/gallery/tobi-erasmus.webp',
+    sm: '/images/gallery/sm/tobi-erasmus.webp',
   },
   tobi: {
-    default: '/images/gallery/tobi.jpg',
-    sm: '/images/gallery/sm/tobi.jpg',
+    default: '/images/gallery/tobi.webp',
+    sm: '/images/gallery/sm/tobi.webp',
   },
 }
