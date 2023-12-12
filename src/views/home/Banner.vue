@@ -84,7 +84,7 @@ onMounted(() => {
   -webkit-pointer-events: none;
   -ms-pointer-events: none;
   pointer-events: none;
-  background-color: #242943;
+  background-color: var(--color-accent-1);
   content: '';
   display: block;
   height: 100%;

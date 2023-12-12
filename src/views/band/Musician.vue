@@ -43,7 +43,7 @@ export default defineComponent({
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #333856;
+  background-color: var(--color-accent-8);
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   display: flex;
@@ -54,7 +54,7 @@ export default defineComponent({
 
 .overlay :first-child::after {
   content: '';
-  background-color: #fff;
+  background-color: var(--color-fg);
   display: block;
   height: 2px;
   margin: 0.325em 0 0.325em 0;
