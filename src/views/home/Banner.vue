@@ -64,11 +64,11 @@ onMounted(() => {
   border-bottom: 0 !important;
   cursor: default;
   height: 80vh;
-  margin-bottom: -3.25em;
+  margin-bottom: -75px;
   max-height: 32em;
   min-height: 22em;
   position: relative;
-  top: -3.25em;
+  top: -75px;
 }
 
 #banner:after {
