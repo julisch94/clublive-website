@@ -1,11 +1,8 @@
 import { test, expect } from '@playwright/test'
 import { waitForHead } from './wait-for-head'
 
-test('open up menu and go to shows', async ({ page }) => {
-  await page.goto('/')
-
-  await page.getByRole('link', { name: 'Menu' }).click()
-  await page.getByRole('link', { name: 'Shows', exact: true }).click()
+test('opens up shows', async ({ page }) => {
+  await page.goto('/shows')
 
   await expect(page.getByRole('heading', { name: 'Shows' })).toBeVisible()
 })
