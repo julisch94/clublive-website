@@ -1,11 +1,36 @@
+<script lang="ts" setup>
+import { menuRoutes } from '@/router'
+import { computed } from 'vue'
+
+defineProps<{
+  isTransparent: boolean
+}>()
+
+const emit = defineEmits(['toggle-menu'])
+
+const toggleMenu = () => {
+  emit('toggle-menu')
+}
+
+const menuRoutesDesktop = computed(() => {
+  return menuRoutes.filter(route => route.name !== 'Home')
+})
+</script>
+
 <template>
   <header id="header" class="reveal" :class="{ alt: isTransparent }">
     <a href="/" class="logo">
       <strong>Club Live</strong>
       <span>Club-Hits and Charts</span>
     </a>
-    <nav id="menu-desktop">
-      <a class="hamburger" href="#" @click.prevent="toggleMenu()">Menu</a>
+    <nav id="menu-desktop" class="navigation-bar">
+      <ul>
+        <li v-for="item in menuRoutesDesktop" :key="item.name">
+          <router-link :to="item.route">
+            {{ item.name }}
+          </router-link>
+        </li>
+      </ul>
     </nav>
     <nav id="menu-mobile">
       <a class="hamburger" href="#" @click.prevent="toggleMenu()" />
@@ -13,39 +38,18 @@
   </header>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'Header',
-  props: {
-    isTransparent: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {
-    toggleMenu() {
-      this.$emit('toggle-menu')
-    },
-  },
-})
-</script>
-
 <style scoped>
 #header {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
   background-color: var(--color-accent-1);
   box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
-  cursor: default;
+  padding: 0 1.5em;
   font-weight: 700;
-  height: 3.25em;
+  font-size: 0.8em;
+  height: 75px;
   left: 0;
   letter-spacing: 0.25em;
-  line-height: 3.25em;
+  line-height: 75px;
   margin: 0;
   position: fixed;
   text-transform: uppercase;
@@ -54,20 +58,16 @@ export default defineComponent({
   z-index: 10000;
 }
 
-#header .logo {
+/* logo */
+
+a {
   border: 0;
-  display: inline-block;
-  font-size: 0.8em;
-  height: inherit;
-  line-height: inherit;
-  padding: 0 1.5em;
 }
 
 #header .logo strong {
-  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
   background-color: var(--color-fg);
   color: var(--color-accent-1);
   display: inline-block;
@@ -84,22 +84,36 @@ export default defineComponent({
   background-color: var(--color-accent-4);
 }
 
-#header nav {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
+/* nav bar desktop */
+
+nav {
   display: flex;
-  -moz-justify-content: -moz-flex-end;
-  -webkit-justify-content: -webkit-flex-end;
-  -ms-justify-content: -ms-flex-end;
   justify-content: flex-end;
-  -moz-flex-grow: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-grow: 1;
   flex-grow: 1;
-  height: inherit;
-  line-height: inherit;
 }
+
+.navigation-bar {
+  display: flex;
+}
+
+.navigation-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-bar li {
+  padding: 0;
+}
+
+.navigation-bar ul li a {
+  padding: 0 0.5em;
+  display: block;
+}
+
+/* nav bar mobile  */
 
 #header nav a.hamburger {
   border: 0;
@@ -107,7 +121,6 @@ export default defineComponent({
   font-size: 0.8em;
   height: inherit;
   line-height: inherit;
-  padding: 0 0.75em;
   position: relative;
   vertical-align: middle;
 }
@@ -137,9 +150,6 @@ export default defineComponent({
 }
 
 #header nav a.hamburger[href='#']:after {
-  -moz-transition: opacity 0.2s ease-in-out;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 2px%3B stroke: %239bf1ff%3B %7D%3C/style%3E%3Cline x1='0' y1='11' x2='24' y2='11' /%3E%3Cline x1='0' y1='21' x2='24' y2='21' /%3E%3Cline x1='0' y1='16' x2='24' y2='16' /%3E%3C/svg%3E");
   opacity: 0;
@@ -151,34 +161,13 @@ export default defineComponent({
   opacity: 1;
 }
 
-#header nav a.hamburger[href='#']:last-child {
-  padding-right: 3.875em !important;
-}
-
-#header nav a.hamburger[href='#']:last-child:before,
-#header nav a.hamburger[href='#']:last-child:after {
-  right: 2em;
-}
-
 #header.reveal {
-  -moz-animation: reveal-header 0.35s ease;
-  -webkit-animation: reveal-header 0.35s ease;
-  -ms-animation: reveal-header 0.35s ease;
   animation: reveal-header 0.35s ease;
 }
 
 #header.alt {
-  -moz-transition: opacity 0.5s ease;
-  -webkit-transition: opacity 0.5s ease;
-  -ms-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
-  -moz-transition-delay: 0.75s;
-  -webkit-transition-delay: 0.75s;
-  -ms-transition-delay: 0.75s;
   transition-delay: 0.75s;
-  -moz-animation: none;
-  -webkit-animation: none;
-  -ms-animation: none;
   animation: none;
   background-color: transparent;
   box-shadow: none;
@@ -191,16 +180,12 @@ body.is-loading #header.alt {
 
 @media screen and (max-width: 840px) {
   #header {
-    height: 2.75em;
-    line-height: 2.75em;
+    height: 50px;
+    line-height: 50px;
   }
 
-  #header .logo {
-    padding: 0 1em;
-  }
-
-  #header nav a.hamburger {
-    padding: 0 0.5em;
+  #header .logo span {
+    display: none;
   }
 
   #header nav a.hamburger:last-child {
@@ -208,19 +193,13 @@ body.is-loading #header.alt {
   }
 }
 
-@media screen and (max-width: 760px) {
-  #header .logo span {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 840px) {
   #menu-mobile {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 840px) {
   #menu-desktop {
     display: none !important;
   }
