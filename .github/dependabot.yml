@@ -5,6 +5,5 @@ updates:
     schedule:
       interval: "daily"
       time: "19:00"
-    open-pull-requests-limit: 10
     # Disable rebasing because of Netlify build time limit
     rebase-strategy: "disabled"
