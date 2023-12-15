@@ -75,4 +75,8 @@ export const shows: ShowModel[] = [
     mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
     description: "Beginn ab 21:30 Uhr",
   },
+  {
+    date: '2024/05/25',
+    place: 'HaDiKo Heimfest, Karlsruhe',
+  },
 ]
