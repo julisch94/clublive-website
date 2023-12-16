@@ -1,6 +1,4 @@
 <template>
-  <section id="banner"></section>
-
   <div id="main" class="alt">
     <section>
       <div class="inner pa">
@@ -8,15 +6,16 @@
           <h1>Shows</h1>
         </header>
         <p>
-          Schaue hier regelmäßig vorbei um zu sehen, wann wir wieder in deine Nähe kommen. Komme zu unseren Konzerten
-          und feiere mit uns zusammen Clubmusik! Wir spielen auf Festivals, Stadtfesten, Vereinsfesten, privaten Feiern
-          und vielem mehr. Um keine Show von uns zu verpassen, folge uns bei Instagram:
+          Never miss a beat! Check hier regelmäßig rein, um zu sehen, wann wir wieder in deine Nähe kommen. Komm rum und
+          feier mit uns zusammen Clubmusik! Festivals, Stadtfeste, Vereins-Events, private Feiern und vieles mehr. Um
+          keine Show von uns zu verpassen, folge uns bei Instagram:
           <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
         </p>
         <p>
-          Du suchst noch nach einer Band für deine private Feier? Egal ob Hochzeit, Firmenfeier, Weihnachtsfeier,
-          Geburtstagsfeier, Abschlussfeier, Gartenparty – Wenn du Livemusik für eine mega Party suchst, bist du bei uns
-          genau richtig. Schreib uns eine unverbindliche Anfrage über unser <a href="#contact">Kontaktformular</a>.
+          Noch auf der Suche nach dem passenden Act für deine Veranstaltung? Egal ob Hochzeit, Firmenfeier,
+          Weihnachtsfeier, Geburtstagsfeier, Abschlussfeier, Gartenparty – für den Live-Party-Boost bist du hier genau
+          richtig. Schreib uns eine unverbindliche Anfrage über unser <a href="#contact">Kontaktformular</a> und lass
+          uns deine Party zum Beben bringen!
         </p>
       </div>
     </section>
@@ -25,16 +24,17 @@
       <div class="inner pa">
         <ShowList />
 
-        <p>
-          Um keinen Auftritt von uns zu verpassen, folge uns bei Instagram:
+        <p style="padding-top: 2em">
+          Stay tuned und folge uns bei Instagram:
           <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
         </p>
       </div>
     </section>
 
     <section data-test-id="references">
-      <div class="inner pa">
-        <h3>Referenzen</h3>
+      <div class="inner pa align-center">
+        <h2>Abrisstagebuch</h2>
+        <p>Hier hat Club Live schon standesgemäß den Laden zerlegt.</p>
         <vue-word-cloud
           style="height: 50vh; width: 100%; max-width: 800px; margin: 0 auto"
           :words="pastShows"
@@ -64,12 +64,4 @@ useHead({
 })
 </script>
 
-<style scoped>
-#banner {
-  min-height: 300px;
-  height: 30vw;
-  background-image: url('../../assets/images/shows.webp');
-  background-size: cover;
-  background-position: top;
-}
-</style>
+<style scoped></style>

@@ -13,7 +13,7 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import { getImageURL } from '@/utils'
 
-const images = ['crowd', 'felix', 'blaeser', 'tiffany', 'tobi'].map(image => getImageURL(image))
+const images = ['crowd'].map(image => getImageURL(image))
 </script>
 
 <style>

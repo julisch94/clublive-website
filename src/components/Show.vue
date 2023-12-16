@@ -1,20 +1,3 @@
-<template>
-  <article class="show" data-testid="show">
-    <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
-    <div v-if="displayDetails" class="info-container">
-      <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.description">{{ show.description }}</span>
-      <span v-if="show.website" class="icon fa-globe" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.website">
-        <a :href="show.website" target="_blank">{{ show.website }}</a>
-      </span>
-      <span v-if="show.mapsLink" class="icon fa-map-marker" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.mapsLink"><a :href="show.mapsLink" target="_blank">Google Maps Link</a></span>
-    </div>
-    <hr />
-  </article>
-</template>
-
 <script setup lang="ts">
 import { computed } from 'vue'
 import { ShowModel } from '@/model/show.model'
@@ -44,16 +27,27 @@ const hasFurtherInformation = computed(() => {
 })
 </script>
 
+<template>
+  <article class="show" data-testid="show">
+    <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
+    <div v-if="displayDetails" class="info-container">
+      <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
+      <span v-if="show.description">{{ show.description }}</span>
+      <span v-if="show.website" class="icon fa-globe" style="justify-self: center">&nbsp;</span>
+      <span v-if="show.website">
+        <a :href="show.website" target="_blank">{{ show.website }}</a>
+      </span>
+      <span v-if="show.mapsLink" class="icon fa-map-marker" style="justify-self: center">&nbsp;</span>
+      <span v-if="show.mapsLink"><a :href="show.mapsLink" target="_blank">Google Maps Link</a></span>
+    </div>
+  </article>
+</template>
+
 <style scoped>
 .title {
   font-size: 1.6em;
   line-height: 1.2em;
   margin-bottom: 0;
-}
-
-.show {
-  margin-bottom: 1.5em;
-  margin-top: 1.5em;
 }
 
 .info-container {

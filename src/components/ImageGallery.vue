@@ -12,7 +12,7 @@
       :dragging-distance="50"
       :breakpoints="breakpoints"
     >
-      <vueper-slide v-for="(image, i) in images" :key="i" :image="image" />
+      <vueper-slide v-for="(image, i) in imageUrls" :key="i" :image="image" />
     </vueper-slides>
   </div>
 </template>
@@ -21,21 +21,15 @@
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import { getImageURL } from '@/utils'
+import { computed } from 'vue'
 
-const images = [
-  'andre',
-  'crowd',
-  'tiffany-erasmus',
-  'blaeser',
-  'crowd-red',
-  'jules',
-  'felix',
-  'tobi',
-  'andre-side',
-  'lasse',
-  'green',
-  'tobi-erasmus',
-].map(image => getImageURL(image))
+const props = defineProps<{
+  images?: string[]
+}>()
+
+const imageUrls = computed(() => {
+  return props.images?.map(image => getImageURL(image))
+})
 
 const breakpoints = {
   800: {
@@ -44,9 +38,6 @@ const breakpoints = {
   },
   1000: {
     visibleSlides: 2,
-  },
-  1280: {
-    visibleSlides: 3,
   },
 }
 </script>
