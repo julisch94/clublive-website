@@ -31,18 +31,26 @@
       </div>
     </section>
 
+    <section id="gallery">
+      <ImageGallery :images="['green', 'jules', 'tobi', 'andre-side']" />
+    </section>
+
     <section data-test-id="references">
       <div class="inner pa align-center">
         <h2>Abrisstagebuch</h2>
         <p>Hier hat Club Live schon standesgemäß den Laden zerlegt.</p>
         <vue-word-cloud
-          style="height: 50vh; width: 100%; max-width: 800px; margin: 0 auto"
+          style="height: 50vh; width: 100%; max-width: 1200px; margin: 0 auto; color:"
           :words="pastShows"
-          color="White"
+          color="var(--color-accent-2)"
           font-family="Montserrat"
           :spacing="1"
         />
       </div>
+    </section>
+
+    <section id="gallery">
+      <ImageGallery :images="['crowd-red', 'felix', 'tiffany-erasmus', 'blaeser']" />
     </section>
   </div>
 </template>
@@ -53,6 +61,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import ShowList from '@/components/ShowList.vue'
 import VueWordCloud from 'vuewordcloud'
 import { pastShows } from '@/data/pastShows'
+import ImageGallery from '@/components/ImageGallery.vue'
 
 useSeoMeta({
   ogTitle: seo.shows.title,
