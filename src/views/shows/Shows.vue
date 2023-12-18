@@ -6,7 +6,7 @@
           <h1>Shows</h1>
         </header>
         <p>
-          Never miss a beat! Check hier regelmäßig rein, um zu sehen, wann wir wieder in deine Nähe kommen. Komm rum und
+          Never miss a beat! Schau hier regelmäßig rein, um zu sehen, wann wir wieder in deine Nähe kommen. Komm rum und
           feier mit uns zusammen Clubmusik! Festivals, Stadtfeste, Vereins-Events, private Feiern und vieles mehr. Um
           keine Show von uns zu verpassen, folge uns bei Instagram:
           <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>

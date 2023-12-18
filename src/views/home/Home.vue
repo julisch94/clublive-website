@@ -114,7 +114,7 @@ useHead({
                   <p>Genau das, was du für dein Event brauchst!</p>
                   <ul class="actions">
                     <li>
-                      <a href="#contact" class="button special">Schreibe uns</a>
+                      <a href="#contact" class="button next">Schreibe uns</a>
                     </li>
                   </ul>
                 </div>
