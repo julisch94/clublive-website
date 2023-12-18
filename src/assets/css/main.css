@@ -1882,7 +1882,7 @@ a {
 
 a:hover {
   border-bottom-color: transparent;
-  color: var(--color-accent-2);
+  color: var(--color-accent-4);
 }
 
 a:active {
@@ -2168,8 +2168,8 @@ input[type='email']:focus,
 input[type='tel']:focus,
 select:focus,
 textarea:focus {
-  border-color: var(--color-accent-2);
-  box-shadow: 0 0 0 2px var(--color-accent-2);
+  border-color: var(--color-accent-4);
+  box-shadow: 0 0 0 2px var(--color-accent-4);
 }
 
 .select-wrapper {
@@ -2270,14 +2270,14 @@ input[type='radio'] + label:before {
 input[type='checkbox']:checked + label:before,
 input[type='radio']:checked + label:before {
   background: var(--color-fg);
-  border-color: var(--color-accent-2);
+  border-color: var(--color-accent-4);
   content: '\f00c';
   color: var(--color-accent-1);
 }
 
 input[type='checkbox']:focus + label:before,
 input[type='radio']:focus + label:before {
-  box-shadow: 0 0 0 2px var(--color-accent-2);
+  box-shadow: 0 0 0 2px var(--color-accent-4);
 }
 
 input[type='radio'] + label:before {

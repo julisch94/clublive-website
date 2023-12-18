@@ -41,7 +41,7 @@ const menuRoutesDesktop = computed(() => {
 <style scoped>
 #header {
   display: flex;
-  background: linear-gradient(to top right, var(--color-accent-1), #6300FF);;
+  background: linear-gradient(to top right, var(--color-accent-1), #6300ff);
   box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
   padding: 0 1.5em;
   font-weight: 700;
@@ -76,10 +76,7 @@ a {
   padding: 0 0.125em 0 0.375em;
 }
 
-#header .logo:hover strong {
-  background-color: var(--color-accent-2);
-}
-
+#header .logo:hover strong,
 #header .logo:active strong {
   background-color: var(--color-accent-4);
 }

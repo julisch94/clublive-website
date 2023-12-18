@@ -153,9 +153,8 @@ useHead({
 
 <style>
 .motto {
-  background: linear-gradient(to top right, #0049ff, #6300ff);
+  background: linear-gradient(to top right, var(--color-accent-1), var(--color-accent-2));
 }
-
 
 @media screen and (max-width: 760px) {
   #start {
