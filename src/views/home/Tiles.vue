@@ -30,15 +30,9 @@ const imageLinkId = (pageName: string): string => {
 }
 </script>
 
-<style>
+<style scoped>
 .tiles {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -moz-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   border-top: 0 !important;
 }
@@ -48,17 +42,8 @@ const imageLinkId = (pageName: string): string => {
 }
 
 .tiles article {
-  -moz-align-items: center;
-  -webkit-align-items: center;
-  -ms-align-items: center;
   align-items: center;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -moz-transition: all 0.25s ease;
-  -webkit-transition: all 0.25s ease;
-  -ms-transition: all 0.25s ease;
   transition: all 0.25s ease;
   padding: 4em 4em 3em 4em;
   background-position: center;
@@ -99,15 +84,15 @@ article.band {
   z-index: 3;
 }
 
-.tiles article h3 {
-  font-size: 1.75em;
-}
-
-.tiles article h3 a:hover {
+a:hover {
   color: inherit !important;
 }
 
-.tiles article .link.primary {
+h2 a.link {
+  border: 0;
+}
+
+a.link.primary {
   border: 0;
   height: 100%;
   left: 0;
@@ -140,13 +125,7 @@ article.band {
 }
 
 .tiles article.is-transitioning {
-  -moz-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
-  -moz-filter: blur(0.5em);
-  -webkit-filter: blur(0.5em);
-  -ms-filter: blur(0.5em);
   filter: blur(0.5em);
   opacity: 0;
 }
