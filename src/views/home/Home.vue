@@ -3,16 +3,52 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 import Banner from '@/views/home/Banner.vue'
-import Tiles from '@/views/home/Tiles.vue'
-import { tiles, seo } from '@/utils'
+import { seo } from '@/utils'
 import ShowList from '@/components/ShowList.vue'
-import { pressText } from '@/data/pressText'
 import ImageGallery from '@/components/ImageGallery.vue'
 
 const main = ref(null)
 const emit = defineEmits(['is-main-in-view'])
 
-const articles = [tiles['music'], tiles['band']]
+const allArtistsText = computed(() => {
+  const artists = [
+    'Avicii',
+    'LMFAO',
+    'Kungs',
+    'Farruko',
+    'Bruno Mars',
+    'Jess Glynne',
+    'Taio Cruz',
+    'Dance Monkey',
+    'Imamy',
+    'Cardi B',
+    'Stromae',
+    'Fergie',
+    'Caravan Palace',
+    'Rihanna',
+    'Marteria',
+    'Sigma',
+    'Deichkind',
+    "Rag'n'Bone Man",
+    'Peter Fox',
+    'Felix Jaehn',
+    'Calvin Harris',
+    'Flo Rida',
+    'Macklemore',
+    'Apache 207',
+    'Ski Aggu',
+    'Robin Schulz',
+    'Die Atzen',
+    'Parov Stelar',
+    'Nina Chuba',
+    'Pepas',
+    'Sonnentanz',
+    'Freed From Desire',
+    'Destination Calabria',
+  ]
+  const result = `${artists.join(', ')} uvm.`
+  return result
+})
 
 const startOfMain = computed(() => {
   if (main.value) {
@@ -50,13 +86,7 @@ useHead({
     <Banner />
 
     <div id="main" ref="main">
-      <!-- <section class="quick-facts">
-        <p>Seit 2017 unterwegs</p>
-        <p>über 50 Shows gespielt</p>
-        <p>inkl. Saxofon und Trompete</p>
-      </section> -->
-
-      <section id="start" class="scroll-target motto">
+      <section id="start" class="scroll-target">
         <div class="inner pa">
           <div class="-2u 8u 12u$(small)">
             <div>
@@ -67,7 +97,7 @@ useHead({
                 Bühne und garantieren unvergessliche Partynächte.
               </p>
             </div>
-            <div class="grid-container" style="margin-top: 4em;">
+            <div class="grid-container" style="margin-top: 4em">
               <div class="grid-item">
                 <div class="video-container">
                   <video controls loop preload="none" poster="/images/video-posters/sommer-23.webp">
@@ -77,14 +107,14 @@ useHead({
                 </div>
               </div>
               <div class="grid-item">
-                <p class="info-text">
-                  {{ pressText }}
+                <p>
+                  {{ allArtistsText }}
                 </p>
                 <div class="cta">
                   <p>Genau das, was du für dein Event brauchst!</p>
                   <ul class="actions">
                     <li>
-                      <a href="#contact" class="button next">Schreibe uns</a>
+                      <a href="#contact" class="button special">Schreibe uns</a>
                     </li>
                   </ul>
                 </div>
@@ -104,7 +134,7 @@ useHead({
             <h2>Anstehende Shows</h2>
           </header>
           <ShowList excerpt />
-          <div style="margin-top: 2em;">
+          <div style="margin-top: 2em">
             <ul class="actions">
               <li>
                 <a href="/shows" class="button next">Mehr Infos</a>
@@ -122,15 +152,10 @@ useHead({
 </template>
 
 <style>
-.info-text {
-  text-align: justify;
+.motto {
+  background: linear-gradient(to top right, #0049ff, #6300ff);
 }
 
-@media screen and (max-width: 760px) {
-  .info-text {
-    text-align: inherit;
-  }
-}
 
 @media screen and (max-width: 760px) {
   #start {
@@ -185,5 +210,6 @@ div.cta {
   left: 0;
   width: 100%;
   height: 100%;
+  box-shadow: -10px 10px 0 var(--color-accent-1);
 }
 </style>

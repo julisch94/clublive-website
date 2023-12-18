@@ -1874,11 +1874,11 @@ a {
 
 a:hover {
   border-bottom-color: transparent;
-  color: var(--color-accent-2) !important;
+  color: var(--color-accent-2);
 }
 
 a:active {
-  color: var(--color-accent-4) !important;
+  color: var(--color-accent-4);
 }
 
 strong,
@@ -2557,13 +2557,7 @@ input[type='reset'],
 input[type='button'],
 button,
 .button {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
   appearance: none;
-  -moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-  -ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
   background-color: transparent;
   border: 0;
@@ -2594,18 +2588,8 @@ button:hover,
 button:active,
 .button:hover,
 .button:active {
-  box-shadow: inset 0 0 0 2px var(--color-accent-2);
-  color: var(--color-accent-2);
-}
-
-input[type='submit']:active,
-input[type='reset']:active,
-input[type='button']:active,
-button:active,
-.button:active {
-  background-color: rgba(155, 241, 255, 0.1);
-  box-shadow: inset 0 0 0 2px var(--color-accent-4);
-  color: var(--color-accent-4);
+  color: var(--color-fg);
+  background-color: var(--color-accent-1);
 }
 
 input[type='submit'].icon:before,
@@ -2654,19 +2638,10 @@ button.next,
 }
 
 input[type='submit'].next:before,
-input[type='submit'].next:after,
 input[type='reset'].next:before,
-input[type='reset'].next:after,
 input[type='button'].next:before,
-input[type='button'].next:after,
 button.next:before,
-button.next:after,
-.button.next:before,
-.button.next:after {
-  -moz-transition: opacity 0.2s ease-in-out;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+.button.next:before {
   background-position: center right;
   background-repeat: no-repeat;
   background-size: 36px 24px;
@@ -2688,29 +2663,6 @@ button.next:before,
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='36px' height='24px' viewBox='0 0 36 24' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23fff%3B stroke-width: 2px%3B %7D%3C/style%3E%3Cline x1='0' y1='12' x2='34' y2='12' /%3E%3Cline x1='25' y1='4' x2='34' y2='12.5' /%3E%3Cline x1='25' y1='20' x2='34' y2='11.5' /%3E%3C/svg%3E");
 }
 
-input[type='submit'].next:after,
-input[type='reset'].next:after,
-input[type='button'].next:after,
-button.next:after,
-.button.next:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='36px' height='24px' viewBox='0 0 36 24' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %239bf1ff%3B stroke-width: 2px%3B %7D%3C/style%3E%3Cline x1='0' y1='12' x2='34' y2='12' /%3E%3Cline x1='25' y1='4' x2='34' y2='12.5' /%3E%3Cline x1='25' y1='20' x2='34' y2='11.5' /%3E%3C/svg%3E");
-  opacity: 0;
-  z-index: 1;
-}
-
-input[type='submit'].next:hover:after,
-input[type='submit'].next:active:after,
-input[type='reset'].next:hover:after,
-input[type='reset'].next:active:after,
-input[type='button'].next:hover:after,
-input[type='button'].next:active:after,
-button.next:hover:after,
-button.next:active:after,
-.button.next:hover:after,
-.button.next:active:after {
-  opacity: 1;
-}
-
 @media screen and (max-width: 1280px) {
   input[type='submit'].next,
   input[type='reset'].next,
@@ -2726,9 +2678,9 @@ input[type='reset'].special,
 input[type='button'].special,
 button.special,
 .button.special {
-  background-color: var(--color-fg);
+  background-color: var(--color-accent-1);
   box-shadow: none;
-  color: var(--color-accent-1);
+  color: var(--color-fg);
 }
 
 input[type='submit'].special:hover,
@@ -2741,8 +2693,9 @@ button.special:hover,
 button.special:active,
 .button.special:hover,
 .button.special:active {
-  background-color: var(--color-accent-2);
-  color: var(--color-accent-1) !important;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--color-accent-1);
+  color: var(--color-fg) !important;
 }
 
 input[type='submit'].special:active,
@@ -2763,9 +2716,6 @@ button.disabled,
 button:disabled,
 .button.disabled,
 .button:disabled {
-  -moz-pointer-events: none;
-  -webkit-pointer-events: none;
-  -ms-pointer-events: none;
   pointer-events: none;
   cursor: default;
   opacity: 0.25;

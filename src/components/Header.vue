@@ -41,7 +41,7 @@ const menuRoutesDesktop = computed(() => {
 <style scoped>
 #header {
   display: flex;
-  background-color: var(--color-accent-1);
+  background: linear-gradient(to top right, var(--color-accent-1), #6300FF);;
   box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
   padding: 0 1.5em;
   font-weight: 700;
@@ -169,7 +169,7 @@ nav {
   transition: opacity 0.5s ease;
   transition-delay: 0.75s;
   animation: none;
-  background-color: transparent;
+  background: transparent;
   box-shadow: none;
   position: absolute;
 }
