@@ -5,7 +5,7 @@
         <header class="major">
           <h1>Musik</h1>
         </header>
-        <p align="justify">
+        <p class="justify-on-desktop">
           Unsere Playlist besteht aus einer sorgfältigen Auswahl an aktuellen Chart- und Club-Hits. Es kommen zudem
           ständig neue Songs dazu. Unsere aktuelle Setlist enthält Songs von Alle Farben, Felix Jaehn, Jess Glynne,
           Avicii, LMFAO, Marteria, Flo Rida, DJ Snake, Stromae, Macklemore, Zara Larsson, Calvin Harris und vielen mehr.
@@ -67,6 +67,12 @@ export default defineComponent({
   left: 0;
   width: 100%;
   height: auto;
+}
+
+@media screen and (min-width: 760px) {
+  .justify-on-desktop {
+    text-align: justify;
+  }
 }
 
 @media screen and (max-width: 760px) {
