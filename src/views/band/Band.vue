@@ -152,10 +152,4 @@ useHead({
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-
-@media screen and (min-width: 760px) {
-  .justify-on-desktop {
-    text-align: justify;
-  }
-}
 </style>

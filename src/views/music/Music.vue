@@ -69,12 +69,6 @@ export default defineComponent({
   height: auto;
 }
 
-@media screen and (min-width: 760px) {
-  .justify-on-desktop {
-    text-align: justify;
-  }
-}
-
 @media screen and (max-width: 760px) {
   .demo-grid {
     grid-template-columns: 1fr;

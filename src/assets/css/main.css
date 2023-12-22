@@ -1976,7 +1976,6 @@ blockquote {
   padding: 0.25em 0 0.25em 1em;
 }
 
-
 hr {
   border: 0;
   border-bottom: solid 1px rgba(212, 212, 255, 0.1);
@@ -2798,7 +2797,6 @@ button:disabled,
   }
 }
 
-
 #overlay.is-menu-visible #wrapper {
   -moz-filter: blur(0.5em);
   -webkit-filter: blur(0.5em);
@@ -2837,5 +2835,11 @@ button:disabled,
 @media screen and (max-width: 760px) {
   .pa {
     padding: 4em 0 2em 0;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .justify-on-desktop {
+    text-align: justify;
   }
 }
