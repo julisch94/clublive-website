@@ -22,6 +22,8 @@
 
     <section>
       <div class="inner pa">
+        <h2>Anstehende Shows</h2>
+
         <ShowList />
 
         <p style="padding-top: 2em">
