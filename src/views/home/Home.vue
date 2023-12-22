@@ -130,16 +130,18 @@ useHead({
 
       <section>
         <div class="inner pa">
-          <header class="major" style="margin-bottom: 4em">
-            <h2>Anstehende Shows</h2>
-          </header>
-          <ShowList excerpt />
-          <div style="margin-top: 2em">
-            <ul class="actions">
-              <li>
-                <a href="/shows" class="button next">Mehr Infos</a>
-              </li>
-            </ul>
+          <div class="-2u 8u 12u$(small)">
+            <header class="major" style="margin-bottom: 4em">
+              <h2>Anstehende Shows</h2>
+            </header>
+            <ShowList excerpt />
+            <div style="margin-top: 2em">
+              <ul class="actions">
+                <li>
+                  <a href="/shows" class="button next">Mehr Infos</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
