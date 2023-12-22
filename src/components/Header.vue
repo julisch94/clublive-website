@@ -39,9 +39,8 @@ const menuRoutesDesktop = computed(() => {
 </template>
 
 <style scoped>
-
 * {
-  --hover-color: var(--color-accent-4)
+  --hover-color: var(--color-accent-4);
 }
 
 #header {

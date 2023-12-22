@@ -7,7 +7,7 @@
         </div>
       </header>
       <div class="content">
-        <h1>Live-Band aus Karlsruhe</h1>
+        <h2>Live-Band aus Karlsruhe</h2>
         <ul class="actions">
           <li>
             <a href="#start" class="button next">Jetzt reinhören</a>
@@ -155,7 +155,7 @@ onMounted(() => {
   margin-left: 0;
 }
 
-#banner .inner .content h1 {
+#banner .inner .content h2 {
   font-size: 0.7em;
   font-weight: 700;
   font-family: inherit;
