@@ -50,7 +50,7 @@ const submitForm = async () => {
   <section id="contact" class="scroll-target">
     <div class="inner pa">
       <section>
-        <h3>Kontaktformular / Buchung</h3>
+        <h2>Kontaktformular / Buchung</h2>
         <div>
           <p>
             Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
