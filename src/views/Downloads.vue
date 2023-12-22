@@ -10,7 +10,6 @@
           <div class="6u 12u$(small)">
             <h3>Pressetext von "Club Live"</h3>
             <p class="justify-on-desktop">
-              Club Live – Clubmusik live performt.<br />
               {{ pressText }}
             </p>
           </div>
