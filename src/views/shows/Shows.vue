@@ -38,7 +38,7 @@
     <section data-test-id="references">
       <div class="inner pa align-center">
         <h2>Referenzen</h2>
-        <p>Hier hat Club Live schon standesgemäß den Laden zerlegt.</p>
+        <p>Hier hat Club Live schon gepflegt den Laden zerlegt.</p>
         <vue-word-cloud
           style="height: 50vh; width: 100%; max-width: 1200px; margin: 0 auto; color:"
           :words="pastShows"
