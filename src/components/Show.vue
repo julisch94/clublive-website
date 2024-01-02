@@ -29,30 +29,29 @@ const hasFurtherInformation = computed(() => {
 
 <template>
   <article class="show" data-testid="show">
-    <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
-    <div v-if="displayDetails" class="info-container">
-      <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.description">{{ show.description }}</span>
-      <span v-if="show.website" class="icon fa-globe" style="justify-self: center">&nbsp;</span>
+    <p class="title m-0">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
+    <p v-if="displayDetails" class="subtitle m-0">
+      <span class="icon fa-info-circle" style="justify-self: center">&nbsp;</span>
+      <span>{{ show.description }}</span>
+      <span v-if="show.mapsLink">,&nbsp;<a :href="show.mapsLink">Google Maps Link</a> </span>
       <span v-if="show.website">
-        <a :href="show.website" target="_blank">{{ show.website }}</a>
+        ,&nbsp;Website: <a :href="show.website">{{ show.website }}</a>
       </span>
-      <span v-if="show.mapsLink" class="icon fa-map-marker" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.mapsLink"><a :href="show.mapsLink" target="_blank">Google Maps Link</a></span>
-    </div>
+    </p>
   </article>
 </template>
 
 <style scoped>
-.title {
-  line-height: 1.2em;
-  margin-bottom: 0;
+.m-0 {
+  margin: 0;
 }
 
-.info-container {
-  padding-top: 1em;
-  display: grid;
-  grid-template-columns: 2em auto;
-  row-gap: 1em;
+.title {
+  line-height: 1.2em;
+}
+
+.subtitle {
+  margin-top: 0.2em;
+  font-size: 0.75em;
 }
 </style>
