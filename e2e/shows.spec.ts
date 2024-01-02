@@ -4,7 +4,7 @@ import { waitForHead } from './wait-for-head'
 test('opens up shows', async ({ page }) => {
   await page.goto('/shows')
 
-  await expect(page.getByRole('heading', { name: 'Shows' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Shows', exact: true })).toBeVisible()
 })
 
 test('shows page is loaded correctly', async ({ page }) => {

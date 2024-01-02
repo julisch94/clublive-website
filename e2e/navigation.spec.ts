@@ -14,7 +14,7 @@ test.describe('on desktop', () => {
     await page.locator('#menu-desktop').getByRole('link', { name: 'Band' }).click()
     await expect(page.getByRole('heading', { name: 'Band' })).toBeVisible()
     await page.locator('#menu-desktop').getByRole('link', { name: 'Shows' }).click()
-    await expect(page.getByRole('heading', { name: 'Shows' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Shows', exact: true })).toBeVisible()
     await page.locator('#menu-desktop').getByRole('link', { name: 'Downloads' }).click()
     await expect(page.getByRole('heading', { name: 'Downloads' })).toBeVisible()
   })
@@ -49,7 +49,7 @@ test.describe('on mobile', () => {
 
     await page.locator('#menu-mobile').getByRole('link').click()
     await page.locator('#menu').getByRole('link', { name: 'Shows' }).click()
-    await expect(page.getByRole('heading', { name: 'Shows' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Shows', exact: true })).toBeVisible()
 
     await page.locator('#menu-mobile').getByRole('link').click()
     await page.locator('#menu').getByRole('link', { name: 'Downloads' }).click()

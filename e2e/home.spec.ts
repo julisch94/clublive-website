@@ -40,7 +40,7 @@ test('when user clicks on the call to action button, the browser scrolls #start 
 test('start section contains heading, video and info paragraph', async ({ page }) => {
   await page.goto('/#start')
 
-  await expect(page.locator('#start').getByRole('heading', { name: 'Clubmusik live performt!' })).toBeVisible()
+  await expect(page.locator('#start').getByRole('heading', { name: 'Wir spielen Clubmusik live!' })).toBeVisible()
 
   await expect(page.locator('video')).toBeVisible()
   await expect(page.locator('video source')).toHaveAttribute(
@@ -49,7 +49,7 @@ test('start section contains heading, video and info paragraph', async ({ page }
   )
 
   await expect(
-    page.locator('#start').getByText('Wer sich fragt, ob moderne, hoch-produzierte Musik überhaupt')
+    page.locator('#start').getByText('Club Live ist deine Live-Band für mitreißende Clubmusik')
   ).toBeVisible()
   await expect(page.getByRole('link', { name: 'Schreibe uns' })).toBeVisible()
 })
