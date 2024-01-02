@@ -2112,7 +2112,7 @@ textarea {
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  background: rgba(212, 212, 255, 0.035);
+  background: var(--color-accent-3);
   border: 0.5px solid var(--color-fg);
   border-radius: 0;
   color: inherit;
