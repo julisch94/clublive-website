@@ -10,13 +10,13 @@ test('opens up shows', async ({ page }) => {
 test('shows page is loaded correctly', async ({ page }) => {
   await page.goto('/shows')
 
-  await expect(page.getByRole('heading', { name: 'Shows' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Shows', exact: true })).toBeVisible()
   await expect(
-    page.getByText('Schaue hier regelmäßig vorbei um zu sehen, wann wir wieder in deine Nähe kommen.')
+    page.getByText('Schau hier regelmäßig rein, um zu sehen, wann wir wieder in deine Nähe kommen.')
   ).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Referenzen' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Kontaktformular / Buchung' })).toBeVisible()
-  await expect(page.getByText('Um keinen Auftritt von uns zu verpassen, folge uns bei Instagram')).toBeVisible()
+  await expect(page.getByText('Stay tuned und folge uns bei Instagram')).toBeVisible()
 })
 
 test('references are loaded correctly', async ({ page }) => {
