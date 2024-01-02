@@ -53,8 +53,8 @@ const submitForm = async () => {
         <h2>Kontaktformular / Buchung</h2>
         <div>
           <p>
-            Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
-            unseren Handys und melden uns umgehend bei dir zurück.
+            Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht und
+            melden uns schnellstmöglich bei dir zurück.
           </p>
           <form data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submitForm">
             <div class="row">
