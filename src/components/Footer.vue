@@ -45,7 +45,7 @@ const currentYear = computed(() => {
 
 <style>
 #footer {
-  background: linear-gradient(to top right, var(--color-accent-2), var(--color-accent-1));
+  background: var(--color-accent-8);
 }
 
 #footer .copyright {

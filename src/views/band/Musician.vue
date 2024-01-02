@@ -36,7 +36,7 @@ img {
 }
 
 .subtitle {
-  background-color: var(--color-accent-1);
+  background-color: var(--color-accent-8);
   padding: 0.5em 1em;
   font-size: 0.8em;
 }

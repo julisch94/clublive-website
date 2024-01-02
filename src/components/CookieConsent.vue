@@ -41,7 +41,7 @@ div.cookie-consent {
   gap: 1em;
   padding: 1em;
   border-top: solid 1px rgba(212, 212, 255, 0.1);
-  background-color: var(--color-accent-1);
+  background-color: var(--color-accent-8);
   transform: translateY(100px);
   animation: moveup 0.2s ease-out forwards;
   z-index: 2;
