@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="carousel">
-      <CarouselContainer />
+      <CarouselContainer :images="['crowd']" />
     </div>
   </section>
 </template>

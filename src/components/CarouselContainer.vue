@@ -13,7 +13,15 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import { getImageURL } from '@/utils'
 
-const images = ['crowd'].map(image => getImageURL(image))
+const props = defineProps({
+  images: {
+    type: Array as () => string[],
+    required: false,
+    default: () => ['crowd'],
+  },
+})
+
+const images = props.images.map(image => getImageURL(image))
 </script>
 
 <style>

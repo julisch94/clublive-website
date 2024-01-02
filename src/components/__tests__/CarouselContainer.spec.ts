@@ -15,7 +15,11 @@ import CarouselContainer from '../CarouselContainer.vue'
 
 describe('CarouselContainer', () => {
   test('loads slideshow correctly', async () => {
-    render(CarouselContainer)
+    render(CarouselContainer, {
+      props: {
+        images: ['crowd', 'felix', 'blaeser', 'tiffany', 'tobi'],
+      },
+    })
 
     expect(screen.getByLabelText('Slideshow')).to.exist
 
@@ -26,7 +30,11 @@ describe('CarouselContainer', () => {
   })
 
   test('loads all images from image manager', async () => {
-    const wrapper = mount(CarouselContainer)
+    const wrapper = mount(CarouselContainer, {
+      props: {
+        images: ['crowd', 'felix', 'blaeser', 'tiffany', 'tobi'],
+      },
+    })
 
     expect(wrapper.vm['images']).toEqual([
       'file:///images/my-gallery/crowd.webp',
