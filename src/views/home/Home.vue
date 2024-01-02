@@ -114,7 +114,7 @@ useHead({
                   <p>Genau das, was du für dein Event brauchst!</p>
                   <ul class="actions">
                     <li>
-                      <a href="#contact" class="button next">Schreibe uns</a>
+                      <a href="#contact" class="button next special">Schreibe uns</a>
                     </li>
                   </ul>
                 </div>
@@ -138,7 +138,7 @@ useHead({
             <div style="margin-top: 2em">
               <ul class="actions">
                 <li>
-                  <a href="/shows" class="button next">Mehr Infos</a>
+                  <a href="/shows" class="button next special">Mehr Infos</a>
                 </li>
               </ul>
             </div>
@@ -153,7 +153,7 @@ useHead({
   </div>
 </template>
 
-<style>
+<style scoped>
 .motto {
   background: linear-gradient(to top right, var(--color-accent-1), var(--color-accent-2));
 }
@@ -211,6 +211,5 @@ div.cta {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: -10px 10px 0 var(--color-accent-1);
 }
 </style>
