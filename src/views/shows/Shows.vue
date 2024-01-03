@@ -9,7 +9,7 @@
           Never miss a beat! Schau hier regelmäßig rein, um zu sehen, wann wir wieder in deine Nähe kommen. Komm rum und
           feier mit uns zusammen Clubmusik! Festivals, Stadtfeste, Vereins-Events, private Feiern und vieles mehr. Um
           keine Show von uns zu verpassen, folge uns bei Instagram:
-          <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+          <a href="https://instagram.com/clublive.band">instagram.com/clublive.band</a>
         </p>
         <p>
           Noch auf der Suche nach dem passenden Act für deine Veranstaltung? Egal ob Hochzeit, Firmenfeier,
@@ -28,7 +28,7 @@
 
         <p style="padding-top: 2em">
           Stay tuned und folge uns bei Instagram:
-          <a href="https://instagram.com/clublive.band">https://instagram.com/clublive.band</a>
+          <a href="https://instagram.com/clublive.band">instagram.com/clublive.band</a>
         </p>
       </div>
     </section>

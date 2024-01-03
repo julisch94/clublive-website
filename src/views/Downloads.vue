@@ -49,13 +49,13 @@
                 >
               </li>
             </ul>
-            <p>Nichts passendes dabei?<br />Schreibe uns gerne eine E-Mail.</p>
+            <p>Du hast Fragen?<br />Schreibe uns gerne eine E-Mail an<br />contact@clublive.band</p>
           </div>
         </div>
       </div>
     </section>
 
-    <hr>
+    <hr />
   </div>
 </template>
 
