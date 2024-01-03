@@ -44,7 +44,7 @@
         <vue-word-cloud
           style="height: 50vh; width: 100%; max-width: 1200px; margin: 0 auto; color:"
           :words="pastShows"
-          color="var(--color-accent-4)"
+          color="var(--color-fg)"
           font-family="Montserrat"
           :spacing="1"
         />
