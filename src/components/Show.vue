@@ -22,6 +22,10 @@ const displayDetails = computed(() => {
   return !props.short && hasFurtherInformation.value
 })
 
+const websiteWithoutProtocol = computed(() => {
+  return props.show.website?.replace('https://', '') ?? ''
+})
+
 const hasFurtherInformation = computed(() => {
   return !!props.show.description || !!props.show.website || !!props.show.mapsLink
 })
@@ -33,9 +37,8 @@ const hasFurtherInformation = computed(() => {
     <p v-if="displayDetails" class="subtitle m-0">
       <span class="icon fa-info-circle" style="justify-self: center">&nbsp;</span>
       <span>{{ show.description }}</span>
-      <span v-if="show.mapsLink">,&nbsp;<a :href="show.mapsLink">Google Maps Link</a> </span>
       <span v-if="show.website">
-        ,&nbsp;Website: <a :href="show.website">{{ show.website }}</a>
+        , <a :href="show.website">{{ websiteWithoutProtocol }}</a>
       </span>
     </p>
   </article>
