@@ -61,4 +61,13 @@
 
 <script setup lang="ts">
 import { pressText } from '@/data/pressText'
+import { seo } from '@/utils'
+import { useHead, useSeoMeta } from '@unhead/vue'
+
+useSeoMeta({
+  ogTitle: seo.downloads.title,
+})
+useHead({
+  title: seo.downloads.title,
+})
 </script>
