@@ -39,9 +39,13 @@ const menuRoutesDesktop = computed(() => {
 </template>
 
 <style scoped>
+* {
+  --hover-color: var(--color-accent-4);
+}
+
 #header {
   display: flex;
-  background-color: var(--color-accent-1);
+  background: linear-gradient(to top right, var(--color-accent-1), #6300ff);
   box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
   padding: 0 1.5em;
   font-weight: 700;
@@ -64,24 +68,25 @@ a {
   border: 0;
 }
 
+a:hover {
+  color: var(--hover-color);
+}
+
 #header .logo strong {
   transition:
     background-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
   background-color: var(--color-fg);
-  color: var(--color-accent-1);
+  color: var(--color-bg);
   display: inline-block;
   line-height: 1.65em;
   margin-right: 1em;
   padding: 0 0.125em 0 0.375em;
 }
 
-#header .logo:hover strong {
-  background-color: var(--color-accent-2);
-}
-
+#header .logo:hover strong,
 #header .logo:active strong {
-  background-color: var(--color-accent-4);
+  background-color: var(--hover-color);
 }
 
 /* nav bar desktop */
@@ -169,7 +174,7 @@ nav {
   transition: opacity 0.5s ease;
   transition-delay: 0.75s;
   animation: none;
-  background-color: transparent;
+  background: transparent;
   box-shadow: none;
   position: absolute;
 }

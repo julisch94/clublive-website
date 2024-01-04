@@ -1,10 +1,9 @@
 <template>
-  <div class="container">
-    <img :src="imageSrc" :alt="alt" />
-    <div class="overlay">
-      <h3>{{ name }}</h3>
-      <p>{{ instrument }}</p>
+  <div>
+    <div class="container">
+      <img :src="imageSrc" :alt="alt" />
     </div>
+    <p class="subtitle">{{ name }} - {{ instrument }}</p>
   </div>
 </template>
 
@@ -29,39 +28,16 @@ export default defineComponent({
 <style scoped>
 .container {
   position: relative;
-}
-
-.container img {
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--color-accent-8);
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
-.overlay :first-child::after {
-  content: '';
-  background-color: var(--color-fg);
-  display: block;
-  height: 2px;
-  margin: 0.325em 0 0.325em 0;
-  width: 100%;
+img {
+  flex-grow: 1;
 }
 
-.overlay:hover {
-  opacity: 0.8;
+.subtitle {
+  background-color: var(--color-accent-8);
+  padding: 0.5em 1em;
+  font-size: 0.8em;
 }
 </style>

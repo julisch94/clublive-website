@@ -9,8 +9,7 @@
         <div class="row">
           <div class="6u 12u$(small)">
             <h3>Pressetext von "Club Live"</h3>
-            <p style="text-align: justify">
-              Club Live – Clubmusik live performt.<br />
+            <p class="justify-on-desktop">
               {{ pressText }}
             </p>
           </div>
@@ -50,11 +49,13 @@
                 >
               </li>
             </ul>
-            <p>Nichts passendes dabei?<br />Schreibe uns gerne eine E-Mail.</p>
+            <p>Du hast Fragen?<br />Schreibe uns gerne eine E-Mail an<br />contact@clublive.band</p>
           </div>
         </div>
       </div>
     </section>
+
+    <hr />
   </div>
 </template>
 

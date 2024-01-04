@@ -1,14 +1,3 @@
-<template>
-  <div v-if="hasFutureShows">
-    <Show v-for="show of futureShows" :key="show.date" :show="show" :short="excerpt" />
-  </div>
-
-  <div v-else id="noShows">
-    <p>In naher Zukunft sind keine öffentlichen Auftritte geplant.</p>
-    <p>Wir werden aber schon bald neue Termine bekannt geben!</p>
-  </div>
-</template>
-
 <script setup lang="ts">
 import Show from '@/components/Show.vue'
 import { computed, ComputedRef } from 'vue'
@@ -34,3 +23,32 @@ const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
   return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
 }
 </script>
+
+<template>
+  <div v-if="hasFutureShows" class="show-list">
+    <Show v-for="show of futureShows" :key="show.date" :show="show" :short="excerpt" />
+  </div>
+
+  <div v-else id="noShows">
+    <p>In naher Zukunft sind keine öffentlichen Auftritte geplant.</p>
+    <p>Wir werden aber schon bald neue Termine bekannt geben!</p>
+  </div>
+</template>
+
+<style scoped>
+.show-list {
+  --gap: 1em;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--gap);
+}
+
+.show-list > * {
+  padding-bottom: var(--gap);
+  padding-top: var(--gap);
+}
+
+.show-list > *:not(:last-child) {
+  border-bottom: 1px solid white;
+}
+</style>

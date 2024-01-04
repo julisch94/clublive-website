@@ -1,20 +1,3 @@
-<template>
-  <article class="show" data-testid="show">
-    <p class="title">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
-    <div v-if="displayDetails" class="info-container">
-      <span v-if="show.description" class="icon fa-info" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.description">{{ show.description }}</span>
-      <span v-if="show.website" class="icon fa-globe" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.website">
-        <a :href="show.website" target="_blank">{{ show.website }}</a>
-      </span>
-      <span v-if="show.mapsLink" class="icon fa-map-marker" style="justify-self: center">&nbsp;</span>
-      <span v-if="show.mapsLink"><a :href="show.mapsLink" target="_blank">Google Maps Link</a></span>
-    </div>
-    <hr />
-  </article>
-</template>
-
 <script setup lang="ts">
 import { computed } from 'vue'
 import { ShowModel } from '@/model/show.model'
@@ -39,27 +22,39 @@ const displayDetails = computed(() => {
   return !props.short && hasFurtherInformation.value
 })
 
+const websiteWithoutProtocol = computed(() => {
+  return props.show.website?.replace('https://', '') ?? ''
+})
+
 const hasFurtherInformation = computed(() => {
   return !!props.show.description || !!props.show.website || !!props.show.mapsLink
 })
 </script>
 
+<template>
+  <article class="show" data-testid="show">
+    <p class="title m-0">{{ prettyDate }}&nbsp;//&nbsp;{{ show.place }}</p>
+    <p v-if="displayDetails" class="subtitle m-0">
+      <span class="icon fa-info-circle" style="justify-self: center">&nbsp;</span>
+      <span>{{ show.description }}</span>
+      <span v-if="show.website">
+        , <a :href="show.website">{{ websiteWithoutProtocol }}</a>
+      </span>
+    </p>
+  </article>
+</template>
+
 <style scoped>
+.m-0 {
+  margin: 0;
+}
+
 .title {
-  font-size: 1.6em;
   line-height: 1.2em;
-  margin-bottom: 0;
 }
 
-.show {
-  margin-bottom: 1.5em;
-  margin-top: 1.5em;
-}
-
-.info-container {
-  padding-top: 1em;
-  display: grid;
-  grid-template-columns: 2em auto;
-  row-gap: 1em;
+.subtitle {
+  margin-top: 0.2em;
+  font-size: 0.75em;
 }
 </style>

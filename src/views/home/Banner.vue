@@ -7,7 +7,7 @@
         </div>
       </header>
       <div class="content">
-        <h1>Live-Band aus Karlsruhe</h1>
+        <h2>Live-Band aus Karlsruhe</h2>
         <ul class="actions">
           <li>
             <a href="#start" class="button next">Jetzt reinhören</a>
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="carousel">
-      <CarouselContainer />
+      <CarouselContainer :images="['crowd']" />
     </div>
   </section>
 </template>
@@ -84,7 +84,7 @@ onMounted(() => {
   -webkit-pointer-events: none;
   -ms-pointer-events: none;
   pointer-events: none;
-  background-color: var(--color-accent-1);
+  background-color: var(--color-bg);
   content: '';
   display: block;
   height: 100%;
@@ -155,7 +155,7 @@ onMounted(() => {
   margin-left: 0;
 }
 
-#banner .inner .content h1 {
+#banner .inner .content h2 {
   font-size: 0.7em;
   font-weight: 700;
   font-family: inherit;

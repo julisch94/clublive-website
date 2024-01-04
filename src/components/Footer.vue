@@ -44,6 +44,10 @@ const currentYear = computed(() => {
 </script>
 
 <style>
+#footer {
+  background: var(--color-accent-8);
+}
+
 #footer .copyright {
   font-size: 0.8em;
   list-style: none;

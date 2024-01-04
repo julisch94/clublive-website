@@ -1,12 +1,60 @@
+<script setup lang="ts">
+import { Ref, computed, ref } from 'vue'
+import { sendContactForm } from '@/utils/api'
+
+const name = ref('')
+const email = ref('')
+const message = ref('')
+const success = ref(false)
+const failure = ref(false)
+const isLoading = ref(false)
+const reference = ref('')
+const referenceOther = ref('')
+
+const resultArea: Ref<HTMLDivElement | null> = ref(null)
+
+const showReferenceOther = computed(() => reference.value === 'other')
+
+const submitForm = async () => {
+  const body = {
+    name: name.value,
+    email: email.value,
+    message: message.value,
+    reference: reference.value,
+    referenceOther: referenceOther.value,
+  }
+
+  success.value = false
+  failure.value = false
+  isLoading.value = true
+
+  try {
+    const result = await sendContactForm(body)
+
+    isLoading.value = false
+    if (result?.ok) {
+      success.value = true
+    } else {
+      failure.value = true
+    }
+  } catch (error) {
+    console.error(error)
+    isLoading.value = false
+  }
+
+  resultArea.value?.scrollIntoView()
+}
+</script>
+
 <template>
   <section id="contact" class="scroll-target">
     <div class="inner pa">
       <section>
-        <h3>Kontaktformular / Buchung</h3>
+        <h2>Kontaktformular / Buchung</h2>
         <div>
           <p>
-            Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht auf
-            unseren Handys und melden uns umgehend bei dir zurück.
+            Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht und
+            melden uns schnellstmöglich bei dir zurück.
           </p>
           <form data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submitForm">
             <div class="row">
@@ -95,54 +143,6 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-import { Ref, computed, ref } from 'vue'
-import { sendContactForm } from '@/utils/api'
-
-const name = ref('')
-const email = ref('')
-const message = ref('')
-const success = ref(false)
-const failure = ref(false)
-const isLoading = ref(false)
-const reference = ref('')
-const referenceOther = ref('')
-
-const resultArea: Ref<HTMLDivElement | null> = ref(null)
-
-const showReferenceOther = computed(() => reference.value === 'other')
-
-const submitForm = async () => {
-  const body = {
-    name: name.value,
-    email: email.value,
-    message: message.value,
-    reference: reference.value,
-    referenceOther: referenceOther.value,
-  }
-
-  success.value = false
-  failure.value = false
-  isLoading.value = true
-
-  try {
-    const result = await sendContactForm(body)
-
-    isLoading.value = false
-    if (result?.ok) {
-      success.value = true
-    } else {
-      failure.value = true
-    }
-  } catch (error) {
-    console.error(error)
-    isLoading.value = false
-  }
-
-  resultArea.value?.scrollIntoView()
-}
-</script>
 
 <style scoped>
 #contact {

@@ -13,7 +13,15 @@ import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import { getImageURL } from '@/utils'
 
-const images = ['crowd', 'felix', 'blaeser', 'tiffany', 'tobi'].map(image => getImageURL(image))
+const props = defineProps({
+  images: {
+    type: Array as () => string[],
+    required: false,
+    default: () => ['crowd'],
+  },
+})
+
+const images = props.images.map(image => getImageURL(image))
 </script>
 
 <style>
@@ -46,6 +54,6 @@ button.vueperslides__bullet:hover {
 }
 
 button.vueperslides__bullet--active {
-  color: var(--color-accent-2);
+  color: var(--color-accent-1);
 }
 </style>

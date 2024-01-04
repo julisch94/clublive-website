@@ -5,7 +5,7 @@
         <header class="major">
           <h1>Band</h1>
         </header>
-        <p>
+        <p class="justify-on-desktop">
           Als unsere Band im Jahr 2017 gegründet wurde, spielten wir Songs, die wir aus dem Radio und aus den Clubs
           kannten – mit einer handvoll Leuten in einem kleinen Proberaum in Karlsruhe-Rheinhafen. Aber wir waren uns
           schnell einig, wohin unsere musikalische Reise gehen sollte. Denn wir merkten, dass viele unserer Freunde in
@@ -15,20 +15,21 @@
         <blockquote>
           Unsere Vision: Wir wollen wieder junge Menschen für Livemusik begeistern. Deshalb spielen wir Clubmusik live.
         </blockquote>
-        <p>
+        <p class="justify-on-desktop">
           Und das zieht an. 2018 feierten wir Bühnenpremiere und sind seit dem
           <b>überall in Baden-Württemberg</b> unterwegs. Wir haben sowohl direkt in Karlsruhe, als auch überregional wie
-          z.B. in Pforzheim, Bad Wildbad, Rastatt, Freudenstadt und sogar in Rheinfelden <b>an der Schweizer Grenze</b> gespielt. Egal
-          ob öffentliche Veranstaltung oder private Feier, wir haben immer Bock mit euch Party zu machen.
+          z.B. in Pforzheim, Bad Wildbad, Rastatt, Freudenstadt und sogar in Rheinfelden
+          <b>an der Schweizer Grenze</b> gespielt. Egal ob öffentliche Veranstaltung oder private Feier, wir haben immer
+          Bock mit euch Party zu machen.
         </p>
         <blockquote>
           Es erfüllt uns einfach mit Freude, wenn alle T-Shirts verschwitzt und alle Frisuren zerstört sind.
         </blockquote>
-        <p>
+        <p class="justify-on-desktop">
           Es zeigt sich auch, dass wir mit unserem ausgefallenen Musikstil <b>sehr talentierte Musiker</b> anziehen:
-          Einige unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln, München oder Oldenburg</b>. Mittlerweile
-          haben wir für einige Instrumente Ersatzleute in petto, die ggf. bei Krankheit oder Terminkollision einspringen
-          können.
+          Einige unserer Musiker kommen ursprünglich aus <b>Heidelberg, Trier, Köln, München oder Oldenburg</b>.
+          Mittlerweile haben wir für einige Instrumente Ersatzleute in petto, die ggf. bei Krankheit oder
+          Terminkollision einspringen können.
         </p>
         <p>
           Spielst auch du ein Instrument und hast Interesse bei uns einzusteigen? Dann schreibe uns gerne eine E-Mail an
@@ -38,14 +39,23 @@
     </section>
 
     <section>
-      <div class="inner pa grid">
-        <Musician
-          v-for="musician in musicians"
-          :key="musician.name"
-          :image-src="musician.imageSrc"
-          :name="musician.name"
-          :instrument="musician.instrument"
-        />
+      <div class="inner pa">
+        <h2>Besetzung</h2>
+        <p class="justify-on-desktop">
+          Club Live spielt mit einer siebenköpfigen Live-Besetzung. Schlagzeug, E-Bass, E-Gitarre, Keyboards, Saxophon
+          und Trompete. Immer dabei sind unsere Frontfrau Tiffany und unser Frontmann Jules, der auch die E-Gitarre
+          spielt. Über die Jahre sind wir mit immer mehr Musikern zu einer großen Club Live Family herangewachsen. Hier
+          stellen wir euch ein paar Mitglieder unserer Club Live Family vor.
+        </p>
+        <div class="grid">
+          <Musician
+            v-for="musician in musicians"
+            :key="musician.name"
+            :image-src="musician.imageSrc"
+            :name="musician.name"
+            :instrument="musician.instrument"
+          />
+        </div>
       </div>
     </section>
 
@@ -101,6 +111,11 @@ const musicians = [
     name: 'Chris',
     instrument: 'Drums / DJ',
   },
+  {
+    imageSrc: 'images/band/andre/andre.webp',
+    name: 'André',
+    instrument: 'Drums',
+  },
 ]
 
 useSeoMeta({
@@ -120,7 +135,7 @@ useHead({
   gap: 1.5em;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 460px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -136,9 +151,5 @@ useHead({
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-}
-
-.grid > * {
-  max-width: 600px;
 }
 </style>
