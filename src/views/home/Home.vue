@@ -123,7 +123,7 @@ useHead({
               <h2>Anstehende Shows</h2>
             </header>
             <ShowList excerpt />
-            <div style="margin-top: 2em">
+            <div style="margin-top: 2em; margin-bottom: 2em;">
               <ul class="actions">
                 <li>
                   <a href="/shows" class="button next special">Mehr Infos</a>
