@@ -29,21 +29,21 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from 'vue'
 import Social from '@/components/Social.vue'
 import Tiles from '@/views/home/Tiles.vue'
-import { tiles } from '@/utils'
+import { seo, tiles } from '@/utils'
 import DemoComponent from '@/views/music/DemoComponent.vue'
+import { useHead, useSeoMeta } from '@unhead/vue'
 
-export default defineComponent({
-  name: 'Music',
-  components: { Social, Tiles, DemoComponent },
-  data() {
-    return {
-      articles: [tiles['band'], tiles['downloads']],
-    }
-  },
+const articles = [tiles['band'], tiles['downloads']]
+
+useSeoMeta({
+  ogTitle: seo.music.title,
+})
+useHead({
+  title: seo.music.title,
 })
 </script>
 
