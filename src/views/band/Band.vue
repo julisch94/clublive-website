@@ -107,6 +107,11 @@ const musicians = [
     instrument: 'Bass',
   },
   {
+    imageSrc: 'images/band/heike/heike.webp',
+    name: 'Heike',
+    instrument: 'Bass',
+  },
+  {
     imageSrc: 'images/band/chris/chris.webp',
     name: 'Chris',
     instrument: 'Drums / DJ',
