@@ -89,7 +89,7 @@ const onMainInView = (isInView: boolean) => {
   top: 0;
   visibility: hidden;
   width: 100%;
-  z-index: 10002;
+  z-index: 30;
 }
 
 #menu .inner {

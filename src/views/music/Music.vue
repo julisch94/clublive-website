@@ -12,12 +12,11 @@
         </p>
         <p>Hier kommen bald noch mehr Aufnahmen!</p>
         <div class="demo-grid">
-          <div class="video-container">
-            <video controls preload="none" poster="/images/video-posters/irish-pub.webp">
-              <source src="https://clublive.blob.core.windows.net/movies/irish-pub.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <VideoComponent
+            src="https://clublive.blob.core.windows.net/movies/irish-pub.mp4"
+            poster="/images/video-posters/irish-pub.webp"
+            mode="landscape"
+          />
           <DemoComponent />
         </div>
         <p>Weitere Aufnahmen und Videos gibt es auf unseren Social-Media-Kanälen:</p>
@@ -30,12 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from 'vue'
 import Social from '@/components/Social.vue'
 import Tiles from '@/views/home/Tiles.vue'
 import { seo, tiles } from '@/utils'
 import DemoComponent from '@/views/music/DemoComponent.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
+import VideoComponent from '@/components/VideoComponent.vue'
 
 const articles = [tiles['band'], tiles['downloads']]
 
@@ -53,20 +52,6 @@ useHead({
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
-}
-
-.demo-grid > .video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16/9 aspect ratio (9 divided by 16) */
-}
-
-.video-container > video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
 }
 
 @media screen and (max-width: 760px) {
