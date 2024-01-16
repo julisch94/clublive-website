@@ -6,6 +6,7 @@ import Banner from '@/views/home/Banner.vue'
 import { seo } from '@/utils'
 import ShowList from '@/components/ShowList.vue'
 import ImageGallery from '@/components/ImageGallery.vue'
+import VideoComponent from '@/components/VideoComponent.vue'
 
 const main = ref(null)
 const emit = defineEmits(['is-main-in-view'])
@@ -87,12 +88,10 @@ useHead({
             </div>
             <div class="grid-container" style="margin-top: 4em">
               <div class="grid-item">
-                <div class="video-container">
-                  <video controls loop preload="none" poster="/images/video-posters/sommer-23.webp">
-                    <source src="https://clublive.blob.core.windows.net/movies/sommer-23.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <VideoComponent
+                  src="https://clublive.blob.core.windows.net/movies/sommer-23.mp4"
+                  poster="/images/video-posters/sommer-23.webp"
+                />
               </div>
               <div class="grid-item">
                 <p>
@@ -123,7 +122,7 @@ useHead({
               <h2>Anstehende Shows</h2>
             </header>
             <ShowList excerpt />
-            <div style="margin-top: 2em; margin-bottom: 2em;">
+            <div style="margin-top: 2em; margin-bottom: 2em">
               <ul class="actions">
                 <li>
                   <a href="/shows" class="button next special">Mehr Infos</a>
@@ -184,20 +183,5 @@ div.cta {
   .grid-container {
     grid-template-columns: 1fr;
   }
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 177.77%; /* 16/9 aspect ratio (16 divided by 9) */
-  margin-bottom: 1em;
-}
-
-.video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 </style>
