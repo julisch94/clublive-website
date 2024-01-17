@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Ref, computed, ref } from 'vue'
 import { sendContactForm } from '@/utils/api'
+import NewContactForm from './NewContactForm.vue'
 
 const name = ref('')
 const email = ref('')
@@ -50,8 +51,9 @@ const submitForm = async () => {
   <section id="contact" class="scroll-target">
     <div class="inner pa">
       <section>
-        <h2>Kontaktformular / Buchung</h2>
-        <div>
+        <h2>Buchungsanfrage</h2>
+        <NewContactForm />
+        <!-- <div>
           <p>
             Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht und
             melden uns schnellstmöglich bei dir zurück.
@@ -138,7 +140,7 @@ const submitForm = async () => {
               </span>
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
     </div>
   </section>
