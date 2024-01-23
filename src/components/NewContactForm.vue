@@ -148,6 +148,14 @@ h4 {
   margin-top: 1em !important;
 }
 
+.vf-step a {
+  border-bottom: 0;
+}
+
+input[type='checkbox'].vf-checkbox {
+  opacity: 1;
+}
+
 .vf-buchungsanfrage *,
 .vf-buchungsanfrage *:before,
 .vf-buchungsanfrage *:after,
