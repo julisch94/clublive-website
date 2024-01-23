@@ -31,7 +31,7 @@
         <FormStep
           name="page2"
           label="Angebot"
-          :elements="['p', 'p_1']"
+          :elements="['container_5', 'container_4']"
           :labels="{
             previous: 'Zurück',
             next: 'Angebot anfordern',
@@ -137,16 +137,31 @@
           <TextElement name="email" input-type="email" :rules="['nullable', 'email']" label="E-Mail-Adresse" />
           <TextElement name="phone" input-type="tel" label="Telefonnummer" />
         </GroupElement>
-        <StaticElement
-          name="p"
-          tag="p"
-          content="Wir speichern und verarbeiten deine Daten gemäß DSGVO nur zur Bearbeitung deiner Anfrage. Mit dem Abschicken deiner Anfrage erklärst du du dich damit einverstanden."
-        />
-        <StaticElement
-          name="p_1"
-          tag="p"
-          content="Bitte stelle nochmal sicher, dass deine Kontaktdaten korrekt sind, sonst können wir dir unser Angebot nicht zukommen lassen."
-        />
+        <GroupElement name="container_5">
+          <TextareaElement
+            name="textarea"
+            label="Deine Nachricht"
+            placeholder="Falls du uns noch etwas sagen möchtest..."
+            :floating="false"
+          />
+        </GroupElement>
+        <GroupElement name="container_4">
+          <StaticElement
+            name="p"
+            tag="p"
+            content="Wir speichern und verarbeiten deine Daten gemäß DSGVO nur zur Bearbeitung deiner Anfrage. Mit dem Abschicken deiner Anfrage erklärst du du dich damit einverstanden."
+          />
+          <StaticElement
+            name="p_1"
+            tag="p"
+            content="Bitte stelle nochmal sicher, dass deine Kontaktdaten korrekt sind, sonst können wir dir unser Angebot nicht zukommen lassen."
+          />
+          <StaticElement
+            name="p"
+            tag="p"
+            content="Wir speichern und verarbeiten deine Daten gemäß DSGVO nur zur Bearbeitung deiner Anfrage. Mit dem Abschicken deiner Anfrage erklärst du du dich damit einverstanden."
+          />
+        </GroupElement>
       </FormElements>
 
       <FormStepsControls @click="onNextClicked"></FormStepsControls>
@@ -181,6 +196,11 @@ label {
 
 .vf-element-layout {
   margin-bottom: 0.5em;
+}
+
+textarea::placeholder {
+  color: var(--vf-color-input) !important;
+  opacity: 0.5;
 }
 
 .vf-btn-sm {
