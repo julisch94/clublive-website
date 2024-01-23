@@ -1,7 +1,7 @@
 <template>
   <Vueform
     id="booking-form"
-    class="mt-s"
+    class="pt-s"
     validate-on="step|change"
     size="sm"
     endpoint="https://data"
@@ -13,7 +13,7 @@
         <FormStep
           name="page0"
           :elements="['container', 'container_1', 'container_2']"
-          label="Veranstaltung"
+          label="Schritt 1"
           :labels="{
             previous: 'Zurück',
             next: 'Weiter',
@@ -22,7 +22,7 @@
         <FormStep
           name="page1"
           :elements="['container_3']"
-          label="Ansprechpartner"
+          label="Schritt 2"
           :labels="{
             previous: 'Zurück',
             next: 'Weiter',
@@ -145,7 +145,7 @@
         <StaticElement
           name="p_1"
           tag="p"
-          content="Bitte stelle nochmals sicher, dass die Kontaktdaten korrekt sind, sonst können wir dir unser Angebot nicht zukommen lassen."
+          content="Bitte stelle nochmal sicher, dass deine Kontaktdaten korrekt sind, sonst können wir dir unser Angebot nicht zukommen lassen."
         />
       </FormElements>
 
@@ -162,12 +162,12 @@ const onNextClicked = () => {
 </script>
 
 <style>
-.mt-s {
-  margin-top: 4em;
+.pt-s {
+  padding-top: 5em;
 }
 
 h4 {
-  margin-top: 2em !important;
+  margin-top: 1em !important;
 }
 
 label {
@@ -184,7 +184,7 @@ label {
 }
 
 .vf-btn-sm {
-  letter-spacing: 0.25em !important;
+  /* letter-spacing: 0.25em !important; */
 }
 
 input[type='checkbox'].vf-checkbox {
