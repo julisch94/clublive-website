@@ -52,95 +52,12 @@ const submitForm = async () => {
     <div class="inner pa">
       <section>
         <h2>Buchungsanfrage</h2>
+        <p>
+          Dieses Kontaktformular ist die beste Möglichkeit ein Angebot von uns anzufragen. Wir lesen deine Nachricht und
+          melden uns schnellstmöglich bei dir zurück. Für einfache Kontaktanfragen kannst du eine E-Mail schreiben an
+          <a href="mailto:contact@clublive.band">contact@clublive.band</a>.
+        </p>
         <NewContactForm />
-        <!-- <div>
-          <p>
-            Dieses Kontaktformular ist die beste Möglichkeit zu uns Kontakt aufzunehmen. Wir lesen deine Nachricht und
-            melden uns schnellstmöglich bei dir zurück.
-          </p>
-          <form data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submitForm">
-            <div class="row">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" v-model="name" type="text" name="name" required />
-              </div>
-              <div class="field">
-                <label for="email">E-Mail</label>
-                <input
-                  id="email"
-                  v-model="email"
-                  type="text"
-                  name="email"
-                  pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="message">Nachricht</label>
-              <textarea
-                id="message"
-                v-model="message"
-                name="message"
-                rows="6"
-                required
-                @keyup.ctrl.enter="submitForm()"
-              />
-            </div>
-
-            <div class="row">
-              <div class="field">
-                <label for="reference">Woher kennst du uns?</label>
-                <select id="reference" v-model="reference" name="reference" required>
-                  <option disabled value="">Bitte wählen</option>
-                  <option value="live">Live-Auftritt</option>
-                  <option value="friends">Empfehlung</option>
-                  <option value="internet">Internet</option>
-                  <option value="press">Presse</option>
-                  <option value="other">Etwas anderes</option>
-                </select>
-              </div>
-              <div v-if="showReferenceOther" class="field">
-                <label for="reference">Woher genau?</label>
-                <input
-                  id="referenceOther"
-                  v-model="referenceOther"
-                  placeholder="Bitte angeben"
-                  type="text"
-                  name="referenceOther"
-                  required
-                />
-              </div>
-            </div>
-
-            <div data-netlify-recaptcha="true" />
-
-            <ul v-if="!success" class="actions">
-              <li>
-                <button type="submit" class="special" :disabled="isLoading">
-                  <span v-if="isLoading">Sendet...</span>
-                  <span v-else>Abschicken</span>
-                </button>
-              </li>
-            </ul>
-          </form>
-
-          <div ref="resultArea" class="result" :class="{ shake: failure, 'slide-in-from-left': success }">
-            <div v-if="success">
-              <span class="icon alt fa-check" />
-              <span>Vielen Dank! Deine Nachricht wurde übermittelt. Wir melden uns baldmöglichst zurück.</span>
-            </div>
-            <div v-if="failure">
-              <span class="icon alt fa-exclamation" />
-              <span>
-                Oh. Da ist etwas schief gegangen. Kannst du uns bitte stattdessen eine E-Mail an
-                <a href="mailto:contact@clublive.band">contact@clublive.band</a>
-                schicken?
-              </span>
-            </div>
-          </div>
-        </div> -->
       </section>
     </div>
   </section>
@@ -149,7 +66,6 @@ const submitForm = async () => {
 <style scoped>
 #contact {
   border-bottom: solid 1px rgba(212, 212, 255, 0.1);
-  overflow-x: hidden;
 }
 
 #contact .inner {

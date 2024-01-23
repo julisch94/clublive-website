@@ -1,5 +1,13 @@
 <template>
-  <Vueform validate-on="step|change" size="sm" endpoint="https://data" method="POST" add-class="vf-buchungsanfrage">
+  <Vueform
+    id="booking-form"
+    class="mt-s"
+    validate-on="step|change"
+    size="sm"
+    endpoint="https://data"
+    method="POST"
+    add-class="vf-buchungsanfrage"
+  >
     <template #empty>
       <FormSteps>
         <FormStep
@@ -13,7 +21,7 @@
         />
         <FormStep
           name="page1"
-          :elements="['text_1', 'checkboxgroup', 'email', 'phone']"
+          :elements="['container_3']"
           label="Ansprechpartner"
           :labels="{
             previous: 'Zurück',
@@ -105,27 +113,30 @@
           <CheckboxElement name="checkbox" text="Ich kenne das genaue Datum noch nicht" />
           <TextElement name="text" label="Ungefährer Zeitraum" :conditions="[['container_2.checkbox', '==', true]]" />
         </GroupElement>
-        <TextElement name="text_1" label="Name des Ansprechpartners" />
-        <CheckboxgroupElement
-          name="checkboxgroup"
-          :items="[
-            {
-              value: 'email',
-              label: 'E-Mail',
-            },
-            {
-              value: 'phone',
-              label: 'Telefon',
-            },
-            {
-              value: 'whatsapp',
-              label: 'Whatsapp',
-            },
-          ]"
-          label="Bevorzugte Kommunikationswege"
-        />
-        <TextElement name="email" input-type="email" :rules="['nullable', 'email']" label="E-Mail-Adresse" />
-        <TextElement name="phone" input-type="tel" label="Telefonnummer" />
+        <GroupElement name="container_3">
+          <StaticElement name="h4" tag="h4" content="Wer?" />
+          <TextElement name="text_1" label="Name des Ansprechpartners" />
+          <CheckboxgroupElement
+            name="checkboxgroup"
+            :items="[
+              {
+                value: 'email',
+                label: 'E-Mail',
+              },
+              {
+                value: 'phone',
+                label: 'Telefon',
+              },
+              {
+                value: 'whatsapp',
+                label: 'Whatsapp',
+              },
+            ]"
+            label="Wie erreichen wir dich am besten?"
+          />
+          <TextElement name="email" input-type="email" :rules="['nullable', 'email']" label="E-Mail-Adresse" />
+          <TextElement name="phone" input-type="tel" label="Telefonnummer" />
+        </GroupElement>
         <StaticElement
           name="p"
           tag="p"
@@ -134,26 +145,56 @@
         <StaticElement
           name="p_1"
           tag="p"
-          content="Bitte stelle nochmals sicher, dass die Kontaktdaten korrekt sind, sonst könnst wir unser Angebot nicht zukommen lassen."
+          content="Bitte stelle nochmals sicher, dass die Kontaktdaten korrekt sind, sonst können wir dir unser Angebot nicht zukommen lassen."
         />
       </FormElements>
 
-      <FormStepsControls />
+      <FormStepsControls @click="onNextClicked"></FormStepsControls>
     </template>
   </Vueform>
 </template>
 
+<script setup lang="ts">
+const onNextClicked = () => {
+  const contactSection = document.getElementById('booking-form')
+  contactSection?.scrollIntoView()
+}
+</script>
+
 <style>
+.mt-s {
+  margin-top: 4em;
+}
+
 h4 {
-  margin-top: 1em !important;
+  margin-top: 2em !important;
+}
+
+label {
+  /* text-transform: none !important; */
+  letter-spacing: 0.1em;
 }
 
 .vf-step a {
   border-bottom: 0;
 }
 
+.vf-element-layout {
+  margin-bottom: 0.5em;
+}
+
+.vf-btn-sm {
+  letter-spacing: 0.25em !important;
+}
+
 input[type='checkbox'].vf-checkbox {
   opacity: 1;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus {
+  height: unset;
 }
 
 .vf-buchungsanfrage *,
@@ -387,12 +428,12 @@ input[type='checkbox'].vf-checkbox {
   --vf-shadow-handles-focus: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   --vf-shadow-btn: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   --vf-shadow-dropdown: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-  --vf-radius-input: 0.25rem;
-  --vf-radius-input-sm: 0.25rem;
-  --vf-radius-input-lg: 0.25rem;
-  --vf-radius-btn: 0.25rem;
-  --vf-radius-btn-sm: 0.25rem;
-  --vf-radius-btn-lg: 0.25rem;
+  --vf-radius-input: 0;
+  --vf-radius-input-sm: 0;
+  --vf-radius-input-lg: 0;
+  --vf-radius-btn: 0;
+  --vf-radius-btn-sm: 0;
+  --vf-radius-btn-lg: 0;
   --vf-radius-small: 0.25rem;
   --vf-radius-small-sm: 0.25rem;
   --vf-radius-small-lg: 0.25rem;
