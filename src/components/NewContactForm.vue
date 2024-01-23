@@ -109,7 +109,7 @@
         </GroupElement>
         <GroupElement name="container_2">
           <StaticElement name="h2_2" tag="h4" content="Wann?" />
-          <DateElement name="date" label="Datum der Veranstaltung" />
+          <DateElement name="date" label="Datum der Veranstaltung" display-format="DD.MM.YYYY" />
           <CheckboxElement name="checkbox" text="Ich kenne das genaue Datum noch nicht" />
           <TextElement name="text" label="Ungefährer Zeitraum" :conditions="[['container_2.checkbox', '==', true]]" />
         </GroupElement>
