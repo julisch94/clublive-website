@@ -54,7 +54,7 @@ const submitForm = async () => {
         <h2>Buchungsanfrage</h2>
         <p>
           Dieses Kontaktformular ist die beste Möglichkeit ein Angebot von uns anzufragen. Wir lesen deine Nachricht und
-          melden uns schnellstmöglich bei dir zurück. Für einfache Kontaktanfragen kannst du eine E-Mail schreiben an
+          melden uns schnellstmöglich bei dir zurück. Für einfache Kontaktanfragen kannst du uns auch eine E-Mail schreiben an
           <a href="mailto:contact@clublive.band">contact@clublive.band</a>.
         </p>
         <NewContactForm />
