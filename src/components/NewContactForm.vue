@@ -1,22 +1,23 @@
 <template>
   <Vueform
+    ref="bookingForm"
     id="booking-form"
     class="pt-s"
     validate-on="step|change"
     :size="formSize"
-    endpoint="https://data"
-    method="POST"
+    :endpoint="false"
     add-class="vf-buchungsanfrage"
     :messages="{
       required: 'Dieses Feld muss ausgefüllt werden',
     }"
+    @submit="onSubmit"
   >
     <template #empty>
       <FormSteps>
         <FormStep
           name="page0"
           :elements="['container', 'container_1', 'container_2']"
-          label="Schritt 1"
+          label="Veranstaltung"
           :labels="{
             previous: 'Zurück',
             next: 'Weiter',
@@ -25,7 +26,7 @@
         <FormStep
           name="page1"
           :elements="['container_3']"
-          label="Schritt 2"
+          label="Kontakt"
           :labels="{
             previous: 'Zurück',
             next: 'Weiter',
@@ -160,6 +161,8 @@
 </template>
 
 <script setup lang="ts">
+import { type Vueform } from '@vueform/vueform'
+import { ref } from 'vue'
 import { computed } from 'vue'
 
 const guestOptions = [
@@ -261,6 +264,12 @@ const formSize = computed(() => {
 const onNextClicked = () => {
   const contactSection = document.getElementById('booking-form')
   contactSection?.scrollIntoView()
+}
+
+const bookingForm = ref<Vueform>()
+
+const onSubmit = () => {
+  console.log('bookingForm.value', bookingForm.value?.data)
 }
 </script>
 
