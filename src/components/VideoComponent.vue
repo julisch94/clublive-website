@@ -5,7 +5,7 @@ withDefaults(
   defineProps<{
     poster?: string
     src: string
-    mode: 'portrait' | 'landscape'
+    mode?: 'portrait' | 'landscape'
   }>(),
   {
     mode: 'portrait',
