@@ -111,8 +111,26 @@
               required: 'Mindestens eine Option muss ausgewählt werden',
             }"
           />
-          <TextElement name="email" input-type="email" :rules="['nullable', 'email']" label="E-Mail-Adresse" />
-          <TextElement name="phone" input-type="tel" label="Telefonnummer" />
+          <TextElement
+            name="email"
+            input-type="email"
+            label="E-Mail-Adresse"
+            :rules="[
+              {
+                required: [['checkboxgroup', ['email']]],
+              },
+            ]"
+          />
+          <TextElement
+            name="phone"
+            input-type="tel"
+            label="Telefonnummer"
+            :rules="[
+              {
+                required: ['checkboxgroup', ['phone', 'whatsapp']],
+              },
+            ]"
+          />
         </GroupElement>
         <GroupElement name="container_5">
           <TextareaElement
