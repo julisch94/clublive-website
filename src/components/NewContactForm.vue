@@ -47,7 +47,7 @@
         <GroupElement name="container">
           <StaticElement name="h2_1" tag="h4" content="Was?" />
           <SelectElement
-            name="select"
+            name="event-type"
             label="Art der Veranstaltung"
             :native="false"
             :items="eventTypeOptions"
@@ -55,57 +55,48 @@
             default="festival"
           />
           <TextElement
-            name="text_2"
+            name="event-type-description"
             label="Bitte beschreibe die Art deiner Veranstaltung"
             :conditions="[['container.select', 'in', ['andere']]]"
           />
           <SelectElement
-            name="select_2"
+            name="amount-of-guests"
             :native="false"
             label="Anzahl der Gäste"
             :items="guestOptions"
             :can-deselect="false"
-            default="under2000"
+            default="1500 - 2000"
           />
           <SelectElement
-            name="select_1"
+            name="planned-air-time"
             :native="false"
             label="Geplante Spielzeit der Band"
             :items="showLengthOptions"
             :can-deselect="false"
-            default="120"
+            default="120 Minuten"
           />
         </GroupElement>
         <GroupElement name="container_1">
           <StaticElement name="h2" tag="h4" content="Wo?" />
-          <TextElement name="text_3" label="Name der Location" />
-          <TextElement name="text_4" label="Ort der Location" />
+          <TextElement name="location-name" label="Name der Location" />
+          <TextElement name="location-address" label="Adresse" />
         </GroupElement>
         <GroupElement name="container_2">
           <StaticElement name="h2_2" tag="h4" content="Wann?" />
-          <DateElement name="date" label="Datum der Veranstaltung" display-format="DD.MM.YYYY" />
-          <CheckboxElement name="checkbox" text="Ich kenne das genaue Datum noch nicht" />
-          <TextElement name="text" label="Ungefährer Zeitraum" :conditions="[['container_2.checkbox', '==', true]]" />
+          <DateElement name="event-date" label="Datum der Veranstaltung" display-format="DD.MM.YYYY" :submit="true" />
+          <CheckboxElement name="date-unknown" text="Ich kenne das genaue Datum noch nicht" />
+          <TextElement
+            name="date-estimate"
+            label="Ungefährer Zeitraum"
+            :conditions="[['container_2.checkbox', '==', true]]"
+          />
         </GroupElement>
         <GroupElement name="container_3">
           <StaticElement name="h4" tag="h4" content="Wer?" />
-          <TextElement name="text_1" label="Name des Ansprechpartners" :rules="['required']" />
+          <TextElement name="contact-name" label="Name des Ansprechpartners" :rules="['required']" />
           <CheckboxgroupElement
-            name="checkboxgroup"
-            :items="[
-              {
-                value: 'email',
-                label: 'E-Mail',
-              },
-              {
-                value: 'phone',
-                label: 'Telefon',
-              },
-              {
-                value: 'whatsapp',
-                label: 'Whatsapp',
-              },
-            ]"
+            name="contact-type"
+            :items="['E-Mail', 'Telefon', 'Whatsapp']"
             label="Wie erreichen wir dich am besten?"
             :rules="['required', 'min:1']"
             :messages="{
@@ -118,24 +109,24 @@
             label="E-Mail-Adresse"
             :rules="[
               {
-                required: [['checkboxgroup', ['email']]],
+                required: [['contact-type', ['email']]],
               },
             ]"
           />
           <TextElement
-            name="phone"
+            name="telephone"
             input-type="tel"
             label="Telefonnummer"
             :rules="[
               {
-                required: ['checkboxgroup', ['phone', 'whatsapp']],
+                required: ['contact-type', ['phone', 'whatsapp']],
               },
             ]"
           />
         </GroupElement>
         <GroupElement name="container_5">
           <TextareaElement
-            name="textarea"
+            name="custom-message"
             label="Deine Nachricht"
             placeholder="Falls du uns noch etwas sagen möchtest..."
             :floating="false"
@@ -166,93 +157,19 @@ import { ref } from 'vue'
 import { computed } from 'vue'
 
 const guestOptions = [
-  {
-    value: 'under100',
-    label: 'bis 100',
-  },
-  {
-    value: 'under250',
-    label: '100 - 250',
-  },
-  {
-    value: 'under500',
-    label: '250 - 500',
-  },
-  {
-    value: 'under1000',
-    label: '500 - 1000',
-  },
-  {
-    value: 'under1500',
-    label: '1000 - 1500',
-  },
-  {
-    value: 'under2000',
-    label: '1500 - 2000',
-  },
-  {
-    value: 'under3000',
-    label: '2000 - 3000',
-  },
-  {
-    value: 'over3000',
-    label: 'mehr als 3000',
-  },
+  'bis 100',
+  '100 - 250',
+  '250 - 500',
+  '500 - 1000',
+  '1000 - 1500',
+  '1500 - 2000',
+  '2000 - 3000',
+  'mehr als 3000',
 ]
 
-const eventTypeOptions = [
-  {
-    value: 'festival',
-    label: 'Festival',
-  },
-  {
-    value: 'stadtfest',
-    label: 'Stadtfest',
-  },
-  {
-    value: 'firmenevent',
-    label: 'Firmen-Event',
-  },
-  {
-    value: 'vereinsfest',
-    label: 'Vereinsfest',
-  },
-  {
-    value: 'hochzeit',
-    label: 'Hochzeit',
-  },
-  {
-    value: 'andere',
-    label: 'Andere',
-  },
-]
+const eventTypeOptions = ['Festival', 'Stadtfest', 'Firmen-Event', 'Vereinsfest', 'Hochzeit', 'Andere']
 
-const showLengthOptions = [
-  {
-    value: '60',
-    label: '60 Minuten',
-  },
-  {
-    value: '90',
-    label: '90 Minuten',
-  },
-  {
-    value: '120',
-    label: '120 Minuten',
-  },
-  {
-    value: '150',
-    label: '150 Minuten',
-  },
-  {
-    value: '180',
-    label: '180 Minuten',
-  },
-  {
-    value: '210',
-    label: '210 Minuten',
-  },
-]
+const showLengthOptions = ['60 Minuten', '90 Minuten', '120 Minuten', '150 Minuten', '180 Minuten', '210 Minuten']
 
 const formSize = computed(() => {
   if (window.innerWidth > 760) {
@@ -268,8 +185,10 @@ const onNextClicked = () => {
 
 const bookingForm = ref<Vueform>()
 
-const onSubmit = () => {
+const onSubmit = form => {
+  console.log('form', form.data)
   console.log('bookingForm.value', bookingForm.value?.data)
+  console.log('date', bookingForm.value?.data['event-date'])
 }
 </script>
 
