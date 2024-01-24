@@ -3,10 +3,13 @@
     id="booking-form"
     class="pt-s"
     validate-on="step|change"
-    size="sm"
+    :size="formSize"
     endpoint="https://data"
     method="POST"
     add-class="vf-buchungsanfrage"
+    :messages="{
+      required: 'Dieses Feld muss ausgefüllt werden',
+    }"
   >
     <template #empty>
       <FormSteps>
@@ -46,60 +49,30 @@
             name="select"
             label="Art der Veranstaltung"
             :native="false"
-            :items="[
-              {
-                value: 'stadtfest',
-                label: 'Stadtfest',
-              },
-              {
-                value: 'hochzeit',
-                label: 'Hochzeit',
-              },
-              {
-                value: 'sportfest',
-                label: 'Sportfest',
-              },
-              {
-                value: 'open-air',
-                label: 'Open Air-Konzert',
-              },
-              {
-                value: 'andere',
-                label: 'Andere',
-              },
-            ]"
+            :items="eventTypeOptions"
+            :can-deselect="false"
+            default="festival"
           />
           <TextElement
             name="text_2"
             label="Bitte beschreibe die Art deiner Veranstaltung"
             :conditions="[['container.select', 'in', ['andere']]]"
           />
-          <SliderElement name="slider" label="Anzahl der Gäste" :min="100" :max="3000" :step="100" :default="1500" />
+          <SelectElement
+            name="select_2"
+            :native="false"
+            label="Anzahl der Gäste"
+            :items="guestOptions"
+            :can-deselect="false"
+            default="under2000"
+          />
           <SelectElement
             name="select_1"
-            :search="true"
             :native="false"
             label="Geplante Spielzeit der Band"
-            input-type="search"
-            autocomplete="off"
-            :items="[
-              {
-                value: '90',
-                label: '90 Minuten',
-              },
-              {
-                value: '120',
-                label: '120 Minuten',
-              },
-              {
-                value: '150',
-                label: '150 Minuten',
-              },
-              {
-                value: '180',
-                label: '180 Minuten',
-              },
-            ]"
+            :items="showLengthOptions"
+            :can-deselect="false"
+            default="120"
           />
         </GroupElement>
         <GroupElement name="container_1">
@@ -115,7 +88,7 @@
         </GroupElement>
         <GroupElement name="container_3">
           <StaticElement name="h4" tag="h4" content="Wer?" />
-          <TextElement name="text_1" label="Name des Ansprechpartners" />
+          <TextElement name="text_1" label="Name des Ansprechpartners" :rules="['required']" />
           <CheckboxgroupElement
             name="checkboxgroup"
             :items="[
@@ -133,6 +106,10 @@
               },
             ]"
             label="Wie erreichen wir dich am besten?"
+            :rules="['required', 'min:1']"
+            :messages="{
+              required: 'Mindestens eine Option muss ausgewählt werden',
+            }"
           />
           <TextElement name="email" input-type="email" :rules="['nullable', 'email']" label="E-Mail-Adresse" />
           <TextElement name="phone" input-type="tel" label="Telefonnummer" />
@@ -146,11 +123,6 @@
           />
         </GroupElement>
         <GroupElement name="container_4">
-          <StaticElement
-            name="p"
-            tag="p"
-            content="Wir speichern und verarbeiten deine Daten gemäß DSGVO nur zur Bearbeitung deiner Anfrage. Mit dem Abschicken deiner Anfrage erklärst du du dich damit einverstanden."
-          />
           <StaticElement
             name="p_1"
             tag="p"
@@ -170,6 +142,104 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
+const guestOptions = [
+  {
+    value: 'under100',
+    label: 'bis 100',
+  },
+  {
+    value: 'under250',
+    label: '100 - 250',
+  },
+  {
+    value: 'under500',
+    label: '250 - 500',
+  },
+  {
+    value: 'under1000',
+    label: '500 - 1000',
+  },
+  {
+    value: 'under1500',
+    label: '1000 - 1500',
+  },
+  {
+    value: 'under2000',
+    label: '1500 - 2000',
+  },
+  {
+    value: 'under3000',
+    label: '2000 - 3000',
+  },
+  {
+    value: 'over3000',
+    label: 'mehr als 3000',
+  },
+]
+
+const eventTypeOptions = [
+  {
+    value: 'festival',
+    label: 'Festival',
+  },
+  {
+    value: 'stadtfest',
+    label: 'Stadtfest',
+  },
+  {
+    value: 'firmenevent',
+    label: 'Firmen-Event',
+  },
+  {
+    value: 'vereinsfest',
+    label: 'Vereinsfest',
+  },
+  {
+    value: 'hochzeit',
+    label: 'Hochzeit',
+  },
+  {
+    value: 'andere',
+    label: 'Andere',
+  },
+]
+
+const showLengthOptions = [
+  {
+    value: '60',
+    label: '60 Minuten',
+  },
+  {
+    value: '90',
+    label: '90 Minuten',
+  },
+  {
+    value: '120',
+    label: '120 Minuten',
+  },
+  {
+    value: '150',
+    label: '150 Minuten',
+  },
+  {
+    value: '180',
+    label: '180 Minuten',
+  },
+  {
+    value: '210',
+    label: '210 Minuten',
+  },
+]
+
+const formSize = computed(() => {
+  if (window.innerWidth > 760) {
+    return 'lg'
+  }
+  return 'sm'
+})
+
 const onNextClicked = () => {
   const contactSection = document.getElementById('booking-form')
   contactSection?.scrollIntoView()
@@ -209,6 +279,11 @@ textarea::placeholder {
 
 input[type='checkbox'].vf-checkbox {
   opacity: 1;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  margin-right: var(--vf-space-checkbox) !important;
 }
 
 input[type='text']:focus,
