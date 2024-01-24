@@ -304,10 +304,17 @@ input[type='radio'] {
   margin-right: var(--vf-space-checkbox) !important;
 }
 
+/* fix border highlight  */
+.vf-datepicker-wrapper {
+  height: inherit !important;
+}
+input[type='text'],
+input[type='password'],
+input[type='email'],
 input[type='text']:focus,
 input[type='password']:focus,
 input[type='email']:focus {
-  height: unset;
+  height: inherit !important;
 }
 
 .vf-buchungsanfrage *,
@@ -547,18 +554,18 @@ input[type='email']:focus {
   --vf-radius-btn: 0;
   --vf-radius-btn-sm: 0;
   --vf-radius-btn-lg: 0;
-  --vf-radius-small: 0.25rem;
-  --vf-radius-small-sm: 0.25rem;
-  --vf-radius-small-lg: 0.25rem;
-  --vf-radius-large: 0.25rem;
-  --vf-radius-large-sm: 0.25rem;
-  --vf-radius-large-lg: 0.25rem;
+  --vf-radius-small: 0;
+  --vf-radius-small-sm: 0;
+  --vf-radius-small-lg: 0;
+  --vf-radius-large: 0;
+  --vf-radius-large-sm: 0;
+  --vf-radius-large-lg: 0;
   --vf-radius-tag: 0.25rem;
   --vf-radius-tag-sm: 0.25rem;
   --vf-radius-tag-lg: 0.25rem;
-  --vf-radius-checkbox: 0.25rem;
-  --vf-radius-checkbox-sm: 0.25rem;
-  --vf-radius-checkbox-lg: 0.25rem;
+  --vf-radius-checkbox: 0;
+  --vf-radius-checkbox-sm: 0;
+  --vf-radius-checkbox-lg: 0;
   --vf-radius-slider: 0.25rem;
   --vf-radius-slider-sm: 0.25rem;
   --vf-radius-slider-lg: 0.25rem;
