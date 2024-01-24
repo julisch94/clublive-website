@@ -219,8 +219,8 @@ textarea::placeholder {
   opacity: 0.5;
 }
 
-.vf-btn-sm {
-  /* letter-spacing: 0.25em !important; */
+.vf-btn-lg {
+  letter-spacing: 0.25em !important;
 }
 
 input[type='checkbox'].vf-checkbox {
