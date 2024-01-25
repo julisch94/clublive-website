@@ -52,12 +52,12 @@
             :native="false"
             :items="eventTypeOptions"
             :can-deselect="false"
-            default="festival"
+            default="Festival"
           />
           <TextElement
             name="event-type-description"
             label="Bitte beschreibe die Art deiner Veranstaltung"
-            :conditions="[['container.select', 'in', ['andere']]]"
+            :conditions="[['container.event-type', '==', 'Andere']]"
           />
           <SelectElement
             name="amount-of-guests"
@@ -88,7 +88,7 @@
           <TextElement
             name="date-estimate"
             label="Ungefährer Zeitraum"
-            :conditions="[['container_2.checkbox', '==', true]]"
+            :conditions="[['container_2.date-unknown', '==', true]]"
           />
         </GroupElement>
         <GroupElement name="container_3">
