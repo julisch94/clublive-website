@@ -247,6 +247,7 @@ input[type='radio'] {
 .vf-datepicker-wrapper {
   height: inherit !important;
 }
+
 input[type='text'],
 input[type='password'],
 input[type='email'],
@@ -256,6 +257,31 @@ input[type='email']:focus {
   height: inherit !important;
 }
 
+/* make buttons feel like the other buttons on the page */
+.vf-steps-controls > .vf-btn {
+  transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  box-shadow: none;
+  font-size: 0.8rem;
+}
+
+.vf-steps-controls > .vf-btn:hover {
+  transform: inherit !important;
+  background-color: transparent;
+}
+
+.vf-steps-controls > .vf-btn-primary:hover {
+  box-shadow: inset 0 0 0 2px var(--color-accent-1);
+}
+
+.vf-steps-controls > .vf-btn-secondary:hover {
+  box-shadow: inset 0 0 0 2px var(--vf-bg-btn-secondary);
+  color: var(--vf-bg-btn-secondary);
+}
+
+/* variables from vueform builder */
 .vf-buchungsanfrage *,
 .vf-buchungsanfrage *:before,
 .vf-buchungsanfrage *:after,
@@ -475,7 +501,7 @@ input[type='email']:focus {
   --vf-border-width-checkbox-b: 1px;
   --vf-border-width-checkbox-l: 1px;
   --vf-border-width-dropdown: 1px;
-  --vf-border-width-btn: 1px;
+  --vf-border-width-btn: 0;
   --vf-border-width-toggle: 0.125rem;
   --vf-border-width-tag: 1px;
   --vf-border-width-blockquote: 3px;
