@@ -1,18 +1,24 @@
-export const sendContactForm = async (values: {
-  name: string
-  email: string
-  message: string
-  reference: string
-  referenceOther: string
-}) => {
+import { TheContactFormData } from '@/components/TheContactForm.vue'
+
+export const sendContactForm = async (values: TheContactFormData): boolean => {
   const body = {
     'form-name': 'clublive-contact',
     ...values,
   }
 
-  return fetch('/', {
+  console.log('sending form', body)
+
+  const response = await fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(body).toString(),
   })
+
+  if (response.ok) {
+    console.log('response is ok', await response.json())
+    return true
+  }
+  
+  console.log('response not ok')
+  return false
 }

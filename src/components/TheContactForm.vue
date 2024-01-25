@@ -169,11 +169,12 @@
 </template>
 
 <script setup lang="ts">
+import { sendContactForm } from '@/utils'
 import { type Vueform } from '@vueform/vueform'
 import { ref } from 'vue'
 import { computed } from 'vue'
 
-type TheContactFormData = {
+export type TheContactFormData = {
   eventType: (typeof eventTypeOptions)[number] | null
   amountOfGuests: (typeof guestOptions)[number] | null
   plannedAirTime: (typeof showLengthOptions)[number] | null
@@ -249,8 +250,10 @@ const onSubmit = async form => {
 
   console.log('formData', formData)
 
+  await sendContactForm(formData)
+
   // send data to API here
-  await new Promise(resolve => setTimeout(resolve, 4000))
+  // await new Promise(resolve => setTimeout(resolve, 4000))
 
   emit('success')
   isFormLoading.value = false
