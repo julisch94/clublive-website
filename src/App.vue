@@ -18,7 +18,7 @@
     <div id="wrapper">
       <router-view @is-main-in-view="onMainInView($event)" />
 
-      <ContactForm />
+      <TheContact />
       <Footer />
     </div>
   </div>
@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import ContactForm from '@/components/ContactForm.vue'
+import TheContact from '@/components/TheContact.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import CookieConsent from '@/components/CookieConsent.vue'

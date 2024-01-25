@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Ref, computed, ref } from 'vue'
 import { sendContactForm } from '@/utils/api'
-import NewContactForm from './NewContactForm.vue'
-import ContactFormResult from './ContactFormResult.vue'
+import TheContactForm from './TheContactForm.vue'
+import TheContactResult from './TheContactResult.vue'
 
 // const name = ref('')
 // const email = ref('')
@@ -74,8 +74,8 @@ const onChange = () => {
           schreiben an
           <a href="mailto:contact@clublive.band">contact@clublive.band</a>.
         </p>
-        <NewContactForm @success="onSuccess" @error="onFailure" @changed="onChange" />
-        <ContactFormResult v-if="shouldShowResultView" :success="success" :failure="failure" />
+        <TheContactForm @success="onSuccess" @error="onFailure" @changed="onChange" />
+        <TheContactResult v-if="shouldShowResultView" :success="success" :failure="failure" />
       </section>
     </div>
   </section>
