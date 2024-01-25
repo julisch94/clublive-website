@@ -109,7 +109,7 @@
             label="E-Mail-Adresse"
             :rules="[
               {
-                required: [['contact-type', ['email']]],
+                required: [['contact-type', ['E-Mail']]],
               },
             ]"
           />
@@ -119,7 +119,7 @@
             label="Telefonnummer"
             :rules="[
               {
-                required: ['contact-type', ['phone', 'whatsapp']],
+                required: ['contact-type', ['Telefon', 'Whatsapp']],
               },
             ]"
           />
