@@ -1,6 +1,6 @@
 import { TheContactFormData } from '@/components/TheContactForm.vue'
 
-export const sendContactForm = async (values: TheContactFormData): boolean => {
+export const sendContactForm = async (values: TheContactFormData): Promise<boolean> => {
   const body = {
     'form-name': 'clublive-contact',
     ...values,
