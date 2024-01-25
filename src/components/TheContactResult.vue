@@ -28,8 +28,6 @@ const props = defineProps<{
 const resultArea: Ref<HTMLDivElement | null> = ref(null)
 
 onMounted(() => {
-  console.log('mounted', props.success, props.failure)
-
   resultArea.value?.scrollIntoView()
 })
 </script>

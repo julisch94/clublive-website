@@ -49,7 +49,7 @@
         <GroupElement name="container">
           <StaticElement name="h2_1" tag="h4" content="Was?" />
           <SelectElement
-            name="event-type"
+            name="eventType"
             label="Art der Veranstaltung"
             :native="false"
             :items="eventTypeOptions"
@@ -57,12 +57,12 @@
             default="Festival"
           />
           <TextElement
-            name="event-type-description"
+            name="eventTypeDescription"
             label="Bitte beschreibe die Art deiner Veranstaltung"
-            :conditions="[['container.event-type', '==', 'Andere']]"
+            :conditions="[['container.eventType', '==', 'Andere']]"
           />
           <SelectElement
-            name="amount-of-guests"
+            name="amountOfGuests"
             :native="false"
             label="Anzahl der Gäste"
             :items="guestOptions"
@@ -70,7 +70,7 @@
             default="1500 - 2000"
           />
           <SelectElement
-            name="planned-air-time"
+            name="plannedAirTime"
             :native="false"
             label="Geplante Spielzeit der Band"
             :items="showLengthOptions"
@@ -80,25 +80,25 @@
         </GroupElement>
         <GroupElement name="container_1">
           <StaticElement name="h2" tag="h4" content="Wo?" />
-          <TextElement name="location-name" label="Name der Location" />
-          <TextElement name="location-address" label="Adresse" />
+          <TextElement name="locationName" label="Name der Location" />
+          <TextElement name="locationAddress" label="Adresse" />
         </GroupElement>
         <GroupElement name="container_2">
           <StaticElement name="h2_2" tag="h4" content="Wann?" />
-          <DateElement name="event-date" label="Datum der Veranstaltung" display-format="DD.MM.YYYY" :submit="true" />
-          <CheckboxElement name="date-unknown" text="Ich kenne das genaue Datum noch nicht" />
+          <DateElement name="eventDate" label="Datum der Veranstaltung" display-format="DD.MM.YYYY" :submit="true" />
+          <CheckboxElement name="dateUnknown" text="Ich kenne das genaue Datum noch nicht" />
           <TextElement
-            name="date-estimate"
+            name="dateEstimate"
             label="Ungefährer Zeitraum"
-            :conditions="[['container_2.date-unknown', '==', true]]"
+            :conditions="[['container_2.dateUnknown', '==', true]]"
           />
         </GroupElement>
         <GroupElement name="container_3">
           <StaticElement name="h4" tag="h4" content="Wer?" />
-          <TextElement name="contact-name" label="Dein Name" :rules="['required']" />
+          <TextElement name="contactName" label="Dein Name" :rules="['required']" />
           <CheckboxgroupElement
-            name="contact-type"
-            :items="['E-Mail', 'Telefon', 'Whatsapp']"
+            name="contactTypes"
+            :items="contactTypeOptions"
             label="Wie erreichen wir dich am besten?"
             :rules="['required', 'min:1']"
             :messages="{
@@ -129,7 +129,7 @@
         <GroupElement name="container_5">
           <StaticElement name="h4_1" tag="h4" content="Fast fertig!" />
           <TextareaElement
-            name="custom-message"
+            name="customMessage"
             label="Deine Nachricht"
             placeholder="Falls du uns noch etwas Persönliches möchtest..."
             :floating="false"
@@ -143,7 +143,7 @@
             :rules="['required']"
           />
           <TextElement
-            name="reference-other"
+            name="referenceOther"
             label="Woher genau?"
             :conditions="[['container_5.reference', '==', 'Etwas anderes']]"
             :rules="['required']"
@@ -173,6 +173,24 @@ import { type Vueform } from '@vueform/vueform'
 import { ref } from 'vue'
 import { computed } from 'vue'
 
+type TheContactFormData = {
+  eventType: (typeof eventTypeOptions)[number] | null
+  amountOfGuests: (typeof guestOptions)[number] | null
+  plannedAirTime: (typeof showLengthOptions)[number] | null
+  locationName: string | null
+  locationAddress: string | null
+  eventDate: '2024-01-28'
+  dateUnknown: boolean
+  dateEstimate?: string | null
+  contactName: string
+  contactTypes: (typeof contactTypeOptions)[number][]
+  email: string | null
+  telephone: string | null
+  customMessage: string | null
+  reference: (typeof referenceOptions)[number]
+  referenceOther?: string
+}
+
 const guestOptions = [
   'bis 100',
   '100 - 250',
@@ -182,13 +200,22 @@ const guestOptions = [
   '1500 - 2000',
   '2000 - 3000',
   'mehr als 3000',
-]
+] as const
 
-const eventTypeOptions = ['Festival', 'Stadtfest', 'Firmen-Event', 'Vereinsfest', 'Hochzeit', 'Andere']
+const eventTypeOptions = ['Festival', 'Stadtfest', 'Firmen-Event', 'Vereinsfest', 'Hochzeit', 'Andere'] as const
 
-const showLengthOptions = ['60 Minuten', '90 Minuten', '120 Minuten', '150 Minuten', '180 Minuten', '210 Minuten']
+const contactTypeOptions = ['E-Mail', 'Telefon', 'Whatsapp'] as const
 
-const referenceOptions = ['Live', 'Empfehlung', 'Internet', 'Presse', 'Etwas anderes']
+const showLengthOptions = [
+  '60 Minuten',
+  '90 Minuten',
+  '120 Minuten',
+  '150 Minuten',
+  '180 Minuten',
+  '210 Minuten',
+] as const
+
+const referenceOptions = ['Live', 'Empfehlung', 'Internet', 'Presse', 'Etwas anderes'] as const
 
 const onChangeForm = () => {
   // give signal to parent; that user has changed something in the form
@@ -216,9 +243,11 @@ const isFormLoading = ref(false)
 
 const onSubmit = async form => {
   onChangeForm()
-
   isFormLoading.value = true
-  console.log('bookingForm.value.requestData', bookingForm.value?.requestData)
+
+  const formData = bookingForm.value?.requestData as TheContactFormData
+
+  console.log('formData', formData)
 
   // send data to API here
   await new Promise(resolve => setTimeout(resolve, 4000))
