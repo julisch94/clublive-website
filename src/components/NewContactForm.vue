@@ -11,6 +11,7 @@
       required: 'Dieses Feld muss ausgefüllt werden',
     }"
     @submit="onSubmit"
+    :loading="isFormLoading"
   >
     <template #empty>
       <FormSteps>
@@ -125,10 +126,11 @@
           />
         </GroupElement>
         <GroupElement name="container_5">
+          <StaticElement name="h4_1" tag="h4" content="Fast fertig!" />
           <TextareaElement
             name="custom-message"
             label="Deine Nachricht"
-            placeholder="Falls du uns noch etwas sagen möchtest..."
+            placeholder="Falls du uns noch etwas Persönliches möchtest..."
             :floating="false"
           />
         </GroupElement>
@@ -185,10 +187,18 @@ const onNextClicked = () => {
 
 const bookingForm = ref<Vueform>()
 
-const onSubmit = form => {
+const isFormLoading = ref(false)
+
+const onSubmit = async form => {
   console.log('form', form.data)
+  isFormLoading.value = true
+  console.log('submitting', bookingForm.value?.submitting)
   console.log('bookingForm.value', bookingForm.value?.data)
   console.log('date', bookingForm.value?.data['event-date'])
+
+  await new Promise(resolve => setTimeout(resolve, 4000))
+
+  isFormLoading.value = false
 }
 </script>
 
