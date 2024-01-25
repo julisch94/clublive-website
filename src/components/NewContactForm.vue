@@ -133,6 +133,20 @@
             placeholder="Falls du uns noch etwas Persönliches möchtest..."
             :floating="false"
           />
+          <SelectElement
+            name="reference"
+            :native="false"
+            label="Woher kennst du uns?"
+            :items="referenceOptions"
+            :can-deselect="false"
+            :rules="['required']"
+          />
+          <TextElement
+            name="reference-other"
+            label="Woher genau?"
+            :conditions="[['container_5.reference', '==', 'Etwas anderes']]"
+            :rules="['required']"
+          />
         </GroupElement>
         <GroupElement name="container_4">
           <StaticElement
@@ -172,6 +186,8 @@ const guestOptions = [
 const eventTypeOptions = ['Festival', 'Stadtfest', 'Firmen-Event', 'Vereinsfest', 'Hochzeit', 'Andere']
 
 const showLengthOptions = ['60 Minuten', '90 Minuten', '120 Minuten', '150 Minuten', '180 Minuten', '210 Minuten']
+
+const referenceOptions = ['Live', 'Empfehlung', 'Internet', 'Presse', 'Etwas anderes']
 
 const formSize = computed(() => {
   if (window.innerWidth > 760) {
