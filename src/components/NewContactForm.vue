@@ -120,7 +120,7 @@
             label="Telefonnummer"
             :rules="[
               {
-                phone: ['contact-type', ['Telefon', 'Whatsapp']],
+                required: ['contact-type', ['Telefon', 'Whatsapp']],
               },
             ]"
           />
