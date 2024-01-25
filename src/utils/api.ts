@@ -8,17 +8,18 @@ export const sendContactForm = async (values: TheContactFormData): Promise<boole
 
   console.log('sending form', body)
 
-  const response = await fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(body as never).toString(),
-  })
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(body as never).toString(),
+    })
 
-  if (response.ok) {
-    console.log('response is ok')
-    return true
+    if (response.ok) {
+      return true
+    }
+    return false
+  } catch (error) {
+    return false
   }
-
-  console.log('response not ok')
-  return false
 }
