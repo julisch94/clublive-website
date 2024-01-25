@@ -247,16 +247,15 @@ const onSubmit = async form => {
   isFormLoading.value = true
 
   const formData = bookingForm.value?.requestData as TheContactFormData
-
   console.log('formData', formData)
+  const succeeded = await sendContactForm(formData)
 
-  await sendContactForm(formData)
-
-  // send data to API here
-  // await new Promise(resolve => setTimeout(resolve, 4000))
-
-  emit('success')
   isFormLoading.value = false
+  if (succeeded) {
+    emit('success')
+  } else {
+    emit('error')
+  }
 }
 </script>
 
