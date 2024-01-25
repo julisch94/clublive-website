@@ -217,11 +217,8 @@ const isFormLoading = ref(false)
 const onSubmit = async form => {
   onChangeForm()
 
-  console.log('form', form.data)
   isFormLoading.value = true
-  console.log('submitting', bookingForm.value?.submitting)
-  console.log('bookingForm.value', bookingForm.value?.data)
-  console.log('date', bookingForm.value?.data['event-date'])
+  console.log('bookingForm.value.requestData', bookingForm.value?.requestData)
 
   // send data to API here
   await new Promise(resolve => setTimeout(resolve, 4000))

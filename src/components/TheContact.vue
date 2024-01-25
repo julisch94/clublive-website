@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Ref, computed, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { sendContactForm } from '@/utils/api'
 import TheContactForm from './TheContactForm.vue'
 import TheContactResult from './TheContactResult.vue'
