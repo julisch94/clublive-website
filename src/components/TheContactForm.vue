@@ -111,7 +111,7 @@
             label="E-Mail-Adresse"
             :rules="[
               {
-                email: [['contact-type', ['E-Mail']]],
+                email: [['contactTypes', ['E-Mail']]],
               },
             ]"
           />
@@ -121,7 +121,7 @@
             label="Telefonnummer"
             :rules="[
               {
-                required: ['contact-type', ['Telefon', 'Whatsapp']],
+                required: ['contactTypes', ['Telefon', 'Whatsapp']],
               },
             ]"
           />
