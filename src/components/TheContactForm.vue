@@ -333,7 +333,6 @@ input[type='email']:focus {
 
 .vf-steps-controls > .vf-btn-secondary:hover {
   box-shadow: inset 0 0 0 2px var(--vf-bg-btn-secondary);
-  color: var(--vf-bg-btn-secondary);
 }
 
 /* variables from vueform builder */
@@ -362,45 +361,45 @@ input[type='email']:focus {
   --vf-ring-color: #07bf9b66;
   --vf-link-color: var(--vf-primary);
   --vf-link-decoration: inherit;
-  --vf-font-size: 1rem;
-  --vf-font-size-sm: 0.875rem;
-  --vf-font-size-lg: 1rem;
-  --vf-font-size-small: 0.875rem;
-  --vf-font-size-small-sm: 0.8125rem;
-  --vf-font-size-small-lg: 0.875rem;
-  --vf-font-size-h1: 2.125rem;
-  --vf-font-size-h1-sm: 2.125rem;
-  --vf-font-size-h1-lg: 2.125rem;
-  --vf-font-size-h2: 1.875rem;
-  --vf-font-size-h2-sm: 1.875rem;
-  --vf-font-size-h2-lg: 1.875rem;
-  --vf-font-size-h3: 1.5rem;
-  --vf-font-size-h3-sm: 1.5rem;
-  --vf-font-size-h3-lg: 1.5rem;
-  --vf-font-size-h4: 1.25rem;
-  --vf-font-size-h4-sm: 1.25rem;
-  --vf-font-size-h4-lg: 1.25rem;
-  --vf-font-size-h1-mobile: 1.5rem;
-  --vf-font-size-h1-mobile-sm: 1.5rem;
-  --vf-font-size-h1-mobile-lg: 1.5rem;
-  --vf-font-size-h2-mobile: 1.25rem;
-  --vf-font-size-h2-mobile-sm: 1.25rem;
-  --vf-font-size-h2-mobile-lg: 1.25rem;
-  --vf-font-size-h3-mobile: 1.125rem;
-  --vf-font-size-h3-mobile-sm: 1.125rem;
-  --vf-font-size-h3-mobile-lg: 1.125rem;
-  --vf-font-size-h4-mobile: 1rem;
-  --vf-font-size-h4-mobile-sm: 1rem;
-  --vf-font-size-h4-mobile-lg: 1rem;
+  --vf-font-size: 1em;
+  --vf-font-size-sm: 1em;
+  --vf-font-size-lg: 1em;
+  --vf-font-size-small: 0.875em;
+  --vf-font-size-small-sm: 0.875em;
+  --vf-font-size-small-lg: 0.875em;
+  --vf-font-size-h1: 2.125em;
+  --vf-font-size-h1-sm: 2.125em;
+  --vf-font-size-h1-lg: 2.125em;
+  --vf-font-size-h2: 1.875em;
+  --vf-font-size-h2-sm: 1.875em;
+  --vf-font-size-h2-lg: 1.875em;
+  --vf-font-size-h3: 1.5em;
+  --vf-font-size-h3-sm: 1.5em;
+  --vf-font-size-h3-lg: 1.5em;
+  --vf-font-size-h4: 1.25em;
+  --vf-font-size-h4-sm: 1.25em;
+  --vf-font-size-h4-lg: 1.25em;
+  --vf-font-size-h1-mobile: 1.5em;
+  --vf-font-size-h1-mobile-sm: 1.5em;
+  --vf-font-size-h1-mobile-lg: 1.5em;
+  --vf-font-size-h2-mobile: 1.25em;
+  --vf-font-size-h2-mobile-sm: 1.25em;
+  --vf-font-size-h2-mobile-lg: 1.25em;
+  --vf-font-size-h3-mobile: 1.125em;
+  --vf-font-size-h3-mobile-sm: 1.125em;
+  --vf-font-size-h3-mobile-lg: 1.125em;
+  --vf-font-size-h4-mobile: 1em;
+  --vf-font-size-h4-mobile-sm: 1em;
+  --vf-font-size-h4-mobile-lg: 1em;
   --vf-font-size-blockquote: 1rem;
   --vf-font-size-blockquote-sm: 0.875rem;
   --vf-font-size-blockquote-lg: 1rem;
-  --vf-line-height: 1.5rem;
+  /* --vf-line-height: 1.5rem;
   --vf-line-height-sm: 1.25rem;
   --vf-line-height-lg: 1.5rem;
   --vf-line-height-small: 1.25rem;
   --vf-line-height-small-sm: 1.125rem;
-  --vf-line-height-small-lg: 1.25rem;
+  --vf-line-height-small-lg: 1.25rem; */
   --vf-line-height-headings: 1.2;
   --vf-line-height-headings-sm: 1.2;
   --vf-line-height-headings-lg: 1.2;
@@ -507,7 +506,7 @@ input[type='email']:focus {
   --vf-bg-addon: #ffffff00;
   --vf-bg-btn: var(--vf-primary);
   --vf-bg-btn-danger: var(--vf-danger);
-  --vf-bg-btn-secondary: var(--vf-gray-200);
+  --vf-bg-btn-secondary: var(--color-accent-8);
   --vf-color-input: var(--vf-gray-800);
   --vf-color-input-hover: var(--vf-gray-800);
   --vf-color-input-focus: var(--vf-gray-800);
@@ -528,7 +527,7 @@ input[type='email']:focus {
   --vf-color-date-head: var(--vf-gray-700);
   --vf-color-btn: var(--vf-color-on-primary);
   --vf-color-btn-danger: #ffffff;
-  --vf-color-btn-secondary: var(--vf-gray-700);
+  --vf-color-btn-secondary: var(--color-fg);
   --vf-border-color-input: var(--vf-gray-300);
   --vf-border-color-input-hover: var(--vf-gray-300);
   --vf-border-color-input-focus: var(--vf-primary);
