@@ -129,7 +129,7 @@
         <GroupElement name="container_5">
           <StaticElement name="h4_1" tag="h4" content="Fast fertig!" />
           <TextareaElement
-            name="customMessage"
+            name="message"
             label="Deine Nachricht"
             placeholder="Falls du uns noch etwas Persönliches sagen möchtest..."
             :floating="false"
@@ -187,7 +187,7 @@ export type TheContactFormData = {
   contactTypes: (typeof contactTypeOptions)[number][]
   email: string | null
   telephone: string | null
-  customMessage: string | null
+  message: string | null
   reference: (typeof referenceOptions)[number]
   referenceOther?: string
 }
