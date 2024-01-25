@@ -180,7 +180,7 @@ export type TheContactFormData = {
   plannedAirTime: (typeof showLengthOptions)[number] | null
   locationName: string | null
   locationAddress: string | null
-  eventDate: '2024-01-28'
+  eventDate: string // YYYY-MM-DD
   dateUnknown: boolean
   dateEstimate?: string | null
   contactName: string
