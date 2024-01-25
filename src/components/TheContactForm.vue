@@ -131,7 +131,7 @@
           <TextareaElement
             name="customMessage"
             label="Deine Nachricht"
-            placeholder="Falls du uns noch etwas Persönliches möchtest..."
+            placeholder="Falls du uns noch etwas Persönliches sagen möchtest..."
             :floating="false"
           />
           <SelectElement
