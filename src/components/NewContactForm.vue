@@ -197,8 +197,9 @@ const onSubmit = form => {
   padding-top: 5em;
 }
 
-h4 {
-  margin-top: 1em !important;
+.vf-static-tag-h4 > h4 {
+  margin-top: 1em;
+  margin-bottom: 0;
 }
 
 label {
