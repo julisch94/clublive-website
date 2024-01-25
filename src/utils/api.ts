@@ -15,7 +15,7 @@ export const sendContactForm = async (values: TheContactFormData): Promise<boole
   })
 
   if (response.ok) {
-    console.log('response is ok', await response.json())
+    console.log('response is ok')
     return true
   }
 
