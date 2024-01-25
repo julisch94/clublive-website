@@ -2,48 +2,64 @@
 import { Ref, computed, ref } from 'vue'
 import { sendContactForm } from '@/utils/api'
 import NewContactForm from './NewContactForm.vue'
+import ContactFormResult from './ContactFormResult.vue'
 
-const name = ref('')
-const email = ref('')
-const message = ref('')
+// const name = ref('')
+// const email = ref('')
+// const message = ref('')
 const success = ref(false)
 const failure = ref(false)
-const isLoading = ref(false)
-const reference = ref('')
-const referenceOther = ref('')
+// const isLoading = ref(false)
+// const reference = ref('')
+// const referenceOther = ref('')
 
-const resultArea: Ref<HTMLDivElement | null> = ref(null)
+// const showReferenceOther = computed(() => reference.value === 'other')
 
-const showReferenceOther = computed(() => reference.value === 'other')
+// const submitForm = async () => {
+//   const body = {
+//     name: name.value,
+//     email: email.value,
+//     message: message.value,
+//     reference: reference.value,
+//     referenceOther: referenceOther.value,
+//   }
 
-const submitForm = async () => {
-  const body = {
-    name: name.value,
-    email: email.value,
-    message: message.value,
-    reference: reference.value,
-    referenceOther: referenceOther.value,
-  }
+//   success.value = false
+//   failure.value = false
+//   isLoading.value = true
 
+//   try {
+//     const result = await sendContactForm(body)
+
+//     isLoading.value = false
+//     if (result?.ok) {
+//       success.value = true
+//     } else {
+//       failure.value = true
+//     }
+//   } catch (error) {
+//     console.error(error)
+//     isLoading.value = false
+//   }
+
+//   // resultArea.value?.scrollIntoView()
+// }
+
+const shouldShowResultView = computed(() => success.value || failure.value)
+
+const onSuccess = () => {
+  success.value = true
+  failure.value = false
+}
+
+const onFailure = () => {
+  success.value = false
+  failure.value = true
+}
+
+const onChange = () => {
   success.value = false
   failure.value = false
-  isLoading.value = true
-
-  try {
-    const result = await sendContactForm(body)
-
-    isLoading.value = false
-    if (result?.ok) {
-      success.value = true
-    } else {
-      failure.value = true
-    }
-  } catch (error) {
-    console.error(error)
-    isLoading.value = false
-  }
-
-  resultArea.value?.scrollIntoView()
 }
 </script>
 
@@ -54,10 +70,12 @@ const submitForm = async () => {
         <h2>Buchungsanfrage</h2>
         <p>
           Dieses Kontaktformular ist die beste Möglichkeit ein Angebot von uns anzufragen. Wir lesen deine Nachricht und
-          melden uns schnellstmöglich bei dir zurück. Für einfache Kontaktanfragen kannst du uns auch eine E-Mail schreiben an
+          melden uns schnellstmöglich bei dir zurück. Für einfache Kontaktanfragen kannst du uns auch eine E-Mail
+          schreiben an
           <a href="mailto:contact@clublive.band">contact@clublive.band</a>.
         </p>
-        <NewContactForm />
+        <NewContactForm @success="onSuccess" @error="onFailure" @changed="onChange" />
+        <ContactFormResult v-if="shouldShowResultView" :success="success" :failure="failure" />
       </section>
     </div>
   </section>
@@ -143,58 +161,7 @@ const submitForm = async () => {
   min-width: 20em;
 }
 
-div.result {
-  margin-top: 1em;
-}
-
 .actions {
   text-align: end;
-}
-
-.result div {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.slide-in-from-left {
-  animation: slide-in-from-left 0.3s ease-out 0.2s forwards;
-  transform: translateX(-10px);
-  opacity: 0;
-}
-
-@keyframes slide-in-from-left {
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.shake {
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-}
-
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
-  }
 }
 </style>

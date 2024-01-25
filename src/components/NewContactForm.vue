@@ -12,9 +12,10 @@
     }"
     @submit="onSubmit"
     :loading="isFormLoading"
+    @change="onChangeForm"
   >
     <template #empty>
-      <FormSteps>
+      <FormSteps @next="onNextClicked" @select="onChangeForm">
         <FormStep
           name="page0"
           :elements="['container', 'container_1', 'container_2']"
@@ -162,7 +163,7 @@
         </GroupElement>
       </FormElements>
 
-      <FormStepsControls @click="onNextClicked"></FormStepsControls>
+      <FormStepsControls />
     </template>
   </Vueform>
 </template>
@@ -189,6 +190,12 @@ const showLengthOptions = ['60 Minuten', '90 Minuten', '120 Minuten', '150 Minut
 
 const referenceOptions = ['Live', 'Empfehlung', 'Internet', 'Presse', 'Etwas anderes']
 
+const onChangeForm = () => {
+  // give signal to parent; that user has changed something in the form
+  // very useful for changes that happen after submission
+  emit('changed')
+}
+
 const formSize = computed(() => {
   if (window.innerWidth > 760) {
     return 'lg'
@@ -201,19 +208,25 @@ const onNextClicked = () => {
   contactSection?.scrollIntoView()
 }
 
+const emit = defineEmits(['error', 'success', 'changed'])
+
 const bookingForm = ref<Vueform>()
 
 const isFormLoading = ref(false)
 
 const onSubmit = async form => {
+  onChangeForm()
+
   console.log('form', form.data)
   isFormLoading.value = true
   console.log('submitting', bookingForm.value?.submitting)
   console.log('bookingForm.value', bookingForm.value?.data)
   console.log('date', bookingForm.value?.data['event-date'])
 
+  // send data to API here
   await new Promise(resolve => setTimeout(resolve, 4000))
 
+  emit('success')
   isFormLoading.value = false
 }
 </script>
