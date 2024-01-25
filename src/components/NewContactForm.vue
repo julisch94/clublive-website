@@ -94,7 +94,7 @@
         </GroupElement>
         <GroupElement name="container_3">
           <StaticElement name="h4" tag="h4" content="Wer?" />
-          <TextElement name="contact-name" label="Name des Ansprechpartners" :rules="['required']" />
+          <TextElement name="contact-name" label="Dein Name" :rules="['required']" />
           <CheckboxgroupElement
             name="contact-type"
             :items="['E-Mail', 'Telefon', 'Whatsapp']"
