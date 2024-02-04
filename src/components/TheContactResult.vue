@@ -20,7 +20,7 @@ import { Ref } from 'vue'
 import { onMounted, defineProps } from 'vue'
 import { ref } from 'vue'
 
-const props = defineProps<{
+defineProps<{
   success?: boolean
   failure?: boolean
 }>()
