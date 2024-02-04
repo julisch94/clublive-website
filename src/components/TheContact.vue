@@ -1,49 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { sendContactForm } from '@/utils/api'
 import TheContactForm from './TheContactForm.vue'
 import TheContactResult from './TheContactResult.vue'
 
-// const name = ref('')
-// const email = ref('')
-// const message = ref('')
 const success = ref(false)
 const failure = ref(false)
-// const isLoading = ref(false)
-// const reference = ref('')
-// const referenceOther = ref('')
-
-// const showReferenceOther = computed(() => reference.value === 'other')
-
-// const submitForm = async () => {
-//   const body = {
-//     name: name.value,
-//     email: email.value,
-//     message: message.value,
-//     reference: reference.value,
-//     referenceOther: referenceOther.value,
-//   }
-
-//   success.value = false
-//   failure.value = false
-//   isLoading.value = true
-
-//   try {
-//     const result = await sendContactForm(body)
-
-//     isLoading.value = false
-//     if (result?.ok) {
-//       success.value = true
-//     } else {
-//       failure.value = true
-//     }
-//   } catch (error) {
-//     console.error(error)
-//     isLoading.value = false
-//   }
-
-//   // resultArea.value?.scrollIntoView()
-// }
 
 const shouldShowResultView = computed(() => success.value || failure.value)
 
@@ -57,7 +18,7 @@ const onFailure = () => {
   failure.value = true
 }
 
-const onChange = () => {
+const resetResult = () => {
   success.value = false
   failure.value = false
 }
@@ -74,7 +35,7 @@ const onChange = () => {
           schreiben an
           <a href="mailto:contact@clublive.band">contact@clublive.band</a>.
         </p>
-        <TheContactForm @success="onSuccess" @error="onFailure" @changed="onChange" />
+        <TheContactForm @success="onSuccess" @error="onFailure" @changed="resetResult" @submit="resetResult" />
         <TheContactResult v-if="shouldShowResultView" :success="success" :failure="failure" />
       </section>
     </div>

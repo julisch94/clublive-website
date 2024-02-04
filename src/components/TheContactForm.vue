@@ -1,3 +1,92 @@
+<script setup lang="ts">
+import { sendContactForm } from '@/utils'
+import { type Vueform } from '@vueform/vueform'
+import { ref, computed } from 'vue'
+
+export type TheContactFormData = {
+  eventType: (typeof eventTypeOptions)[number] | null
+  amountOfGuests: (typeof guestOptions)[number] | null
+  plannedAirTime: (typeof showLengthOptions)[number] | null
+  locationName: string | null
+  locationAddress: string | null
+  eventDate: string // YYYY-MM-DD
+  dateUnknown: boolean
+  dateEstimate?: string | null
+  contactName: string
+  contactTypes: (typeof contactTypeOptions)[number][]
+  email: string | null
+  telephone: string | null
+  message: string | null
+  reference: (typeof referenceOptions)[number]
+  referenceOther?: string
+}
+
+const guestOptions = [
+  'bis 100',
+  '100 - 250',
+  '250 - 500',
+  '500 - 1000',
+  '1000 - 1500',
+  '1500 - 2000',
+  '2000 - 3000',
+  'mehr als 3000',
+] as const
+
+const eventTypeOptions = ['Festival', 'Stadtfest', 'Firmen-Event', 'Vereinsfest', 'Hochzeit', 'Andere'] as const
+
+const contactTypeOptions = ['E-Mail', 'Telefon', 'Whatsapp'] as const
+
+const showLengthOptions = [
+  '60 Minuten',
+  '90 Minuten',
+  '120 Minuten',
+  '150 Minuten',
+  '180 Minuten',
+  '210 Minuten',
+] as const
+
+const referenceOptions = ['Live', 'Empfehlung', 'Internet', 'Presse', 'Etwas anderes'] as const
+
+const onChangeForm = () => {
+  // give signal to parent; that user has changed something in the form
+  // very useful for changes that happen after submission
+  emit('changed')
+}
+
+const formSize = computed(() => {
+  if (window.innerWidth > 760) {
+    return 'lg'
+  }
+  return 'sm'
+})
+
+const onNextClicked = () => {
+  const contactSection = document.getElementById('booking-form')
+  contactSection?.scrollIntoView()
+}
+
+const emit = defineEmits(['error', 'success', 'changed', 'submit'])
+
+const bookingForm = ref<Vueform>()
+
+const isFormLoading = ref(false)
+
+const onSubmit = async () => {
+  emit('submit')
+  isFormLoading.value = true
+
+  const formData = bookingForm.value?.requestData as TheContactFormData
+  const succeeded = await sendContactForm(formData)
+
+  isFormLoading.value = false
+  if (succeeded) {
+    emit('success')
+  } else {
+    emit('error')
+  }
+}
+</script>
+
 <template>
   <Vueform
     ref="bookingForm"
@@ -167,97 +256,6 @@
     </template>
   </Vueform>
 </template>
-
-<script setup lang="ts">
-import { sendContactForm } from '@/utils'
-import { type Vueform } from '@vueform/vueform'
-import { ref } from 'vue'
-import { computed } from 'vue'
-
-export type TheContactFormData = {
-  eventType: (typeof eventTypeOptions)[number] | null
-  amountOfGuests: (typeof guestOptions)[number] | null
-  plannedAirTime: (typeof showLengthOptions)[number] | null
-  locationName: string | null
-  locationAddress: string | null
-  eventDate: string // YYYY-MM-DD
-  dateUnknown: boolean
-  dateEstimate?: string | null
-  contactName: string
-  contactTypes: (typeof contactTypeOptions)[number][]
-  email: string | null
-  telephone: string | null
-  message: string | null
-  reference: (typeof referenceOptions)[number]
-  referenceOther?: string
-}
-
-const guestOptions = [
-  'bis 100',
-  '100 - 250',
-  '250 - 500',
-  '500 - 1000',
-  '1000 - 1500',
-  '1500 - 2000',
-  '2000 - 3000',
-  'mehr als 3000',
-] as const
-
-const eventTypeOptions = ['Festival', 'Stadtfest', 'Firmen-Event', 'Vereinsfest', 'Hochzeit', 'Andere'] as const
-
-const contactTypeOptions = ['E-Mail', 'Telefon', 'Whatsapp'] as const
-
-const showLengthOptions = [
-  '60 Minuten',
-  '90 Minuten',
-  '120 Minuten',
-  '150 Minuten',
-  '180 Minuten',
-  '210 Minuten',
-] as const
-
-const referenceOptions = ['Live', 'Empfehlung', 'Internet', 'Presse', 'Etwas anderes'] as const
-
-const onChangeForm = () => {
-  // give signal to parent; that user has changed something in the form
-  // very useful for changes that happen after submission
-  emit('changed')
-}
-
-const formSize = computed(() => {
-  if (window.innerWidth > 760) {
-    return 'lg'
-  }
-  return 'sm'
-})
-
-const onNextClicked = () => {
-  const contactSection = document.getElementById('booking-form')
-  contactSection?.scrollIntoView()
-}
-
-const emit = defineEmits(['error', 'success', 'changed'])
-
-const bookingForm = ref<Vueform>()
-
-const isFormLoading = ref(false)
-
-const onSubmit = async form => {
-  onChangeForm()
-  isFormLoading.value = true
-
-  const formData = bookingForm.value?.requestData as TheContactFormData
-  console.log('formData', formData)
-  const succeeded = await sendContactForm(formData)
-
-  isFormLoading.value = false
-  if (succeeded) {
-    emit('success')
-  } else {
-    emit('error')
-  }
-}
-</script>
 
 <style>
 .pt-s {
