@@ -5,6 +5,7 @@ import { ref, computed } from 'vue'
 
 export type TheContactFormData = {
   eventType: (typeof eventTypeOptions)[number] | null
+  eventTypeDescription?: string
   amountOfGuests: (typeof guestOptions)[number] | null
   plannedAirTime: (typeof showLengthOptions)[number] | null
   locationName: string | null
