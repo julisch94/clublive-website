@@ -15,7 +15,7 @@ test('shows page is loaded correctly', async ({ page }) => {
     page.getByText('Schau hier regelmäßig rein, um zu sehen, wann wir wieder in deine Nähe kommen.')
   ).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Referenzen' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Kontaktformular / Buchung' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Buchungsanfrage' })).toBeVisible()
   await expect(page.getByText('Stay tuned und folge uns bei Instagram')).toBeVisible()
 })
 

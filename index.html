@@ -66,11 +66,25 @@
 <script type='module' src='/src/main.ts'></script>
 </body>
 <form name='clublive-contact' method='post' data-netlify='true' data-netlify-honeypot='bot-field' hidden>
+  <input name='contactName' />
+  <input name='message' />
+  <input name='eventDate' />
+  <input name='dateUnknown' />
+  <input name='dateEstimate' />
+  <input name='eventType' />
+  <input name='eventTypeDescription' />
+  <input name='amountOfGuests' />
+  <input name='plannedAirTime' />
+  <input name='locationName' />
+  <input name='locationAddress' />
+  <input name='contactTypes' />
+  <input name='email' />
+  <input name='telephone' />
+  <input name='reference' />
+  <input name='referenceOther' />
+
+  <!-- to keep backward compatibility for now; can be deleted in October 2024 -->
   <input type='text' name='name' />
-  <input type='text' name='email' />
-  <textarea name='message'> </textarea>
-  <select name='reference'></select>
-  <input type='text' name='referenceOther' />
 </form>
 
 </html>
