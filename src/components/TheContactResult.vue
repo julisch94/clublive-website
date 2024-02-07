@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { Ref } from 'vue'
-import { onMounted, defineProps } from 'vue'
+import { onMounted } from 'vue'
 import { ref } from 'vue'
 
 defineProps<{
