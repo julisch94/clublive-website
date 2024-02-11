@@ -44,7 +44,7 @@
                 <a
                   class="button icon fa-external-link"
                   target="_blank"
-                  href="https://docs.google.com/document/d/1AooJzmKIZVnO1OPj85vuYYvG90yLNqWNW9zRvdBf9mg/view"
+                  href="https://drive.google.com/file/d/1btQ41IQZeaxZEp6xZzbJu93tpTPejDHy/view?usp=drive_link"
                   >Nur Technical Rider</a
                 >
               </li>
