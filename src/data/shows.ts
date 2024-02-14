@@ -84,7 +84,7 @@ export const shows: ShowModel[] = [
   {
     date: '2024/01/13',
     place: 'The Irish Pub, Pforzheim',
-    website: 'https://www.irishpubpf.de/',
+    website: 'https://www.irishpubpf.de',
     mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
     description: 'Beginn ab 21:30 Uhr',
     type: 'public',

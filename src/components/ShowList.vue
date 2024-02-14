@@ -9,7 +9,7 @@ const props = defineProps({
   excerpt: { type: Boolean, default: false },
 })
 
-const numberOfShowsWhenExcerpt = 3
+const numberOfShowsWhenExcerpt = 5
 
 const futureShows: ComputedRef<ShowModel[]> = computed(() => {
   return shows.filter(show => !dayjs().isAfter(show.date, 'day')).sort(sortByDateAsc)
@@ -22,10 +22,6 @@ const visibleShows = computed(() => {
   return futureShows.value
 })
 
-const hasMoreShowsThanVisible = computed(() => {
-  return futureShows.value.length > visibleShows.value.length
-})
-
 const hasVisibleShows = computed(() => visibleShows.value.length > 0)
 
 const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
@@ -36,7 +32,6 @@ const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
 <template>
   <div v-if="hasVisibleShows" class="show-list">
     <Show v-for="show of visibleShows" :key="show.date" :show="show" :short="excerpt" />
-    <p v-if="hasMoreShowsThanVisible">...</p>
   </div>
 
   <div v-else id="noShows">

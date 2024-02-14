@@ -31,10 +31,20 @@ vi.mock('@/data/shows', () => {
       type: 'public',
     },
     {
+      date: '2023/08/03',
+      place: 'Gig day after tomorrow',
+      type: 'public',
+    },
+    {
+      date: '2023/08/04',
+      place: 'Gig soon',
+      type: 'public',
+    },
+    {
       date: '2999/12/03',
       place: 'The Irish Pub, Pforzheim',
-      website: 'https://www.irishpubpf.de/',
-      mapsLink: 'https://g.page/TheIrishPubPforzheim?share',
+      description: 'nice description',
+      website: 'https://www.irishpubpf.de',
       type: 'public',
     },
     {
@@ -50,32 +60,49 @@ vi.mock('@/data/shows', () => {
 it('displays future shows', () => {
   const screen = render(ShowList)
 
-  expect(screen.queryAllByTestId('show').length).toBe(4)
+  expect(screen.queryAllByTestId('show').length).toBe(6)
   expect(screen.getByText(/The Irish Pub, Pforzheim/)).toBeTruthy()
   expect(screen.getByText(/Private Veranstaltung, Karlsruhe/)).toBeTruthy()
   expect(screen.getByText(/Gig this evening/)).toBeTruthy()
+  expect(screen.getByText(/Gig tomorrow/)).toBeTruthy()
+  expect(screen.getByText(/Gig day after tomorrow/)).toBeTruthy()
+  expect(screen.getByText(/Gig soon/)).toBeTruthy()
+
   expect(screen.queryByText(/Old gig/i)).toBeFalsy()
 })
 
-it('displays only three future shows when excerpt is true', () => {
-  const screen = render(ShowList, {
-    props: {
-      excerpt: true,
-    },
-  })
+it('displays description and website when not excerpt', () => {
+  const screen = render(ShowList)
 
-  expect(screen.queryAllByTestId('show')).toHaveLength(3)
-  expect(screen.queryByText(/Gig this evening/)).toBeTruthy()
-  expect(screen.queryByText(/Gig tomorrow/)).toBeTruthy()
-  expect(screen.queryByText(/Private Veranstaltung, Karlsruhe/)).toBeTruthy()
+  expect(screen.getByText('nice description')).toBeTruthy()
+  expect(screen.getByRole('link', { name: 'www.irishpubpf.de' })).toBeTruthy()
 })
 
-it('displays ... in excerpt when there are more shows than visible', () => {
+it('does not display description and website when excerpt', () => {
   const screen = render(ShowList, {
     props: {
       excerpt: true,
     },
   })
 
-  expect(screen.queryByText('...')).toBeTruthy()
+  expect(screen.queryByText('nice description')).toBeFalsy()
+  expect(screen.queryByRole('link', { name: 'www.irishpubpf.de' })).toBeFalsy()
+})
+
+it('displays only 5 future shows when excerpt is true', () => {
+  const screen = render(ShowList, {
+    props: {
+      excerpt: true,
+    },
+  })
+
+  expect(screen.queryAllByTestId('show')).toHaveLength(5)
+
+  expect(screen.getByText(/Gig this evening/)).toBeTruthy()
+  expect(screen.getByText(/Gig tomorrow/)).toBeTruthy()
+  expect(screen.getByText(/Gig day after tomorrow/)).toBeTruthy()
+  expect(screen.getByText(/Gig soon/)).toBeTruthy()
+  expect(screen.getByText(/Private Veranstaltung, Karlsruhe/)).toBeTruthy()
+
+  expect(screen.queryByText(/The Irish Pub, Pforzheim/)).toBeFalsy()
 })
