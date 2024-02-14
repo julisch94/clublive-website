@@ -9,15 +9,20 @@ const props = defineProps({
   excerpt: { type: Boolean, default: false },
 })
 
+const numberOfShowsWhenExcerpt = 5
+
 const futureShows: ComputedRef<ShowModel[]> = computed(() => {
-  const allShows = shows.filter(show => !dayjs().isAfter(show.date, 'day')).sort(sortByDateAsc)
-  if (props.excerpt) {
-    return allShows.slice(0, 3)
-  }
-  return allShows
+  return shows.filter(show => !dayjs().isAfter(show.date, 'day')).sort(sortByDateAsc)
 })
 
-const hasFutureShows = computed(() => futureShows.value.length > 0)
+const visibleShows = computed(() => {
+  if (props.excerpt) {
+    return futureShows.value.slice(0, numberOfShowsWhenExcerpt)
+  }
+  return futureShows.value
+})
+
+const hasVisibleShows = computed(() => visibleShows.value.length > 0)
 
 const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
   return dayjs(showA.date).isAfter(showB.date) ? 1 : -1
@@ -25,13 +30,13 @@ const sortByDateAsc = (showA: ShowModel, showB: ShowModel) => {
 </script>
 
 <template>
-  <div v-if="hasFutureShows" class="show-list">
-    <Show v-for="show of futureShows" :key="show.date" :show="show" :short="excerpt" />
+  <div v-if="hasVisibleShows" class="show-list">
+    <Show v-for="show of visibleShows" :key="show.date" :show="show" :short="excerpt" />
   </div>
 
   <div v-else id="noShows">
-    <p>In naher Zukunft sind keine öffentlichen Auftritte geplant.</p>
-    <p>Wir werden aber schon bald neue Termine bekannt geben!</p>
+    <p>Wow! Wie krass waren bitte die vergangenen Shows?!</p>
+    <p>Und bald schon werden wir hier wieder neue Termine bekannt geben können. Es werden immer mehr!</p>
   </div>
 </template>
 
