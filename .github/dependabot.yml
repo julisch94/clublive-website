@@ -8,5 +8,5 @@ updates:
     # Disable rebasing because of Netlify build time limit
     rebase-strategy: "disabled"
     ignore:
-      - dependency-type: "all"
+      - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
