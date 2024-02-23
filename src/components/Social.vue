@@ -11,7 +11,11 @@
       </a>
     </li>
     <li>
-      <a href="https://www.youtube.com/channel/UCpnhZgIseF5XWs5icvU4nuQ" aria-label="YouTube" class="icon alt fa-youtube">
+      <a
+        href="https://www.youtube.com/channel/UCpnhZgIseF5XWs5icvU4nuQ"
+        aria-label="YouTube"
+        class="icon alt fa-youtube"
+      >
         <span class="label">YouTube</span>
       </a>
     </li>

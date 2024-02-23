@@ -53,10 +53,10 @@
 </template>
 
 <script setup lang="ts">
-import { posthog } from 'posthog-js';
-import { onMounted } from 'vue';
+import { posthog } from 'posthog-js'
+import { onMounted } from 'vue'
 
 onMounted(() => {
-  posthog.capture('impressum_page_view');
-});
+  posthog.capture('impressum_page_view')
+})
 </script>
