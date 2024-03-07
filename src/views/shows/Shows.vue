@@ -5,6 +5,7 @@
         <header class="major">
           <h1>Shows</h1>
         </header>
+        <ShowList />
         <p>
           Never miss a beat! Schau hier regelmäßig rein, um zu sehen, wann wir wieder in deine Nähe kommen. Komm rum und
           feier mit uns zusammen Clubmusik! Festivals, Stadtfeste, Vereins-Events, private Feiern und vieles mehr. Um
@@ -16,19 +17,6 @@
           Weihnachtsfeier, Geburtstagsfeier, Abschlussfeier, Gartenparty – für den Live-Party-Boost bist du hier genau
           richtig. Schreib uns eine unverbindliche Anfrage über unser <a href="#contact">Kontaktformular</a> und lass
           uns deine Party zum Beben bringen!
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="inner pa">
-        <h2>Anstehende Shows</h2>
-
-        <ShowList />
-
-        <p style="padding-top: 2em">
-          Stay tuned und folge uns bei Instagram:
-          <a href="https://instagram.com/clublive.band">instagram.com/clublive.band</a>
         </p>
       </div>
     </section>
