@@ -6,6 +6,27 @@
           <h1>Band</h1>
         </header>
         <p class="justify-on-desktop">
+          Club Live spielt mit einer siebenköpfigen Live-Besetzung. Schlagzeug, E-Bass, E-Gitarre, Keyboards, Saxophon
+          und Trompete. Immer dabei sind unsere Frontfrau Tiffany und unser Frontmann Jules, der auch die E-Gitarre
+          spielt. Über die Jahre sind wir mit immer mehr Musikern zu einer großen Club Live Family herangewachsen. Hier
+          stellen wir euch ein paar Mitglieder unserer Club Live Family vor.
+        </p>
+        <div class="grid">
+          <Musician
+            v-for="musician in musicians"
+            :key="musician.name"
+            :image-src="musician.imageSrc"
+            :name="musician.name"
+            :instrument="musician.instrument"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="inner pa">
+        <h2>Unsere Vision</h2>
+        <p class="justify-on-desktop">
           Als unsere Band im Jahr 2017 gegründet wurde, spielten wir Songs, die wir aus dem Radio und aus den Clubs
           kannten – mit einer handvoll Leuten in einem kleinen Proberaum in Karlsruhe-Rheinhafen. Aber wir waren uns
           schnell einig, wohin unsere musikalische Reise gehen sollte. Denn wir merkten, dass viele unserer Freunde in
@@ -35,27 +56,6 @@
           Spielst auch du ein Instrument und hast Interesse bei uns einzusteigen? Dann schreibe uns gerne eine E-Mail an
           <a href="mailto:contact@clublive.band">contact@clublive.band</a>.
         </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="inner pa">
-        <h2>Besetzung</h2>
-        <p class="justify-on-desktop">
-          Club Live spielt mit einer siebenköpfigen Live-Besetzung. Schlagzeug, E-Bass, E-Gitarre, Keyboards, Saxophon
-          und Trompete. Immer dabei sind unsere Frontfrau Tiffany und unser Frontmann Jules, der auch die E-Gitarre
-          spielt. Über die Jahre sind wir mit immer mehr Musikern zu einer großen Club Live Family herangewachsen. Hier
-          stellen wir euch ein paar Mitglieder unserer Club Live Family vor.
-        </p>
-        <div class="grid">
-          <Musician
-            v-for="musician in musicians"
-            :key="musician.name"
-            :image-src="musician.imageSrc"
-            :name="musician.name"
-            :instrument="musician.instrument"
-          />
-        </div>
       </div>
     </section>
 
