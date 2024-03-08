@@ -92,8 +92,9 @@ export const shows: ShowModel[] = [
   {
     date: '2024/05/25',
     place: 'HaDiKo Heimfest, Karlsruhe',
-    description: 'Hauptact ab 22:30 Uhr',
+    description: 'Wir sind der Hauptact ab 22:30 Uhr',
     type: 'public',
+    website: 'https://www.hadiko.de/',
   },
   {
     date: '2024/08/10',
@@ -102,18 +103,20 @@ export const shows: ShowModel[] = [
   },
   {
     date: '2024/08/31',
-    place: 'Einweihung Feuerwache, Möhrfelden-Walldorf',
+    place: 'Einweihung Feuerwache, Mörfelden-Walldorf',
     type: 'public',
+    description: 'Beginn ab 20 Uhr, beim Flughafen Frankfurt',
+    website: 'https://www.feuerwehr-walldorf.org/',
   },
-  // {
-  //   date: '2024/09/13',
-  //   place: 'Private Veranstaltung, Maulbronn',
-  //   type: 'private',
-  // },
+  {
+    date: '2024/09/13',
+    place: 'Private Veranstaltung, Maulbronn',
+    type: 'private',
+  },
   {
     date: '2024/09/14',
     place: 'Kerwe Kriegsheim, Monsheim',
-    description: 'Beginn ab 20:00 Uhr',
+    description: 'Beginn ab 20:00 Uhr, bei Worms',
     type: 'public',
   },
   {

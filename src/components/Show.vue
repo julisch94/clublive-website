@@ -37,9 +37,9 @@ const hasFurtherInformation = computed(() => {
     <p v-if="displayDetails" class="subtitle m-0">
       <span class="icon fa-info-circle" style="justify-self: center">&nbsp;</span>
       <span>{{ show.description }}</span>
-      <span v-if="show.website">
-        , <a :href="show.website">{{ websiteWithoutProtocol }}</a>
-      </span>
+      <span v-if="show.website"
+        >, <a :href="show.website">{{ websiteWithoutProtocol }}</a></span
+      >
     </p>
   </article>
 </template>
