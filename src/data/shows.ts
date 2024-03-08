@@ -94,6 +94,7 @@ export const shows: ShowModel[] = [
     place: 'HaDiKo Heimfest, Karlsruhe',
     description: 'Hauptact ab 22:30 Uhr',
     type: 'public',
+    website: 'https://www.hadiko.de/',
   },
   {
     date: '2024/08/10',
