@@ -104,6 +104,7 @@ export const shows: ShowModel[] = [
     date: '2024/08/31',
     place: 'Einweihung Feuerwache, Mörfelden-Walldorf',
     type: 'public',
+    description: 'Beginn ab 20 Uhr, bei Frankfurt'
   },
   {
     date: '2024/09/13',
@@ -113,7 +114,7 @@ export const shows: ShowModel[] = [
   {
     date: '2024/09/14',
     place: 'Kerwe Kriegsheim, Monsheim',
-    description: 'Beginn ab 20:00 Uhr',
+    description: 'Beginn ab 20:00 Uhr, bei Worms',
     type: 'public',
   },
   {
