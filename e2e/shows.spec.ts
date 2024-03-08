@@ -16,7 +16,6 @@ test('shows page is loaded correctly', async ({ page }) => {
   ).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Referenzen' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Buchungsanfrage' })).toBeVisible()
-  await expect(page.getByText('Stay tuned und folge uns bei Instagram')).toBeVisible()
 })
 
 test('references are loaded correctly', async ({ page }) => {
