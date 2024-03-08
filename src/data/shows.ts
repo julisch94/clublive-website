@@ -104,7 +104,8 @@ export const shows: ShowModel[] = [
     date: '2024/08/31',
     place: 'Einweihung Feuerwache, Mörfelden-Walldorf',
     type: 'public',
-    description: 'Beginn ab 20 Uhr, bei Frankfurt'
+    description: 'Beginn ab 20 Uhr, beim Flughafen Frankfurt',
+    website: 'https://www.feuerwehr-walldorf.org/',
   },
   {
     date: '2024/09/13',
