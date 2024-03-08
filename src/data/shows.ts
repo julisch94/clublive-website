@@ -105,11 +105,11 @@ export const shows: ShowModel[] = [
     place: 'Einweihung Feuerwache, Möhrfelden-Walldorf',
     type: 'public',
   },
-  // {
-  //   date: '2024/09/13',
-  //   place: 'Private Veranstaltung, Maulbronn',
-  //   type: 'private',
-  // },
+  {
+    date: '2024/09/13',
+    place: 'Private Veranstaltung, Maulbronn',
+    type: 'private',
+  },
   {
     date: '2024/09/14',
     place: 'Kerwe Kriegsheim, Monsheim',
