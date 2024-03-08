@@ -92,7 +92,7 @@ export const shows: ShowModel[] = [
   {
     date: '2024/05/25',
     place: 'HaDiKo Heimfest, Karlsruhe',
-    description: 'Hauptact ab 22:30 Uhr',
+    description: 'Wir sind der Hauptact ab 22:30 Uhr',
     type: 'public',
     website: 'https://www.hadiko.de/',
   },
