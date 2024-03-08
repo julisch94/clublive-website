@@ -102,7 +102,7 @@ export const shows: ShowModel[] = [
   },
   {
     date: '2024/08/31',
-    place: 'Einweihung Feuerwache, Möhrfelden-Walldorf',
+    place: 'Einweihung Feuerwache, Mörfelden-Walldorf',
     type: 'public',
   },
   {
