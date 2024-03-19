@@ -97,6 +97,12 @@ export const shows: ShowModel[] = [
     website: 'https://www.hadiko.de/',
   },
   {
+    date: '2024/06/15',
+    place: 'Secret Gig',
+    description: 'Wird hier bald bekanntgegeben',
+    type: 'public',
+  },
+  {
     date: '2024/08/10',
     place: 'Private Veranstaltung, Pforzheim',
     type: 'private',
