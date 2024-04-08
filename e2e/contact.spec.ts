@@ -23,7 +23,6 @@ test('fills form and shows success message; happy path', async ({ page }) => {
   await page.locator('.flatpickr-next-month').click()
   await page.locator('.flatpickr-next-month').click()
   await page.locator('.flatpickr-next-month').click()
-  await page.locator('.flatpickr-next-month').click()
   await page.getByLabel('July 13,').click()
   await page.getByRole('button', { name: 'Weiter' }).click()
   await page.getByLabel('Dein Name').click()
@@ -74,7 +73,8 @@ test('sends all data to the server', async ({ page }) => {
   await page.getByLabel('Datum der Veranstaltung').click()
   await page.locator('.flatpickr-next-month').click()
   await page.locator('.flatpickr-next-month').click()
-  await page.getByLabel('June 15,').click()
+  await page.locator('.flatpickr-next-month').click()
+  await page.getByLabel('July 15,').click()
   await page.locator('label').filter({ hasText: 'Ich kenne das genaue Datum' }).click()
   await page.getByLabel('Ungefährer Zeitraum').click()
   await page.getByLabel('Ungefährer Zeitraum').fill('könnte auch die Woche danach werden')
@@ -110,7 +110,7 @@ test('sends all data to the server', async ({ page }) => {
       dateEstimate: 'könnte auch die Woche danach werden',
       dateUnknown: 'true',
       email: 'test@example.com',
-      eventDate: '2024-06-15',
+      eventDate: '2024-07-15',
       eventType: 'Andere',
       eventTypeDescription: 'Fette Party',
       'form-name': 'clublive-contact',
@@ -151,7 +151,6 @@ test('shows error message when submission fails', async ({ page }) => {
   await page.getByLabel('Adresse', { exact: true }).click()
   await page.getByLabel('Adresse', { exact: true }).fill('Moltkestraße, Karlsruhe')
   await page.getByLabel('Datum der Veranstaltung').click()
-  await page.locator('.flatpickr-next-month').click()
   await page.locator('.flatpickr-next-month').click()
   await page.locator('.flatpickr-next-month').click()
   await page.locator('.flatpickr-next-month').click()
