@@ -74,7 +74,6 @@ test('sends all data to the server', async ({ page }) => {
   await page.getByLabel('Datum der Veranstaltung').click()
   await page.locator('.flatpickr-next-month').click()
   await page.locator('.flatpickr-next-month').click()
-  await page.locator('.flatpickr-next-month').click()
   await page.getByLabel('June 15,').click()
   await page.locator('label').filter({ hasText: 'Ich kenne das genaue Datum' }).click()
   await page.getByLabel('Ungefährer Zeitraum').click()
