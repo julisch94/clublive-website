@@ -98,9 +98,9 @@ export const shows: ShowModel[] = [
   },
   {
     date: '2024/06/15',
-    place: 'Secret Gig',
-    description: 'Wird hier bald bekanntgegeben',
+    place: 'Unifest, Karlsruhe',
     type: 'public',
+    website: 'https://unifest-karlsruhe.de/',
   },
   {
     date: '2024/08/10',
