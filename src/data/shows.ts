@@ -94,13 +94,14 @@ export const shows: ShowModel[] = [
     place: 'HaDiKo Heimfest, Karlsruhe',
     description: 'Wir sind der Hauptact ab 22:30 Uhr',
     type: 'public',
-    website: 'https://www.hadiko.de/',
+    website: 'https://www.hadiko.de',
   },
   {
     date: '2024/06/15',
-    place: 'Secret Gig',
-    description: 'Wird hier bald bekanntgegeben',
+    place: 'Unifest, Karlsruhe',
     type: 'public',
+    description: 'Karlsruher Bühne',
+    website: 'https://www.unifest-karlsruhe.de',
   },
   {
     date: '2024/08/10',
@@ -112,7 +113,7 @@ export const shows: ShowModel[] = [
     place: 'Einweihung Feuerwache, Mörfelden-Walldorf',
     type: 'public',
     description: 'Beginn ab 20 Uhr, beim Flughafen Frankfurt',
-    website: 'https://www.feuerwehr-walldorf.org/',
+    website: 'https://www.feuerwehr-walldorf.org',
   },
   {
     date: '2024/09/13',
