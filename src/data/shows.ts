@@ -109,6 +109,13 @@ export const shows: ShowModel[] = [
     type: 'private',
   },
   {
+    date: '2024/08/24',
+    place: 'Marktfest, Ettlingen',
+    type: 'public',
+    description: 'Beginn ab 20 Uhr, beim Schloss',
+    website: 'https://www.ettlingen.de/events/marktfest',
+  },
+  {
     date: '2024/08/31',
     place: 'Einweihung Feuerwache, Mörfelden-Walldorf',
     type: 'public',
