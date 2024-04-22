@@ -14,7 +14,7 @@
     "@unhead/vue": "^1.8.10",
     "@vueform/vueform": "1.7.0",
     "dayjs": "1.11.10",
-    "posthog-js": "^1.93.3",
+    "posthog-js": "^1.128.3",
     "vue": "3.4.19",
     "vue-cookies": "^1.8.3",
     "vue-router": "4.3.0",
