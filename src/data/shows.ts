@@ -100,8 +100,14 @@ export const shows: ShowModel[] = [
     date: '2024/06/15',
     place: 'Unifest, Karlsruhe',
     type: 'public',
-    description: 'Karlsruher Bühne',
+    description: 'ca. 17 Uhr, Karlsruher Bühne',
     website: 'https://www.unifest-karlsruhe.de',
+  },
+  {
+    date: '2024/07/06',
+    place: 'Sommerfest Open-Air, Schömberg',
+    type: 'public',
+    description: 'Beginn ab 20:30 Uhr, Bürgerhaus Oberlengenhardt'
   },
   {
     date: '2024/08/10',
