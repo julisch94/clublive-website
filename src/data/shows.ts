@@ -105,7 +105,7 @@ export const shows: ShowModel[] = [
   },
   {
     date: '2024/07/06',
-    place: 'Sommerfest Open-Air, Schömberg',
+    place: 'Sommerfest TV Oberlengenhardt, Schömberg',
     type: 'public',
     description: 'Beginn ab 20:30 Uhr, Bürgerhaus Oberlengenhardt'
   },
