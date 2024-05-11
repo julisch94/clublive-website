@@ -104,6 +104,13 @@ export const shows: ShowModel[] = [
     website: 'https://www.unifest-karlsruhe.de',
   },
   {
+    date: '2024/06/28',
+    place: 'Parkplatzfest, Karlsruhe',
+    type: 'public',
+    description: '21 Uhr',
+    website: 'https://www.parkplatzfest.de/',
+  },
+  {
     date: '2024/07/06',
     place: 'Sommerfest TV Oberlengenhardt, Schömberg',
     type: 'public',
