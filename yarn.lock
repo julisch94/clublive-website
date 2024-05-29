@@ -1531,7 +1531,7 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-fflate@^0.4.1:
+fflate@^0.4.8:
   version "0.4.8"
   resolved "https://registry.yarnpkg.com/fflate/-/fflate-0.4.8.tgz#f90b82aefbd8ac174213abb338bd7ef848f0f5ae"
   integrity sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==
@@ -2563,12 +2563,18 @@ postcss@^8.4.33, postcss@^8.4.38:
     picocolors "^1.0.0"
     source-map-js "^1.2.0"
 
-posthog-js@^1.93.3:
-  version "1.93.3"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.93.3.tgz#6216b761d57885b1d0f31459d13c40d40d724b0d"
-  integrity sha512-jEOWwaQpTRbqLPrDLY6eZr7t95h+LyXqN7Yq1/K6u3V0Y1C9xHtYhpuGzYamirVnCDTbVq22RM++OBUaIpp9Wg==
+posthog-js@^1.136.1:
+  version "1.136.1"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.136.1.tgz#4f08815ab4d8366e75c516352ece7c21edd7a67d"
+  integrity sha512-hM3PCDtPdyzO52l0FXEFAw1sI6PJm1U9U3MVanAcrOY3QgeJ+z241OnYm5XMrTyDF5ImCTWzq4p23moLQSZvDA==
   dependencies:
-    fflate "^0.4.1"
+    fflate "^0.4.8"
+    preact "^10.19.3"
+
+preact@^10.19.3:
+  version "10.22.0"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.22.0.tgz#a50f38006ae438d255e2631cbdaf7488e6dd4e16"
+  integrity sha512-RRurnSjJPj4rp5K6XoP45Ui33ncb7e4H7WiOHVpjbkvqvA3U+N8Z6Qbo0AE6leGYBV66n8EhEaFixvIu3SkxFw==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
@@ -2830,8 +2836,16 @@ stop-iteration-iterator@^1.0.0:
   dependencies:
     internal-slot "^1.0.4"
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
-  name string-width-cjs
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+string-width@^4.1.0:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -2849,8 +2863,14 @@ string-width@^5.0.1, string-width@^5.1.2:
     emoji-regex "^9.2.2"
     strip-ansi "^7.0.1"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
-  name strip-ansi-cjs
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
