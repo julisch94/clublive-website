@@ -100,7 +100,7 @@ export const shows: ShowModel[] = [
     date: '2024/06/15',
     place: 'Unifest, Karlsruhe',
     type: 'public',
-    description: 'ca. 17 Uhr, Karlsruher Bühne',
+    description: 'ca. 17:30 Uhr, Karlsruher Bühne',
     website: 'https://www.unifest-karlsruhe.de',
   },
   {
@@ -120,6 +120,15 @@ export const shows: ShowModel[] = [
     date: '2024/08/10',
     place: 'Private Veranstaltung, Pforzheim',
     type: 'private',
+  },
+  {
+    date: '2023/08/11',
+    place: 'Fischerfest, Plittersdorf',
+    website: 'https://fischergilde-plittersdorf.de/',
+    mapsLink: 'https://goo.gl/maps/TrdwZUYAPV5ZwQKZ7',
+    description:
+      'Festplatz Niedersand, Fischerfest der Fischergilde Plittersdorf e.V., Eintritt frei, Beginn ab 20 Uhr',
+    type: 'public',
   },
   {
     date: '2024/08/24',
