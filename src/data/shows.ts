@@ -122,7 +122,7 @@ export const shows: ShowModel[] = [
     type: 'private',
   },
   {
-    date: '2023/08/11',
+    date: '2024/08/11',
     place: 'Fischerfest, Plittersdorf',
     website: 'https://fischergilde-plittersdorf.de/',
     mapsLink: 'https://goo.gl/maps/TrdwZUYAPV5ZwQKZ7',
