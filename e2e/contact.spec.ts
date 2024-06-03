@@ -1,13 +1,9 @@
 import test, { expect } from '@playwright/test'
 
 test('fills form and shows success message; happy path', async ({ page }) => {
-  await page.goto('/')
+  await page.clock.install({ now: new Date('2024-03-04') })
 
-  page.evaluate(() => {
-    Date.now = () => {
-      return new Date('February 4, 2024').getTime()
-    }
-  })
+  await page.goto('/')
 
   await page.getByLabel('Art der Veranstaltung').click()
   await page.getByLabel('Vereinsfest').click()
@@ -50,13 +46,9 @@ test('fills form and shows success message; happy path', async ({ page }) => {
 })
 
 test('sends all data to the server', async ({ page }) => {
-  await page.goto('/')
+  await page.clock.install({ now: new Date('2024-03-04') })
 
-  page.evaluate(() => {
-    Date.now = () => {
-      return new Date('May 4, 2024').getTime()
-    }
-  })
+  await page.goto('/')
 
   await page.getByLabel('Art der Veranstaltung').click()
   await page.getByLabel('Andere', { exact: true }).click()
@@ -65,7 +57,7 @@ test('sends all data to the server', async ({ page }) => {
   await page.getByLabel('Anzahl der Gäste').click()
   await page.getByLabel('2000 - 3000').click()
   await page.getByLabel('Geplante Spielzeit der Band').click()
-  await page.getByLabel('180 Minuten').click()
+  await page.getByLabel('210 Minuten').click()
   await page.getByLabel('Name der Location').click()
   await page.getByLabel('Name der Location').fill('Hochschule Karlsruhe')
   await page.getByLabel('Adresse', { exact: true }).click()
@@ -117,7 +109,7 @@ test('sends all data to the server', async ({ page }) => {
       locationAddress: 'Moltkestraße Karlsruhe',
       locationName: 'Hochschule Karlsruhe',
       message: 'in der Kürze liegt die Würze',
-      plannedAirTime: '180 Minuten',
+      plannedAirTime: '210 Minuten',
       reference: 'Etwas anderes',
       referenceOther: 'Eventplaner',
       telephone: '0721000000',
@@ -132,13 +124,9 @@ test('sends all data to the server', async ({ page }) => {
 })
 
 test('shows error message when submission fails', async ({ page }) => {
-  await page.goto('/')
+  await page.clock.install({ now: new Date('2024-03-02') })
 
-  page.evaluate(() => {
-    Date.now = () => {
-      return new Date('February 4, 2024').getTime()
-    }
-  })
+  await page.goto('/')
 
   await page.getByLabel('Art der Veranstaltung').click()
   await page.getByLabel('Vereinsfest').click()
