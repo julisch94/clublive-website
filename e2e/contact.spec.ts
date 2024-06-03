@@ -1,7 +1,7 @@
 import test, { expect } from '@playwright/test'
 
 test('fills form and shows success message; happy path', async ({ page }) => {
-  await page.clock.install({ now: new Date('2024-03-04') })
+  await page.clock.install({ now: new Date('2024-04-04') })
 
   await page.goto('/')
 
@@ -46,7 +46,7 @@ test('fills form and shows success message; happy path', async ({ page }) => {
 })
 
 test('sends all data to the server', async ({ page }) => {
-  await page.clock.install({ now: new Date('2024-03-04') })
+  await page.clock.install({ now: new Date('2024-04-04') })
 
   await page.goto('/')
 
@@ -58,7 +58,8 @@ test('sends all data to the server', async ({ page }) => {
   await page.getByLabel('2000 - 3000').click()
   await page.getByLabel('Geplante Spielzeit der Band').click()
   await page.getByLabel('210 Minuten').click()
-  await page.getByLabel('Name der Location').click()
+  // no idea why this exact false is needed
+  await page.getByLabel('Name der Location', { exact: false }).click()
   await page.getByLabel('Name der Location').fill('Hochschule Karlsruhe')
   await page.getByLabel('Adresse', { exact: true }).click()
   await page.getByLabel('Adresse', { exact: true }).fill('Moltkestraße Karlsruhe')
@@ -124,7 +125,7 @@ test('sends all data to the server', async ({ page }) => {
 })
 
 test('shows error message when submission fails', async ({ page }) => {
-  await page.clock.install({ now: new Date('2024-03-02') })
+  await page.clock.install({ now: new Date('2024-04-02') })
 
   await page.goto('/')
 
