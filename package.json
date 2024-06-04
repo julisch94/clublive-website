@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@unhead/vue": "^1.9.12",
-    "@vueform/vueform": "1.7.0",
+    "@vueform/vueform": "1.9.9",
     "dayjs": "1.11.10",
     "posthog-js": "^1.136.5",
     "vue": "3.4.19",
