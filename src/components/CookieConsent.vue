@@ -8,26 +8,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 
-export default defineComponent({
-  name: 'CookieConsent',
-  data() {
-    return {
-      show: false,
-    }
-  },
-  mounted() {
-    this.show = !this.$cookies.get('cookie-consent')
-  },
-  methods: {
-    hide(): void {
-      this.$cookies.set('cookie-consent', 1)
-      this.show = false
-    },
-  },
-})
+const show = ref(!localStorage.getItem('cookie-consent'))
+
+const hide = () => {
+  localStorage.setItem('cookie-consent', 'true')
+  show.value = false
+}
 </script>
 
 <style scoped>
