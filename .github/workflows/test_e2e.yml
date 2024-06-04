@@ -15,10 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # - name: Extract Node.js version from .nvmrc
-      #   id: extract-node-version
-      #   run: echo ::set-output name=node_version::$(cat .nvmrc)
-
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
