@@ -56,7 +56,7 @@ const onChangeForm = () => {
 
 const formSize = computed(() => {
   if (window.innerWidth > 760) {
-    return 'lg'
+    return 'md'
   }
   return 'sm'
 })
