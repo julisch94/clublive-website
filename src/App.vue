@@ -34,8 +34,11 @@ import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import CookieConsent from '@/components/CookieConsent.vue'
 import { menuRoutes } from '@/router'
+import { useTracking } from './utils/tracking'
 
 const route = useRoute()
+
+useTracking().init()
 
 const isMenuVisible = ref(false)
 const isMainInView = ref(false)
